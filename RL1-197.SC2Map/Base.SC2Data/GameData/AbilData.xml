@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CAbilEffectTarget id="250mmStrikeCannons">
+        <Cost index="0">
+            <Resource index="Terrazine" value="5"/>
+            <Display index="Terrazine" value="1"/>
+            <Vital index="Energy" value="0"/>
+            <Cooldown TimeUse="15"/>
+        </Cost>
+        <CmdButtonArray index="Execute" Requirements=""/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="330mmBarrageCannons">
+        <Cost index="0">
+            <Resource index="Terrazine" value="5"/>
+            <Display index="Terrazine" value="1"/>
+            <Vital index="Energy" value="0"/>
+            <Cooldown TimeUse="15"/>
+        </Cost>
+        <CmdButtonArray index="Execute" Requirements=""/>
+    </CAbilEffectTarget>
+    <CAbilArmMagazine id="ArmSiloWithNuke">
+        <InfoArray index="Ammo1" Time="0">
+            <Button Requirements=""/>
+        </InfoArray>
+    </CAbilArmMagazine>
+    <CAbilTrain id="BarracksTrain">
+        <InfoArray index="Train1" Time="1"/>
+        <InfoArray index="Train2" Time="1">
+            <Button DefaultButtonFace="Hellion" State="Available"/>
+            <Unit index="0" value="Hellion"/>
+        </InfoArray>
+        <InfoArray index="Train3" Time="1">
+            <Button DefaultButtonFace="SiegeTank" Requirements=""/>
+            <Unit index="0" value="SiegeTank"/>
+        </InfoArray>
+        <InfoArray index="Train4" Time="1">
+            <Button Requirements=""/>
+        </InfoArray>
+        <InfoArray index="Train5" Time="1">
+            <Button State="Available" Requirements=""/>
+        </InfoArray>
+        <InfoArray index="Train6" Time="1">
+            <Button DefaultButtonFace="Vulture" State="Available" Requirements=""/>
+            <Unit index="0" value="Vulture"/>
+        </InfoArray>
+        <InfoArray index="Train8" Time="1">
+            <Button DefaultButtonFace="Predator"/>
+            <Unit value="Predator"/>
+        </InfoArray>
+        <InfoArray index="Train9" Time="1">
+            <Button DefaultButtonFace="Goliath" State="Restricted"/>
+            <Unit value="Goliath"/>
+        </InfoArray>
+        <InfoArray index="Train10" Time="1">
+            <Button DefaultButtonFace="SCV" State="Restricted"/>
+            <Unit value="SCV"/>
+        </InfoArray>
+        <InfoArray index="Train11" Time="1">
+            <Button DefaultButtonFace="Ghost" State="Restricted"/>
+            <Unit value="Ghost"/>
+        </InfoArray>
+        <InfoArray index="Train12" Time="1">
+            <Button DefaultButtonFace="Thor" Requirements="UnknownRequirement"/>
+            <Unit value="ThorAP"/>
+        </InfoArray>
+    </CAbilTrain>
+    <CAbilTrain id="BarracksTrain2" parent="BarracksTrain">
+        <Name value="Abil/Name/BarracksTrain2"/>
+        <InfoArray index="Train1" Time="0"/>
+        <InfoArray index="Train2" Time="0"/>
+        <InfoArray index="Train3" Time="0"/>
+        <InfoArray index="Train4" Time="0"/>
+        <InfoArray index="Train5" Time="0"/>
+        <InfoArray index="Train6" Time="0">
+            <Button DefaultButtonFace="Predator"/>
+            <Unit index="0" value="Predator"/>
+        </InfoArray>
+        <InfoArray index="Train7" Time="0">
+            <Button DefaultButtonFace="Wraith" State="Available" Requirements=""/>
+            <Unit index="0" value="Wraith"/>
+        </InfoArray>
+        <InfoArray index="Train8" Time="0">
+            <Button DefaultButtonFace="VikingFighter"/>
+            <Unit index="0" value="VikingFighter"/>
+        </InfoArray>
+        <InfoArray index="Train9" Time="0">
+            <Button DefaultButtonFace="TrainConscriptMarine" State="Available" Requirements="JumboBunkerNotResearched"/>
+            <Unit index="0" value="ConscriptMarine"/>
+        </InfoArray>
+        <InfoArray index="Train10" Time="0">
+            <Button DefaultButtonFace="" State="Available"/>
+            <Unit index="0" removed="1"/>
+        </InfoArray>
+        <InfoArray index="Train11" Time="0">
+            <Button DefaultButtonFace="" State="Available"/>
+            <Unit index="0" removed="1"/>
+        </InfoArray>
+        <InfoArray index="Train12" Time="0">
+            <Button DefaultButtonFace="" Requirements=""/>
+            <Unit index="0" removed="1"/>
+        </InfoArray>
+        <Alert value=""/>
+    </CAbilTrain>
+    <CAbilArmMagazine id="CarrierHangar">
+        <Leash value="6"/>
+        <InfoArray index="Ammo1" Time="1" CountStart="3">
+            <Display index="Terrazine" value="1"/>
+            <Cooldown Link="Abil/##id##"/>
+            <Button Requirements="ArmInterceptor4"/>
+            <Flags index="AutoBuildOn" value="1"/>
+        </InfoArray>
+        <MaxCount value="3"/>
+    </CAbilArmMagazine>
+    <CAbilTrain id="FactoryTrain">
+        <InfoArray index="Train3" Time="30">
+            <Button DefaultButtonFace="Hellion" State="Restricted"/>
+            <Unit value="Hellion"/>
+        </InfoArray>
+        <InfoArray index="Train5" Time="0">
+            <Button DefaultButtonFace="" State="Available" Requirements=""/>
+            <Unit index="0" removed="1"/>
+        </InfoArray>
+        <InfoArray index="Train6">
+            <Button DefaultButtonFace="HellionTank" State="Available"/>
+            <Unit index="0" value="Goliath"/>
+            <Unit value="HellionTank"/>
+        </InfoArray>
+        <InfoArray index="Train7" Time="45">
+            <Button DefaultButtonFace="BuildCyclone" Requirements="HaveAttachedTechLab"/>
+            <Unit index="0" value="Diamondback"/>
+            <Unit index="1" value="Cyclone"/>
+        </InfoArray>
+        <InfoArray index="Train8" Time="25">
+            <Button DefaultButtonFace="Vulture" Requirements=""/>
+            <Unit index="0" value="Vulture"/>
+            <Unit index="1" removed="1"/>
+        </InfoArray>
+        <InfoArray index="Train9" Time="40">
+            <Button DefaultButtonFace="Predator" Requirements="HaveAttachedTechLab"/>
+            <Unit index="0" value="Predator"/>
+        </InfoArray>
+        <InfoArray index="Train10" Time="0">
+            <Button DefaultButtonFace="" State="Available" Requirements=""/>
+            <Unit index="0" removed="1"/>
+        </InfoArray>
+    </CAbilTrain>
+    <CAbilTransport id="HerculesTransport">
+        <Range value="0"/>
+        <MaxUnloadRange value="0.5"/>
+        <MaxCargoCount value="16"/>
+        <TotalCargoSpace value="16"/>
+        <TargetSorts>
+            <SortArray index="0" removed="1"/>
+            <SortArray index="1" removed="1"/>
+        </TargetSorts>
+        <LoadValidatorArray value="Loadable"/>
+        <Flags index="IgnoreBlockers" value="1"/>
+        <UnloadValidatorArray value="TargetIsPathable"/>
+    </CAbilTransport>
+    <CAbilEffectTarget id="MedivacDoubleBeamHeal">
+        <TargetFilters index="0" value="Biological,Visible;Self,Enemy,Structure,User1,Missile,Uncommandable,Dead,Hidden,Invulnerable"/>
+        <SmartValidatorArray index="0" value="NotWarpingIn"/>
+        <SmartValidatorArray index="1" value="healSmartTargetFilters"/>
+        <CmdButtonArray index="Execute" Requirements=""/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="NanoRepair">
+        <TargetFilters index="0" value="Visible;Self,Enemy,Biological,Structure,Missile,Uncommandable,Dead,Hidden,Invulnerable"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="SeekerMissile">
+        <Cost index="0">
+            <Vital index="Energy" value="33"/>
+        </Cost>
+        <Range index="0" value="5.5"/>
+    </CAbilEffectTarget>
+    <CAbilEffectInstant id="SelectCountry">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="SelectDefense2"/>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="LaunchNuke">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Cost>
+            <Resource index="Terrazine" value="500"/>
+            <Display index="Terrazine" value="1"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="SelectDefense22" Requirements="NukeReq"/>
+    </CAbilEffectInstant>
+    <CAbilEffectTarget id="SelectDefender">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <Effect index="0" value="NovaSnipe"/>
+        <Cost>
+            <Charge Link="Abil/NovaSnipe"/>
+            <Cooldown Link="RogueGhostSnipe"/>
+        </Cost>
+        <TargetFilters value="Visible;Self,Neutral,Enemy,Structure,Destructible,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="3.6"/>
+        <AutoCastRange value="10"/>
+        <CastIntroTime value="0"/>
+        <FinishTime value="0"/>
+        <Marker Link="Abil/NovaSnipe">
+            <MatchFlags index="Link" value="0"/>
+            <MatchFlags index="CasterUnit" value="1"/>
+        </Marker>
+        <UninterruptibleArray index="Cast" value="1"/>
+        <UninterruptibleArray index="Finish" value="1"/>
+        <AINotifyEffect value="NovaSnipe"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="SelectDefense"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="SelectDefender2">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <Effect index="0" value="YamatoU"/>
+        <TargetFilters value="Visible;Self,Neutral,Enemy,Psionic,Structure,Invulnerable"/>
+        <Range value="2.5"/>
+        <AINotifyEffect value="YamatoU"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="SelectDefense"/>
+        <Flags index="AllowTurningSuppressed" value="1"/>
+    </CAbilEffectTarget>
+    <CAbilTrain id="StarportTrain">
+        <InfoArray index="Train1" Time="1">
+            <Button DefaultButtonFace="Marine"/>
+            <Unit index="0" value="Marine"/>
+        </InfoArray>
+        <InfoArray index="Train3" Time="1">
+            <Button Requirements="UnknownRequirement"/>
+        </InfoArray>
+        <InfoArray index="Train4" Time="1">
+            <Button DefaultButtonFace="Banshee" State="Available" Requirements=""/>
+            <Unit index="0" value="Banshee"/>
+        </InfoArray>
+        <InfoArray index="Train5" Time="1"/>
+        <InfoArray index="Train6" Time="1">
+            <Button State="Available" Requirements=""/>
+        </InfoArray>
+        <InfoArray index="Train7" Time="1">
+            <Button DefaultButtonFace="BuildScienceVessel" State="Available" Requirements=""/>
+            <Unit index="1" removed="1"/>
+        </InfoArray>
+        <InfoArray index="Train8" Time="1">
+            <Button DefaultButtonFace="Battlecruiser" State="Available" Requirements=""/>
+            <Unit index="0" value="Battlecruiser"/>
+        </InfoArray>
+        <InfoArray index="Train9">
+            <Button DefaultButtonFace="Wraith" Requirements="UnknownRequirement"/>
+            <Unit value="Wraith"/>
+        </InfoArray>
+        <InfoArray index="Train10" Time="1">
+            <Button DefaultButtonFace="Carrier" Requirements="UnknownRequirement"/>
+            <Unit value="Diamondback"/>
+        </InfoArray>
+    </CAbilTrain>
+    <CAbilEffectTarget id="TacNukeStrike">
+        <Range index="0" value="500"/>
+        <CmdButtonArray index="Execute" Requirements=""/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="TossGrenade">
+        <Cost index="0">
+            <Charge>
+                <CountMax value="3"/>
+                <CountStart value="3"/>
+                <CountUse value="1"/>
+                <Link value="RaynorTossGrenade"/>
+                <Location value="Unit"/>
+            </Charge>
+        </Cost>
+        <Range index="0" value="3"/>
+    </CAbilEffectTarget>
+</Catalog>

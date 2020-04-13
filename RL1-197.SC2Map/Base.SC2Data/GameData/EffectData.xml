@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CEffectDamage id="90mmCannons">
+        <AttributeBonus index="Light" value="15"/>
+        <AttributeBonus index="Armored" value="0"/>
+        <Amount value="20"/>
+        <Random value="10"/>
+        <AreaArray Radius="0.2" Fraction="1"/>
+        <AreaArray Radius="0.4" Fraction="0.5"/>
+        <AreaArray Radius="0.6" Fraction="0.2"/>
+    </CEffectDamage>
+    <CEffectLaunchMissile id="ATSLaserBatteryLM">
+        <ValidatorArray index="0" value="UnitDefending"/>
+        <ValidatorArray value="ATSLaserBatteryLMTargetFilters"/>
+    </CEffectLaunchMissile>
+    <CEffectDamage id="ATSLaserBatteryU">
+        <AttributeBonus index="Psionic" value="-20"/>
+        <AttributeBonus index="Hover" value="-10"/>
+        <Amount value="45"/>
+        <Random value="10"/>
+        <AreaArray Radius="0.1" Fraction="0.5"/>
+        <AreaArray Radius="0.3" Fraction="0.25"/>
+        <AreaArray Radius="0.5" Fraction="0.05"/>
+        <ValidatorArray value="UnitDefending"/>
+        <SearchFilters value="-;Air,Hover"/>
+    </CEffectDamage>
+    <CEffectDamage id="AutoTurret">
+        <Random value="4"/>
+    </CEffectDamage>
+    <CEffectDamage id="BacklashRocketsU">
+        <AttributeBonus index="Hover" value="4"/>
+        <Amount value="17"/>
+        <Random value="5"/>
+        <AreaArray Radius="0.1" Fraction="0.5"/>
+        <AreaArray Radius="0.2" Fraction="0.25"/>
+        <AreaArray Radius="0.3" Fraction="0.05"/>
+    </CEffectDamage>
+    <CEffectDamage id="C10CanisterRifle">
+        <AttributeBonus index="Light" value="0"/>
+        <AttributeBonus index="Biological" value="8"/>
+        <AttributeBonus index="Massive" value="-2"/>
+        <AttributeBonus index="Hover" value="-2"/>
+        <ArmorReduction value="0"/>
+    </CEffectDamage>
+    <CEffectDamage id="GoliathAU">
+        <AttributeBonus index="Armored" value="0"/>
+        <Random value="5"/>
+        <AreaArray Radius="0.1" Fraction="0.1"/>
+        <AreaArray Radius="0.2"/>
+        <AreaArray Radius="0.3"/>
+        <Amount value="23"/>
+        <SearchFilters value="-;Air,Hover"/>
+    </CEffectDamage>
+    <CEffectDamage id="GoliathG">
+        <AttributeBonus index="Light" value="7"/>
+        <AttributeBonus index="Armored" value="7"/>
+        <Random value="5"/>
+    </CEffectDamage>
+    <CEffectDamage id="GuassRifle">
+        <Amount value="4"/>
+        <Random value="2"/>
+        <AttributeBonus index="Psionic" value="-1"/>
+    </CEffectDamage>
+    <CEffectCreatePersistent id="HealScanPersistent">
+        <FinalEffect value=""/>
+    </CEffectCreatePersistent>
+    <CEffectDamage id="InfernalFlameThrower">
+        <AttributeBonus index="Light" value="6"/>
+        <AttributeBonus index="Psionic" value="1"/>
+        <Amount value="9"/>
+        <Random value="2"/>
+    </CEffectDamage>
+    <CEffectCreatePersistent id="InfernalFlameThrowerCP">
+        <PeriodicOffsetArray index="12" removed="1"/>
+        <PeriodicOffsetArray index="13" removed="1"/>
+        <PeriodicOffsetArray index="14" removed="1"/>
+        <PeriodicOffsetArray index="15" removed="1"/>
+        <PeriodicOffsetArray index="16" removed="1"/>
+        <PeriodicOffsetArray index="17" removed="1"/>
+        <PeriodicOffsetArray index="18" removed="1"/>
+        <PeriodicOffsetArray index="19" removed="1"/>
+        <PeriodicOffsetArray index="20" removed="1"/>
+        <PeriodicOffsetArray index="21" removed="1"/>
+        <PeriodicOffsetArray index="22" removed="1"/>
+        <PeriodicOffsetArray index="23" removed="1"/>
+        <PeriodicOffsetArray index="24" removed="1"/>
+    </CEffectCreatePersistent>
+    <CEffectEnumArea id="InfernalFlameThrowerE">
+        <ExcludeArray index="0" Value="Caster"/>
+    </CEffectEnumArea>
+    <CEffectDamage id="InterceptorBeamDamage">
+        <Random value="2"/>
+        <AttributeBonus index="Massive" value="-2"/>
+        <AttributeBonus index="Hover" value="3"/>
+        <AttributeBonus index="MapBoss" value="-2"/>
+        <Amount value="7"/>
+    </CEffectDamage>
+    <CEffectDamage id="LanzerTorpedoesDamage">
+        <AttributeBonus index="Armored" value="0"/>
+        <AttributeBonus index="Psionic" value="-2"/>
+        <Random value="5"/>
+        <AreaArray index="0" removed="1"/>
+        <AreaArray index="1" removed="1"/>
+        <AreaArray index="2" removed="1"/>
+        <Amount value="8"/>
+    </CEffectDamage>
+    <CEffectModifyUnit id="MedivacHealModifyCasterEnergy">
+        <VitalArray index="Energy" Change="-0.495"/>
+    </CEffectModifyUnit>
+    <CEffectModifyUnit id="MedivacHealModifyTargetLife">
+        <VitalArray index="Life" Change="1.5"/>
+    </CEffectModifyUnit>
+    <CEffectCreateHealer id="NanoRepair">
+        <DrainVitalCostFactor value="0.66"/>
+        <RechargeVitalRate value="5"/>
+    </CEffectCreateHealer>
+    <CEffectDamage id="NovaSnipe">
+        <Amount value="0"/>
+    </CEffectDamage>
+    <CEffectDamage id="NukeDamage">
+        <AttributeBonus index="Structure" value="0"/>
+        <Amount value="2500"/>
+        <AreaArray index="0" Radius="25" Fraction="1"/>
+        <AreaArray index="1" removed="1"/>
+        <AreaArray index="2" removed="1"/>
+    </CEffectDamage>
+    <CEffectCreatePersistent id="NukeDetonate">
+        <ExpireDelay value="2.5"/>
+        <RevealRadius value="25"/>
+    </CEffectCreatePersistent>
+    <CEffectCreatePersistent id="NukePersistent">
+        <InitialDelay value="2"/>
+        <PeriodCount value="0"/>
+    </CEffectCreatePersistent>
+    <CEffectDamage id="Predator">
+        <AttributeBonus index="Armored" value="10"/>
+        <Amount value="20"/>
+        <Random value="5"/>
+    </CEffectDamage>
+    <CEffectApplyBehavior id="PunisherGrenadesSlow">
+        <ValidatorArray index="0" value="PunisherGrenadesSlowTargetFilters"/>
+        <ValidatorArray index="1" value="NotStructure"/>
+        <ValidatorArray index="2" value="NotFrenzied"/>
+        <ValidatorArray index="3" removed="1"/>
+    </CEffectApplyBehavior>
+    <CEffectDamage id="PunisherGrenadesU">
+        <AttributeBonus index="Armored" value="0"/>
+        <AttributeBonus index="Mechanical" value="13"/>
+        <Random value="5"/>
+        <Amount value="7"/>
+    </CEffectDamage>
+    <CEffectDamage id="SeekerMissileDamage">
+        <Amount value="75"/>
+        <AreaArray index="0" Radius="0.1"/>
+        <AreaArray index="1" Radius="0.25"/>
+        <AreaArray index="2" Radius="0.5"/>
+        <AreaArray Radius="1" Fraction="0.125"/>
+    </CEffectDamage>
+    <CEffectCreatePersistent id="SpartanCompanyA">
+        <PeriodCount value="14"/>
+        <PeriodicPeriodArray index="1" value="0.45"/>
+    </CEffectCreatePersistent>
+    <CEffectDamage id="SpartanCompanyAU">
+        <AttributeBonus index="Armored" value="3"/>
+        <Amount value="5"/>
+    </CEffectDamage>
+    <CEffectDamage id="ThorsHammerDamage">
+        <ArmorReduction value="2"/>
+        <Amount value="35"/>
+        <Random value="5"/>
+        <AreaArray Radius="0.2" Fraction="0.5"/>
+        <AreaArray Radius="0.4" Fraction="0.3"/>
+        <AreaArray Radius="0.6" Fraction="0.1"/>
+        <SearchFilters value="-;Air"/>
+    </CEffectDamage>
+    <CEffectDamage id="TossGrenadeDamage">
+        <AttributeBonus index="Structure" value="0"/>
+        <Amount value="20"/>
+        <AreaArray index="0" Radius="1" Fraction="1"/>
+    </CEffectDamage>
+    <CEffectEnumArea id="VultureSearch">
+        <EditorCategories value=""/>
+        <SearchFilters value="Ground;Self,Psionic,Structure,Missile,Item,Stasis,Dead,Hidden,Invulnerable,Detector"/>
+        <AreaArray Radius="0.25" Effect="VultureSpiderMinesSet"/>
+    </CEffectEnumArea>
+    <CEffectDamage id="VultureSpiderMinesDamage">
+        <AttributeBonus index="Armored" value="50"/>
+        <Amount value="50"/>
+        <SearchFilters value="Ground;Self,Psionic,Structure,Missile,Item,Stasis,Dead,Hidden,Invulnerable,Detector"/>
+    </CEffectDamage>
+    <CEffectDamage id="VultureU">
+        <AttributeBonus index="Light" value="0"/>
+        <AttributeBonus index="Armored" value="13"/>
+        <Random value="5"/>
+        <SearchFilters value="Ground;Self,Missile,Stasis,Dead,Hidden,Invulnerable,Summoned"/>
+        <Amount value="17"/>
+    </CEffectDamage>
+    <CEffectDamage id="WraithAU">
+        <AttributeBonus index="Armored" value="0"/>
+        <Amount value="25"/>
+        <Random value="5"/>
+    </CEffectDamage>
+    <CEffectDamage id="WraithGU">
+        <Amount value="5"/>
+        <Random value="2"/>
+    </CEffectDamage>
+    <!--sadfasdf-->
+    <CEffectDamage id="YamatoU">
+        <Amount value="0"/>
+    </CEffectDamage>
+    <CEffectCreateHealer id="heal">
+        <DrainVitalCostFactor value="0.495"/>
+    </CEffectCreateHealer>
+</Catalog>

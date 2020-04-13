@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CModel id="Banshee">
+        <ScaleMax value="0.600000,0.600000,0.600000"/>
+        <ScaleMin value="0.600000,0.600000,0.600000"/>
+        <ShadowRadius value="0.800000"/>
+    </CModel>
+    <CModel id="Barracks">
+        <ScaleMax value="0.430000,0.430000,0.430000"/>
+        <ScaleMin value="0.430000,0.430000,0.430000"/>
+        <Radius value="0.850000"/>
+        <ShadowRadius value="1.300000"/>
+    </CModel>
+    <CModel id="Battlecruiser">
+        <ScaleMax value="0.400000,0.400000,0.400000"/>
+        <ScaleMin value="0.400000,0.400000,0.400000"/>
+        <ShadowRadius value="0.800000"/>
+    </CModel>
+    <CModel id="Beacon_TerranSmall">
+        <ScaleMax value="0.170000,0.170000,0.170000"/>
+        <ScaleMin value="0.170000,0.170000,0.170000"/>
+    </CModel>
+    <CModel id="BelShirTree">
+        <ScaleMax value="0.750000,0.750000,0.750000"/>
+        <ScaleMin value="0.750000,0.750000,0.750000"/>
+        <VariationCount value="4"/>
+    </CModel>
+    <CModel id="BioDomeCommand">
+        <Radius value="0.750000"/>
+        <ScaleMax value="0.310000,0.310000,0.310000"/>
+        <ScaleMin value="0.310000,0.310000,0.310000"/>
+    </CModel>
+    <CModel id="BlackOpsMarine" parent="Marine_CovertOps_Collection">
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+    </CModel>
+    <CModel id="BlackopsBanshee">
+        <Model value="Assets\Units\Terran\Banshee_BlackOps\Banshee_BlackOps.m3"/>
+        <EditorCategories value="Race:Terran"/>
+        <ScaleMax value="0.600000,0.600000,0.600000"/>
+        <ScaleMin value="0.600000,0.600000,0.600000"/>
+    </CModel>
+    <CModel id="BlackopsGoliath">
+        <Model value="Assets\Units\Terran\Goliath_BlackOps\Goliath_BlackOps.m3"/>
+        <ScaleMax value="0.350000,0.350000,0.350000"/>
+        <ScaleMin value="0.350000,0.350000,0.350000"/>
+    </CModel>
+    <CModel id="BlackopsMarauder" parent="Marauder_BlackOps"/>
+    <CModel id="BlackopsTank">
+        <Model value="Assets\Units\Terran\SiegeTank_BlackOps_Tank\SiegeTank_BlackOps_Tank.m3"/>
+        <EditorCategories value="Race:Terran"/>
+    </CModel>
+    <CModel id="BloodTargetImpact">
+        <Flags index="TeenSafe" value="1"/>
+    </CModel>
+    <CModel id="CerberusBattlecruiser">
+        <Model value="Assets\Units\Terran\Cerberus\Cerberus.m3"/>
+        <EditorCategories value="Race:Terran"/>
+        <ScaleMax value="0.400000,0.400000,0.400000"/>
+        <ScaleMin value="0.400000,0.400000,0.400000"/>
+    </CModel>
+    <CModel id="CommandoTank" parent="Tank_Commando_Collection">
+        <ScaleMax value="0.400000,0.400000,0.400000"/>
+        <ScaleMin value="0.400000,0.400000,0.400000"/>
+    </CModel>
+    <CModel id="CovertopsBanshee" parent="Banshee_CovertsOps_Collection">
+        <ScaleMax value="0.600000,0.600000,0.600000"/>
+        <ScaleMin value="0.600000,0.600000,0.600000"/>
+    </CModel>
+    <CModel id="CovertopsBattlecruiser" parent="BattleCruiser_CovertOps_Collection">
+        <ScaleMax value="0.400000,0.400000,0.400000"/>
+        <ScaleMin value="0.400000,0.400000,0.400000"/>
+    </CModel>
+    <CModel id="CovertopsHellion" parent="Hellion_CovertOps_Collection">
+        <ScaleMax value="0.375000,0.375000,0.375000"/>
+        <ScaleMin value="0.375000,0.375000,0.375000"/>
+    </CModel>
+    <CModel id="CovertopsMarauder" parent="Marauder_CovertOps_Collection">
+        <EditorCategories value=""/>
+    </CModel>
+    <CModel id="CovertopsSCV" parent="SCV_CovertOps_Collection">
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+    </CModel>
+    <CModel id="CovertopsTank">
+        <Model value="Assets\Units\Terran\SiegeTank_CovertOps_Collection_Tank\SiegeTank_CovertOps_Collection_Tank.m3"/>
+        <EditorCategories value="Race:Terran"/>
+    </CModel>
+    <CModel id="CovertopsViking" parent="Viking_CovertOps_Fighter">
+        <ScaleMax value="0.575000,0.575000,0.575000"/>
+        <ScaleMin value="0.575000,0.575000,0.575000"/>
+    </CModel>
+    <CModelFoliage id="CruiserHellion">
+        <Model value="Assets\Units\Terran\CruiserQuad\CruiserQuad.m3"/>
+        <EditorCategories value="Race:Terran"/>
+    </CModelFoliage>
+    <CModel id="DeluxeMarauder" parent="Marauder_Deluxe_Collection"/>
+    <CModel id="Diamondback">
+        <Model value="Assets\assault gallen\COOP_AssaultGalleon.m3"/>
+        <ScaleMax value="0.350000,0.350000,0.250000"/>
+        <ScaleMin value="0.350000,0.350000,0.250000"/>
+    </CModel>
+    <CModel id="DuskWing">
+        <Radius value="0.750000"/>
+        <ScaleMax value="0.600000,0.600000,0.600000"/>
+        <ScaleMin value="0.600000,0.600000,0.600000"/>
+    </CModel>
+    <CModel id="EliteMedic">
+        <Model value="Assets\Units\Terran\MedicMercenary\MedicMercenary.m3"/>
+        <EditorCategories value="Race:Terran"/>
+    </CModel>
+    <CModel id="Factory">
+        <Radius value="0.100000"/>
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+    </CModel>
+    <CModel id="FactorySplat">
+        <Radius value="0.600000"/>
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+    </CModel>
+    <CModel id="Ghost">
+        <Radius value="0.320000"/>
+        <ScaleMax value="0.650000,0.650000,0.650000"/>
+        <ScaleMin value="0.650000,0.650000,0.650000"/>
+    </CModel>
+    <CModel id="GhostNukeCollateralFire">
+        <ScaleMax value="2.000000,2.000000,2.000000"/>
+        <ScaleMin value="2.000000,2.000000,2.000000"/>
+    </CModel>
+    <CModel id="GhostNukeExplode">
+        <ScaleMax value="2.000000,2.000000,2.000000"/>
+        <ScaleMin value="2.000000,2.000000,2.000000"/>
+    </CModel>
+    <CModel id="GhostNukeIndicator">
+        <ScaleMax value="2.000000,2.000000,2.000000"/>
+        <ScaleMin value="2.000000,2.000000,2.000000"/>
+    </CModel>
+    <CModel id="Goliath">
+        <ScaleMax value="0.350000,0.350000,0.350000"/>
+        <ScaleMin value="0.350000,0.350000,0.350000"/>
+        <Radius value="0.687500"/>
+    </CModel>
+    <CModel id="GorgonBattlecruiser">
+        <EditorCategories value="Race:Terran"/>
+        <Model value="Assets\Units\Terran\BattlecruiserGiant\BattlecruiserGiant.m3"/>
+        <ScaleMax value="0.300000,0.300000,0.300000"/>
+        <ScaleMin value="0.300000,0.300000,0.300000"/>
+    </CModel>
+    <CModel id="HammerSecurity">
+        <Radius value="0.250000"/>
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+    </CModel>
+    <CModel id="HavenTree">
+        <ScaleMax value="0.800000,0.800000,0.800000"/>
+        <ScaleMin value="0.800000,0.800000,0.800000"/>
+    </CModel>
+    <CModel id="Hellion">
+        <Radius value="0.326000"/>
+        <ScaleMax value="0.375000,0.375000,0.375000"/>
+        <ScaleMin value="0.375000,0.375000,0.375000"/>
+        <ShadowRadius value="0.400000"/>
+    </CModel>
+    <CModel id="HellionAttackBeam">
+        <ScaleMax value="1.000000,0.600000,1.000000"/>
+        <ScaleMin value="1.000000,0.600000,1.000000"/>
+    </CModel>
+    <CModel id="HelsAngelFighter">
+        <ScaleMax value="0.600000,0.600000,0.600000"/>
+        <ScaleMin value="0.600000,0.600000,0.600000"/>
+    </CModel>
+    <CModel id="Hercules">
+        <Radius value="0.750000"/>
+        <RadiusLoose value="1.250000"/>
+        <ScaleMax value="0.300000,0.300000,0.300000"/>
+        <ScaleMin value="0.300000,0.300000,0.300000"/>
+        <ShadowRadius value="1.100000"/>
+    </CModel>
+    <CModel id="HunterSeekerAttackImpact">
+        <ScaleMax value="0.700000,0.700000,0.700000"/>
+        <ScaleMin value="0.700000,0.700000,0.700000"/>
+    </CModel>
+    <CModel id="HunterSeekerWeapon">
+        <ScaleMax value="0.700000,0.700000,0.700000"/>
+        <ScaleMin value="0.700000,0.700000,0.700000"/>
+    </CModel>
+    <CModel id="InfestedSCV">
+        <Model value="Assets\Units\Zerg\SCV_Stukov_Coop\SCV_Stukov_Coop.m3"/>
+        <EditorCategories value="Race:Terran"/>
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+    </CModel>
+    <CModel id="InfestedTerran">
+        <Radius value="0.400000"/>
+        <ScaleMax value="0.390000,0.390000,0.390000"/>
+        <ScaleMin value="0.390000,0.390000,0.390000"/>
+    </CModel>
+    <CModel id="Interceptor">
+        <Model value="Assets\assault gallen\assault gallen\COOP_Interceptor_HornerHan.m3"/>
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+    </CModel>
+    <CModel id="InterceptorAttackImpact">
+        <Model value="Assets\Effects\Protoss\DarkInterceptorMissileImpact\DarkInterceptorMissileImpact.m3"/>
+    </CModel>
+    <CModel id="JunkerBanshee" parent="Banshee_Junker_Collection">
+        <ScaleMax value="0.600000,0.600000,0.600000"/>
+        <ScaleMin value="0.600000,0.600000,0.600000"/>
+    </CModel>
+    <CModel id="JunkerBattlecruiser" parent="BattleCruiser_Junker_Collection">
+        <ScaleMax value="0.400000,0.400000,0.400000"/>
+        <ScaleMin value="0.400000,0.400000,0.400000"/>
+    </CModel>
+    <CModel id="JunkerHellion" parent="Hellion_Junker_Collection">
+        <ScaleMax value="0.375000,0.375000,0.375000"/>
+        <ScaleMin value="0.375000,0.375000,0.375000"/>
+    </CModel>
+    <CModel id="JunkerMarauder" parent="Marauder_Junker_Collection"/>
+    <CModel id="JunkerTank">
+        <Model value="Assets\Units\Terran\Tank_Junker_Collection\Tank_Junker_Collection.m3"/>
+        <EditorCategories value="Race:Terran"/>
+    </CModel>
+    <CModel id="KillsquadMedic">
+        <Model value="Assets\Units\Terran\MedicKillSquad\MedicKillSquad.m3"/>
+        <EditorCategories value="Race:Terran"/>
+    </CModel>
+    <CModel id="KorhalFlag">
+        <TextureDeclares Prefix="Korhal_">
+            <Adaptions TriggerOnSubstring="_Flag" Slot="decal"/>
+        </TextureDeclares>
+        <Model value="Assets\Doodads\KorhalFlag\KorhalFlag_00.m3"/>
+        <VariationCount value="1"/>
+        <ScaleMax value="0.700000,0.700000,0.700000"/>
+        <ScaleMin value="0.700000,0.700000,0.700000"/>
+        <Occlusion value="Show"/>
+        <Flags index="FOW" value="0"/>
+        <Flags index="Wait" value="0"/>
+    </CModel>
+    <CModel id="Loki">
+        <Radius value="1.000000"/>
+        <ScaleMax value="0.400000,0.400000,0.400000"/>
+        <ScaleMin value="0.400000,0.400000,0.400000"/>
+    </CModel>
+    <CModel id="Marauder">
+        <Radius value="0.250000"/>
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+        <ShadowRadius value="0.450000"/>
+    </CModel>
+    <!--CModel id="MarineFootprint" parent="OneShotSpellFX">-->
+    <!--        <Occlusion value="Show"/>-->
+    <!--        <Model value="Assets\Effects\Terran\ThorFootPrint\ThorFootPrint.m3"/>-->
+    <!--        <VariationCount value="4"/>-->
+    <!--        <EditorCategories value="Race:Terran"/>-->
+    <!--    </CModel-->
+    <CModel id="Marine">
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+        <Radius value="0.187500"/>
+        <ShadowRadius value="0.250000"/>
+    </CModel>
+    <CModel id="Marine2" parent="MarineBase">
+        <Model value="Assets\Units\Terran\Marine_BlackOps\Marine_BlackOps.m3"/>
+        <Radius value="0.187500"/>
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+        <ShadowRadius value="0.250000"/>
+    </CModel>
+    <CModel id="MarineJunker" parent="Marine_Junker_Collection">
+        <EditorCategories value=""/>
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+    </CModel>
+    <CModel id="MechaViking">
+        <Model value="Assets\Units\Terran\VikingFighter_Mecha_Collection\VikingFighter_Mecha_Collection.m3"/>
+        <EditorCategories value="Race:Terran"/>
+    </CModel>
+    <CModel id="Medic">
+        <Radius value="0.187500"/>
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+        <ShadowRadius value="0.350000"/>
+    </CModel>
+    <CModel id="Medivac">
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+    </CModel>
+    <CModel id="MercGoliath" parent="SpartanCompany">
+        <ScaleMax value="0.350000,0.350000,0.350000"/>
+        <ScaleMin value="0.350000,0.350000,0.350000"/>
+    </CModel>
+    <CModel id="MercHellion" parent="Hellion_Merc_Collection">
+        <Model value="Assets\Units\Terran\HellionMercenary\HellionMercenary.m3"/>
+        <ScaleMax value="0.375000,0.375000,0.375000"/>
+        <ScaleMin value="0.375000,0.375000,0.375000"/>
+    </CModel>
+    <CModel id="MercSCV" parent="SCV_Merc_Collection">
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+    </CModel>
+    <CModel id="MinimapPing">
+        <Model value="Assets\UI\Feedback\PingSimple\PingSimple.m3"/>
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+    </CModel>
+    <CModel id="MuleSCV" parent="MULE">
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+    </CModel>
+    <CModel id="MurlocMarine">
+        <ScaleMax value="0.400000,0.400000,0.400000"/>
+        <ScaleMin value="0.400000,0.400000,0.400000"/>
+    </CModel>
+    <CModel id="Nova">
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+    </CModel>
+    <CModel id="Predator">
+        <ScaleMax value="0.750000,0.750000,0.750000"/>
+        <ScaleMin value="0.750000,0.750000,0.750000"/>
+    </CModel>
+    <CModel id="Raven">
+        <ScaleMax value="0.600000,0.600000,0.600000"/>
+        <ScaleMin value="0.600000,0.600000,0.600000"/>
+    </CModel>
+    <CModel id="RavenDeath">
+        <ScaleMax value="0.600000,0.600000,0.600000"/>
+        <ScaleMin value="0.600000,0.600000,0.600000"/>
+    </CModel>
+    <CModel id="SCV">
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+    </CModel>
+    <CModel id="SMBanshee">
+        <Flags index="FOW" value="1"/>
+        <Occlusion value="Show"/>
+        <Radius value="0.750000"/>
+        <ScaleMax value="0.600000,0.600000,0.600000"/>
+        <ScaleMin value="0.600000,0.600000,0.600000"/>
+        <SelectionOffset value="0.000000,0.000000,-0.500000"/>
+        <SelectionRadius value="1.100000"/>
+        <ShadowRadius value="0.600000"/>
+    </CModel>
+    <CModel id="ScienceVessel">
+        <ScaleMax value="0.650000,0.650000,0.650000"/>
+        <ScaleMin value="0.650000,0.650000,0.650000"/>
+        <SelectionRadius value="0.900000"/>
+        <ShadowRadius value="0.900000"/>
+    </CModel>
+    <CModel id="SciencevesselHologram">
+        <Model value="Assets\Units\Terran\Hologram_Skin_ScienceVessel\Hologram_Skin_ScienceVessel.m3"/>
+        <EditorCategories value="Race:Terran"/>
+    </CModel>
+    <CModel id="SciencevesselPDD">
+        <Model value="Assets\Units\Terran\PointDefenseDrone\PointDefenseDrone.m3"/>
+        <EditorCategories value="Race:Terran"/>
+    </CModel>
+    <CModel id="SciencevesselBiomechanicalDrone">
+        <Model value="Assets\Units\Terran\BioMechanical_RepairDrone\BioMechanical_RepairDrone.m3"/>
+        <EditorCategories value="Race:Terran"/>
+    </CModel>
+    <CModel id="SiegeBreaker">
+        <Radius value="0.500000"/>
+        <ScaleMax value="0.400000,0.400000,0.400000"/>
+        <ScaleMin value="0.400000,0.400000,0.400000"/>
+    </CModel>
+    <CModel id="SiegeTank">
+        <Radius value="0.500000"/>
+        <ScaleMax value="0.400000,0.400000,0.400000"/>
+        <ScaleMin value="0.400000,0.400000,0.400000"/>
+        <ShadowRadius value="0.800000"/>
+    </CModel>
+    <CModel id="SpaceDiablo">
+        <ScaleMax value="2.000000,2.000000,2.000000"/>
+        <ScaleMin value="2.000000,2.000000,2.000000"/>
+    </CModel>
+    <CModel id="SpawnZone" parent="Doodad">
+        <Model value="Assets\UI\Feedback\BeaconProtoss\BeaconProtoss.m3"/>
+        <Lighting value="Beacon_Protoss"/>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="UIBeaconProtossDeath"/>
+            <Type value="Sound"/>
+            <Time value="0.010000"/>
+            <Payload value="UI_BeaconProtossDeath"/>
+        </Events>
+        <ScaleMax value="0.300000,0.300000,0.300000"/>
+        <ScaleMin value="0.300000,0.300000,0.300000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="2.100000"/>
+        <ShadowRadius value="1.999700"/>
+    </CModel>
+    <CModel id="SpawnZone2" parent="Doodad">
+        <Model value="Assets\UI\Feedback\BeaconProtoss\BeaconProtoss.m3"/>
+        <Lighting value="Beacon_Protoss"/>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="UIBeaconProtossDeath"/>
+            <Type value="Sound"/>
+            <Time value="0.010000"/>
+            <Payload value="UI_BeaconProtossDeath"/>
+        </Events>
+        <ScaleMax value="0.750000,0.750000,0.750000"/>
+        <ScaleMin value="0.750000,0.750000,0.750000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="2.100000"/>
+        <ShadowRadius value="1.999700"/>
+    </CModel>
+    <CModel id="Spectre">
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+    </CModel>
+    <CModel id="Starport">
+        <ScaleMax value="0.400000,0.400000,0.400000"/>
+        <ScaleMin value="0.400000,0.400000,0.400000"/>
+        <Radius value="0.800000"/>
+        <ShadowRadius value="1.300000"/>
+    </CModel>
+    <CModel id="SwannMarauder" parent="Swann"/>
+    <CModel id="TaurenSpaceMarine">
+        <Radius value="0.250000"/>
+        <ScaleMax value="0.270000,0.270000,0.270000"/>
+        <ScaleMin value="0.270000,0.270000,0.270000"/>
+    </CModel>
+    <CModel id="Thor">
+        <ScaleMax value="0.320000,0.335000,0.320000"/>
+        <ScaleMin value="0.320000,0.335000,0.320000"/>
+        <SelectionRadius value="1.775000"/>
+    </CModel>
+    <CModel id="ThorCE">
+        <Radius value="0.700000"/>
+        <ScaleMax value="0.280000,0.280000,0.280000"/>
+        <ScaleMin value="0.280000,0.280000,0.280000"/>
+    </CModel>
+    <CModel id="ThorHandGunAttackImpact">
+        <ScaleMax value="0.700000,0.700000,0.700000"/>
+        <ScaleMin value="0.700000,0.700000,0.700000"/>
+    </CModel>
+    <CModel id="ThorHandGunAttackLaunch">
+        <ScaleMax value="0.700000,0.700000,0.700000"/>
+        <ScaleMin value="0.700000,0.700000,0.700000"/>
+    </CModel>
+    <CModel id="ThorWreckage">
+        <Radius value="0.700000"/>
+        <ScaleMax value="0.280000,0.280000,0.280000"/>
+        <ScaleMin value="0.280000,0.280000,0.280000"/>
+    </CModel>
+    <CModel id="UmojanBanshee" parent="Banshee_Umojan">
+        <ScaleMax value="0.600000,0.600000,0.600000"/>
+        <ScaleMin value="0.600000,0.600000,0.600000"/>
+    </CModel>
+    <CModel id="UmojanBattlecruiser" parent="Battlecruiser_Umojan">
+        <ScaleMax value="0.400000,0.400000,0.400000"/>
+        <ScaleMin value="0.400000,0.400000,0.400000"/>
+    </CModel>
+    <CModel id="UmojanHellion" parent="Hellion_Umojan">
+        <ScaleMax value="0.375000,0.375000,0.375000"/>
+        <ScaleMin value="0.375000,0.375000,0.375000"/>
+    </CModel>
+    <CModel id="UmojanMarauder" parent="Marauder_Umojan"/>
+    <CModel id="UmojanMarine" parent="Marine_Umojan">
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+    </CModel>
+    <CModel id="UmojanSCV" parent="SCV_Umojan">
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+    </CModel>
+    <CModel id="UmojanTank">
+        <Model value="Assets\Units\Terran\SiegeTank_Umojan\SiegeTank_Umojan.m3"/>
+        <EditorCategories value="Race:Terran"/>
+    </CModel>
+    <CModel id="UmojanViking" parent="Viking_Umojan_Fighter">
+        <ScaleMax value="0.575000,0.575000,0.575000"/>
+        <ScaleMin value="0.575000,0.575000,0.575000"/>
+    </CModel>
+    <CModel id="VikingFighter">
+        <ScaleMax value="0.575000,0.575000,0.575000"/>
+        <ScaleMin value="0.575000,0.575000,0.575000"/>
+        <ShadowRadius value="0.600000"/>
+    </CModel>
+    <CModel id="Vulture">
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+        <ShadowRadius value="0.550000"/>
+    </CModel>
+    <CModel id="WarPig">
+        <Radius value="0.187500"/>
+        <ScaleMax value="0.530000,0.530000,0.530000"/>
+        <ScaleMin value="0.530000,0.530000,0.530000"/>
+    </CModel>
+    <CModel id="WraithPortrait">
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+    </CModel>
+</Catalog>

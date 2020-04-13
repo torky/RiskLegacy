@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Catalog>
+    <CRequirement id="ArmInterceptor4">
+        <NodeArray index="Use" Link="LT172494085CountUnitInterceptorQueuedOrBetterAtUnit3"/>
+    </CRequirement>
+    <CRequirement id="NukeReq">
+        <EditorCategories value="Race:Terran"/>
+        <NodeArray index="Use" Link="AndCountUnitNoPresentNukesTotalCountUnitTurn50Total"/>
+    </CRequirement>
+    <CRequirement id="UnknownRequirement">
+        <NodeArray index="Use" Link="CountUpgradeUnknownUpgradeCompleteOnly"/>
+    </CRequirement>
+</Catalog>

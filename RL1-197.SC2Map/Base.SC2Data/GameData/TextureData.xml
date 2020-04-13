@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Catalog>
+    <CTexture id="Albania2">
+        <File value="risk\donate\monaco.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Albania22">
+        <File value="risk\donate\RoyalFrench.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Albania3">
+        <File value="risk\donate\pastaH.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Andorra">
+        <File value="risk\Flag\AndorraH.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Gotland">
+        <File value="risk\Flag\gotlandH.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Nireland">
+        <File value="risk\Flag\Northern_IrelandH.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="UK">
+        <File value="risk\Flag\UKH.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Montenegro">
+        <File value="risk\Flag\MontenegroH.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Luxembourg">
+        <File value="risk\Flag\Luxembourg.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Madeira">
+        <File value="risk\Flag\Madeira.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Sahara">
+        <File value="risk\Flag\saharaH.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Mars">
+        <File value="risk\donate\marsH.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Gadsden">
+        <File value="risk\donate\gadsdenH.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="RiskLegacyFlag">
+        <File value="risk\donate\risklegacyH.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Nazi">
+        <File value="risk\donate\nazi.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Axis">
+        <File value="risk\donate\Axis.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Demonskull">
+        <File value="risk\donate\demonskull.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Shetland">
+        <File value="risk\Flag\ShetlandH.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Joepasta">
+        <File value="risk\Flag\joepastaH.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Sovietflag">
+        <File value="risk\donate\soviet flagH.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Confederate">
+        <File value="risk\Flag\ConfederateFlag.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Azerbaijan">
+        <File value="risk\Flag\AzerbaijanH.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="lllllllllll">
+        <File value="risk\donate\lllllllllll.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="lilpeep">
+        <File value="risk\donate\lilpeep.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Sicily">
+        <File value="risk\Flag\SicilyH.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Slimrim">
+        <File value="risk\Donate\SlimrimH.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="digitek">
+        <File value="risk\Donate\digitek.dds"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="England">
+        <File value="Risk\Flag\England.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Wales">
+        <File value="Risk\Flag\WalesH.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Karjala">
+        <File value="Risk\Donate\KarjalaH.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="CrazyRusski">
+        <File value="risk\donate\UnitedNationsH.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Feature">
+        <File value="Risk\Donate\featureH.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Iceland">
+        <File value="Risk\Flag\IcelandH.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="CzechRepublic">
+        <File value="Risk\Flag\CzechRepublicH.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Ireland">
+        <File value="Risk\Flag\IrelandH.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Lewiddyion">
+        <File value="Risk\Donate\Lewiddyion.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Optimal">
+        <File value="risk\donate\UnitedNationsH.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Snow">
+        <File value="Risk\Donate\Snow.dds"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="TombStone">
+        <File value="Risk\Donate\TombStone.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Scotland">
+        <File value="Risk\Flag\Scotland.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="WestLibya">
+        <File value="Risk\Flag\LibyaH.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Libya">
+        <File value="Risk\Flag\LibyaH.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Sardegna">
+        <File value="Risk\Flag\SardiniaH.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Crete">
+        <File value="Risk\Flag\CreteH.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Egypt">
+        <File value="Risk\Flag\EgyptH.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Nothing">
+        <File value="Assets\Textures\white32.dds"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Israel">
+        <File value="Risk\Flag\Israel.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Cyprus">
+        <File value="Risk\Flag\CyprusH.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Lebanon">
+        <File value="Risk\Flag\LebanonH.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Jordan">
+        <File value="Risk\Flag\JordanH.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="SaudiArabia">
+        <File value="Risk\Flag\SaudiArabiaH.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="UnitedKingdom">
+        <File value="Risk\Flag\UnitedKingdom.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Iraq">
+        <File value="Risk\Flag\IraqH.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Turkey">
+        <File value="Risk\Flag\TurkeyH.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Armenia">
+        <File value="risk\Flag\Armenia.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Georgia">
+        <File value="Risk\Flag\Georgia.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Russia">
+        <File value="Risk\Flag\Russia.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Iran">
+        <File value="Risk\Flag\Iran.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Kazakhstan">
+        <File value="Risk\Flag\KazakhstanH.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Portugal">
+        <File value="Risk\Flag\PortugalH.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Spain">
+        <File value="Risk\Flag\SpainH.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="France">
+        <File value="Risk\Flag\FranceH.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Belgium">
+        <File value="Risk\Flag\BelgiumH.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Netherlands">
+        <File value="Risk\Flag\Netherlands.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Switzerland">
+        <File value="Risk\Flag\Switzerland.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Italy">
+        <File value="Risk\Flag\ItalyH.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Germany">
+        <File value="Risk\Flag\Germany.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Austria">
+        <File value="Risk\Flag\Austria.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Poland">
+        <File value="Risk\Flag\Poland.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Kalingrad">
+        <File value="Risk\Flag\KaliningradH.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Lithuania">
+        <File value="Risk\Flag\Lithuania.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Latvia">
+        <File value="Risk\Flag\Latvia.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Sweden">
+        <File value="Risk\Flag\SwedenH.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Estonia">
+        <File value="Risk\Flag\Estonia.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="FaroeIslands">
+        <File value="Risk\Flag\FaroeIslandsH.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Belarus">
+        <File value="Risk\Flag\BelarusH.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Ukraine">
+        <File value="Risk\Flag\Ukraine.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Moldova">
+        <File value="Risk\Flag\MoldovaH.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Slovakia">
+        <File value="Risk\Flag\SlovakiaH.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Hungary">
+        <File value="Risk\Flag\Hungary.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Slovenia">
+        <File value="Risk\Flag\SloveniaH.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Croatia">
+        <File value="Risk\Flag\CroatiaH.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Bosnia">
+        <File value="Risk\Flag\BosniaH.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Serbia">
+        <File value="Risk\Flag\SerbiaH.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Finland">
+        <File value="Risk\Flag\FinlandH.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Syria">
+        <File value="Risk\Flag\Syria.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Romania">
+        <File value="Risk\Flag\RomaniaH.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Bulgaria">
+        <File value="Risk\Flag\Bulgaria.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Macedonia">
+        <File value="Risk\Flag\Macedonia.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Albania">
+        <File value="Risk\Flag\Albania.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Greece">
+        <File value="Risk\Flag\GreeceH.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="NorwaySvalbard">
+        <File value="Risk\Flag\NorwayH.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Greenland">
+        <File value="Risk\Flag\GreenlandH.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Malta">
+        <File value="Risk\Flag\MaltaH.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Denmark">
+        <File value="Risk\Flag\DenmarkH.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Morocco">
+        <File value="Risk\Flag\MoroccoH.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Algeria">
+        <File value="Risk\Flag\AlgeriaH.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Tunisia">
+        <File value="Risk\Flag\TunisiaH.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Wingcrafter">
+        <File value="Risk\Donate\Wingcrafter.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="PsychoPyro">
+        <File value="risk\donate\PsychoPyro.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+</Catalog>

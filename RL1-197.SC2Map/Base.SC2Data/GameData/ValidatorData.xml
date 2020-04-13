@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CValidatorUnitCompareBehaviorCount id="Loadable">
+        <Compare value="GT"/>
+        <Behavior value="Loadable"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitFilters id="PunisherGrenadesSlowTargetFilters">
+        <Filters value="-;Robotic"/>
+    </CValidatorUnitFilters>
+    <CValidatorLocationCreep id="TargetPointIsCreep">
+        <WhichLocation Value="TargetUnitOrPoint"/>
+    </CValidatorLocationCreep>
+    <CValidatorUnitType id="isBarracks">
+        <Value value="Barracks"/>
+    </CValidatorUnitType>
+</Catalog>

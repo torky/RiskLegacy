@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CGameUI id="Dflt">
+        <SoundData index="Test">
+            <VolumeRolloffPoints index="1" Distance="60.000000"/>
+        </SoundData>
+        <SoundData index="ME">
+            <VolumeRolloffPoints index="1" Distance="60.000000"/>
+        </SoundData>
+        <SoundData index="Music">
+            <VolumeRolloffPoints index="1" Distance="60.000000"/>
+        </SoundData>
+        <SoundData index="Other" Volume="-1.250000">
+            <VolumeRolloffPoints index="1" Distance="60.000000"/>
+        </SoundData>
+        <SoundData index="Ambient" Volume="-1.250000">
+            <VolumeRolloffPoints index="1" Distance="60.000000"/>
+        </SoundData>
+        <SoundData index="SAmbient" Volume="-1.250000">
+            <VolumeRolloffPoints index="1" Distance="60.000000"/>
+        </SoundData>
+        <SoundData index="Alert" Volume="-1.250000"/>
+        <SoundData index="Death" Volume="-1.000000">
+            <VolumeRolloffPoints index="1" Distance="60.000000"/>
+        </SoundData>
+        <SoundData index="Ready" Volume="-1.250000"/>
+        <SoundData index="Spell">
+            <VolumeRolloffPoints index="1" Distance="60.000000"/>
+        </SoundData>
+        <SoundData index="Combat" Volume="-1.250000">
+            <VolumeRolloffPoints index="1" Distance="60.000000"/>
+        </SoundData>
+        <SoundData index="Message">
+            <VolumeRolloffPoints index="1" Distance="60.000000"/>
+        </SoundData>
+        <SoundData index="UI" Volume="-1.250000">
+            <VolumeRolloffPoints index="1" Distance="60.000000"/>
+        </SoundData>
+        <SoundData index="Flames" Volume="-1.250000">
+            <VolumeRolloffPoints index="1" Distance="60.000000"/>
+        </SoundData>
+        <SoundData index="Build" Volume="-1.250000">
+            <VolumeRolloffPoints index="1" Distance="60.000000"/>
+        </SoundData>
+        <SoundData index="Gather" Volume="-1.250000">
+            <VolumeRolloffPoints index="1" Distance="60.000000"/>
+        </SoundData>
+        <SoundData index="SEmitters" Volume="-1.250000">
+            <VolumeRolloffPoints index="1" Distance="60.000000"/>
+        </SoundData>
+        <SoundData index="SPieces" Volume="-1.250000"/>
+        <SoundData index="Foley" Volume="-1.250000"/>
+        <SoundData index="Movement" Volume="-1.250000">
+            <VolumeRolloffPoints index="1" Distance="60.000000"/>
+        </SoundData>
+        <DefaultUIRace value="Prot"/>
+        <SoundQuality index="0">
+            <VariationMaximum index="Other" value="2"/>
+            <VariationMaximum index="Ambient" value="2"/>
+            <VariationMaximum index="Death" value="2"/>
+            <VariationMaximum index="Spell" value="2"/>
+            <VariationMaximum index="Combat" value="2"/>
+            <VariationMaximum index="UI" value="2"/>
+            <VariationMaximum index="Flames" value="2"/>
+            <VariationMaximum index="Build" value="2"/>
+            <VariationMaximum index="Gather" value="2"/>
+            <VariationMaximum index="Doodad" value="2"/>
+            <VariationMaximum index="Movement" value="2"/>
+        </SoundQuality>
+        <SoundQuality index="1" Channels="16" SampleRate="22050" SpeakerMode="Stereo">
+            <VariationMaximum index="Other" value="2"/>
+            <VariationMaximum index="Ambient" value="2"/>
+            <VariationMaximum index="Death" value="1"/>
+            <VariationMaximum index="Spell" value="2"/>
+            <VariationMaximum index="Combat" value="2"/>
+            <VariationMaximum index="UI" value="2"/>
+            <VariationMaximum index="Flames" value="2"/>
+            <VariationMaximum index="Build" value="2"/>
+            <VariationMaximum index="Gather" value="2"/>
+            <VariationMaximum index="Doodad" value="2"/>
+            <VariationMaximum index="Movement" value="2"/>
+        </SoundQuality>
+        <SoundQuality index="2" Channels="16" SampleRate="22050" SpeakerMode="Stereo">
+            <VariationMaximum index="Other" value="2"/>
+            <VariationMaximum index="Ambient" value="2"/>
+            <VariationMaximum index="Death" value="1"/>
+            <VariationMaximum index="Spell" value="2"/>
+            <VariationMaximum index="Combat" value="2"/>
+            <VariationMaximum index="UI" value="2"/>
+            <VariationMaximum index="Flames" value="2"/>
+            <VariationMaximum index="Build" value="2"/>
+            <VariationMaximum index="Gather" value="2"/>
+            <VariationMaximum index="Doodad" value="2"/>
+            <VariationMaximum index="Movement" value="2"/>
+        </SoundQuality>
+        <UnitKillRank index="4" MinKills="25"/>
+        <ResourceArray index="Minerals" Icon="UI/ResourceIconNoBackground2" IconBackground="UI/ResourceIcon2"/>
+        <ResourceArray index="Vespene" Icon="UI/ResourceIconNoBackground3" IconBackground="UI/ResourceIcon3"/>
+        <ResourceArray index="Terrazine" Icon="UI/ResourceIconNoBackground0" IconBackground="UI/ResourceIcon0"/>
+        <ResourceArray index="Custom" Icon="UI/ResourceIconNoBackground1" IconBackground="UI/ResourceIcon1"/>
+    </CGameUI>
+</Catalog>

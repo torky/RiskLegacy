@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CSound id="C_UI_Money01">
+        <Volume value="-18.770000,-18.770000"/>
+    </CSound>
+    <CSound id="UI_PTTStop">
+        <Pitch value="-3.430000,-3.430000"/>
+        <Volume value="-12.000000,-12.000000"/>
+    </CSound>
+    <CSound id="UI_WarChest_MainEvent_HoverExit">
+        <Pitch value="-0.200000,0.000000"/>
+        <Volume value="-15.860000,-15.860000"/>
+    </CSound>
+</Catalog>

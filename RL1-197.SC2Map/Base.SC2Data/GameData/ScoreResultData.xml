@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Catalog>
+    <CScoreResultGraph id="Graphs">
+        <ValueTable index="0" value="APM"/>
+        <ValueTable index="1" value="ResourceCollectionRateSampled"/>
+        <ValueTable value="ResourceValueArmySampled"/>
+    </CScoreResultGraph>
+</Catalog>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CWeaponLegacy id="90mmCannons">
+        <Range value="4"/>
+        <Period value="2"/>
+        <MinScanRange value="4"/>
+        <TargetFilters value="Ground,Visible;User1,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="ATSLaserBattery">
+        <Range value="4.5"/>
+        <Period value="2.2"/>
+        <TargetFilters value="Ground,Visible;Heroic,User1,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="AutoTurret">
+        <TargetFilters value="Visible;User1,Missile,Stasis,Dead,Hidden,Invulnerable,Summoned"/>
+        <Range value="2.7"/>
+        <Period value="1"/>
+        <Options index="LinkedCooldown" value="0"/>
+        <Backswing value="0"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="BacklashRockets">
+        <Range value="3"/>
+        <TargetFilters value="Ground,Visible;Heroic,User1,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <MinScanRange value="4.5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="C10CanisterRifle">
+        <Range value="3.5"/>
+        <TargetFilters value="Visible;User1,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <MinScanRange value="3.75"/>
+        <Period value="2.5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="GoliathA">
+        <Range value="4"/>
+        <TargetFilters value="Air,Visible;User1,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Period value="2"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="GoliathAUpgraded">
+        <Range value="4"/>
+        <Period value="2"/>
+        <TargetFilters value="Air,Visible;User1,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="GoliathG">
+        <Range value="3"/>
+        <TargetFilters value="Ground,Visible;Air,User1,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <MinScanRange value="4"/>
+        <Period value="1"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="GoliathGUpgraded">
+        <TargetFilters value="Ground,Visible;Air,User1,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="3"/>
+        <Period value="1"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="GuassRifle">
+        <Range value="2"/>
+        <Period value="1"/>
+        <MinScanRange value="3"/>
+        <TargetFilters value="Visible;User1,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Backswing value="0"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="InfernalFlameThrower">
+        <Range value="2.5"/>
+        <Period value="0.8"/>
+        <MinScanRange value="3.5"/>
+        <TargetFilters value="Ground,Visible;Psionic,Heroic,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+    </CWeaponLegacy>
+    <CWeaponStrafe id="InterceptorBeam">
+        <MinScanRange value="3"/>
+        <Range value="1.5"/>
+        <LoiterRadius value="3"/>
+        <Period value="2.5"/>
+        <TargetFilters value="Visible;Psionic,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+    </CWeaponStrafe>
+    <CWeaponLegacy id="InterceptorLaunch">
+        <Range value="5"/>
+        <Period value="0.2"/>
+        <TargetFilters value="Visible;Psionic,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="JavelinMissileLaunchers">
+        <TargetFilters value="Visible;Air,Ground,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="LanceMissileLaunchers">
+        <TargetFilters value="Air,Visible;Heroic,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="5"/>
+        <!--Effect value="LanceMissileLaunchersLaunchMissile"/-->
+    </CWeaponLegacy>
+    <CWeaponLegacy id="LanzerTorpedoes">
+        <Range value="2.5"/>
+        <Period value="0.6"/>
+        <MinScanRange value="3.5"/>
+        <TargetFilters value="Visible;User1,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <LegacyOptions index="KeepChanneling" value="1"/>
+        <LegacyOptions index="NoDeceleration" value="1"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Predator">
+        <Period value="0.75"/>
+        <Effect value="Predator"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="PunisherGrenades">
+        <TargetFilters value="Ground,Visible;Heroic,User1,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <MinScanRange value="4"/>
+        <Range value="2.5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="SpartanCompanyA">
+        <TargetFilters value="Air,Massive,Visible;User1,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <MinimumRange value="5"/>
+        <Period value="11"/>
+        <DisplayAttackCount value="18"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="SpartanCompanyAUpgraded">
+        <TargetFilters value="Air,Massive,Visible;User1,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <MinimumRange value="5"/>
+        <Period value="11"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="ThorsHammer">
+        <Range value="5"/>
+        <TargetFilters value="Ground,Visible;Air,Heroic,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Vulture">
+        <Range value="3"/>
+        <Period value="1.4"/>
+        <TargetFilters value="Ground,Visible;User1,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="VultureSpiderMines">
+        <TargetFilters value="Ground,Visible;User1,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="0.5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="WraithA">
+        <Range value="3"/>
+        <Period value="2"/>
+        <TargetFilters value="Air,Visible;User1,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="WraithG">
+        <Range value="2.5"/>
+        <Period value="0.15"/>
+        <TargetFilters value="Ground,Visible;User1,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Options index="OnlyFireWhileInAttackOrder" value="0"/>
+        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
+        <MinimumRange value="2"/>
+        <LegacyOptions index="FaceTargetWhileInCooldown" value="0"/>
+        <AllowedMovement value="Moving"/>
+    </CWeaponLegacy>
+</Catalog>

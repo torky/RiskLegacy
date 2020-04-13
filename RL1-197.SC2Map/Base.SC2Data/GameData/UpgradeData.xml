@@ -1,0 +1,1482 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Catalog>
+    <CUpgrade default="1" id="TerranInfantryArmors">
+        <ScoreAmount value="100"/>
+        <EffectArray index="0" Reference="Unit,Marine,LifeArmorLevel" Value="1"/>
+        <EffectArray index="1" Reference="Unit,Marine,LifeArmor" Value="1"/>
+        <EffectArray index="2" Reference="Unit,Marauder,LifeArmorLevel" Value="1"/>
+        <EffectArray index="3" Reference="Unit,Marauder,LifeArmor" Value="1"/>
+        <EffectArray index="4" Reference="Unit,Medic,LifeArmor" Value="1"/>
+        <EffectArray index="5" Reference="Unit,Medic,LifeArmorLevel" Value="1"/>
+        <EffectArray index="6" removed="1"/>
+        <EffectArray index="7" removed="1"/>
+        <EffectArray index="8" removed="1"/>
+        <EffectArray index="9" removed="1"/>
+        <EffectArray index="10" removed="1"/>
+        <EffectArray index="11" removed="1"/>
+        <AffectedUnitArray index="0" value="Medic"/>
+        <AffectedUnitArray index="3" removed="1"/>
+        <AffectedUnitArray index="4" removed="1"/>
+    </CUpgrade>
+    <CUpgrade default="1" id="TerranInfantryWeapons">
+        <EffectArray index="2" Reference="Weapon,PunisherGrenades,Level" Value="1"/>
+        <EffectArray index="3" Reference="Effect,PunisherGrenadesU,Amount" Value="1.000000"/>
+        <EffectArray index="4" removed="1"/>
+        <EffectArray index="5" removed="1"/>
+        <EffectArray index="6" removed="1"/>
+        <EffectArray index="7" removed="1"/>
+        <EffectArray index="8" removed="1"/>
+        <EffectArray index="9" removed="1"/>
+        <EffectArray index="10" removed="1"/>
+        <EffectArray index="11" removed="1"/>
+        <AffectedUnitArray index="0" value="Marauder"/>
+        <AffectedUnitArray index="1" value="Marine"/>
+        <AffectedUnitArray index="2" removed="1"/>
+        <AffectedUnitArray index="3" removed="1"/>
+    </CUpgrade>
+    <CUpgrade default="1" id="TerranShipArmors">
+        <EffectArray index="0" Reference="Unit,Hercules,LifeArmorLevel" Value="1"/>
+        <EffectArray index="1" Reference="Unit,Hercules,LifeArmor" Value="1"/>
+        <EffectArray index="2" Reference="Unit,VikingFighter,LifeArmor" Value="1.000000"/>
+        <EffectArray index="3" Reference="Unit,VikingFighter,LifeArmorLevel" Value="1"/>
+        <EffectArray index="4" removed="1"/>
+        <EffectArray index="5" removed="1"/>
+        <EffectArray index="6" removed="1"/>
+        <EffectArray index="7" removed="1"/>
+        <EffectArray index="8" removed="1"/>
+        <EffectArray index="9" removed="1"/>
+        <EffectArray index="10" removed="1"/>
+        <EffectArray index="11" removed="1"/>
+        <AffectedUnitArray index="0" value="Hercules"/>
+        <AffectedUnitArray index="1" value="VikingFighter"/>
+        <AffectedUnitArray index="2" removed="1"/>
+        <AffectedUnitArray index="3" removed="1"/>
+        <AffectedUnitArray index="4" removed="1"/>
+        <AffectedUnitArray index="5" removed="1"/>
+    </CUpgrade>
+    <CUpgrade default="1" id="TerranShipWeapons">
+        <EffectArray index="0" Reference="Weapon,LanzerTorpedoes,Level" Value="1"/>
+        <EffectArray index="1" Reference="Effect,LanzerTorpedoesDamage,Amount" Value="1.000000"/>
+        <EffectArray index="2" removed="1"/>
+        <EffectArray index="3" removed="1"/>
+        <EffectArray index="4" removed="1"/>
+        <EffectArray index="5" removed="1"/>
+        <EffectArray index="6" removed="1"/>
+        <EffectArray index="7" removed="1"/>
+        <EffectArray index="8" removed="1"/>
+        <EffectArray index="9" removed="1"/>
+        <AffectedUnitArray index="0" value="VikingFighter"/>
+        <AffectedUnitArray index="1" removed="1"/>
+        <AffectedUnitArray index="2" removed="1"/>
+        <AffectedUnitArray index="3" removed="1"/>
+        <AffectedUnitArray index="4" removed="1"/>
+        <AffectedUnitArray index="5" removed="1"/>
+        <AffectedUnitArray index="6" removed="1"/>
+    </CUpgrade>
+    <CUpgrade default="1" id="TerranVehicleArmors">
+        <EffectArray index="0" Reference="Unit,SiegeTank,LifeArmorLevel" Value="1"/>
+        <EffectArray index="1" Reference="Unit,SiegeTank,LifeArmor" Value="1"/>
+        <EffectArray index="2" Reference="Unit,Hellion,LifeArmor" Value="1.000000"/>
+        <EffectArray index="3" Reference="Unit,Hellion,LifeArmorLevel" Value="1"/>
+        <EffectArray index="4" removed="1"/>
+        <EffectArray index="5" removed="1"/>
+        <EffectArray index="6" removed="1"/>
+        <EffectArray index="7" removed="1"/>
+        <AffectedUnitArray index="1" value="SiegeTank"/>
+        <AffectedUnitArray index="2" removed="1"/>
+        <AffectedUnitArray index="3" removed="1"/>
+    </CUpgrade>
+    <CUpgrade default="1" id="TerranVehicleWeapons">
+        <EffectArray index="0" Reference="Weapon,90mmCannons,Level" Value="1"/>
+        <EffectArray index="1" Reference="Effect,90mmCannons,Amount" Value="1"/>
+        <EffectArray index="2" Reference="Effect,InfernalFlameThrower,Amount" Value="1.000000"/>
+        <EffectArray index="3" Reference="Weapon,InfernalFlameThrower,Level" Value="1"/>
+        <EffectArray index="4" removed="1"/>
+        <EffectArray index="5" removed="1"/>
+        <EffectArray index="6" removed="1"/>
+        <EffectArray index="7" removed="1"/>
+        <EffectArray index="8" removed="1"/>
+        <EffectArray index="9" removed="1"/>
+        <EffectArray index="10" removed="1"/>
+        <EffectArray index="11" removed="1"/>
+        <EffectArray index="12" removed="1"/>
+        <EffectArray index="13" removed="1"/>
+        <EffectArray index="14" removed="1"/>
+        <AffectedUnitArray index="1" value="SiegeTank"/>
+        <AffectedUnitArray index="2" removed="1"/>
+        <AffectedUnitArray index="3" removed="1"/>
+    </CUpgrade>
+    <CUpgrade id="Achievements"/>
+    <CUpgrade id="Achievements2"/>
+    <CUpgrade id="Achievements22"/>
+    <CUpgrade id="Achievements3"/>
+    <CUpgrade id="Achievements32"/>
+    <CUpgrade id="Achievements4"/>
+    <CUpgrade id="Achievements5"/>
+    <CUpgrade id="Achievements6"/>
+    <CUpgrade id="Achievements7"/>
+    <CUpgrade id="BansheeCloak">
+        <AffectedUnitArray index="0" removed="1"/>
+    </CUpgrade>
+    <CUpgrade id="BattlecruiserBehemothReactor">
+        <AffectedUnitArray index="0" removed="1"/>
+    </CUpgrade>
+    <CUpgrade id="BattlecruiserEnableSpecializations">
+        <AffectedUnitArray index="0" removed="1"/>
+    </CUpgrade>
+    <CUpgrade id="CarrierLaunchSpeedUpgrade">
+        <EffectArray index="0" Operation="Set" Reference="Weapon,InterceptorLaunch,Period" Value="0.3"/>
+    </CUpgrade>
+    <CUpgrade id="DialogDelayFix"/>
+    <CUpgrade id="DarkProtoss">
+        <Race value="Human"/>
+    </CUpgrade>
+    <CUpgrade id="DarkTemplarTactics">
+        <EffectArray index="9" Operation="Multiply" Reference="Weapon,GoliathA,Period" Value="0.900000"/>
+        <EffectArray index="10" Operation="Multiply" Reference="Weapon,GoliathAUpgraded,Period" Value="0.900000"/>
+        <EffectArray index="11" Operation="Multiply" Reference="Weapon,GoliathG,Period" Value="0.900000"/>
+        <EffectArray index="12" Operation="Multiply" Reference="Weapon,GoliathGUpgraded,Period" Value="0.900000"/>
+        <EffectArray index="13" Operation="Multiply" Reference="Weapon,Vulture,Period" Value="0.900000"/>
+        <EffectArray index="14" Operation="Multiply" Reference="Weapon,Diamondback,Period" Value="0.900000"/>
+        <EffectArray index="15" Operation="Multiply" Reference="Weapon,LanzerTorpedoes,Period" Value="0.900000"/>
+        <EffectArray index="16" Operation="Multiply" Reference="Weapon,TwinGatlingCannon,Period" Value="0.900000"/>
+        <EffectArray index="17" Operation="Multiply" Reference="Weapon,BacklashRockets,Period" Value="0.900000"/>
+        <EffectArray index="18" Operation="Multiply" Reference="Weapon,ATALaserBattery,Period" Value="0.900000"/>
+        <EffectArray index="19" Operation="Multiply" Reference="Weapon,ATSLaserBattery,Period" Value="0.900000"/>
+        <EffectArray index="20" Operation="Multiply" Reference="Weapon,WraithA,Period" Value="0.900000"/>
+        <EffectArray index="21" Operation="Multiply" Reference="Weapon,WraithG,Period" Value="0.900000"/>
+        <EffectArray index="22" Operation="Multiply" Reference="Weapon,SpartanCompanyA,Period" Value="0.900000"/>
+        <EffectArray index="23" Operation="Multiply" Reference="Weapon,SpartanCompanyG,Period" Value="0.900000"/>
+        <EffectArray index="24" Operation="Multiply" Reference="Weapon,SpartanCompanyAUpgraded,Period" Value="0.900000"/>
+        <EffectArray index="25" Operation="Multiply" Reference="Weapon,SpartanCompanyGUpgraded,Period" Value="0.900000"/>
+        <EffectArray index="26" Operation="Multiply" Reference="Weapon,KelmorianMinerGaussRifle,Period" Value="0.900000"/>
+        <EffectArray index="27" Operation="Multiply" Reference="Weapon,HammerSecurity,Period" Value="0.900000"/>
+        <EffectArray index="28" Operation="Multiply" Reference="Weapon,DevilDogFlameThrower,Period" Value="0.900000"/>
+        <EffectArray index="29" Operation="Multiply" Reference="Weapon,SiegeBreaker,Period" Value="0.900000"/>
+        <EffectArray index="30" Operation="Multiply" Reference="Weapon,ArcliteShockCannon,Period" Value="0.900000"/>
+        <EffectArray index="31" Operation="Multiply" Reference="Weapon,DuskWingBanshee,Period" Value="0.900000"/>
+        <EffectArray index="32" removed="1"/>
+        <EffectArray index="33" removed="1"/>
+    </CUpgrade>
+    <CUpgrade id="HighCapacityBarrels">
+        <AffectedUnitArray index="0" removed="1"/>
+    </CUpgrade>
+    <CUpgrade id="PunisherGrenades">
+        <AffectedUnitArray index="0" removed="1"/>
+    </CUpgrade>
+    <CUpgrade id="ShieldWall">
+        <AffectedUnitArray index="0" removed="1"/>
+    </CUpgrade>
+    <CUpgrade id="SiegeTech">
+        <AffectedUnitArray index="0" removed="1"/>
+    </CUpgrade>
+    <CUpgrade id="Stimpack">
+        <AffectedUnitArray index="0" removed="1"/>
+        <AffectedUnitArray index="1" removed="1"/>
+    </CUpgrade>
+    <CUpgrade id="StrikeCannons">
+        <AffectedUnitArray index="0" removed="1"/>
+    </CUpgrade>
+    <CUpgrade id="TerranInfantryArmorsLevel1">
+        <ScoreAmount value="100"/>
+        <EffectArray index="0" Reference="Unit,Marine,LifeArmorLevel"/>
+        <EffectArray index="1" Reference="Unit,Marine,LifeArmor"/>
+        <EffectArray index="2" Reference="Unit,Marauder,LifeArmorLevel"/>
+        <EffectArray index="3" Reference="Unit,Marauder,LifeArmor"/>
+        <EffectArray index="4" Reference="Unit,Medic,LifeArmor"/>
+        <EffectArray index="5" Reference="Unit,Medic,LifeArmorLevel"/>
+        <EffectArray index="6" removed="1"/>
+        <EffectArray index="7" removed="1"/>
+        <EffectArray index="8" removed="1"/>
+        <EffectArray index="9" removed="1"/>
+        <EffectArray index="10" removed="1"/>
+        <EffectArray index="11" removed="1"/>
+        <EffectArray index="12" removed="1"/>
+        <EffectArray index="13" removed="1"/>
+        <EffectArray index="14" removed="1"/>
+        <EffectArray index="15" removed="1"/>
+        <EffectArray index="16" removed="1"/>
+        <EffectArray index="17" removed="1"/>
+        <EffectArray index="18" removed="1"/>
+        <EffectArray index="19" removed="1"/>
+        <EffectArray index="20" removed="1"/>
+        <EffectArray index="21" removed="1"/>
+        <EffectArray index="22" removed="1"/>
+        <EffectArray index="23" removed="1"/>
+        <EffectArray index="24" removed="1"/>
+        <EffectArray index="25" removed="1"/>
+        <EffectArray index="26" removed="1"/>
+        <EffectArray index="27" removed="1"/>
+        <EffectArray index="28" removed="1"/>
+        <EffectArray index="29" removed="1"/>
+        <EffectArray index="30" removed="1"/>
+        <EffectArray index="31" removed="1"/>
+        <EffectArray index="32" removed="1"/>
+        <EffectArray index="33" removed="1"/>
+        <EffectArray index="34" removed="1"/>
+        <EffectArray index="35" removed="1"/>
+        <EffectArray index="36" removed="1"/>
+        <EffectArray index="37" removed="1"/>
+        <EffectArray index="38" removed="1"/>
+        <EffectArray index="39" removed="1"/>
+        <EffectArray index="40" removed="1"/>
+        <EffectArray index="41" removed="1"/>
+        <EffectArray index="42" removed="1"/>
+        <EffectArray index="43" removed="1"/>
+        <EffectArray index="44" removed="1"/>
+        <EffectArray index="45" removed="1"/>
+        <EffectArray index="46" removed="1"/>
+        <EffectArray index="47" removed="1"/>
+        <EffectArray index="48" removed="1"/>
+        <EffectArray index="49" removed="1"/>
+        <EffectArray index="50" removed="1"/>
+        <EffectArray index="51" removed="1"/>
+        <EffectArray index="52" removed="1"/>
+        <EffectArray index="53" removed="1"/>
+        <EffectArray index="54" removed="1"/>
+        <EffectArray index="55" removed="1"/>
+        <EffectArray index="56" removed="1"/>
+        <EffectArray index="57" removed="1"/>
+        <EffectArray index="58" removed="1"/>
+        <EffectArray index="59" removed="1"/>
+        <EffectArray index="60" removed="1"/>
+        <EffectArray index="61" removed="1"/>
+        <EffectArray index="62" removed="1"/>
+        <EffectArray index="63" removed="1"/>
+        <EffectArray index="64" removed="1"/>
+        <EffectArray index="65" removed="1"/>
+        <AffectedUnitArray index="0" value="Medic"/>
+        <AffectedUnitArray index="3" removed="1"/>
+        <AffectedUnitArray index="4" removed="1"/>
+        <AffectedUnitArray index="5" removed="1"/>
+    </CUpgrade>
+    <CUpgrade id="TerranInfantryArmorsLevel2">
+        <ScoreAmount value="100"/>
+        <EffectArray index="0" Reference="Unit,Marine,LifeArmorLevel"/>
+        <EffectArray index="1" Reference="Unit,Marine,LifeArmor"/>
+        <EffectArray index="2" Reference="Unit,Marauder,LifeArmorLevel"/>
+        <EffectArray index="3" Reference="Unit,Marauder,LifeArmor"/>
+        <EffectArray index="4" Reference="Unit,Medic,LifeArmor"/>
+        <EffectArray index="5" Reference="Unit,Medic,LifeArmorLevel"/>
+        <EffectArray index="6" removed="1"/>
+        <EffectArray index="7" removed="1"/>
+        <EffectArray index="8" removed="1"/>
+        <EffectArray index="9" removed="1"/>
+        <EffectArray index="10" removed="1"/>
+        <EffectArray index="11" removed="1"/>
+        <EffectArray index="12" removed="1"/>
+        <EffectArray index="13" removed="1"/>
+        <EffectArray index="14" removed="1"/>
+        <EffectArray index="15" removed="1"/>
+        <EffectArray index="16" removed="1"/>
+        <EffectArray index="17" removed="1"/>
+        <EffectArray index="18" removed="1"/>
+        <EffectArray index="19" removed="1"/>
+        <EffectArray index="20" removed="1"/>
+        <EffectArray index="21" removed="1"/>
+        <EffectArray index="22" removed="1"/>
+        <EffectArray index="23" removed="1"/>
+        <EffectArray index="24" removed="1"/>
+        <EffectArray index="25" removed="1"/>
+        <EffectArray index="26" removed="1"/>
+        <EffectArray index="27" removed="1"/>
+        <EffectArray index="28" removed="1"/>
+        <EffectArray index="29" removed="1"/>
+        <EffectArray index="30" removed="1"/>
+        <EffectArray index="31" removed="1"/>
+        <EffectArray index="32" removed="1"/>
+        <EffectArray index="33" removed="1"/>
+        <EffectArray index="34" removed="1"/>
+        <EffectArray index="35" removed="1"/>
+        <EffectArray index="36" removed="1"/>
+        <EffectArray index="37" removed="1"/>
+        <EffectArray index="38" removed="1"/>
+        <EffectArray index="39" removed="1"/>
+        <EffectArray index="40" removed="1"/>
+        <EffectArray index="41" removed="1"/>
+        <EffectArray index="42" removed="1"/>
+        <EffectArray index="43" removed="1"/>
+        <EffectArray index="44" removed="1"/>
+        <EffectArray index="45" removed="1"/>
+        <EffectArray index="46" removed="1"/>
+        <EffectArray index="47" removed="1"/>
+        <EffectArray index="48" removed="1"/>
+        <EffectArray index="49" removed="1"/>
+        <EffectArray index="50" removed="1"/>
+        <EffectArray index="51" removed="1"/>
+        <EffectArray index="52" removed="1"/>
+        <EffectArray index="53" removed="1"/>
+        <EffectArray index="54" removed="1"/>
+        <EffectArray index="55" removed="1"/>
+        <EffectArray index="56" removed="1"/>
+        <EffectArray index="57" removed="1"/>
+        <EffectArray index="58" removed="1"/>
+        <EffectArray index="59" removed="1"/>
+        <EffectArray index="60" removed="1"/>
+        <EffectArray index="61" removed="1"/>
+        <EffectArray index="62" removed="1"/>
+        <EffectArray index="63" removed="1"/>
+        <EffectArray index="64" removed="1"/>
+        <EffectArray index="65" removed="1"/>
+        <AffectedUnitArray index="0" value="Medic"/>
+        <AffectedUnitArray index="3" removed="1"/>
+        <AffectedUnitArray index="4" removed="1"/>
+        <AffectedUnitArray index="5" removed="1"/>
+    </CUpgrade>
+    <CUpgrade id="TerranInfantryArmorsLevel3">
+        <ScoreAmount value="100"/>
+        <EffectArray index="0" Reference="Unit,Marine,LifeArmorLevel"/>
+        <EffectArray index="1" Reference="Unit,Marine,LifeArmor"/>
+        <EffectArray index="2" Reference="Unit,Marauder,LifeArmorLevel"/>
+        <EffectArray index="3" Reference="Unit,Marauder,LifeArmor"/>
+        <EffectArray index="4" Reference="Unit,Medic,LifeArmor"/>
+        <EffectArray index="5" Reference="Unit,Medic,LifeArmorLevel"/>
+        <EffectArray index="6" removed="1"/>
+        <EffectArray index="7" removed="1"/>
+        <EffectArray index="8" removed="1"/>
+        <EffectArray index="9" removed="1"/>
+        <EffectArray index="10" removed="1"/>
+        <EffectArray index="11" removed="1"/>
+        <EffectArray index="12" removed="1"/>
+        <EffectArray index="13" removed="1"/>
+        <EffectArray index="14" removed="1"/>
+        <EffectArray index="15" removed="1"/>
+        <EffectArray index="16" removed="1"/>
+        <EffectArray index="17" removed="1"/>
+        <EffectArray index="18" removed="1"/>
+        <EffectArray index="19" removed="1"/>
+        <EffectArray index="20" removed="1"/>
+        <EffectArray index="21" removed="1"/>
+        <EffectArray index="22" removed="1"/>
+        <EffectArray index="23" removed="1"/>
+        <EffectArray index="24" removed="1"/>
+        <EffectArray index="25" removed="1"/>
+        <EffectArray index="26" removed="1"/>
+        <EffectArray index="27" removed="1"/>
+        <EffectArray index="28" removed="1"/>
+        <EffectArray index="29" removed="1"/>
+        <EffectArray index="30" removed="1"/>
+        <EffectArray index="31" removed="1"/>
+        <EffectArray index="32" removed="1"/>
+        <EffectArray index="33" removed="1"/>
+        <EffectArray index="34" removed="1"/>
+        <EffectArray index="35" removed="1"/>
+        <EffectArray index="36" removed="1"/>
+        <EffectArray index="37" removed="1"/>
+        <EffectArray index="38" removed="1"/>
+        <EffectArray index="39" removed="1"/>
+        <EffectArray index="40" removed="1"/>
+        <EffectArray index="41" removed="1"/>
+        <EffectArray index="42" removed="1"/>
+        <EffectArray index="43" removed="1"/>
+        <EffectArray index="44" removed="1"/>
+        <EffectArray index="45" removed="1"/>
+        <EffectArray index="46" removed="1"/>
+        <EffectArray index="47" removed="1"/>
+        <EffectArray index="48" removed="1"/>
+        <EffectArray index="49" removed="1"/>
+        <EffectArray index="50" removed="1"/>
+        <EffectArray index="51" removed="1"/>
+        <EffectArray index="52" removed="1"/>
+        <EffectArray index="53" removed="1"/>
+        <EffectArray index="54" removed="1"/>
+        <EffectArray index="55" removed="1"/>
+        <EffectArray index="56" removed="1"/>
+        <EffectArray index="57" removed="1"/>
+        <EffectArray index="58" removed="1"/>
+        <EffectArray index="59" removed="1"/>
+        <EffectArray index="60" removed="1"/>
+        <EffectArray index="61" removed="1"/>
+        <EffectArray index="62" removed="1"/>
+        <EffectArray index="63" removed="1"/>
+        <EffectArray index="64" removed="1"/>
+        <EffectArray index="65" removed="1"/>
+        <AffectedUnitArray index="0" value="Medic"/>
+        <AffectedUnitArray index="3" removed="1"/>
+        <AffectedUnitArray index="4" removed="1"/>
+        <AffectedUnitArray index="5" removed="1"/>
+    </CUpgrade>
+    <CUpgrade id="TerranInfantryWeaponsLevel1">
+        <ScoreAmount value="100"/>
+        <EffectArray index="2" Reference="Weapon,PunisherGrenades,Level"/>
+        <EffectArray index="3" Reference="Effect,PunisherGrenadesU,Amount" Value="1.000000"/>
+        <EffectArray index="4" removed="1"/>
+        <EffectArray index="5" removed="1"/>
+        <EffectArray index="6" removed="1"/>
+        <EffectArray index="7" removed="1"/>
+        <EffectArray index="8" removed="1"/>
+        <EffectArray index="9" removed="1"/>
+        <EffectArray index="10" removed="1"/>
+        <EffectArray index="11" removed="1"/>
+        <EffectArray index="12" removed="1"/>
+        <EffectArray index="13" removed="1"/>
+        <EffectArray index="14" removed="1"/>
+        <EffectArray index="15" removed="1"/>
+        <EffectArray index="16" removed="1"/>
+        <EffectArray index="17" removed="1"/>
+        <EffectArray index="18" removed="1"/>
+        <EffectArray index="19" removed="1"/>
+        <EffectArray index="20" removed="1"/>
+        <EffectArray index="21" removed="1"/>
+        <EffectArray index="22" removed="1"/>
+        <EffectArray index="23" removed="1"/>
+        <EffectArray index="24" removed="1"/>
+        <EffectArray index="25" removed="1"/>
+        <EffectArray index="26" removed="1"/>
+        <EffectArray index="27" removed="1"/>
+        <EffectArray index="28" removed="1"/>
+        <EffectArray index="29" removed="1"/>
+        <EffectArray index="30" removed="1"/>
+        <EffectArray index="31" removed="1"/>
+        <EffectArray index="32" removed="1"/>
+        <EffectArray index="33" removed="1"/>
+        <EffectArray index="34" removed="1"/>
+        <EffectArray index="35" removed="1"/>
+        <EffectArray index="36" removed="1"/>
+        <EffectArray index="37" removed="1"/>
+        <EffectArray index="38" removed="1"/>
+        <EffectArray index="39" removed="1"/>
+        <EffectArray index="40" removed="1"/>
+        <EffectArray index="41" removed="1"/>
+        <EffectArray index="42" removed="1"/>
+        <EffectArray index="43" removed="1"/>
+        <EffectArray index="44" removed="1"/>
+        <EffectArray index="45" removed="1"/>
+        <EffectArray index="46" removed="1"/>
+        <EffectArray index="47" removed="1"/>
+        <EffectArray index="48" removed="1"/>
+        <EffectArray index="49" removed="1"/>
+        <EffectArray index="50" removed="1"/>
+        <EffectArray index="51" removed="1"/>
+        <EffectArray index="52" removed="1"/>
+        <EffectArray index="53" removed="1"/>
+        <EffectArray index="54" removed="1"/>
+        <EffectArray index="55" removed="1"/>
+        <EffectArray index="56" removed="1"/>
+        <EffectArray index="57" removed="1"/>
+        <EffectArray index="58" removed="1"/>
+        <EffectArray index="59" removed="1"/>
+        <EffectArray index="60" removed="1"/>
+        <EffectArray index="61" removed="1"/>
+        <EffectArray index="62" removed="1"/>
+        <AffectedUnitArray index="0" value="Marauder"/>
+        <AffectedUnitArray index="1" value="Marine"/>
+        <AffectedUnitArray index="2" removed="1"/>
+        <AffectedUnitArray index="3" removed="1"/>
+        <AffectedUnitArray index="4" removed="1"/>
+        <AffectedUnitArray index="5" removed="1"/>
+        <AffectedUnitArray index="6" removed="1"/>
+        <AffectedUnitArray index="7" removed="1"/>
+        <AffectedUnitArray index="8" removed="1"/>
+        <AffectedUnitArray index="9" removed="1"/>
+        <AffectedUnitArray index="10" removed="1"/>
+        <AffectedUnitArray index="11" removed="1"/>
+        <AffectedUnitArray index="12" removed="1"/>
+    </CUpgrade>
+    <CUpgrade id="TerranInfantryWeaponsLevel2">
+        <ScoreAmount value="100"/>
+        <EffectArray index="2" Reference="Weapon,PunisherGrenades,Level"/>
+        <EffectArray index="3" Reference="Effect,PunisherGrenadesU,Amount" Value="1.000000"/>
+        <EffectArray index="4" removed="1"/>
+        <EffectArray index="5" removed="1"/>
+        <EffectArray index="6" removed="1"/>
+        <EffectArray index="7" removed="1"/>
+        <EffectArray index="8" removed="1"/>
+        <EffectArray index="9" removed="1"/>
+        <EffectArray index="10" removed="1"/>
+        <EffectArray index="11" removed="1"/>
+        <EffectArray index="12" removed="1"/>
+        <EffectArray index="13" removed="1"/>
+        <EffectArray index="14" removed="1"/>
+        <EffectArray index="15" removed="1"/>
+        <EffectArray index="16" removed="1"/>
+        <EffectArray index="17" removed="1"/>
+        <EffectArray index="18" removed="1"/>
+        <EffectArray index="19" removed="1"/>
+        <EffectArray index="20" removed="1"/>
+        <EffectArray index="21" removed="1"/>
+        <EffectArray index="22" removed="1"/>
+        <EffectArray index="23" removed="1"/>
+        <EffectArray index="24" removed="1"/>
+        <EffectArray index="25" removed="1"/>
+        <EffectArray index="26" removed="1"/>
+        <EffectArray index="27" removed="1"/>
+        <EffectArray index="28" removed="1"/>
+        <EffectArray index="29" removed="1"/>
+        <EffectArray index="30" removed="1"/>
+        <EffectArray index="31" removed="1"/>
+        <EffectArray index="32" removed="1"/>
+        <EffectArray index="33" removed="1"/>
+        <EffectArray index="34" removed="1"/>
+        <EffectArray index="35" removed="1"/>
+        <EffectArray index="36" removed="1"/>
+        <EffectArray index="37" removed="1"/>
+        <EffectArray index="38" removed="1"/>
+        <EffectArray index="39" removed="1"/>
+        <EffectArray index="40" removed="1"/>
+        <EffectArray index="41" removed="1"/>
+        <EffectArray index="42" removed="1"/>
+        <EffectArray index="43" removed="1"/>
+        <EffectArray index="44" removed="1"/>
+        <EffectArray index="45" removed="1"/>
+        <EffectArray index="46" removed="1"/>
+        <EffectArray index="47" removed="1"/>
+        <EffectArray index="48" removed="1"/>
+        <EffectArray index="49" removed="1"/>
+        <EffectArray index="50" removed="1"/>
+        <EffectArray index="51" removed="1"/>
+        <EffectArray index="52" removed="1"/>
+        <EffectArray index="53" removed="1"/>
+        <EffectArray index="54" removed="1"/>
+        <EffectArray index="55" removed="1"/>
+        <EffectArray index="56" removed="1"/>
+        <EffectArray index="57" removed="1"/>
+        <EffectArray index="58" removed="1"/>
+        <EffectArray index="59" removed="1"/>
+        <EffectArray index="60" removed="1"/>
+        <EffectArray index="61" removed="1"/>
+        <EffectArray index="62" removed="1"/>
+        <AffectedUnitArray index="0" value="Marauder"/>
+        <AffectedUnitArray index="1" value="Marine"/>
+        <AffectedUnitArray index="2" removed="1"/>
+        <AffectedUnitArray index="3" removed="1"/>
+        <AffectedUnitArray index="4" removed="1"/>
+        <AffectedUnitArray index="5" removed="1"/>
+        <AffectedUnitArray index="6" removed="1"/>
+        <AffectedUnitArray index="7" removed="1"/>
+        <AffectedUnitArray index="8" removed="1"/>
+        <AffectedUnitArray index="9" removed="1"/>
+        <AffectedUnitArray index="10" removed="1"/>
+        <AffectedUnitArray index="11" removed="1"/>
+    </CUpgrade>
+    <CUpgrade id="TerranInfantryWeaponsLevel3">
+        <ScoreAmount value="100"/>
+        <EffectArray index="2" Reference="Weapon,PunisherGrenades,Level"/>
+        <EffectArray index="3" Reference="Effect,PunisherGrenadesU,Amount" Value="1.000000"/>
+        <EffectArray index="4" removed="1"/>
+        <EffectArray index="5" removed="1"/>
+        <EffectArray index="6" removed="1"/>
+        <EffectArray index="7" removed="1"/>
+        <EffectArray index="8" removed="1"/>
+        <EffectArray index="9" removed="1"/>
+        <EffectArray index="10" removed="1"/>
+        <EffectArray index="11" removed="1"/>
+        <EffectArray index="12" removed="1"/>
+        <EffectArray index="13" removed="1"/>
+        <EffectArray index="14" removed="1"/>
+        <EffectArray index="15" removed="1"/>
+        <EffectArray index="16" removed="1"/>
+        <EffectArray index="17" removed="1"/>
+        <EffectArray index="18" removed="1"/>
+        <EffectArray index="19" removed="1"/>
+        <EffectArray index="20" removed="1"/>
+        <EffectArray index="21" removed="1"/>
+        <EffectArray index="22" removed="1"/>
+        <EffectArray index="23" removed="1"/>
+        <EffectArray index="24" removed="1"/>
+        <EffectArray index="25" removed="1"/>
+        <EffectArray index="26" removed="1"/>
+        <EffectArray index="27" removed="1"/>
+        <EffectArray index="28" removed="1"/>
+        <EffectArray index="29" removed="1"/>
+        <EffectArray index="30" removed="1"/>
+        <EffectArray index="31" removed="1"/>
+        <EffectArray index="32" removed="1"/>
+        <EffectArray index="33" removed="1"/>
+        <EffectArray index="34" removed="1"/>
+        <EffectArray index="35" removed="1"/>
+        <EffectArray index="36" removed="1"/>
+        <EffectArray index="37" removed="1"/>
+        <EffectArray index="38" removed="1"/>
+        <EffectArray index="39" removed="1"/>
+        <EffectArray index="40" removed="1"/>
+        <EffectArray index="41" removed="1"/>
+        <EffectArray index="42" removed="1"/>
+        <EffectArray index="43" removed="1"/>
+        <EffectArray index="44" removed="1"/>
+        <EffectArray index="45" removed="1"/>
+        <EffectArray index="46" removed="1"/>
+        <EffectArray index="47" removed="1"/>
+        <EffectArray index="48" removed="1"/>
+        <EffectArray index="49" removed="1"/>
+        <EffectArray index="50" removed="1"/>
+        <EffectArray index="51" removed="1"/>
+        <EffectArray index="52" removed="1"/>
+        <EffectArray index="53" removed="1"/>
+        <EffectArray index="54" removed="1"/>
+        <EffectArray index="55" removed="1"/>
+        <EffectArray index="56" removed="1"/>
+        <EffectArray index="57" removed="1"/>
+        <EffectArray index="58" removed="1"/>
+        <EffectArray index="59" removed="1"/>
+        <EffectArray index="60" removed="1"/>
+        <EffectArray index="61" removed="1"/>
+        <EffectArray index="62" removed="1"/>
+        <AffectedUnitArray index="0" value="Marauder"/>
+        <AffectedUnitArray index="1" value="Marine"/>
+        <AffectedUnitArray index="2" removed="1"/>
+        <AffectedUnitArray index="3" removed="1"/>
+        <AffectedUnitArray index="4" removed="1"/>
+        <AffectedUnitArray index="5" removed="1"/>
+        <AffectedUnitArray index="6" removed="1"/>
+        <AffectedUnitArray index="7" removed="1"/>
+        <AffectedUnitArray index="8" removed="1"/>
+        <AffectedUnitArray index="9" removed="1"/>
+        <AffectedUnitArray index="10" removed="1"/>
+        <AffectedUnitArray index="11" removed="1"/>
+    </CUpgrade>
+    <CUpgrade id="TerranShipArmorsLevel1">
+        <ScoreAmount value="100"/>
+        <EffectArray index="0" Reference="Unit,Hercules,LifeArmorLevel"/>
+        <EffectArray index="1" Reference="Unit,Hercules,LifeArmor"/>
+        <EffectArray index="2" Reference="Unit,VikingFighter,LifeArmor" Value="1.000000"/>
+        <EffectArray index="3" Reference="Unit,VikingFighter,LifeArmorLevel"/>
+        <EffectArray index="4" removed="1"/>
+        <EffectArray index="5" removed="1"/>
+        <EffectArray index="6" removed="1"/>
+        <EffectArray index="7" removed="1"/>
+        <EffectArray index="8" removed="1"/>
+        <EffectArray index="9" removed="1"/>
+        <EffectArray index="10" removed="1"/>
+        <EffectArray index="11" removed="1"/>
+        <EffectArray index="12" removed="1"/>
+        <EffectArray index="13" removed="1"/>
+        <EffectArray index="14" removed="1"/>
+        <EffectArray index="15" removed="1"/>
+        <EffectArray index="16" removed="1"/>
+        <EffectArray index="17" removed="1"/>
+        <EffectArray index="18" removed="1"/>
+        <EffectArray index="19" removed="1"/>
+        <EffectArray index="20" removed="1"/>
+        <EffectArray index="21" removed="1"/>
+        <EffectArray index="22" removed="1"/>
+        <EffectArray index="23" removed="1"/>
+        <EffectArray index="24" removed="1"/>
+        <EffectArray index="25" removed="1"/>
+        <EffectArray index="26" removed="1"/>
+        <EffectArray index="27" removed="1"/>
+        <EffectArray index="28" removed="1"/>
+        <EffectArray index="29" removed="1"/>
+        <EffectArray index="30" removed="1"/>
+        <EffectArray index="31" removed="1"/>
+        <EffectArray index="32" removed="1"/>
+        <EffectArray index="33" removed="1"/>
+        <EffectArray index="34" removed="1"/>
+        <EffectArray index="35" removed="1"/>
+        <EffectArray index="36" removed="1"/>
+        <EffectArray index="37" removed="1"/>
+        <EffectArray index="38" removed="1"/>
+        <EffectArray index="39" removed="1"/>
+        <EffectArray index="40" removed="1"/>
+        <EffectArray index="41" removed="1"/>
+        <EffectArray index="42" removed="1"/>
+        <EffectArray index="43" removed="1"/>
+        <EffectArray index="44" removed="1"/>
+        <EffectArray index="45" removed="1"/>
+        <AffectedUnitArray index="0" value="Hercules"/>
+        <AffectedUnitArray index="1" value="VikingFighter"/>
+        <AffectedUnitArray index="2" removed="1"/>
+        <AffectedUnitArray index="3" removed="1"/>
+        <AffectedUnitArray index="4" removed="1"/>
+        <AffectedUnitArray index="5" removed="1"/>
+    </CUpgrade>
+    <CUpgrade id="TerranShipArmorsLevel2">
+        <ScoreAmount value="100"/>
+        <EffectArray index="0" Reference="Unit,Hercules,LifeArmorLevel"/>
+        <EffectArray index="1" Reference="Unit,Hercules,LifeArmor"/>
+        <EffectArray index="2" Reference="Unit,VikingFighter,LifeArmor" Value="1.000000"/>
+        <EffectArray index="3" Reference="Unit,VikingFighter,LifeArmorLevel"/>
+        <EffectArray index="4" removed="1"/>
+        <EffectArray index="5" removed="1"/>
+        <EffectArray index="6" removed="1"/>
+        <EffectArray index="7" removed="1"/>
+        <EffectArray index="8" removed="1"/>
+        <EffectArray index="9" removed="1"/>
+        <EffectArray index="10" removed="1"/>
+        <EffectArray index="11" removed="1"/>
+        <EffectArray index="12" removed="1"/>
+        <EffectArray index="13" removed="1"/>
+        <EffectArray index="14" removed="1"/>
+        <EffectArray index="15" removed="1"/>
+        <EffectArray index="16" removed="1"/>
+        <EffectArray index="17" removed="1"/>
+        <EffectArray index="18" removed="1"/>
+        <EffectArray index="19" removed="1"/>
+        <EffectArray index="20" removed="1"/>
+        <EffectArray index="21" removed="1"/>
+        <EffectArray index="22" removed="1"/>
+        <EffectArray index="23" removed="1"/>
+        <EffectArray index="24" removed="1"/>
+        <EffectArray index="25" removed="1"/>
+        <EffectArray index="26" removed="1"/>
+        <EffectArray index="27" removed="1"/>
+        <EffectArray index="28" removed="1"/>
+        <EffectArray index="29" removed="1"/>
+        <EffectArray index="30" removed="1"/>
+        <EffectArray index="31" removed="1"/>
+        <EffectArray index="32" removed="1"/>
+        <EffectArray index="33" removed="1"/>
+        <EffectArray index="34" removed="1"/>
+        <EffectArray index="35" removed="1"/>
+        <EffectArray index="36" removed="1"/>
+        <EffectArray index="37" removed="1"/>
+        <EffectArray index="38" removed="1"/>
+        <EffectArray index="39" removed="1"/>
+        <EffectArray index="40" removed="1"/>
+        <EffectArray index="41" removed="1"/>
+        <EffectArray index="42" removed="1"/>
+        <EffectArray index="43" removed="1"/>
+        <EffectArray index="44" removed="1"/>
+        <EffectArray index="45" removed="1"/>
+        <AffectedUnitArray index="0" value="Hercules"/>
+        <AffectedUnitArray index="1" value="VikingFighter"/>
+        <AffectedUnitArray index="2" removed="1"/>
+        <AffectedUnitArray index="3" removed="1"/>
+        <AffectedUnitArray index="4" removed="1"/>
+        <AffectedUnitArray index="5" removed="1"/>
+    </CUpgrade>
+    <CUpgrade id="TerranShipArmorsLevel3">
+        <ScoreAmount value="100"/>
+        <EffectArray index="0" Reference="Unit,Hercules,LifeArmorLevel"/>
+        <EffectArray index="1" Reference="Unit,Hercules,LifeArmor"/>
+        <EffectArray index="2" Reference="Unit,VikingFighter,LifeArmor" Value="1.000000"/>
+        <EffectArray index="3" Reference="Unit,VikingFighter,LifeArmorLevel"/>
+        <EffectArray index="4" removed="1"/>
+        <EffectArray index="5" removed="1"/>
+        <EffectArray index="6" removed="1"/>
+        <EffectArray index="7" removed="1"/>
+        <EffectArray index="8" removed="1"/>
+        <EffectArray index="9" removed="1"/>
+        <EffectArray index="10" removed="1"/>
+        <EffectArray index="11" removed="1"/>
+        <EffectArray index="12" removed="1"/>
+        <EffectArray index="13" removed="1"/>
+        <EffectArray index="14" removed="1"/>
+        <EffectArray index="15" removed="1"/>
+        <EffectArray index="16" removed="1"/>
+        <EffectArray index="17" removed="1"/>
+        <EffectArray index="18" removed="1"/>
+        <EffectArray index="19" removed="1"/>
+        <EffectArray index="20" removed="1"/>
+        <EffectArray index="21" removed="1"/>
+        <EffectArray index="22" removed="1"/>
+        <EffectArray index="23" removed="1"/>
+        <EffectArray index="24" removed="1"/>
+        <EffectArray index="25" removed="1"/>
+        <EffectArray index="26" removed="1"/>
+        <EffectArray index="27" removed="1"/>
+        <EffectArray index="28" removed="1"/>
+        <EffectArray index="29" removed="1"/>
+        <EffectArray index="30" removed="1"/>
+        <EffectArray index="31" removed="1"/>
+        <EffectArray index="32" removed="1"/>
+        <EffectArray index="33" removed="1"/>
+        <EffectArray index="34" removed="1"/>
+        <EffectArray index="35" removed="1"/>
+        <EffectArray index="36" removed="1"/>
+        <EffectArray index="37" removed="1"/>
+        <EffectArray index="38" removed="1"/>
+        <EffectArray index="39" removed="1"/>
+        <EffectArray index="40" removed="1"/>
+        <EffectArray index="41" removed="1"/>
+        <EffectArray index="42" removed="1"/>
+        <EffectArray index="43" removed="1"/>
+        <EffectArray index="44" removed="1"/>
+        <EffectArray index="45" removed="1"/>
+        <AffectedUnitArray index="0" value="Hercules"/>
+        <AffectedUnitArray index="1" value="VikingFighter"/>
+        <AffectedUnitArray index="2" removed="1"/>
+        <AffectedUnitArray index="3" removed="1"/>
+        <AffectedUnitArray index="4" removed="1"/>
+        <AffectedUnitArray index="5" removed="1"/>
+    </CUpgrade>
+    <CUpgrade id="TerranShipWeaponsLevel1">
+        <ScoreAmount value="100"/>
+        <EffectArray index="0" Reference="Weapon,LanzerTorpedoes,Level"/>
+        <EffectArray index="1" Reference="Effect,LanzerTorpedoesDamage,Amount" Value="1.000000"/>
+        <EffectArray index="2" removed="1"/>
+        <EffectArray index="3" removed="1"/>
+        <EffectArray index="4" removed="1"/>
+        <EffectArray index="5" removed="1"/>
+        <EffectArray index="6" removed="1"/>
+        <EffectArray index="7" removed="1"/>
+        <EffectArray index="8" removed="1"/>
+        <EffectArray index="9" removed="1"/>
+        <EffectArray index="10" removed="1"/>
+        <EffectArray index="11" removed="1"/>
+        <EffectArray index="12" removed="1"/>
+        <EffectArray index="13" removed="1"/>
+        <EffectArray index="14" removed="1"/>
+        <EffectArray index="15" removed="1"/>
+        <EffectArray index="16" removed="1"/>
+        <EffectArray index="17" removed="1"/>
+        <EffectArray index="18" removed="1"/>
+        <EffectArray index="19" removed="1"/>
+        <EffectArray index="20" removed="1"/>
+        <EffectArray index="21" removed="1"/>
+        <EffectArray index="22" removed="1"/>
+        <EffectArray index="23" removed="1"/>
+        <EffectArray index="24" removed="1"/>
+        <EffectArray index="25" removed="1"/>
+        <EffectArray index="26" removed="1"/>
+        <EffectArray index="27" removed="1"/>
+        <EffectArray index="28" removed="1"/>
+        <EffectArray index="29" removed="1"/>
+        <EffectArray index="30" removed="1"/>
+        <EffectArray index="31" removed="1"/>
+        <EffectArray index="32" removed="1"/>
+        <EffectArray index="33" removed="1"/>
+        <EffectArray index="34" removed="1"/>
+        <EffectArray index="35" removed="1"/>
+        <EffectArray index="36" removed="1"/>
+        <EffectArray index="37" removed="1"/>
+        <EffectArray index="38" removed="1"/>
+        <EffectArray index="39" removed="1"/>
+        <EffectArray index="40" removed="1"/>
+        <EffectArray index="41" removed="1"/>
+        <EffectArray index="42" removed="1"/>
+        <EffectArray index="43" removed="1"/>
+        <EffectArray index="44" removed="1"/>
+        <EffectArray index="45" removed="1"/>
+        <EffectArray index="46" removed="1"/>
+        <EffectArray index="47" removed="1"/>
+        <EffectArray index="48" removed="1"/>
+        <AffectedUnitArray index="0" value="VikingFighter"/>
+        <AffectedUnitArray index="1" removed="1"/>
+        <AffectedUnitArray index="2" removed="1"/>
+        <AffectedUnitArray index="3" removed="1"/>
+        <AffectedUnitArray index="4" removed="1"/>
+        <AffectedUnitArray index="5" removed="1"/>
+        <AffectedUnitArray index="6" removed="1"/>
+    </CUpgrade>
+    <CUpgrade id="TerranShipWeaponsLevel2">
+        <ScoreAmount value="100"/>
+        <EffectArray index="0" Reference="Weapon,LanzerTorpedoes,Level"/>
+        <EffectArray index="1" Reference="Effect,LanzerTorpedoesDamage,Amount" Value="1.000000"/>
+        <EffectArray index="2" removed="1"/>
+        <EffectArray index="3" removed="1"/>
+        <EffectArray index="4" removed="1"/>
+        <EffectArray index="5" removed="1"/>
+        <EffectArray index="6" removed="1"/>
+        <EffectArray index="7" removed="1"/>
+        <EffectArray index="8" removed="1"/>
+        <EffectArray index="9" removed="1"/>
+        <EffectArray index="10" removed="1"/>
+        <EffectArray index="11" removed="1"/>
+        <EffectArray index="12" removed="1"/>
+        <EffectArray index="13" removed="1"/>
+        <EffectArray index="14" removed="1"/>
+        <EffectArray index="15" removed="1"/>
+        <EffectArray index="16" removed="1"/>
+        <EffectArray index="17" removed="1"/>
+        <EffectArray index="18" removed="1"/>
+        <EffectArray index="19" removed="1"/>
+        <EffectArray index="20" removed="1"/>
+        <EffectArray index="21" removed="1"/>
+        <EffectArray index="22" removed="1"/>
+        <EffectArray index="23" removed="1"/>
+        <EffectArray index="24" removed="1"/>
+        <EffectArray index="25" removed="1"/>
+        <EffectArray index="26" removed="1"/>
+        <EffectArray index="27" removed="1"/>
+        <EffectArray index="28" removed="1"/>
+        <EffectArray index="29" removed="1"/>
+        <EffectArray index="30" removed="1"/>
+        <EffectArray index="31" removed="1"/>
+        <EffectArray index="32" removed="1"/>
+        <EffectArray index="33" removed="1"/>
+        <EffectArray index="34" removed="1"/>
+        <EffectArray index="35" removed="1"/>
+        <EffectArray index="36" removed="1"/>
+        <EffectArray index="37" removed="1"/>
+        <EffectArray index="38" removed="1"/>
+        <EffectArray index="39" removed="1"/>
+        <EffectArray index="40" removed="1"/>
+        <EffectArray index="41" removed="1"/>
+        <EffectArray index="42" removed="1"/>
+        <EffectArray index="43" removed="1"/>
+        <EffectArray index="44" removed="1"/>
+        <EffectArray index="45" removed="1"/>
+        <EffectArray index="46" removed="1"/>
+        <EffectArray index="47" removed="1"/>
+        <EffectArray index="48" removed="1"/>
+        <AffectedUnitArray index="0" value="VikingFighter"/>
+        <AffectedUnitArray index="1" removed="1"/>
+        <AffectedUnitArray index="2" removed="1"/>
+        <AffectedUnitArray index="3" removed="1"/>
+        <AffectedUnitArray index="4" removed="1"/>
+        <AffectedUnitArray index="5" removed="1"/>
+        <AffectedUnitArray index="6" removed="1"/>
+    </CUpgrade>
+    <CUpgrade id="TerranShipWeaponsLevel3">
+        <ScoreAmount value="100"/>
+        <EffectArray index="0" Reference="Weapon,LanzerTorpedoes,Level"/>
+        <EffectArray index="1" Reference="Effect,LanzerTorpedoesDamage,Amount" Value="1.000000"/>
+        <EffectArray index="2" removed="1"/>
+        <EffectArray index="3" removed="1"/>
+        <EffectArray index="4" removed="1"/>
+        <EffectArray index="5" removed="1"/>
+        <EffectArray index="6" removed="1"/>
+        <EffectArray index="7" removed="1"/>
+        <EffectArray index="8" removed="1"/>
+        <EffectArray index="9" removed="1"/>
+        <EffectArray index="10" removed="1"/>
+        <EffectArray index="11" removed="1"/>
+        <EffectArray index="12" removed="1"/>
+        <EffectArray index="13" removed="1"/>
+        <EffectArray index="14" removed="1"/>
+        <EffectArray index="15" removed="1"/>
+        <EffectArray index="16" removed="1"/>
+        <EffectArray index="17" removed="1"/>
+        <EffectArray index="18" removed="1"/>
+        <EffectArray index="19" removed="1"/>
+        <EffectArray index="20" removed="1"/>
+        <EffectArray index="21" removed="1"/>
+        <EffectArray index="22" removed="1"/>
+        <EffectArray index="23" removed="1"/>
+        <EffectArray index="24" removed="1"/>
+        <EffectArray index="25" removed="1"/>
+        <EffectArray index="26" removed="1"/>
+        <EffectArray index="27" removed="1"/>
+        <EffectArray index="28" removed="1"/>
+        <EffectArray index="29" removed="1"/>
+        <EffectArray index="30" removed="1"/>
+        <EffectArray index="31" removed="1"/>
+        <EffectArray index="32" removed="1"/>
+        <EffectArray index="33" removed="1"/>
+        <EffectArray index="34" removed="1"/>
+        <EffectArray index="35" removed="1"/>
+        <EffectArray index="36" removed="1"/>
+        <EffectArray index="37" removed="1"/>
+        <EffectArray index="38" removed="1"/>
+        <EffectArray index="39" removed="1"/>
+        <EffectArray index="40" removed="1"/>
+        <EffectArray index="41" removed="1"/>
+        <EffectArray index="42" removed="1"/>
+        <EffectArray index="43" removed="1"/>
+        <EffectArray index="44" removed="1"/>
+        <EffectArray index="45" removed="1"/>
+        <EffectArray index="46" removed="1"/>
+        <EffectArray index="47" removed="1"/>
+        <EffectArray index="48" removed="1"/>
+        <AffectedUnitArray index="0" value="VikingFighter"/>
+        <AffectedUnitArray index="1" removed="1"/>
+        <AffectedUnitArray index="2" removed="1"/>
+        <AffectedUnitArray index="3" removed="1"/>
+        <AffectedUnitArray index="4" removed="1"/>
+        <AffectedUnitArray index="5" removed="1"/>
+        <AffectedUnitArray index="6" removed="1"/>
+    </CUpgrade>
+    <CUpgrade id="TerranVehicleArmorsLevel1">
+        <ScoreAmount value="100"/>
+        <EffectArray index="0" Reference="Unit,SiegeTank,LifeArmorLevel"/>
+        <EffectArray index="1" Reference="Unit,SiegeTank,LifeArmor"/>
+        <EffectArray index="2" Reference="Unit,Hellion,LifeArmor" Value="1.000000"/>
+        <EffectArray index="3" Reference="Unit,Hellion,LifeArmorLevel"/>
+        <EffectArray index="4" removed="1"/>
+        <EffectArray index="5" removed="1"/>
+        <EffectArray index="6" removed="1"/>
+        <EffectArray index="7" removed="1"/>
+        <EffectArray index="8" removed="1"/>
+        <EffectArray index="9" removed="1"/>
+        <EffectArray index="10" removed="1"/>
+        <EffectArray index="11" removed="1"/>
+        <EffectArray index="12" removed="1"/>
+        <EffectArray index="13" removed="1"/>
+        <EffectArray index="14" removed="1"/>
+        <EffectArray index="15" removed="1"/>
+        <EffectArray index="16" removed="1"/>
+        <EffectArray index="17" removed="1"/>
+        <EffectArray index="18" removed="1"/>
+        <EffectArray index="19" removed="1"/>
+        <EffectArray index="20" removed="1"/>
+        <EffectArray index="21" removed="1"/>
+        <EffectArray index="22" removed="1"/>
+        <EffectArray index="23" removed="1"/>
+        <EffectArray index="24" removed="1"/>
+        <EffectArray index="25" removed="1"/>
+        <EffectArray index="26" removed="1"/>
+        <EffectArray index="27" removed="1"/>
+        <EffectArray index="28" removed="1"/>
+        <EffectArray index="29" removed="1"/>
+        <EffectArray index="30" removed="1"/>
+        <EffectArray index="31" removed="1"/>
+        <EffectArray index="32" removed="1"/>
+        <EffectArray index="33" removed="1"/>
+        <EffectArray index="34" removed="1"/>
+        <EffectArray index="35" removed="1"/>
+        <EffectArray index="36" removed="1"/>
+        <EffectArray index="37" removed="1"/>
+        <EffectArray index="38" removed="1"/>
+        <EffectArray index="39" removed="1"/>
+        <EffectArray index="40" removed="1"/>
+        <EffectArray index="41" removed="1"/>
+        <EffectArray index="42" removed="1"/>
+        <EffectArray index="43" removed="1"/>
+        <EffectArray index="44" removed="1"/>
+        <EffectArray index="45" removed="1"/>
+        <EffectArray index="46" removed="1"/>
+        <EffectArray index="47" removed="1"/>
+        <EffectArray index="48" removed="1"/>
+        <EffectArray index="49" removed="1"/>
+        <EffectArray index="50" removed="1"/>
+        <EffectArray index="51" removed="1"/>
+        <AffectedUnitArray index="1" value="SiegeTank"/>
+        <AffectedUnitArray index="2" removed="1"/>
+        <AffectedUnitArray index="3" removed="1"/>
+        <AffectedUnitArray index="4" removed="1"/>
+        <AffectedUnitArray index="5" removed="1"/>
+        <AffectedUnitArray index="6" removed="1"/>
+        <AffectedUnitArray index="7" removed="1"/>
+        <AffectedUnitArray index="8" removed="1"/>
+        <AffectedUnitArray index="9" removed="1"/>
+    </CUpgrade>
+    <CUpgrade id="TerranVehicleArmorsLevel2">
+        <ScoreAmount value="100"/>
+        <EffectArray index="0" Reference="Unit,SiegeTank,LifeArmorLevel"/>
+        <EffectArray index="1" Reference="Unit,SiegeTank,LifeArmor"/>
+        <EffectArray index="2" Reference="Unit,Hellion,LifeArmor" Value="1.000000"/>
+        <EffectArray index="3" Reference="Unit,Hellion,LifeArmorLevel"/>
+        <EffectArray index="4" removed="1"/>
+        <EffectArray index="5" removed="1"/>
+        <EffectArray index="6" removed="1"/>
+        <EffectArray index="7" removed="1"/>
+        <EffectArray index="8" removed="1"/>
+        <EffectArray index="9" removed="1"/>
+        <EffectArray index="10" removed="1"/>
+        <EffectArray index="11" removed="1"/>
+        <EffectArray index="12" removed="1"/>
+        <EffectArray index="13" removed="1"/>
+        <EffectArray index="14" removed="1"/>
+        <EffectArray index="15" removed="1"/>
+        <EffectArray index="16" removed="1"/>
+        <EffectArray index="17" removed="1"/>
+        <EffectArray index="18" removed="1"/>
+        <EffectArray index="19" removed="1"/>
+        <EffectArray index="20" removed="1"/>
+        <EffectArray index="21" removed="1"/>
+        <EffectArray index="22" removed="1"/>
+        <EffectArray index="23" removed="1"/>
+        <EffectArray index="24" removed="1"/>
+        <EffectArray index="25" removed="1"/>
+        <EffectArray index="26" removed="1"/>
+        <EffectArray index="27" removed="1"/>
+        <EffectArray index="28" removed="1"/>
+        <EffectArray index="29" removed="1"/>
+        <EffectArray index="30" removed="1"/>
+        <EffectArray index="31" removed="1"/>
+        <EffectArray index="32" removed="1"/>
+        <EffectArray index="33" removed="1"/>
+        <EffectArray index="34" removed="1"/>
+        <EffectArray index="35" removed="1"/>
+        <EffectArray index="36" removed="1"/>
+        <EffectArray index="37" removed="1"/>
+        <EffectArray index="38" removed="1"/>
+        <EffectArray index="39" removed="1"/>
+        <EffectArray index="40" removed="1"/>
+        <EffectArray index="41" removed="1"/>
+        <EffectArray index="42" removed="1"/>
+        <EffectArray index="43" removed="1"/>
+        <EffectArray index="44" removed="1"/>
+        <EffectArray index="45" removed="1"/>
+        <EffectArray index="46" removed="1"/>
+        <EffectArray index="47" removed="1"/>
+        <EffectArray index="48" removed="1"/>
+        <EffectArray index="49" removed="1"/>
+        <EffectArray index="50" removed="1"/>
+        <EffectArray index="51" removed="1"/>
+        <AffectedUnitArray index="1" value="SiegeTank"/>
+        <AffectedUnitArray index="2" removed="1"/>
+        <AffectedUnitArray index="3" removed="1"/>
+        <AffectedUnitArray index="4" removed="1"/>
+        <AffectedUnitArray index="5" removed="1"/>
+        <AffectedUnitArray index="6" removed="1"/>
+        <AffectedUnitArray index="7" removed="1"/>
+        <AffectedUnitArray index="8" removed="1"/>
+        <AffectedUnitArray index="9" removed="1"/>
+    </CUpgrade>
+    <CUpgrade id="TerranVehicleArmorsLevel3">
+        <ScoreAmount value="100"/>
+        <EffectArray index="0" Reference="Unit,SiegeTank,LifeArmorLevel"/>
+        <EffectArray index="1" Reference="Unit,SiegeTank,LifeArmor"/>
+        <EffectArray index="2" Reference="Unit,Hellion,LifeArmor" Value="1.000000"/>
+        <EffectArray index="3" Reference="Unit,Hellion,LifeArmorLevel"/>
+        <EffectArray index="4" removed="1"/>
+        <EffectArray index="5" removed="1"/>
+        <EffectArray index="6" removed="1"/>
+        <EffectArray index="7" removed="1"/>
+        <EffectArray index="8" removed="1"/>
+        <EffectArray index="9" removed="1"/>
+        <EffectArray index="10" removed="1"/>
+        <EffectArray index="11" removed="1"/>
+        <EffectArray index="12" removed="1"/>
+        <EffectArray index="13" removed="1"/>
+        <EffectArray index="14" removed="1"/>
+        <EffectArray index="15" removed="1"/>
+        <EffectArray index="16" removed="1"/>
+        <EffectArray index="17" removed="1"/>
+        <EffectArray index="18" removed="1"/>
+        <EffectArray index="19" removed="1"/>
+        <EffectArray index="20" removed="1"/>
+        <EffectArray index="21" removed="1"/>
+        <EffectArray index="22" removed="1"/>
+        <EffectArray index="23" removed="1"/>
+        <EffectArray index="24" removed="1"/>
+        <EffectArray index="25" removed="1"/>
+        <EffectArray index="26" removed="1"/>
+        <EffectArray index="27" removed="1"/>
+        <EffectArray index="28" removed="1"/>
+        <EffectArray index="29" removed="1"/>
+        <EffectArray index="30" removed="1"/>
+        <EffectArray index="31" removed="1"/>
+        <EffectArray index="32" removed="1"/>
+        <EffectArray index="33" removed="1"/>
+        <EffectArray index="34" removed="1"/>
+        <EffectArray index="35" removed="1"/>
+        <EffectArray index="36" removed="1"/>
+        <EffectArray index="37" removed="1"/>
+        <EffectArray index="38" removed="1"/>
+        <EffectArray index="39" removed="1"/>
+        <EffectArray index="40" removed="1"/>
+        <EffectArray index="41" removed="1"/>
+        <EffectArray index="42" removed="1"/>
+        <EffectArray index="43" removed="1"/>
+        <EffectArray index="44" removed="1"/>
+        <EffectArray index="45" removed="1"/>
+        <EffectArray index="46" removed="1"/>
+        <EffectArray index="47" removed="1"/>
+        <EffectArray index="48" removed="1"/>
+        <EffectArray index="49" removed="1"/>
+        <EffectArray index="50" removed="1"/>
+        <EffectArray index="51" removed="1"/>
+        <AffectedUnitArray index="1" value="SiegeTank"/>
+        <AffectedUnitArray index="2" removed="1"/>
+        <AffectedUnitArray index="3" removed="1"/>
+        <AffectedUnitArray index="4" removed="1"/>
+        <AffectedUnitArray index="5" removed="1"/>
+        <AffectedUnitArray index="6" removed="1"/>
+        <AffectedUnitArray index="7" removed="1"/>
+        <AffectedUnitArray index="8" removed="1"/>
+        <AffectedUnitArray index="9" removed="1"/>
+    </CUpgrade>
+    <CUpgrade id="TerranVehicleWeaponsLevel1">
+        <ScoreAmount value="100"/>
+        <EffectArray index="0" Reference="Weapon,90mmCannons,Level"/>
+        <EffectArray index="1" Reference="Effect,90mmCannons,Amount"/>
+        <EffectArray index="2" Reference="Effect,InfernalFlameThrower,Amount" Value="1.000000"/>
+        <EffectArray index="3" Reference="Weapon,InfernalFlameThrower,Level" Value="1"/>
+        <EffectArray index="4" removed="1"/>
+        <EffectArray index="5" removed="1"/>
+        <EffectArray index="6" removed="1"/>
+        <EffectArray index="7" removed="1"/>
+        <EffectArray index="8" removed="1"/>
+        <EffectArray index="9" removed="1"/>
+        <EffectArray index="10" removed="1"/>
+        <EffectArray index="11" removed="1"/>
+        <EffectArray index="12" removed="1"/>
+        <EffectArray index="13" removed="1"/>
+        <EffectArray index="14" removed="1"/>
+        <EffectArray index="15" removed="1"/>
+        <EffectArray index="16" removed="1"/>
+        <EffectArray index="17" removed="1"/>
+        <EffectArray index="18" removed="1"/>
+        <EffectArray index="19" removed="1"/>
+        <EffectArray index="20" removed="1"/>
+        <EffectArray index="21" removed="1"/>
+        <EffectArray index="22" removed="1"/>
+        <EffectArray index="23" removed="1"/>
+        <EffectArray index="24" removed="1"/>
+        <EffectArray index="25" removed="1"/>
+        <EffectArray index="26" removed="1"/>
+        <EffectArray index="27" removed="1"/>
+        <EffectArray index="28" removed="1"/>
+        <EffectArray index="29" removed="1"/>
+        <EffectArray index="30" removed="1"/>
+        <EffectArray index="31" removed="1"/>
+        <EffectArray index="32" removed="1"/>
+        <EffectArray index="33" removed="1"/>
+        <EffectArray index="34" removed="1"/>
+        <EffectArray index="35" removed="1"/>
+        <EffectArray index="36" removed="1"/>
+        <EffectArray index="37" removed="1"/>
+        <EffectArray index="38" removed="1"/>
+        <EffectArray index="39" removed="1"/>
+        <EffectArray index="40" removed="1"/>
+        <EffectArray index="41" removed="1"/>
+        <EffectArray index="42" removed="1"/>
+        <EffectArray index="43" removed="1"/>
+        <EffectArray index="44" removed="1"/>
+        <EffectArray index="45" removed="1"/>
+        <EffectArray index="46" removed="1"/>
+        <EffectArray index="47" removed="1"/>
+        <EffectArray index="48" removed="1"/>
+        <EffectArray index="49" removed="1"/>
+        <EffectArray index="50" removed="1"/>
+        <EffectArray index="51" removed="1"/>
+        <EffectArray index="52" removed="1"/>
+        <EffectArray index="53" removed="1"/>
+        <EffectArray index="54" removed="1"/>
+        <EffectArray index="55" removed="1"/>
+        <EffectArray index="56" removed="1"/>
+        <EffectArray index="57" removed="1"/>
+        <EffectArray index="58" removed="1"/>
+        <EffectArray index="59" removed="1"/>
+        <EffectArray index="60" removed="1"/>
+        <EffectArray index="61" removed="1"/>
+        <EffectArray index="62" removed="1"/>
+        <EffectArray index="63" removed="1"/>
+        <EffectArray index="64" removed="1"/>
+        <EffectArray index="65" removed="1"/>
+        <EffectArray index="66" removed="1"/>
+        <EffectArray index="67" removed="1"/>
+        <EffectArray index="68" removed="1"/>
+        <EffectArray index="69" removed="1"/>
+        <EffectArray index="70" removed="1"/>
+        <EffectArray index="71" removed="1"/>
+        <EffectArray index="72" removed="1"/>
+        <EffectArray index="73" removed="1"/>
+        <EffectArray index="74" removed="1"/>
+        <EffectArray index="75" removed="1"/>
+        <EffectArray index="76" removed="1"/>
+        <EffectArray index="77" removed="1"/>
+        <EffectArray index="78" removed="1"/>
+        <EffectArray index="79" removed="1"/>
+        <EffectArray index="80" removed="1"/>
+        <EffectArray index="81" removed="1"/>
+        <EffectArray index="82" removed="1"/>
+        <EffectArray index="83" removed="1"/>
+        <EffectArray index="84" removed="1"/>
+        <EffectArray index="85" removed="1"/>
+        <EffectArray index="86" removed="1"/>
+        <EffectArray index="87" removed="1"/>
+        <EffectArray index="88" removed="1"/>
+        <EffectArray index="89" removed="1"/>
+        <EffectArray index="90" removed="1"/>
+        <EffectArray index="91" removed="1"/>
+        <EffectArray index="92" removed="1"/>
+        <AffectedUnitArray index="1" value="SiegeTank"/>
+        <AffectedUnitArray index="2" removed="1"/>
+        <AffectedUnitArray index="3" removed="1"/>
+        <AffectedUnitArray index="4" removed="1"/>
+        <AffectedUnitArray index="5" removed="1"/>
+        <AffectedUnitArray index="6" removed="1"/>
+        <AffectedUnitArray index="7" removed="1"/>
+        <AffectedUnitArray index="8" removed="1"/>
+        <AffectedUnitArray index="9" removed="1"/>
+    </CUpgrade>
+    <CUpgrade id="TerranVehicleWeaponsLevel2">
+        <ScoreAmount value="100"/>
+        <EffectArray index="0" Reference="Weapon,90mmCannons,Level"/>
+        <EffectArray index="1" Reference="Effect,90mmCannons,Amount"/>
+        <EffectArray index="2" Reference="Effect,InfernalFlameThrower,Amount" Value="1.000000"/>
+        <EffectArray index="3" Reference="Weapon,InfernalFlameThrower,Level" Value="1"/>
+        <EffectArray index="4" removed="1"/>
+        <EffectArray index="5" removed="1"/>
+        <EffectArray index="6" removed="1"/>
+        <EffectArray index="7" removed="1"/>
+        <EffectArray index="8" removed="1"/>
+        <EffectArray index="9" removed="1"/>
+        <EffectArray index="10" removed="1"/>
+        <EffectArray index="11" removed="1"/>
+        <EffectArray index="12" removed="1"/>
+        <EffectArray index="13" removed="1"/>
+        <EffectArray index="14" removed="1"/>
+        <EffectArray index="15" removed="1"/>
+        <EffectArray index="16" removed="1"/>
+        <EffectArray index="17" removed="1"/>
+        <EffectArray index="18" removed="1"/>
+        <EffectArray index="19" removed="1"/>
+        <EffectArray index="20" removed="1"/>
+        <EffectArray index="21" removed="1"/>
+        <EffectArray index="22" removed="1"/>
+        <EffectArray index="23" removed="1"/>
+        <EffectArray index="24" removed="1"/>
+        <EffectArray index="25" removed="1"/>
+        <EffectArray index="26" removed="1"/>
+        <EffectArray index="27" removed="1"/>
+        <EffectArray index="28" removed="1"/>
+        <EffectArray index="29" removed="1"/>
+        <EffectArray index="30" removed="1"/>
+        <EffectArray index="31" removed="1"/>
+        <EffectArray index="32" removed="1"/>
+        <EffectArray index="33" removed="1"/>
+        <EffectArray index="34" removed="1"/>
+        <EffectArray index="35" removed="1"/>
+        <EffectArray index="36" removed="1"/>
+        <EffectArray index="37" removed="1"/>
+        <EffectArray index="38" removed="1"/>
+        <EffectArray index="39" removed="1"/>
+        <EffectArray index="40" removed="1"/>
+        <EffectArray index="41" removed="1"/>
+        <EffectArray index="42" removed="1"/>
+        <EffectArray index="43" removed="1"/>
+        <EffectArray index="44" removed="1"/>
+        <EffectArray index="45" removed="1"/>
+        <EffectArray index="46" removed="1"/>
+        <EffectArray index="47" removed="1"/>
+        <EffectArray index="48" removed="1"/>
+        <EffectArray index="49" removed="1"/>
+        <EffectArray index="50" removed="1"/>
+        <EffectArray index="51" removed="1"/>
+        <EffectArray index="52" removed="1"/>
+        <EffectArray index="53" removed="1"/>
+        <EffectArray index="54" removed="1"/>
+        <EffectArray index="55" removed="1"/>
+        <EffectArray index="56" removed="1"/>
+        <EffectArray index="57" removed="1"/>
+        <EffectArray index="58" removed="1"/>
+        <EffectArray index="59" removed="1"/>
+        <EffectArray index="60" removed="1"/>
+        <EffectArray index="61" removed="1"/>
+        <EffectArray index="62" removed="1"/>
+        <EffectArray index="63" removed="1"/>
+        <EffectArray index="64" removed="1"/>
+        <EffectArray index="65" removed="1"/>
+        <EffectArray index="66" removed="1"/>
+        <EffectArray index="67" removed="1"/>
+        <EffectArray index="68" removed="1"/>
+        <EffectArray index="69" removed="1"/>
+        <EffectArray index="70" removed="1"/>
+        <EffectArray index="71" removed="1"/>
+        <EffectArray index="72" removed="1"/>
+        <EffectArray index="73" removed="1"/>
+        <EffectArray index="74" removed="1"/>
+        <EffectArray index="75" removed="1"/>
+        <EffectArray index="76" removed="1"/>
+        <EffectArray index="77" removed="1"/>
+        <EffectArray index="78" removed="1"/>
+        <EffectArray index="79" removed="1"/>
+        <EffectArray index="80" removed="1"/>
+        <EffectArray index="81" removed="1"/>
+        <EffectArray index="82" removed="1"/>
+        <EffectArray index="83" removed="1"/>
+        <EffectArray index="84" removed="1"/>
+        <EffectArray index="85" removed="1"/>
+        <EffectArray index="86" removed="1"/>
+        <EffectArray index="87" removed="1"/>
+        <EffectArray index="88" removed="1"/>
+        <EffectArray index="89" removed="1"/>
+        <EffectArray index="90" removed="1"/>
+        <EffectArray index="91" removed="1"/>
+        <EffectArray index="92" removed="1"/>
+        <AffectedUnitArray index="1" value="SiegeTank"/>
+        <AffectedUnitArray index="2" removed="1"/>
+        <AffectedUnitArray index="3" removed="1"/>
+        <AffectedUnitArray index="4" removed="1"/>
+        <AffectedUnitArray index="5" removed="1"/>
+        <AffectedUnitArray index="6" removed="1"/>
+        <AffectedUnitArray index="7" removed="1"/>
+        <AffectedUnitArray index="8" removed="1"/>
+        <AffectedUnitArray index="9" removed="1"/>
+    </CUpgrade>
+    <CUpgrade id="TerranVehicleWeaponsLevel3">
+        <ScoreAmount value="100"/>
+        <EffectArray index="0" Reference="Weapon,90mmCannons,Level"/>
+        <EffectArray index="1" Reference="Effect,90mmCannons,Amount"/>
+        <EffectArray index="2" Reference="Effect,InfernalFlameThrower,Amount" Value="1.000000"/>
+        <EffectArray index="3" Reference="Weapon,InfernalFlameThrower,Level" Value="1"/>
+        <EffectArray index="4" removed="1"/>
+        <EffectArray index="5" removed="1"/>
+        <EffectArray index="6" removed="1"/>
+        <EffectArray index="7" removed="1"/>
+        <EffectArray index="8" removed="1"/>
+        <EffectArray index="9" removed="1"/>
+        <EffectArray index="10" removed="1"/>
+        <EffectArray index="11" removed="1"/>
+        <EffectArray index="12" removed="1"/>
+        <EffectArray index="13" removed="1"/>
+        <EffectArray index="14" removed="1"/>
+        <EffectArray index="15" removed="1"/>
+        <EffectArray index="16" removed="1"/>
+        <EffectArray index="17" removed="1"/>
+        <EffectArray index="18" removed="1"/>
+        <EffectArray index="19" removed="1"/>
+        <EffectArray index="20" removed="1"/>
+        <EffectArray index="21" removed="1"/>
+        <EffectArray index="22" removed="1"/>
+        <EffectArray index="23" removed="1"/>
+        <EffectArray index="24" removed="1"/>
+        <EffectArray index="25" removed="1"/>
+        <EffectArray index="26" removed="1"/>
+        <EffectArray index="27" removed="1"/>
+        <EffectArray index="28" removed="1"/>
+        <EffectArray index="29" removed="1"/>
+        <EffectArray index="30" removed="1"/>
+        <EffectArray index="31" removed="1"/>
+        <EffectArray index="32" removed="1"/>
+        <EffectArray index="33" removed="1"/>
+        <EffectArray index="34" removed="1"/>
+        <EffectArray index="35" removed="1"/>
+        <EffectArray index="36" removed="1"/>
+        <EffectArray index="37" removed="1"/>
+        <EffectArray index="38" removed="1"/>
+        <EffectArray index="39" removed="1"/>
+        <EffectArray index="40" removed="1"/>
+        <EffectArray index="41" removed="1"/>
+        <EffectArray index="42" removed="1"/>
+        <EffectArray index="43" removed="1"/>
+        <EffectArray index="44" removed="1"/>
+        <EffectArray index="45" removed="1"/>
+        <EffectArray index="46" removed="1"/>
+        <EffectArray index="47" removed="1"/>
+        <EffectArray index="48" removed="1"/>
+        <EffectArray index="49" removed="1"/>
+        <EffectArray index="50" removed="1"/>
+        <EffectArray index="51" removed="1"/>
+        <EffectArray index="52" removed="1"/>
+        <EffectArray index="53" removed="1"/>
+        <EffectArray index="54" removed="1"/>
+        <EffectArray index="55" removed="1"/>
+        <EffectArray index="56" removed="1"/>
+        <EffectArray index="57" removed="1"/>
+        <EffectArray index="58" removed="1"/>
+        <EffectArray index="59" removed="1"/>
+        <EffectArray index="60" removed="1"/>
+        <EffectArray index="61" removed="1"/>
+        <EffectArray index="62" removed="1"/>
+        <EffectArray index="63" removed="1"/>
+        <EffectArray index="64" removed="1"/>
+        <EffectArray index="65" removed="1"/>
+        <EffectArray index="66" removed="1"/>
+        <EffectArray index="67" removed="1"/>
+        <EffectArray index="68" removed="1"/>
+        <EffectArray index="69" removed="1"/>
+        <EffectArray index="70" removed="1"/>
+        <EffectArray index="71" removed="1"/>
+        <EffectArray index="72" removed="1"/>
+        <EffectArray index="73" removed="1"/>
+        <EffectArray index="74" removed="1"/>
+        <EffectArray index="75" removed="1"/>
+        <EffectArray index="76" removed="1"/>
+        <EffectArray index="77" removed="1"/>
+        <EffectArray index="78" removed="1"/>
+        <EffectArray index="79" removed="1"/>
+        <EffectArray index="80" removed="1"/>
+        <EffectArray index="81" removed="1"/>
+        <EffectArray index="82" removed="1"/>
+        <EffectArray index="83" removed="1"/>
+        <EffectArray index="84" removed="1"/>
+        <EffectArray index="85" removed="1"/>
+        <EffectArray index="86" removed="1"/>
+        <EffectArray index="87" removed="1"/>
+        <EffectArray index="88" removed="1"/>
+        <EffectArray index="89" removed="1"/>
+        <EffectArray index="90" removed="1"/>
+        <EffectArray index="91" removed="1"/>
+        <EffectArray index="92" removed="1"/>
+        <AffectedUnitArray index="1" value="SiegeTank"/>
+        <AffectedUnitArray index="2" removed="1"/>
+        <AffectedUnitArray index="3" removed="1"/>
+        <AffectedUnitArray index="4" removed="1"/>
+        <AffectedUnitArray index="5" removed="1"/>
+        <AffectedUnitArray index="6" removed="1"/>
+        <AffectedUnitArray index="7" removed="1"/>
+        <AffectedUnitArray index="8" removed="1"/>
+        <AffectedUnitArray index="9" removed="1"/>
+    </CUpgrade>
+    <CUpgrade id="UnknownUpgrade">
+        <Race value="Terr"/>
+        <ScoreAmount value="1"/>
+        <EditorCategories value="Race:Terran,UpgradeType:SpellResearch"/>
+    </CUpgrade>
+</Catalog>

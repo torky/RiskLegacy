@@ -1,0 +1,565 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Catalog>
+    <CBehaviorBuff id="Barracks">
+        <Cost>
+            <Charge Link="Behavior/Achievement1"/>
+            <Cooldown Link="Behavior/Achievement1"/>
+        </Cost>
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Neutral"/>
+        <Modification>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/Achievement1"/>
+                    <Cooldown Link="Behavior/Achievement1"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/Achievement1"/>
+                <Cooldown Link="Behavior/Achievement1"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="Battlecruiser">
+        <Cost>
+            <Charge Link="Behavior/Achievement1"/>
+            <Cooldown Link="Behavior/Achievement1"/>
+        </Cost>
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Neutral"/>
+        <Modification>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/Achievement1"/>
+                    <Cooldown Link="Behavior/Achievement1"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/Achievement1"/>
+                <Cooldown Link="Behavior/Achievement1"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="BlackOpsMarine"/>
+    <CBehaviorBuff id="BlackopsBanshee"/>
+    <CBehaviorBuff id="BlackopsGoliath"/>
+    <CBehaviorBuff id="BlackopsMarauder"/>
+    <CBehaviorBuff id="BlackopsTank"/>
+    <CBehaviorBuff id="CardCooldown">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <DisplayDuration index="Self" value="1"/>
+        <DisplayDuration index="Ally" value="1"/>
+        <DisplayDuration index="Enemy" value="1"/>
+        <Duration value="15"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CerberusBattlecruiser"/>
+    <CBehaviorBuff id="CommandoTank"/>
+    <CBehaviorBuff id="CovertopsBanshee"/>
+    <CBehaviorBuff id="CovertopsBattlecruiser">
+        <EditorCategories value="Race:NightElf,AbilityorEffectType:Units"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CovertopsHellion"/>
+    <CBehaviorBuff id="CovertopsMarauder"/>
+    <CBehaviorBuff id="CovertopsSCV"/>
+    <CBehaviorBuff id="CovertopsTank"/>
+    <CBehaviorBuff id="CovertopsViking"/>
+    <CBehaviorBuff id="CruiserHellion"/>
+    <CBehaviorBuff id="DeluxeMarauder"/>
+    <CBehaviorBuff id="Detector102" parent="Detector">
+        <Alignment value="Positive"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <InfoIcon value="Assets\Textures\btn-status-detector.dds"/>
+        <Modification Detect="5"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="EliteMedic"/>
+    <CBehaviorBuff id="Goliath"/>
+    <CBehaviorBuff id="GorgonBattlecruiser"/>
+    <CBehaviorBuff id="GroundDefender">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="Hellion"/>
+    <CBehaviorBuff id="InfestedMarine">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Neutral"/>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="InfestedSCV"/>
+    <CBehaviorBuff id="JunkerBanshee"/>
+    <CBehaviorBuff id="JunkerBattlecruiser"/>
+    <CBehaviorBuff id="JunkerHellion"/>
+    <CBehaviorBuff id="JunkerMarauder"/>
+    <CBehaviorBuff id="JunkerMarine">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Neutral"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="JunkerTank"/>
+    <CBehaviorBuff id="KillsquadMedic"/>
+    <CBehaviorBuff id="Loadable">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="Marine">
+        <Cost>
+            <Charge Link="Behavior/Achievement1"/>
+            <Cooldown Link="Behavior/Achievement1"/>
+        </Cost>
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Neutral"/>
+        <Modification>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/Achievement1"/>
+                    <Cooldown Link="Behavior/Achievement1"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/Achievement1"/>
+                <Cooldown Link="Behavior/Achievement1"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="Marauder">
+        <Cost>
+            <Charge Link="Behavior/Achievement1"/>
+            <Cooldown Link="Behavior/Achievement1"/>
+        </Cost>
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Neutral"/>
+        <Modification>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/Achievement1"/>
+                    <Cooldown Link="Behavior/Achievement1"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/Achievement1"/>
+                <Cooldown Link="Behavior/Achievement1"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="Banshee">
+        <Cost>
+            <Charge Link="Behavior/Achievement1"/>
+            <Cooldown Link="Behavior/Achievement1"/>
+        </Cost>
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Neutral"/>
+        <Modification>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/Achievement1"/>
+                    <Cooldown Link="Behavior/Achievement1"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/Achievement1"/>
+                <Cooldown Link="Behavior/Achievement1"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="MechaViking"/>
+    <CBehaviorBuff id="Medic"/>
+    <CBehaviorBuff id="MercBanshee">
+        <Cost>
+            <Charge Link="Behavior/Achievement1"/>
+            <Cooldown Link="Behavior/Achievement1"/>
+        </Cost>
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Neutral"/>
+        <Modification>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/Achievement1"/>
+                    <Cooldown Link="Behavior/Achievement1"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/Achievement1"/>
+                <Cooldown Link="Behavior/Achievement1"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="MercBarracks">
+        <Cost>
+            <Charge Link="Behavior/Achievement1"/>
+            <Cooldown Link="Behavior/Achievement1"/>
+        </Cost>
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Neutral"/>
+        <Modification>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/Achievement1"/>
+                    <Cooldown Link="Behavior/Achievement1"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/Achievement1"/>
+                <Cooldown Link="Behavior/Achievement1"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="MercBattlecruiser">
+        <Cost>
+            <Charge Link="Behavior/Achievement1"/>
+            <Cooldown Link="Behavior/Achievement1"/>
+        </Cost>
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Neutral"/>
+        <Modification>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/Achievement1"/>
+                    <Cooldown Link="Behavior/Achievement1"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/Achievement1"/>
+                <Cooldown Link="Behavior/Achievement1"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="MercGoliath"/>
+    <CBehaviorBuff id="MercHellion"/>
+    <CBehaviorBuff id="MercSCV"/>
+    <CBehaviorBuff id="MercStarport">
+        <Cost>
+            <Charge Link="Behavior/Achievement1"/>
+            <Cooldown Link="Behavior/Achievement1"/>
+        </Cost>
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Neutral"/>
+        <Modification>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/Achievement1"/>
+                    <Cooldown Link="Behavior/Achievement1"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/Achievement1"/>
+                <Cooldown Link="Behavior/Achievement1"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="MercViking2"/>
+    <CBehaviorBuff id="MuleSCV"/>
+    <CBehaviorBuff id="MultilockTargetingSystems">
+        <Requirements value=""/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="SCV"/>
+    <CBehaviorBuff id="Sciencevessel"/>
+    <CBehaviorBuff id="SciencevesselMatrixDrone"/>
+    <CBehaviorBuff id="SciencevesselPDD"/>
+    <CBehaviorBuff id="SciencevesselTargetingDrone"/>
+    <CBehaviorBuff id="Stalker">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="Starport">
+        <Cost>
+            <Charge Link="Behavior/Achievement1"/>
+            <Cooldown Link="Behavior/Achievement1"/>
+        </Cost>
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Neutral"/>
+        <Modification>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/Achievement1"/>
+                    <Cooldown Link="Behavior/Achievement1"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/Achievement1"/>
+                <Cooldown Link="Behavior/Achievement1"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="SwannMarauder"/>
+    <CBehaviorBuff id="UmojanBanshee"/>
+    <CBehaviorBuff id="UmojanBattlecruiser">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Neutral"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="UmojanHellion"/>
+    <CBehaviorBuff id="UmojanMarauder"/>
+    <CBehaviorBuff id="UmojanMarine">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="UmojanSCV"/>
+    <CBehaviorBuff id="UmojanTank"/>
+    <CBehaviorBuff id="UmojanViking"/>
+    <CBehaviorBuff id="Viking">
+        <Cost>
+            <Charge Link="Behavior/Achievement1"/>
+            <Cooldown Link="Behavior/Achievement1"/>
+        </Cost>
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Neutral"/>
+        <Modification>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/Achievement1"/>
+                    <Cooldown Link="Behavior/Achievement1"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/Achievement1"/>
+                <Cooldown Link="Behavior/Achievement1"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="SiegeTank">
+        <Cost>
+            <Charge Link="Behavior/Achievement1"/>
+            <Cooldown Link="Behavior/Achievement1"/>
+        </Cost>
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Neutral"/>
+        <Modification>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/Achievement1"/>
+                    <Cooldown Link="Behavior/Achievement1"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/Achievement1"/>
+                <Cooldown Link="Behavior/Achievement1"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="MarauderCamo">
+        <Cost>
+            <Charge Link="Behavior/Achievement1"/>
+            <Cooldown Link="Behavior/Achievement1"/>
+        </Cost>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Neutral"/>
+        <Modification>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/Achievement1"/>
+                    <Cooldown Link="Behavior/Achievement1"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/Achievement1"/>
+                <Cooldown Link="Behavior/Achievement1"/>
+            </Cost>
+        </DamageResponse>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="Warpig">
+        <Cost>
+            <Charge Link="Behavior/Achievement1"/>
+            <Cooldown Link="Behavior/Achievement1"/>
+        </Cost>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Neutral"/>
+        <Modification>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/Achievement1"/>
+                    <Cooldown Link="Behavior/Achievement1"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/Achievement1"/>
+                <Cooldown Link="Behavior/Achievement1"/>
+            </Cost>
+        </DamageResponse>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="SiegeBreaker">
+        <Cost>
+            <Charge Link="Behavior/Achievement1"/>
+            <Cooldown Link="Behavior/Achievement1"/>
+        </Cost>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Neutral"/>
+        <Modification>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/Achievement1"/>
+                    <Cooldown Link="Behavior/Achievement1"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/Achievement1"/>
+                <Cooldown Link="Behavior/Achievement1"/>
+            </Cost>
+        </DamageResponse>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="MercMarauder">
+        <Cost>
+            <Charge Link="Behavior/Achievement1"/>
+            <Cooldown Link="Behavior/Achievement1"/>
+        </Cost>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Neutral"/>
+        <Modification>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/Achievement1"/>
+                    <Cooldown Link="Behavior/Achievement1"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/Achievement1"/>
+                <Cooldown Link="Behavior/Achievement1"/>
+            </Cost>
+        </DamageResponse>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="TaurenMarine">
+        <Cost>
+            <Charge Link="Behavior/Achievement1"/>
+            <Cooldown Link="Behavior/Achievement1"/>
+        </Cost>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Neutral"/>
+        <Modification>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/Achievement1"/>
+                    <Cooldown Link="Behavior/Achievement1"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/Achievement1"/>
+                <Cooldown Link="Behavior/Achievement1"/>
+            </Cost>
+        </DamageResponse>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="MercViking">
+        <Cost>
+            <Charge Link="Behavior/Achievement1"/>
+            <Cooldown Link="Behavior/Achievement1"/>
+        </Cost>
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Neutral"/>
+        <Modification>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/Achievement1"/>
+                    <Cooldown Link="Behavior/Achievement1"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/Achievement1"/>
+                <Cooldown Link="Behavior/Achievement1"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="MurlockMarine">
+        <Cost>
+            <Charge Link="Behavior/Achievement1"/>
+            <Cooldown Link="Behavior/Achievement1"/>
+        </Cost>
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Neutral"/>
+        <Modification>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/Achievement1"/>
+                    <Cooldown Link="Behavior/Achievement1"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/Achievement1"/>
+                <Cooldown Link="Behavior/Achievement1"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="Spectre">
+        <Cost>
+            <Charge Link="Behavior/Achievement1"/>
+            <Cooldown Link="Behavior/Achievement1"/>
+        </Cost>
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Neutral"/>
+        <Modification>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/Achievement1"/>
+                    <Cooldown Link="Behavior/Achievement1"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/Achievement1"/>
+                <Cooldown Link="Behavior/Achievement1"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="Defender">
+        <InfoIcon value="Assets\Textures\btn-techupgrade-terran-combatshield.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Terran"/>
+        <Modification MoveSpeedMaximum="0" LifeArmorBonus="1" SubgroupPriority="-20">
+            <VitalMaxArray index="Life" value="20"/>
+            <AbilClassEnableArray index="CAbilAttack" value="1"/>
+            <AbilLinkEnableArray value="attack"/>
+            <WeaponArray Link="AutoTurret"/>
+            <AttributeChangeArray Attribute="NoDefenderAttribute" Points="-255"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="Slow">
+        <Duration value="3"/>
+        <Modification MoveSpeedMultiplier="0.4"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="WaterUnit">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="WaterUnit2">
+        <Cost>
+            <Charge Link="Behavior/WaterUnit"/>
+            <Cooldown Link="Behavior/WaterUnit"/>
+        </Cost>
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/WaterUnit"/>
+                <Cooldown Link="Behavior/WaterUnit"/>
+            </Cost>
+        </DamageResponse>
+        <Requirements value="UnknownRequirement"/>
+    </CBehaviorBuff>
+</Catalog>

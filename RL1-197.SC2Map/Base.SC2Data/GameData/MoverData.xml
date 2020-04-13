@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Catalog>
+    <CMoverFlock id="Fly">
+        <HeightMap value="Ground"/>
+        <PlacementArray index="Prevent">
+            <Bits index="NoBuild" value="1"/>
+            <Bits index="Creep" value="1"/>
+        </PlacementArray>
+    </CMoverFlock>
+</Catalog>

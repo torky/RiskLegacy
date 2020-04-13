@@ -1,0 +1,597 @@
+Abil/Name/BarracksTrain2=Train Copy
+Abil/Name/SelectCountry=Select Homeland
+Abil/Name/SelectDefender=Select Defender
+Abil/Name/SelectDefender2=Select Defender
+Achievement/Category/Risk Revulsion=Risk Revulsion
+Achievement/Description/Achi1=Win 10 Ranked Risk Games
+Achievement/Description/Achi2=Win 25 Ranked Risk Games
+Achievement/Description/Achi3=Win 50 Ranked Risk Games
+Achievement/Description/Achi4=Win 100 Ranked Risk Games
+Achievement/Description/Achi5=Win 250 Ranked Risk Games
+Achievement/Description/Achi6=Win 500 Ranked Risk Games
+Achievement/Name/Achi1=Risk Novice
+Achievement/Name/Achi2=Risk Apprentice
+Achievement/Name/Achi3=Risk Regular
+Achievement/Name/Achi4=Risk Expert
+Achievement/Name/Achi5=Risk Master
+Achievement/Name/Achi6=Risk Guru
+Behavior/Name/Banshee=Banshee
+Behavior/Name/CardCooldown=Card Cooldown
+Behavior/Name/Defender=Defender
+Behavior/Name/GoldenTank=Golden Tank
+Behavior/Name/InfestedMarine=Infested Marine
+Behavior/Name/Marauder=Marauder
+Behavior/Name/MarauderCamo=Marauder Camo
+Behavior/Name/Marine=Marine
+Behavior/Name/Medivac=Medivac
+Behavior/Name/MercMarauder=Merc Marauder
+Behavior/Name/MercViking=Merc Viking
+Behavior/Name/MurlockMarine=Murlock Marine
+Behavior/Name/Nova=Nova
+Behavior/Name/SiegeBreaker=Siege Breaker
+Behavior/Name/SiegeTank=Siege Tank
+Behavior/Name/Spectre=Spectre
+Behavior/Name/TaurenMarine=Tauren Marine
+Behavior/Name/Viking=Viking
+Behavior/Name/Warpig=Warpig
+Behavior/Name/WaterUnit=WaterUnit
+Button/Name/SelectDefense=Select Defender
+Button/Name/SelectDefense2=Select Home Land
+Button/Name/SiegeTank=Build Siege Tank 
+Button/Tooltip/Banshee=Tactical-strike aircraft.<n/><c val="FF0000"><n/>Damage: 20-25 ( 1.25 AS )</c><c val="8000FF"><n/>Range: 3</c><c val="0000FF"><n/>Armor: 2</c><c val="008000"><n/>Health: 160</c><c val="FF80FF"><n/>Special: None</c>
+Button/Tooltip/Barracks22=Infantry production facility. <n/><n/><c val="ffff8a">Enables:</c><n/>- Marines<n/>- Bunkers from SCVs
+Button/Tooltip/Battlecruiser=Powerful warship.<n/><c val="FF0000"><n/>Damage: 45-55 ( 2.2AS )</c><c val="8000FF"><n/>Range: 5</c><c val="0000FF"><n/>Armor: 2</c><c val="008000"><n/>Health: 225</c><c val="FF80FF"><n/>Special: None</c>
+Button/Tooltip/BuildHercules=Massive transport ship.  Deploys loaded troops almost instantly.<n/><c val="FF0000"><n/>Damage: None</c><c val="8000FF"><n/>Range: 0</c><c val="0000FF"><n/>Armor: 1</c><c val="008000"><n/>Health: 175</c><c val="FF80FF"><n/>Special: Rapid Deployment</c>
+Button/Tooltip/BuildScienceVessel=Aerial support unit. Can use Nano-Repair abilities.<n/><c val="FF0000"><n/>Damage: None</c><c val="8000FF"><n/>Range: 0</c><c val="0000FF"><n/>Armor: 1</c><c val="008000"><n/>Health: 220</c><c val="FF80FF"><n/>Special: Nano-Repair</c>
+Button/Tooltip/Charge=Allows Predators to intercept nearby enemies. Also increases the movement speed of Predators. Ability can only be used once every <d ref="Abil,Charge,Cost.Cooldown.TimeUse"/> seconds.
+Button/Tooltip/ConcussiveGrenade=Units hit by the Marauder are temporarily slowed.<n/><n/><c val="#ColorAttackInfo">Robotic units are immune.</c>
+Button/Tooltip/DominionKillTeam=Heavy assault infantry.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
+Button/Tooltip/Goliath=Heavy-fire support unit.<c val="FFFF8A"><n/><n/>Can attack air and ground units.</c><n/><c val="FF0000"><n/>Damage: 12-16 ( 1.5 AS ) [ 20-24 ( 1.5 AS ) ]</c><c val="8000FF"><n/>Range: 3 [ 3.5 ]</c><c val="0000FF"><n/>Armor: 2</c><c val="008000"><n/>Health: 165</c><c val="FF80FF"><n/>Special: None</c>
+Button/Tooltip/HammerSecurity=Heavy assault infantry.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
+Button/Tooltip/Hellion=Fastest unit in game. Has a flame attack that damages all enemy units in its line of fire.<n/><n/><c val="FF0000">Damage: 9-11 ( .8 AS )</c><c val="8000FF"><n/>Range: 2.5</c><c val="0000FF"><n/>Armor: 1</c><c val="008000"><n/>Health: 105</c><c val="FF80FF"><n/>Special: None</c>
+Button/Tooltip/Hercules=Massive transport ship.  Deploys loaded troops almost instantly.<n/><c val="FF0000"><n/>Damage: None</c><c val="8000FF"><n/>Range: 0</c><c val="0000FF"><n/>Armor: 1</c><c val="008000"><n/>Health: 200</c><c val="FF80FF"><n/>Special: Rapid Deployment</c>
+Button/Tooltip/InfestedTerranCampaign=General-purpose infantry.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
+Button/Tooltip/Marauder=Heavy assault infantry.<n/><c val="FF0000"><n/>Damage: 7-12 ( 1.5 AS )</c><c val="8000FF"><n/>Range: 2.5</c><c val="0000FF"><n/>Armor: 2</c><c val="008000"><n/>Health: 110</c><c val="FF80FF"><n/>Special: Concussive Shells</c>
+Button/Tooltip/Marine=General-purpose infantry.<n/><c val="FF0000"><n/>Damage: 4-6 ( 1 AS )</c><c val="8000FF"><n/>Range: 2</c><c val="0000FF"><n/>Armor: 0</c><c val="008000"><n/>Health: 70</c><c val="FF80FF"><n/>Special: None</c>
+Button/Tooltip/Medic=Support trooper. Heals nearby biological units.<n/><c val="FF0000"><n/>Damage: None</c><c val="8000FF"><n/>Range: 0</c><c val="0000FF"><n/>Armor: 1</c><c val="008000"><n/>Health: 75</c><c val="FF80FF"><n/>Special: Heal</c>
+Button/Tooltip/NanoRepair=Heals a friendly mechanical unit.<n/><n/><c val="f078ff"> Heals 3 life per 2 energy.</c>
+Button/Tooltip/Predator=Anti-Ground Mechanical specialist that deals strong melee damage.<n/><c val="FF0000"><n/>Damage: 10 ( .75 AS )</c><c val="8000FF"><n/>Range: Melee</c><c val="0000FF"><n/>Armor: 2</c><c val="008000"><n/>Health: 175</c><c val="FF80FF"><n/>Special: Charge</c>
+Button/Tooltip/ScienceVessel=Aerial support unit. Can use Nano-Repair abilities.
+Button/Tooltip/SelectDefense=Selects a Defender for Selected Building.
+Button/Tooltip/SelectDefense2=The Selected Spawn Zone becomes the Homeland of your Empire.
+Button/Tooltip/SiegeBreaker=Heavy tank.<n/><n/><c val="FFFF8A">Can attack ground units.</c>
+Button/Tooltip/SiegeTank=Heavy tank.<n/><c val="FF0000"><n/>Damage: 20-30 ( 2 AS )<n/></c><c val="8000FF">Range: 4<n/></c><c val="0000FF">Armor: 2<n/></c><c val="008000">Health: 200<n/></c><c val="FF80FF">Special: None</c>
+Button/Tooltip/TaurenSpaceMarine=General-purpose infantry.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
+Button/Tooltip/Thor=Heavy assault mech.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c><n/><c val="FF0000"><n/>Damage: 20 ( 1.7 AS ) [ 27 ( 1.9 AS )</c><c val="8000FF"><n/>Range: 3 [ 3.7 ]</c><c val="0000FF"><n/>Armor: 2</c><c val="008000"><n/>Health: 185</c><c val="FF80FF"><n/>Special: Dual-Weapons</c>
+Button/Tooltip/VikingFighter=Durable support flyer. Loaded with strong anti-capital air missiles.<n/><c val="FF0000"><n/>Damage: 10-15 ( .6 AS )</c><c val="8000FF"><n/>Range: 2.5</c><c val="0000FF"><n/>Armor: 2</c><c val="008000"><n/>Health: 135</c><c val="FF80FF"><n/>Special: None</c>
+Button/Tooltip/Vulture=Fast skirmish unit. <n/><c val="FF0000"><n/>Damage: 10-15 ( .9 AS )</c><c val="8000FF"><n/>Range: 2.7</c><c val="0000FF"><n/>Armor: 2</c><c val="008000"><n/>Health: 130</c><c val="FF80FF"><n/>Special: None</c>
+Button/Tooltip/WarPig=General-purpose infantry.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
+Button/Tooltip/Wraith=Highly mobile flying unit. Excellent at surgical strikes.<c val="FFFF8A"><n/><n/>Can attack air and ground units.</c><n/><c val="FF0000"><n/>Damage: 15-20 ( 1.75 AS ) [ 2-4 ( .15 AS )</c><c val="8000FF"><n/>Range: 3 [ 2.5 ]</c><c val="0000FF"><n/>Armor: 1</c><c val="008000"><n/>Health: 160</c><c val="FF80FF"><n/>Special: None</c>
+DocInfo/Author=By CrazyRusski.925 [NA] and RedMarine.109 [EU]
+DocInfo/DescLong=Version - 3.05 - 5/11/12<n/>Risk Revulsion is a SC2 remake of the popular board game, risk. If you're familiar with WC3 Risk or the original SC Risk for that matter, then this map should be quite familiar in terms of gameplay.
+DocInfo/DescShort=2-12 Players
+DocInfo/HowToPlayBasic00=Conquer a 2 Base County and continue gathering countries
+DocInfo/HowToPlayBasic01=Counter Units
+DocInfo/HowToPlayBasic02=Use Chokes and have Strategic plans
+DocInfo/HowToPlayWinning00=Conquer atleast 70% of the bases
+DocInfo/Name=European Risk Revulsion [
+DocInfo/PatchNote001=- Added: Ban System
+DocInfo/PatchNote002=- Balanced: Battlecruisers
+DocInfo/PatchNote003=- Balanced: Banshees
+DocInfo/PatchNote004=- Fixed: Defender Switch Heal Bug
+DocInfo/PatchNote005=- Fixed: Achivement Hack
+DocInfo/PatchNote006=- Fixed: Conquest Bar
+DocInfo/PatchNote007=- Fixed: Randomizing Colours
+DocInfo/PatchNote008=- Fixed: Achievements
+DocInfo/PatchNote009=- Temporary: Ranking is temporarily off
+DocInfo/PatchNote010=- Improved: Emoticons
+DocInfo/PatchNote011=- Added: Card Timer to reduce Farming
+DocInfo/PatchNote012=- Balanced: Marauder, Banshee, Battlecruiser, Viking, Vulture, and Hellion
+DocInfo/PatchNote013=- Fixed: Players no longer start on islands in the mode "One base each"
+DocInfo/PatchNote014=- Fixed: Card Bug ( No need for AI's )
+DocInfo/PatchNote015=- Improved: Chat lines now break
+DocInfo/PatchNote016=- Improved: Fog now shows territory distribution on minimap
+DocInfo/PatchNote017=- Fixed: Defender Selection
+DocInfo/PatchNote018=- Balanced: Battlecrusiers
+DocInfo/PatchNote019=- Balanced: Banshees
+DocInfo/PatchNote020=- Fixed: Chat Fading
+DocInfo/PatchNote021=- Fixed: Ground Pathing
+DocInfo/PatchNote022=- Added: Ranking
+DocInfo/PatchNote023=- Added: Anonymous System
+DocInfo/PatchNote024=- Fixed: No Defender
+DocInfo/PatchNote025=- Improved: Priority of Units
+DocInfo/PatchNote026=- Improved: Scenario Menu
+DocInfo/PatchNote027=- Improved: Flag System
+DocInfo/PatchNote028=- Replaced: Air Viking to Water Viking
+DocInfo/PatchNote029=- Replaced: Wraith to Battlecrusier
+DocInfo/PatchNote030=- Replaced: Goliath to Banshee
+DocInfo/PatchNote031=- Replaced: Moderator Banning System to Replay Banning System
+DocInfo/PatchNote032=- Improved: Coding
+DocInfo/PatchNote033=* This is a Alpha Version, things will change *
+DocInfo/PatchNote034=- Changed:  User Interface
+LoadingScreen/Subtitle= 
+LoadingScreen/TextBody= 
+LoadingScreen/Tip=By CrazyRusski.925 [NA] and RedMarine.109 [EU]<n/><n/><s val="CampaignActionButton">Alpha 4.00 Patch Notes</s><n /><s val="BossBarTitle"> - Changed:  User Interface</s>
+LoadingScreen/Title= 
+MapInfo/Player00/Name=Hostile
+MapInfo/Player01/Name=Player 1
+MapInfo/Player02/Name=Player 2
+MapInfo/Player03/Name=Player 3
+MapInfo/Player04/Name=Player 4
+MapInfo/Player05/Name=Player 5
+MapInfo/Player06/Name=Player 6
+MapInfo/Player07/Name=Player 7
+MapInfo/Player08/Name=Player 8
+MapInfo/Player09/Name=Player 9
+MapInfo/Player10/Name=Player 10
+MapInfo/Player11/Name=Player 11
+MapInfo/Player12/Name=Player 12
+MapInfo/Player13/Name=Spectator 1
+MapInfo/Player14/Name=Spectator 2
+MapInfo/Player15/Name=Spectator 3
+Param/Value/006FFC14=Help
+Param/Value/01742B7B=
+Param/Value/01B0C27B=Time: 
+Param/Value/021A5C2C=Your Ranked Username Is Not Allowed!
+Param/Value/02F4C1D3=Setting
+Param/Value/04040C6B=Next
+Param/Value/04104EDF= - In order to capture a territory, simply conquer all structures inside of the territory's border by killing the defending units nearby these structures.<n/> - The amount of income you get for each Territory/Continent is displayed next to the countries labels. <n/> - You're able to switch the defending unit using the structures's defender ability. Simply right click the unit you want to switch places with the defending unit. Note that there is a range limit to the ability.<n/> - You can select all your Spawn Zones with Control Group 9.<n/> - To view the Info Panel press the Green Button on the Right side of the Screen and above the Command Card.
+Param/Value/046B8B6E=Disabled [Default]
+Param/Value/05DECCDE=
+Param/Value/0671261A=2
+Param/Value/071E77C0=Disabled [Default]
+Param/Value/072BFD60=History
+Param/Value/078C9751=
+Param/Value/079F5040=Inc
+Param/Value/0849EFF1=
+Param/Value/08657765= - Players get 1 Random Base
+Param/Value/08F44272=123456789012345678901234567890
+Param/Value/0A0D1BB7=
+Param/Value/0A5109C0=Enabled
+Param/Value/0ADF8169=Death
+Param/Value/0AF8F2A7=Combat
+Param/Value/0BCC09D0=Enabled 1/6
+Param/Value/0CEEE092=
+Param/Value/0D7712E1=<s val="AchievementFrameDescription_Terr">
+Param/Value/0DA105EE=Credits
+Param/Value/0EB747AF= [Paladin]
+Param/Value/0EFACBFD=
+Param/Value/109BC8BC=None
+Param/Value/10A32B11='s Alliance Request!
+Param/Value/10D3A501=<n/>
+Param/Value/10EE6FB1=
+Param/Value/12BA6303=100%
+Param/Value/13F51E9C=Enabled 1/6
+Param/Value/1454177B=The Number of Players in a Team
+Param/Value/14BE77E3=- In order to capture a territory, simply conquer all structures inside of the territory's border by killing the defending units nearby these structures.<n/>- The amount of income you get for each Territory/Continent is displayed next to the countries labels. <n/>- You're able to switch the defending unit using the structures's defender ability. Simply right click the unit you want to switch places with the defending unit. Note that there is a range limit to the ability.<n/>- When near the Side of the Map you are moved to the other side of the map to create a realistic feel that this is a global map.
+Param/Value/14C32AAA=
+Param/Value/14F9BA37=History Turn Time: 
+Param/Value/159650A0=
+Param/Value/15E51B7E=The Game has Started!
+Param/Value/160F8E87=30
+Param/Value/1645893A=Settings
+Param/Value/167CA70C=Shows or Hides the Information Board
+Param/Value/16DAF3A2=</s>
+Param/Value/170CE9A1=Ally or Unally player
+Param/Value/177485B5=
+Param/Value/1784EC96=Disabled
+Param/Value/17FE0630=Enabled 1/6
+Param/Value/1838ED34=<s val="DebugDisplay">250</s>
+Param/Value/18CF1386=75
+Param/Value/1908B2D7=
+Param/Value/19CA61AF=90
+Param/Value/19D1846C=
+Param/Value/1A0ED901=
+Param/Value/1A4046CA=Win 10 Ranked Risk Games
+Param/Value/1AD6CAE1= has won the game!
+Param/Value/1AF10358=Visibility
+Param/Value/1AF5C6F3=75%
+Param/Value/1B48DBC7= [Slayer]
+Param/Value/1BBE55C2=<s val="AchievementFrameName_Prot">
+Param/Value/1C45CCA9=Make sure to check out the Help Panel!
+Param/Value/1CBEA591=
+Param/Value/1D2BC859=No More Minimap History Memory Left!
+Param/Value/1D4B5A76=
+Param/Value/1DD1C53B=</s></s>
+Param/Value/1DD47C92=No Fog [Default]
+Param/Value/1EF7C8FC=
+Param/Value/1F3D4564=Exchanges 3 Cards for 5 Minerals
+Param/Value/2019238C=Low Health
+Param/Value/21604B1F=Win Conditions
+Param/Value/21BC2D23=</s></s>
+Param/Value/22126C25=
+Param/Value/23A81447= - Normal Game-Play<n/> - Allows Ranked Games
+Param/Value/243A96D5=95%
+Param/Value/24BFC36B=Risk Revulsion
+Param/Value/25DD7E89= is a banned player!
+Param/Value/26750F8F=Risk FFA [Default]
+Param/Value/267CA12F=70% [Default]
+Param/Value/26EF3EAB= has declined 
+Param/Value/28643582=
+Param/Value/28654BDB=Disabled
+Param/Value/28694460=Neutral
+Param/Value/2897EF40=News:
+Param/Value/2940B290=Status
+Param/Value/294442B4=Spawn
+Param/Value/29E7EE86=
+Param/Value/2B1BE732=Disabled [Default]
+Param/Value/2B2219E8=
+Param/Value/2B502C7D= You have reached Maximum Supply hold of Cards!  Use them to gain more!
+Param/Value/2B58E50F=History Turn Time: 0
+Param/Value/2D370746=
+Param/Value/2E05B2B3=Collection
+Param/Value/2F349DD6=60 [Default]
+Param/Value/2FEB4554=70% [Default]
+Param/Value/302CB786=60%
+Param/Value/31609BD6=Enabled [Default]
+Param/Value/31DEFAD3=
+Param/Value/329FDFEF=<s val="AchievementFrameName_Terr"><s val="ModLeftSize20Bold">
+Param/Value/32BF55A3=
+Param/Value/33379AD4=Fog of War
+Param/Value/3339F092=100%
+Param/Value/337FAB84=History
+Param/Value/33F6FBA0=Status
+Param/Value/3456001E=New scroll bar height: 
+Param/Value/3456FDDF=60 [Default]
+Param/Value/34A31E21=Low Priority - Low Health
+Param/Value/34B6A340= has requested to ally you!
+Param/Value/35A027CE=Time: 
+Param/Value/3612399A=
+Param/Value/362D023C=<s val="AchievementFrameName_Terr">
+Param/Value/36411549=Kills
+Param/Value/38AFDC67=If you're familiar to WarCraft III Risk or the original StarCraft Risk for that matter, then this map should be quite familiar in terms of both gameplay and features. For newcomers, read below.<n/><n/>Risk Revulsion is a StarCraft II remake of the popular board game, risk. Similar to the boardgame, each player begin with a limited amount of minerals for them to expand their influence by capturing countries. The more countries you capture, the more income you get, the stronger you become. When a country is captured, you'll be provided with free marines and additional income provided by your countries. This boost in income will be added on top of the original income of 4. You'll recieve your income at the start of a new turn. <n/><n/>When your influence or power has reached a certain thresshold, challenge your foes over the wartorned European battlefield and prove your worth.
+Param/Value/3B0F0F98=Tips and Information Part 2
+Param/Value/3B12208A=Close achievement window
+Param/Value/3B6BBAF7=123456789012345678901234<n/>2<n/>3<n/>4<n/>5<n/>6<n/>7<n/>8<n/>9<n/>0<n/>1<n/>2<n/>3<n/>4<n/>5<n/>6<n/>7<n/>8<n/>9<n/>0
+Param/Value/3B7E36FA=
+Param/Value/3C3DA13F=60%
+Param/Value/3CD7A338=
+Param/Value/3F22BABA=Game Settings
+Param/Value/40B79738=Unlimited [Default]
+Param/Value/4176C0BA=- Balanced: Medic,  Decreased Energy Regen, Increased Heal Energy Cost, Decreased Health, Decreased Starting Energy<n/>- Fixed: While training a Marauder it would show a SCV icon<n/>- Fixed: When Controlling a Territory/Continent it consumed 1 Mineral away to produce the spawned unit<n/>- Improved: Help Section [ Better Unit Type Help, Tip and Information, About the Game ]<n/>- New: Alliance Host Setting Option<n/>- New: Loading Screen Image<n/>- New: Added Water Pathway in Indonesia<n/>- New: Conquest Bar<n/>- New: Territory; Svalbard
+Param/Value/41ED45A0=
+Param/Value/427E6B23=Selected Scenario
+Param/Value/427FA5D1=% of the map!
+Param/Value/430D2989= [Phantom]
+Param/Value/43AEBCF2=High Priority - Low Health
+Param/Value/44176BC9=Defeats
+Param/Value/445DBB0E=80%
+Param/Value/449042C3=Disabled
+Param/Value/44B4A1D2=Statistics
+Param/Value/44B5AE38=Turns: N/A
+Param/Value/45B9B03A= [Paladin]
+Param/Value/45E110F1=History
+Param/Value/45FC222B=<s val="AchievementFrameName_Terr"><s val="ModLeftSize20Bold">
+Param/Value/46F08450=1. No Cheating/Hacking<n/>2. No Spamming<n/>3. No Abusing ( For Admins )<n/><n/>If one is to brake these rules notify HELLYA or RedMarine at RiskRevulsion.com with a replay of the game.
+Param/Value/47642B70=
+Param/Value/47663DFC=
+Param/Value/4799EBCC=
+Param/Value/47D32DDF=<img path="Assets\Textures\icon-mineral-protoss.dds" width="27" height="27"/>
+Param/Value/487A4873=<n/>
+Param/Value/49A2D3CB=Death
+Param/Value/49E13653=</s></s>
+Param/Value/4B1C254E= are now allies!
+Param/Value/4B403D26=Time: N/A
+Param/Value/4DECACBE=Phantom
+Param/Value/4E4875E2=Decline
+Param/Value/4E991E3B=Kills
+Param/Value/4ECE59E2=High Health
+Param/Value/4ED96EF2=<s val="DebugDisplay"> 25</s>
+Param/Value/4EEF3AB7=Alliance
+Param/Value/4F4E83DB=<s val="AchievementFrameDescription_Zerg">
+Param/Value/4F5111A7=60% [Default]
+Param/Value/4F782F00=
+Param/Value/50400B8E=45
+Param/Value/50AFEB7A=
+Param/Value/50B1416E=
+Param/Value/50F67C93=
+Param/Value/510A351E= has declared war on 
+Param/Value/5191660C=Players
+Param/Value/51FB8D63=
+Param/Value/530B4B3A=Kills: 
+Param/Value/53C8C642=<c val="FFFF00"> - Alliance is Activated</c><n/> - Players get Regional Countries
+Param/Value/545097A3=Mode
+Param/Value/560BAE4C= You have reached Maximum Supply hold of Cards!  Use them to gain more!
+Param/Value/574F9F00=Enabled 1/2
+Param/Value/57AF6258=Start-Game City Ping
+Param/Value/588A57D0=</s>
+Param/Value/59313744=60
+Param/Value/5A01AB12=The Mode which players can be allied or either a mode which everyone is against each other.
+Param/Value/5A76929A=Disabled
+Param/Value/5B51260D=Accept
+Param/Value/5B8224E1=</s>
+Param/Value/5DC89AF2=80%
+Param/Value/5F68F5E2=
+Param/Value/5FC39360=Decided Whether players are chosen in teams tby the player him/her self or the game.
+Param/Value/60E03EA6=Victories
+Param/Value/60F46731= has won the game!
+Param/Value/616051A4=Disabled [Default]
+Param/Value/61C0F881=Turn Time
+Param/Value/626D875F=Disabled
+Param/Value/62C501E6=Disabled
+Param/Value/62CD3FCD=Bounty
+Param/Value/6352EFBD=
+Param/Value/663695F0=Kills
+Param/Value/664623B8=
+Param/Value/669C025D=100%
+Param/Value/68B24736=Teams
+Param/Value/69EC5E2E=Rules
+Param/Value/69F9206E=World War
+Param/Value/6A26A1BB=80%
+Param/Value/6A902C77=News: 
+Param/Value/6AE16017=
+Param/Value/6B4B4FE9=Enabled [Default]
+Param/Value/6B9AD0D0=Low Priority
+Param/Value/6C583923=High Priority - High Health
+Param/Value/6D04FFC8=<c val="FF0000">Warning!</c> - 
+Param/Value/6D2C982B=
+Param/Value/6DBF02E8=123456789012345678901234<n/>2<n/>3<n/>4<n/>5<n/>6<n/>7<n/>8<n/>9<n/>0<n/>1<n/>2<n/>3<n/>4<n/>5<n/>6<n/>7<n/>8<n/>9<n/>0
+Param/Value/6E92AA7D=History Turn Time: 
+Param/Value/6E9F00C6=View Achievements
+Param/Value/6F24B68B=% of the map.
+Param/Value/6F9EC11B=60
+Param/Value/712DE936= [Slayer]
+Param/Value/73A76871=Closes the Information Board
+Param/Value/73E2ECF7=</s><n/><s val="AchievementFrameDescription_Prot">
+Param/Value/763B307F=
+Param/Value/76BACEA8=
+Param/Value/7737DE0B=Bounty
+Param/Value/7745790F=Disabled
+Param/Value/7861F40B=
+Param/Value/7920AAAC=
+Param/Value/7949147C=News: 
+Param/Value/7A6693D8=<s val="CinematicLabel">Settings</s>          
+Param/Value/7B6E93C2=85%
+Param/Value/7BF1D6BF=Menu
+Param/Value/7C403F46=Enabled [Default]
+Param/Value/7C467882=History Turn Time: 
+Param/Value/7C9BEA5C=Tips and Information Part 1
+Param/Value/7CC80FA3=
+Param/Value/7CDB34B3=Dawn of Man
+Param/Value/7CEFE848= has claimed 
+Param/Value/7CF657FB=
+Param/Value/7D1F8F00= [Phantom]
+Param/Value/7F0DE139=
+Param/Value/80130E25=None
+Param/Value/815BA804=Enabled 1/4
+Param/Value/81BE0F24=Enabled
+Param/Value/83AA23A7=Activated
+Param/Value/842CAAD3= controls 
+Param/Value/86FFA742=<s val="AchievementFrameName"> </s>
+Param/Value/8842EA0E=<s val="DebugDisplay"> 50</s>
+Param/Value/8857B569= has won!
+Param/Value/894B00FE=</s></s>
+Param/Value/895ED44C=
+Param/Value/8A3A6FF8=Profile
+Param/Value/8D1FC6DD=Risk Diplomacy
+Param/Value/8D31F784=Achievements
+Param/Value/8DFCAE2C=Game Started!
+Param/Value/8E7C2456=
+Param/Value/8E9F7D37=Accept
+Param/Value/8EC74BFD=60 [Default]
+Param/Value/8F617E59=
+Param/Value/8F724E20=Turns: 
+Param/Value/902CA480=Enabled 1/2
+Param/Value/9107DBD7=Normal
+Param/Value/911A88B1=
+Param/Value/915756B9=80%
+Param/Value/9198BB8E=100%
+Param/Value/91D31AA8=</s>
+Param/Value/9286D2FA=Enabled 1/4
+Param/Value/92F7061C=
+Param/Value/948375F8=High Priority
+Param/Value/948768E6= (AKA) 
+Param/Value/95BC3CDC=Turns: N/A
+Param/Value/95FCA8C6=
+Param/Value/971D2B8C=Fog
+Param/Value/98AC2560=Opens the Information Board
+Param/Value/98E69BB0=Enabled [Default]
+Param/Value/99190DB6=
+Param/Value/9977321C=100%
+Param/Value/99F42615=
+Param/Value/9A609FEC=__________________________________________________
+Param/Value/9D43358A=Enabled [Default]
+Param/Value/9D5B4D30=
+Param/Value/9D8DE221=/
+Param/Value/9EA9C217=<s val="AchievementFrameDescription_Terr">
+Param/Value/9EB0B303=<s val="AchievementFrameDescription_Prot">
+Param/Value/9ED606BB=
+Param/Value/A00301AF=100
+Param/Value/A028620F=
+Param/Value/A02C7689=Game Settings
+Param/Value/A0514F37=Game Defined [Default]
+Param/Value/A152EDD8=45
+Param/Value/A2C53D91=: 
+Param/Value/A2F7E2F6=% of the map!
+Param/Value/A32EEB30=- LeaderBoard Info:<n/>   - Turn Time - Remainder time until a new turn.<n/>   - Turns - The total amount of turns passed.<n/>   - In - The total amount of minerals recieved at the end of a turn.( Updated every turn )<n/>   - KD% - Displays the kill death ratio in %.<n/>- Alliance Info:<n/>   In order to ally another player, the host must have set the rules to do so. Their can be a Limit to how many allies you have if the host has set it so. So click on the player's box ( Make sure you are in your view ) and then select the ALLY if you wish to ally or ENEMY if you wish to declare war on him.
+Param/Value/A38BCA0F=
+Param/Value/A43A421C=<s val="AchievementFramePoints_Terr">
+Param/Value/A49E0C10=Win Condition
+Param/Value/A6253038= controls 
+Param/Value/A7ABEEEC=<n/>
+Param/Value/A7E8EE31=
+Param/Value/A8E55A5B=<s val="DebugDisplay">100</s>
+Param/Value/A902DD36=
+Param/Value/A9084D31=Losses: 
+Param/Value/A909039D=Card
+Param/Value/AA4F2D9E=Win Condition
+Param/Value/AABA13A6=Players
+Param/Value/AB927486=
+Param/Value/AB94CD08=
+Param/Value/ABB1BE85=90% [Default]
+Param/Value/ACFDD412=_______________________________________________________
+Param/Value/AD548CEF=%
+Param/Value/AEE41F2B=Death Match
+Param/Value/AF611A4F= has won the game!
+Param/Value/B01694D4=Disabled
+Param/Value/B039C6FF=Show Profile to Other Players
+Param/Value/B0495533=Turn Time
+Param/Value/B095EFA6=
+Param/Value/B1231D94=45
+Param/Value/B16E22EF=<s val="AchievementFrameName_Zerg"><s val="ModLeftSize20Bold">
+Param/Value/B1743E89=Accept
+Param/Value/B1BF1A9B=
+Param/Value/B1CBB2AF=Low Priority - High Health
+Param/Value/B2352280=User Defined
+Param/Value/B296C4F0=Ranked
+Param/Value/B416FE53=.
+Param/Value/B47670F1=Select
+Param/Value/B48409DA=Stats
+Param/Value/B4A7EF54=Disabled [Default]
+Param/Value/B4ADF6B9=Show Profile to Other Players
+Param/Value/B4C186C1=Time: N/A
+Param/Value/B4C83B75= has been Kicked!
+Param/Value/B57FC25B=<s val="CinematicLabel">Settings</s>          
+Param/Value/B5C6A854= and 
+Param/Value/B6956EE5=Achieve
+Param/Value/B8630326=
+Param/Value/B898252B=Accept
+Param/Value/B9243296=- LeaderBoard Info:<n/>   - Turn Time - Remainder time until a new turn.<n/>   - Turns - The total amount of turns passed.<n/>   - In - The total amount of minerals recieved at the end of a turn.( Updated every turn )<n/>   - K/D - Displays the kill death ratio in %.<n/>- Alliance Info:<n/>   In order to ally another player, the host must have set the rules to do so. Their can be a Limit to how many allies you have if the host has set it so. So to ally you press the Green Long button above your Command Card. Then select the players Checkbox then press the Button that says Alliance. Then The Selected player has to accept it to become allies with you.
+Param/Value/BBB12BC6=
+Param/Value/BBD6BD2E=
+Param/Value/BD9C6570=
+Param/Value/BDB8EAAF=Help
+Param/Value/BF67DB89=Previous
+Param/Value/BFBDF467=Enabled
+Param/Value/BFF8C890=Deactivated [Default]
+Param/Value/C04A84A3=Turns: 
+Param/Value/C2CE2763=None
+Param/Value/C394B3E9=<s val="PageButton_Terr">X</s>
+Param/Value/C3D729CF=Card
+Param/Value/C5161ABB= - 
+Param/Value/C5A586FE=Version 0.6
+Param/Value/C5E9DFEF=</s>
+Param/Value/C5F673CE= controls 
+Param/Value/C81CD27C=Start Game City Ping
+Param/Value/C81E2CBA=
+Param/Value/C8EFB3D0=
+Param/Value/C99B5594=
+Param/Value/C9A5A5C4=Enabled 1/4
+Param/Value/CA25EDE9=3
+Param/Value/CA349C69=
+Param/Value/CB84FEE8=60% [Default]
+Param/Value/CBF9329C=
+Param/Value/CC0D9354=80%
+Param/Value/CC408BDE= has been promoted to Moderator!
+Param/Value/CD945BCF=
+Param/Value/CEAC87DF=Disabled [Default]
+Param/Value/CF537AA1=<n/>
+Param/Value/CF9AD25C=
+Param/Value/D0F7653E=Ranked
+Param/Value/D10238A2= has claimed 
+Param/Value/D303A121=Deaths: 
+Param/Value/D3131263=1
+Param/Value/D3D77C4C= has been Banned!
+Param/Value/D45CB9E1=<s val="DebugDisplay">500</s>
+Param/Value/D45F1115=Inc
+Param/Value/D4C16B27=<s val="Header18">Waiting for New Players to Enter their Ranked Usernames...</s>
+Param/Value/D4C3AA99=Enabled 1/3
+Param/Value/D4EC20F1=The Percentage of cities[bases] requiered to win the game.
+Param/Value/D4EF7559=Wins: 
+Param/Value/D5CF20C8=60 [Default]
+Param/Value/D619C915=Debug
+Param/Value/D87067F5=Tips and Information Part 2
+Param/Value/D95B1322=
+Param/Value/D9832E82=<s val="AchievementFrameName_Prot"><s val="ModLeftSize20Bold">
+Param/Value/D98538BD=<s val="DebugDisplay"> 10</s>
+Param/Value/DA6AAEC9=
+Param/Value/DA9E3670=Turn Time
+Param/Value/DAA59A15=Accept
+Param/Value/DB1D44F9=Start Game City Ping
+Param/Value/DC0D54A5=
+Param/Value/DD0B60FE=
+Param/Value/DE0CA1C1=Kills: 
+Param/Value/DEE195BD=News: 
+Param/Value/DEF5A42B=Risk and You...
+Param/Value/DF430AF5=Tips and Information Part 1
+Param/Value/E1551B90=Wins
+Param/Value/E190F759=Not Scrolling Content
+Param/Value/E1F51BEB= has won!
+Param/Value/E1FEEE99=
+Param/Value/E29E94C7=
+Param/Value/E2C81D53=45
+Param/Value/E31EA307=</s><n/><s val="AchievementFrameDescription_Prot">
+Param/Value/E37277C3=
+Param/Value/E43F3D42=<img path="Assets\Textures\icon-mineral-protoss.dds" width="21" height="21"/>
+Param/Value/E5791ECB= has been Banned due to 3 Kicks!
+Param/Value/E579E234=Bounty
+Param/Value/E5D12869=Choose how the Game decides which close unit is your New Defender
+Param/Value/E6604FFF=Enabled 1/6
+Param/Value/E6F63D3D=Death: 
+Param/Value/E6FAB2F5=Closes the Information Panel
+Param/Value/E89BEB67=Disabled [Default]
+Param/Value/EA6DB675=Show Profile to Other Players
+Param/Value/EACD7588=60 [Default]
+Param/Value/EB9EDD94=75
+Param/Value/EBD38F6A=Alliance
+Param/Value/EDAF7AEC=
+Param/Value/EE0723FC=History Panel is Disabled due to the Host Setting: Fog Enabled
+Param/Value/EF1A8527=
+Param/Value/EF92D767=Shows or Hides the Alliance Panel.
+Param/Value/EFCA13C8=
+Param/Value/F168A524=Whether you can see your enemy units or not.
+Param/Value/F37002FD=Enabled [Default]
+Param/Value/F692FC99=Turn Time
+Param/Value/F6DA6C17=Active
+Param/Value/F7A92BB5=<n/>
+Param/Value/F9B5D5CB=
+Param/Value/FAA1DAA8=</s><n/><n/><s val="AchievementFrameDescription_Prot">Reward:</s> 
+Param/Value/FAA8FEBD=If you're familiar to WarCraft III Risk or the original StarCraft Risk for that matter, then this map should be quite familiar in terms of both gameplay and features. For newcomers, read below.<n/><n/>Risk Revulsion is a StarCraft II remake of the popular board game, risk. Similar to the boardgame, each player begin with a limited amount of minerals for them to expand their influence by capturing countries. The more countries you capture, the more income you get, the stronger you become. When a country is captured, you'll be provided with free marines and additional income provided by your countries. This boost in income will be added on top of the original income of 4. You'll recieve your income at the start of a new turn. <n/><n/>When your influence or power has reached a certain thresshold, challenge your foes over the World Wide battlefield and prove your worth.<n/><n/>Take chances, take risks,<n/>Risk Revulsion!
+Param/Value/FAC0737F=<c val="FF0000">Warning!</c> - 
+Param/Value/FBC62DD2=The Length of Each Turn in Seconds.
+Param/Value/FCD888D9=<s val="AchievementToastInfo">0/
+Param/Value/FD2F1AC2=The Process of gaining minerals through the act of killing enemy units.
+Param/Value/FDCD31D3=Death Match
+Param/Value/FF4A13C0=Spawn
+Race/Name/Human=Human
+Race/Name/Terr=Terran
+Reward/Name/RiskNovice=Risk Novice
+TerrainTex/Name/AgriaConcrete=New Folsom Dirt
+TerrainTex/Name/AgriaCrops=Bel'Shir Dirt Dark
+TerrainTex/Name/AgriaDirtRough=Monlyth Bricks
+UI/HelpMenuDialogTechGlossary_Control_Unit/Category/TerranUnits=RISK UNITS
+UI/HelpMenuDialogTips_Control=GAME SETTINGS
+UI/HelpMenuDialogTutorials_Control=PATCH NOTES
+UI/MapSize0=
+UI/MapSize05=Epic
+UI/MapSize06=Super
+UI/ResourceToolTip0=Minerals are used to build your forces. Recieve more minerals by increasing your income.
+UI/ResourceToolTip1=This is your Current Army Size.
+UI/ResourceToolTip2=Cards are used to gain minerals in another method. Recieve more cards by taking over bases.
+UI/TeamColor12=Brown
+UI/TeamColor13=Light Green
+UI/TeamColor14=Dark Grey
+UI/TeamColor15=Pink
+Unit/Category/Terran=Terran
+Unit/Category/TerranStory=Terran
+Unit/Category/TerranUnits=Terran
+Unit/Name/Barracks22=Continent Spawn Zone
+Unit/Name/Barracks3=Barracks
+Unit/Name/GroundPathBlocker=Ground Path Blocker
+Unit/Name/HammerSecurity=Heavy Marauder
+Unit/Name/SiegeBreaker=Heavy Siege Tank
+Unit/Name/SpawnZone=Spawn Zone
+Unit/Name/VikingFighter=Viking
+Unit/Name/WarPig=Heavy Marine
+Unit/Name/WaterPathBlocker=Water Path Blocker
+Upgrade/Name/Achievements=Infested Marine
+Upgrade/Name/Achievements2=Marauder Camo
+Upgrade/Name/Achievements22=Murlock Marine
+Upgrade/Name/Achievements3=Warpig
+Upgrade/Name/Achievements32=Spectre
+Upgrade/Name/Achievements4=Siege Breaker
+Upgrade/Name/Achievements5=Merc Marauder
+Upgrade/Name/Achievements6=Tauren Marine
+Upgrade/Name/Achievements7=Merc Viking
+Upgrade/Name/DialogDelayFix=Dialog Delay Fix
+Variant001/ModeDesc=Unranked Game with the Multiple settings that are votable.
+Variant001/ModeName=Custom
+Variant001/Name=Risk Revulsion
+Variant002/ModeDesc=Ranked Game with the Default settings
+Variant002/ModeName=Quick Game
+Variant005/CategoryDesc=All settings may be customized.
+Variant005/CategoryName=Strategy
+Variant005/ModeDesc=All settings may be customized.
+Variant005/ModeName=Risk
+e_gameUIStringDetector=Defender
+e_gameUIStringDetectorColon=Defender: 

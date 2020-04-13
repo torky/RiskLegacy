@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Catalog>
+    <CCursor id="Arrow_Prot">
+        <Texture value="Assets\Textures\cursor-bnet.dds"/>
+    </CCursor>
+    <CCursor id="Crosshairs_Prot">
+        <Texture value="Assets\Textures\cursor-bnet.dds"/>
+    </CCursor>
+    <CCursor id="DragScroll_Prot">
+        <Texture value="Assets\Textures\cursor-bnet.dds"/>
+    </CCursor>
+    <CCursor id="EdgeScrollBottomLeft_Prot">
+        <Texture value="Assets\Textures\cursor-edgescroll-bottom-left.dds"/>
+    </CCursor>
+    <CCursor id="EdgeScrollBottomRight_Prot">
+        <Texture value="Assets\Textures\cursor-edgescroll-bottom-right.dds"/>
+    </CCursor>
+    <CCursor id="EdgeScrollBottom_Prot">
+        <Texture value="Assets\Textures\cursor-edgescroll-bottom.dds"/>
+    </CCursor>
+    <CCursor id="EdgeScrollLeft_Prot">
+        <Texture value="Assets\Textures\cursor-edgescroll-left.dds"/>
+    </CCursor>
+    <CCursor id="EdgeScrollRight_Prot">
+        <Texture value="Assets\Textures\cursor-edgescroll-right.dds"/>
+    </CCursor>
+    <CCursor id="EdgeScrollTopLeft_Prot">
+        <Texture value="Assets\Textures\cursor-edgescroll-top-left.dds"/>
+    </CCursor>
+    <CCursor id="EdgeScrollTopRight_Prot">
+        <Texture value="Assets\Textures\cursor-edgescroll-top-right.dds"/>
+    </CCursor>
+    <CCursor id="EdgeScrollTop_Prot">
+        <Texture value="Assets\Textures\cursor-edgescroll-top.dds"/>
+    </CCursor>
+    <CCursor id="EditBar_Terr">
+        <Texture value="Assets\Textures\cursor-ibeam-bnet.dds"/>
+    </CCursor>
+    <CCursor id="Wait_Prot">
+        <Texture value="Assets\Textures\cursor-bnet.dds"/>
+    </CCursor>
+</Catalog>

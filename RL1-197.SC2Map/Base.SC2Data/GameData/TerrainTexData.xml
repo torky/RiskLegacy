@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Catalog>
+    <CTerrainTex id="AgriaConcrete">
+        <Texture value="Assets\Textures\NewFolsom_Dirt.dds"/>
+        <Normalmap value="Assets\Textures\NewFolsom_DirtNormal.dds"/>
+        <EditorIcon value="Assets\Textures\ui-editoricon-NewFolsom_Dirt.dds"/>
+        <DoodadEntry index="0">
+            <Model value="RockMixNewFolsom"/>
+            <RandomRotation value="1"/>
+            <Probability value="0.100000"/>
+            <PlacementRadius value="1.000000"/>
+        </DoodadEntry>
+    </CTerrainTex>
+    <CTerrainTex id="AgriaCrops">
+        <Texture value="Assets\Textures\Bel_Shir_Dirt_Dark.dds"/>
+        <Normalmap value="Assets\Textures\Bel_Shir_Dirt_DarkNormal.dds"/>
+        <EditorIcon value="Assets\Textures\ui-editoricon-Bel_Shir_Dirt_Dark.dds"/>
+        <DoodadEntry index="0">
+            <Model value="PlantMixBelShir"/>
+            <RandomRotation value="1"/>
+            <Probability value="0.100000"/>
+            <PlacementRadius value="1.000000"/>
+        </DoodadEntry>
+        <DoodadEntry>
+            <Model value="RockMixBelShir"/>
+            <RandomRotation value="1"/>
+            <Probability value="0.200000"/>
+            <PlacementRadius value="1.000000"/>
+        </DoodadEntry>
+    </CTerrainTex>
+    <CTerrainTex id="AgriaDirtRough">
+        <Texture value="Assets\Textures\Monlyth_Bricks.dds"/>
+        <Normalmap value="Assets\Textures\Monlyth_BricksNormal.dds"/>
+        <EditorIcon value="Assets\Textures\ui-editoricon-Monlyth_Bricks.dds"/>
+        <DoodadEntry index="0">
+            <Model value="RockMixMonlyth"/>
+            <RandomRotation value="1"/>
+            <Probability value="0.100000"/>
+            <PlacementRadius value="1.000000"/>
+        </DoodadEntry>
+    </CTerrainTex>
+</Catalog>

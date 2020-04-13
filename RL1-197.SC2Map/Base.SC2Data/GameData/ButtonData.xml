@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CButton id="Banshee">
+        <TooltipFlags index="ShowSupply" value="0"/>
+    </CButton>
+    <CButton id="Barracks"/>
+    <CButton id="Battlecruiser">
+        <TooltipFlags index="ShowSupply" value="0"/>
+    </CButton>
+    <!--s-->
+    <CButton id="BuildHercules"/>
+    <CButton id="BuildHercules2">
+        <Icon value="Assets\Textures\btn-unit-terran-hercules.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-hercules.dds"/>
+        <EditorCategories value="Race:Terran"/>
+        <TooltipFlags index="ShowSupply" value="0"/>
+    </CButton>
+    <CButton id="BuildScienceVessel">
+        <TooltipFlags index="ShowSupply" value="0"/>
+        <Hotkey value="Button/Hotkey/Science Vessel"/>
+    </CButton>
+    <CButton id="CancelBuilding">
+        <Hotkey value="Button/Hotkey/Cancel"/>
+    </CButton>
+    <CButton id="Carrier">
+        <TooltipFlags index="ShowSupply" value="0"/>
+        <Icon value="Assets\Textures\btn-building-hornerhan-assaultgalleon.dds"/>
+        <AlertIcon value="Assets\assault gallen\assault gallen\btn-building-hornerhan-assaultgalleon.dds"/>
+    </CButton>
+    <!--asd-->
+    <CButton id="ConcussiveGrenade"/>
+    <CButton id="Goliath">
+        <TooltipFlags index="ShowSupply" value="0"/>
+    </CButton>
+    <CButton id="Heal">
+        <Icon value="Assets\assault gallen\assault gallen\buttons\btn-upgrade-terran-nova-healingmastery.dds"/>
+    </CButton>
+    <CButton id="Hellion">
+        <TooltipFlags index="ShowSupply" value="0"/>
+    </CButton>
+    <CButton id="Interceptor">
+        <Icon value="Assets\assault gallen\btn-unit-collection-interceptor-junker.dds"/>
+        <AlertIcon value="Assets\assault gallen\btn-unit-collection-interceptor-junker.dds"/>
+        <TooltipImage value="Assets\assault gallen\btn-unit-collection-interceptor-junker.dds"/>
+    </CButton>
+    <CButton id="KillerPhantasm">
+        <TooltipFlags index="ShowSupply" value="0"/>
+        <Icon value="Assets\Textures\btn-ability-hornerhan-raven-analyzetarget.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-hornerhan-raven-analyzetarget.dds"/>
+    </CButton>
+    <CButton id="Marauder2">
+        <Icon value="Assets\Textures\btn-unit-terran-marauder.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-marauder.dds"/>
+        <EditorCategories value="Race:Terran"/>
+        <TooltipFlags index="ShowSupply" value="0"/>
+    </CButton>
+    <CButton id="Marine">
+        <TooltipFlags index="ShowSupply" value="0"/>
+    </CButton>
+    <CButton id="Medic">
+        <TooltipFlags index="ShowSupply" value="0"/>
+    </CButton>
+    <CButton id="MultiLockTargetingSystem">
+        <TooltipFlags index="ShowRequirements" value="0"/>
+        <AlertIcon value="Assets\Textures\btn-techupgrade-terran-multilocktargetingsystem.dds"/>
+        <TintRacially value="0"/>
+        <Universal value="1"/>
+    </CButton>
+    <CButton id="NanoRepair">
+        <Icon value="Assets\Textures\btn-progression-hornerhan-11-mechhealing.dds"/>
+        <AlertIcon value="Assets\Textures\btn-progression-hornerhan-11-mechhealing.dds"/>
+    </CButton>
+    <CButton id="PermanentlyCloakedZeratul">
+        <Icon value="Assets\Textures\nova coop_lvl 12_raven upgrades.dds"/>
+    </CButton>
+    <!--Predator-->
+    <CButton id="Predator"/>
+    <CButton id="SCV">
+        <TooltipFlags index="ShowSupply" value="0"/>
+    </CButton>
+    <CButton id="SelectDefense">
+        <Icon value="Assets\Textures\btn-ability-protoss-gravitonbeam.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-gravitonbeam.dds"/>
+    </CButton>
+    <CButton id="SelectDefense2">
+        <Icon value="Assets\Textures\btn-tips-relicshrine.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-gravitonbeam.dds"/>
+    </CButton>
+    <CButton id="SelectDefense22">
+        <Icon value="Assets\Textures\btn-ability-terran-armnuke.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-gravitonbeam.dds"/>
+    </CButton>
+    <CButton id="SiegeTank">
+        <TooltipFlags index="ShowSupply" value="0"/>
+    </CButton>
+    <CButton id="Thor">
+        <TooltipFlags index="ShowSupply" value="0"/>
+    </CButton>
+    <!--l-->
+    <CButton id="TossGrenade">
+        <EditorCategories value=""/>
+        <TintRacially value="0"/>
+    </CButton>
+    <CButton id="TrainConscriptMarine"/>
+    <CButton id="VikingFighter">
+        <TooltipFlags index="ShowSupply" value="0"/>
+    </CButton>
+    <CButton id="Vulture">
+        <TooltipFlags index="ShowSupply" value="0"/>
+    </CButton>
+</Catalog>

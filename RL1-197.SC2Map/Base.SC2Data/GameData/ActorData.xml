@@ -1,0 +1,688 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CActorUnit id="Banshee">
+        <On Terms="Behavior.Banshee.On" Send="ModelSwap Banshee"/>
+        <On Terms="Behavior.MercBanshee.On" Send="ModelSwap DuskWing"/>
+        <On Terms="Behavior.JunkerBanshee.On" Send="ModelSwap JunkerBanshee"/>
+        <On Terms="Behavior.UmojanBanshee.On" Send="ModelSwap UmojanBanshee"/>
+        <On Terms="Behavior.CovertopsBanshee.On" Send="ModelSwap CovertopsBanshee"/>
+        <On Terms="Behavior.BlackopsBanshee.On" Send="ModelSwap BlackopsBanshee"/>
+        <BarOffset value="30"/>
+        <BarWidth value="50"/>
+    </CActorUnit>
+    <!--                                                                                         -->
+    <!-- Barracks .............................................................................. -->
+    <!--                                                                                         -->
+    <CActorUnit id="Barracks">
+        <BarOffset value="70"/>
+        <BarWidth value="100"/>
+        <StatusBarFlags index="Shields" value="0"/>
+        <StatusBarFlags index="Life" value="0"/>
+        <StatusBarFlags index="Energy" value="0"/>
+        <StatusBarFlags index="Cargo" value="0"/>
+        <StatusBarFlags index="Progress" value="0"/>
+        <Scale value="1.200000"/>
+        <On Terms="Behavior.Barracks.On" Send="ModelSwap Barracks"/>
+        <On Terms="Behavior.MercBarracks.On" Send="ModelSwap MercCompound"/>
+    </CActorUnit>
+    <CActorUnit id="Barracks2" parent="TerranBuildingFlyer" unitName="SpawnZone">
+        <Macros value="QueueAnim"/>
+        <Macros value="BuildAnim"/>
+        <On Terms="Behavior.ColonyInfestation.On" Send="Create InfestationBarracks"/>
+        <On Terms="UnitDeathCustomize.BarracksFlying" Send="DeathCustomize Flying"/>
+        <HostSiteOps Ops="SOpBankerBuilding"/>
+        <DeathArray index="Normal" ModelLink="BarracksDeath" SoundLink=""/>
+        <DeathArray index="UnderConstruction" ModelLink="TerranLargeBuildingDeath" SoundLink="Barracks_Explode"/>
+        <DeathCustoms ModelLink="BarracksFlyDeath" SoundLink="Barracks_Explode" Name="Flying"/>
+        <PlacementSound value="Terran_BuildingPlacement"/>
+        <BarOffset value="70"/>
+        <BarWidth value="1"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\wireframe-general-circleofpower-protoss.dds"/>
+        </GroupIcon>
+        <HighlightTooltip value="Unit/Name/Barracks2"/>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-terran-buildingarmor.dds"/>
+        <NameOffset value="110"/>
+        <SoundArray index="Ready" value="Barracks_What"/>
+        <SoundArray index="Construction" value="Terran_ConstructionWhat"/>
+        <StatusBarFlags index="Shields" value="0"/>
+        <StatusBarFlags index="Life" value="0"/>
+        <StatusBarFlags index="Energy" value="0"/>
+        <StatusBarFlags index="Cargo" value="0"/>
+        <StatusBarFlags index="Progress" value="0"/>
+        <StatusBarFlags index="Duration" value="0"/>
+        <Wireframe>
+            <Image value="Assets\Textures\wireframe-general-circleofpower-protoss.dds"/>
+        </Wireframe>
+        <UnitIcon value="Assets\Textures\wireframe-general-circleofpower-protoss.dds"/>
+        <UnitFlags index="ShowBlobShadow" value="0"/>
+    </CActorUnit>
+    <CActorUnit id="Barracks22" parent="TerranBuildingFlyer" unitName="Barracks2">
+        <Macros value="QueueAnim"/>
+        <Macros value="BuildAnim"/>
+        <On Terms="Behavior.ColonyInfestation.On" Send="Create InfestationBarracks"/>
+        <On Terms="UnitDeathCustomize.BarracksFlying" Send="DeathCustomize Flying"/>
+        <HostSiteOps Ops="SOpBankerBuilding"/>
+        <Model value="SpawnZone2"/>
+        <BuildModel value="SpawnZone2"/>
+        <DeathArray index="Normal" ModelLink="BarracksDeath" SoundLink=""/>
+        <DeathArray index="UnderConstruction" ModelLink="TerranLargeBuildingDeath" SoundLink="Barracks_Explode"/>
+        <DeathCustoms ModelLink="BarracksFlyDeath" SoundLink="Barracks_Explode" Name="Flying"/>
+        <PlacementModel value="SpawnZone2"/>
+        <PlacementSound value="Terran_BuildingPlacement"/>
+        <BarOffset value="70"/>
+        <BarWidth value="1"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\wireframe-general-circleofpower-protoss.dds"/>
+        </GroupIcon>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-terran-buildingarmor.dds"/>
+        <NameOffset value="110"/>
+        <SoundArray index="Ready" value="Barracks_What"/>
+        <SoundArray index="Construction" value="Terran_ConstructionWhat"/>
+        <StatusBarFlags index="Shields" value="0"/>
+        <StatusBarFlags index="Life" value="0"/>
+        <StatusBarFlags index="Energy" value="0"/>
+        <StatusBarFlags index="Cargo" value="0"/>
+        <StatusBarFlags index="Progress" value="0"/>
+        <StatusBarFlags index="Duration" value="0"/>
+        <Wireframe>
+            <Image value="Assets\Textures\wireframe-general-circleofpower-protoss.dds"/>
+        </Wireframe>
+        <HighlightTooltip value="Unit/Name/Barracks22"/>
+    </CActorUnit>
+    <CActorUnit id="Barracks3" parent="TerranBuildingFlyer" unitName="SpawnZone2">
+        <Macros value="QueueAnim"/>
+        <Macros value="BuildAnim"/>
+        <On Terms="Behavior.ColonyInfestation.On" Send="Create InfestationBarracks"/>
+        <On Terms="UnitDeathCustomize.BarracksFlying" Send="DeathCustomize Flying"/>
+        <HostSiteOps Ops="SOpBankerUnitBuilding"/>
+        <Model value="Barracks"/>
+        <Scale value="1.200000"/>
+        <BuildModel value="Barracks"/>
+        <DeathArray index="Normal" ModelLink="BarracksDeath" SoundLink=""/>
+        <DeathArray index="UnderConstruction" ModelLink="TerranLargeBuildingDeath" SoundLink="Barracks_Explode"/>
+        <DeathCustoms ModelLink="BarracksFlyDeath" SoundLink="Barracks_Explode" Name="Flying"/>
+        <PlacementModel value="BarracksPlacement"/>
+        <PlacementSound value="Terran_BuildingPlacement"/>
+        <PortraitModel value="AdjutantPortrait"/>
+        <BarOffset value="70"/>
+        <BarWidth value="1"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-Terran-Barracks.dds"/>
+        </GroupIcon>
+        <GroupSoundArray index="What" value="Barracks_GroupWhat"/>
+        <GroupSoundArray index="Yes" value="Barracks_GroupYes"/>
+        <GroupSoundArray index="Attack" value="Barracks_GroupAttack"/>
+        <GroupSoundArray index="Board" value="Barracks_GroupBoard"/>
+        <HeroIcon value="Assets\Textures\btn-building-terran-barracks.dds"/>
+        <HighlightTooltip value="Unit/Name/Barracks3"/>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-terran-buildingarmor.dds"/>
+        <NameOffset value="110"/>
+        <SoundArray index="Ready" value="Barracks_What"/>
+        <SoundArray index="Construction" value="Terran_ConstructionWhat"/>
+        <StatusBarFlags index="Shields" value="0"/>
+        <StatusBarFlags index="Life" value="0"/>
+        <StatusBarFlags index="Energy" value="0"/>
+        <StatusBarFlags index="Cargo" value="0"/>
+        <StatusBarFlags index="Duration" value="0"/>
+        <UnitIcon value="Assets\Textures\btn-building-terran-barracks.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-Terran-Barracks.dds"/>
+        </Wireframe>
+    </CActorUnit>
+    <CActorSplat id="BarracksSplat">
+        <On index="0" removed="1"/>
+        <On index="1" removed="1"/>
+        <On index="2" removed="1"/>
+        <On index="3" removed="1"/>
+        <On index="4" removed="1"/>
+        <Model value="Invisible"/>
+    </CActorSplat>
+    <!--                                                                                         -->
+    <!-- Battlecruiser ......................................................................... -->
+    <!--                                                                                         -->
+    <CActorUnit id="Battlecruiser">
+        <On Terms="Behavior.MercBattlecruiser.On" Send="ModelSwap Loki"/>
+        <On Terms="Behavior.CovertopsBattlecruiser.On" Send="ModelSwap CovertopsBattlecruiser"/>
+        <On Terms="Behavior.JunkerBattlecruiser.On" Send="ModelSwap JunkerBattlecruiser"/>
+        <On Terms="Behavior.GorgonBattlecruiser.On" Send="ModelSwap GorgonBattlecruiser"/>
+        <On Terms="Behavior.UmojanBattlecruiser.On" Send="ModelSwap UmojanBattlecruiser"/>
+        <On Terms="Behavior.CerberusBattlecruiser.On" Send="ModelSwap CerberusBattlecruiser"/>
+        <On Terms="Behavior.Battlecruiser.On" Send="ModelSwap Battlecruiser"/>
+        <BarOffset value="35"/>
+        <BarWidth value="70"/>
+        <TerrainSquibs index="0">
+            <MovementDistance value="0.150000,0.150000"/>
+            <IdlePeriod value="0.250000,0.500000"/>
+            <RangeDown value="5.000000"/>
+            <RangeDownFade value="1.000000"/>
+            <Visuals index="0" TerrainPhysicsMaterial="" ActorModel="" ModelLink=""/>
+        </TerrainSquibs>
+    </CActorUnit>
+    <CActorRange id="DefenderGuide" parent="RangeAbil" abil="SelectDefender2">
+        <Aliases value="_GuideVisual"/>
+        <Aliases value="_Scalable"/>
+        <Inherits index="Visibility" value="0"/>
+        <EditorCategories value=""/>
+        <Host Subject="_GuideRegion"/>
+        <HostSiteOps Ops=""/>
+        <Abil Link="SelectDefender"/>
+        <Range value="3.000000"/>
+        <Icon value="Assets\Textures\radaricon1.dds"/>
+        <IconScale value="0.010000,0.005000"/>
+        <IconArcLength value="2.000000"/>
+        <IconTint value="175,255,255,255"/>
+    </CActorRange>
+    <!--                                                                                         -->
+    <!-- DestructibleKorhalFlag ................................................................ -->
+    <!--                                                                                         -->
+    <CActorUnit id="DestructibleKorhalFlag">
+        <FogVisibility value="Hidden"/>
+    </CActorUnit>
+    <!--                                                                                         -->
+    <!-- Diamondback ........................................................................... -->
+    <!--                                                                                         -->
+    <CActorUnit id="Diamondback">
+        <BarOffset value="50"/>
+        <BarWidth value="70"/>
+    </CActorUnit>
+    <!--                                                                                         -->
+    <!-- Factory ............................................................................... -->
+    <!--                                                                                         -->
+    <CActorUnit id="Factory">
+        <StatusBarFlags index="Shields" value="0"/>
+        <StatusBarFlags index="Life" value="0"/>
+        <StatusBarFlags index="Energy" value="0"/>
+        <StatusBarFlags index="Cargo" value="0"/>
+        <StatusBarFlags index="Progress" value="0"/>
+    </CActorUnit>
+    <!--                                                                                         -->
+    <!-- Ghost ................................................................................. -->
+    <!--                                                                                         -->
+    <CActorUnit id="Ghost">
+        <PlacementModel value="Invisible"/>
+        <BarOffset value="25"/>
+        <BarWidth value="20"/>
+    </CActorUnit>
+    <CActorUnit id="Ghost2" parent="GenericUnitBase" unitName="Turn50">
+        <Macros value="UnloadDropAnim"/>
+        <On Terms="Abil.TacNukeStrike.SourceCastStart" Send="AnimPlay SpellA Spell,A"/>
+        <On Terms="Abil.TacNukeStrike.SourceCastStop" Send="AnimClear SpellA"/>
+        <On Terms="Abil.TacNukeStrike.SourceChannelStart" Send="AnimPlay SpellB Spell,B PlayForever"/>
+        <On Terms="Abil.TacNukeStrike.SourceChannelStop" Send="AnimClear SpellB"/>
+        <On Terms="Abil.TacNukeStrike.SourceFinishStart" Send="AnimPlay SpellC Spell,C"/>
+        <On Terms="Abil.TacNukeStrike.SourceFinishStop" Send="AnimClear SpellC"/>
+        <On Terms="Abil.Snipe.SourceCastStart" Send="AnimBaselineStop"/>
+        <On Terms="Abil.Snipe.SourceCastStart" Send="AnimPlay SpellA Spell,A"/>
+        <On Terms="Abil.Snipe.SourceCastStop" Send="AnimClear SpellA"/>
+        <On Terms="Abil.Snipe.SourceCastStop" Send="AnimBaselineStart"/>
+        <On Terms="Abil.Snipe.SourceChannelStart" Send="AnimPlay SpellB Spell,B PlayForever"/>
+        <On Terms="Abil.Snipe.SourceChannelStop" Send="AnimClear SpellB"/>
+        <On Terms="Abil.Snipe.SourceFinishStart" Send="AnimPlay SpellC Spell,C"/>
+        <On Terms="UnitMovementUpdate.*.Walk; AnimPlaying SpellC" Send="AnimClear SpellC"/>
+        <On Terms="Abil.EMP.SourceCastStart" Send="AnimPlay SpellC Spell,C 0 0.000000 0.300000"/>
+        <On Terms="Abil.attack.ReadyStart" Send="AnimGroupApply Ready"/>
+        <On Terms="Behavior.GhostHoldFireB.On" Send="AnimGroupApply Cover"/>
+        <On Terms="Behavior.GhostHoldFireB.On" Send="AnimPlay MorphStart Cover,Start"/>
+        <On Terms="Behavior.GhostHoldFireB.On" Send="AnimClear MorphEnd"/>
+        <On Terms="Behavior.GhostHoldFireB.On" Send="Create Ghost_HoldFire_Sound"/>
+        <On Terms="Behavior.GhostHoldFireB.Off" Send="AnimPlay MorphEnd Cover,End"/>
+        <On Terms="Behavior.GhostHoldFireB.Off" Send="AnimClear MorphStart"/>
+        <On Terms="Behavior.GhostHoldFireB.Off" Send="AnimGroupRemove Cover"/>
+        <On Terms="Behavior.GhostHoldFireB.Off" Send="Create Ghost_WeaponsFree_Sound"/>
+        <On Terms="WeaponStart.*.AttackStart; WeaponTargetElevation GE 20.000000" Send="AnimBracketStart Attack Attack,Superior"/>
+        <On Terms="WeaponStart.*.AttackStart; WeaponTargetElevation LE -20.000000" Send="AnimBracketStart Attack Attack,Inferior"/>
+        <On Terms="WeaponStart.*.AttackStart" Send="AnimBracketStart Attack Attack"/>
+        <On Terms="WeaponStop.*.AttackStop" Send="AnimBracketStop Attack"/>
+        <On Terms="Abil.attack.ReadyStop" Send="AnimGroupRemove Ready"/>
+        <Model value="Invisible"/>
+        <AnimBlendTime value="-0.800000"/>
+        <BuildModel value="Invisible"/>
+        <DeathArray index="Normal" ModelLink="GhostDeath" SoundLink="Ghost_Explode"/>
+        <DeathArray index="Blast" ModelLink="GhostDeathBlast"/>
+        <DeathArray index="Disintegrate" ModelLink="GhostDeathAcid" SoundLink="Uni_DeathFXAcid"/>
+        <DeathArray index="Eviscerate" ModelLink="GhostDeathEviscerate" SoundLink="Uni_DeathFXEviscerate"/>
+        <DeathArray index="Fire" ModelLink="GhostDeathFire" SoundLink="Uni_DeathFXFire"/>
+        <PlacementModel value="Invisible"/>
+        <PortraitModel value="Invisible"/>
+        <WalkAnimMoveSpeed value="2.25"/>
+        <AbilSoundArray AbilCmd="GhostCloak,On" Sound="Ghost_CloakOnVO"/>
+        <AbilSoundArray AbilCmd="EMP,Execute" Sound="Ghost_EmpVO"/>
+        <AbilSoundArray AbilCmd="TacNukeStrike,Execute" Sound="Ghost_NuclearStrikeVO"/>
+        <BarOffset value="50"/>
+        <BarWidth value="42"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-Terran-Ghost.dds"/>
+        </GroupIcon>
+        <HeroIcon value="Assets\Textures\btn-unit-terran-ghost.dds"/>
+        <HighlightTooltip value="Unit/Name/Ghost2"/>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel0.dds"/>
+        <SelectAbilCmd value="EMP,Execute"/>
+        <SoundArray index="Ready" value="Ghost_Ready"/>
+        <SoundArray index="Help" value="Ghost_Help"/>
+        <SoundArray index="What" value="Ghost_What"/>
+        <SoundArray index="Yes" value="Ghost_Yes"/>
+        <SoundArray index="Attack" value="Ghost_Attack"/>
+        <SoundArray index="Pissed" value="Ghost_Pissed"/>
+        <UnitIcon value="Assets\Textures\btn-unit-terran-ghost.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-Terran-Ghost.dds"/>
+        </Wireframe>
+    </CActorUnit>
+    <CActorUnit id="Ghost22" parent="GenericUnitBase" unitName="NoPresentNukes">
+        <Macros value="UnloadDropAnim"/>
+        <On Terms="Abil.TacNukeStrike.SourceCastStart" Send="AnimPlay SpellA Spell,A"/>
+        <On Terms="Abil.TacNukeStrike.SourceCastStop" Send="AnimClear SpellA"/>
+        <On Terms="Abil.TacNukeStrike.SourceChannelStart" Send="AnimPlay SpellB Spell,B PlayForever"/>
+        <On Terms="Abil.TacNukeStrike.SourceChannelStop" Send="AnimClear SpellB"/>
+        <On Terms="Abil.TacNukeStrike.SourceFinishStart" Send="AnimPlay SpellC Spell,C"/>
+        <On Terms="Abil.TacNukeStrike.SourceFinishStop" Send="AnimClear SpellC"/>
+        <On Terms="Abil.Snipe.SourceCastStart" Send="AnimBaselineStop"/>
+        <On Terms="Abil.Snipe.SourceCastStart" Send="AnimPlay SpellA Spell,A"/>
+        <On Terms="Abil.Snipe.SourceCastStop" Send="AnimClear SpellA"/>
+        <On Terms="Abil.Snipe.SourceCastStop" Send="AnimBaselineStart"/>
+        <On Terms="Abil.Snipe.SourceChannelStart" Send="AnimPlay SpellB Spell,B PlayForever"/>
+        <On Terms="Abil.Snipe.SourceChannelStop" Send="AnimClear SpellB"/>
+        <On Terms="Abil.Snipe.SourceFinishStart" Send="AnimPlay SpellC Spell,C"/>
+        <On Terms="UnitMovementUpdate.*.Walk; AnimPlaying SpellC" Send="AnimClear SpellC"/>
+        <On Terms="Abil.EMP.SourceCastStart" Send="AnimPlay SpellC Spell,C 0 0.000000 0.300000"/>
+        <On Terms="Abil.attack.ReadyStart" Send="AnimGroupApply Ready"/>
+        <On Terms="Behavior.GhostHoldFireB.On" Send="AnimGroupApply Cover"/>
+        <On Terms="Behavior.GhostHoldFireB.On" Send="AnimPlay MorphStart Cover,Start"/>
+        <On Terms="Behavior.GhostHoldFireB.On" Send="AnimClear MorphEnd"/>
+        <On Terms="Behavior.GhostHoldFireB.On" Send="Create Ghost_HoldFire_Sound"/>
+        <On Terms="Behavior.GhostHoldFireB.Off" Send="AnimPlay MorphEnd Cover,End"/>
+        <On Terms="Behavior.GhostHoldFireB.Off" Send="AnimClear MorphStart"/>
+        <On Terms="Behavior.GhostHoldFireB.Off" Send="AnimGroupRemove Cover"/>
+        <On Terms="Behavior.GhostHoldFireB.Off" Send="Create Ghost_WeaponsFree_Sound"/>
+        <On Terms="WeaponStart.*.AttackStart; WeaponTargetElevation GE 20.000000" Send="AnimBracketStart Attack Attack,Superior"/>
+        <On Terms="WeaponStart.*.AttackStart; WeaponTargetElevation LE -20.000000" Send="AnimBracketStart Attack Attack,Inferior"/>
+        <On Terms="WeaponStart.*.AttackStart" Send="AnimBracketStart Attack Attack"/>
+        <On Terms="WeaponStop.*.AttackStop" Send="AnimBracketStop Attack"/>
+        <On Terms="Abil.attack.ReadyStop" Send="AnimGroupRemove Ready"/>
+        <Model value="Invisible"/>
+        <AnimBlendTime value="-0.800000"/>
+        <BuildModel value="Invisible"/>
+        <DeathArray index="Normal" ModelLink="GhostDeath" SoundLink="Ghost_Explode"/>
+        <DeathArray index="Blast" ModelLink="GhostDeathBlast"/>
+        <DeathArray index="Disintegrate" ModelLink="GhostDeathAcid" SoundLink="Uni_DeathFXAcid"/>
+        <DeathArray index="Eviscerate" ModelLink="GhostDeathEviscerate" SoundLink="Uni_DeathFXEviscerate"/>
+        <DeathArray index="Fire" ModelLink="GhostDeathFire" SoundLink="Uni_DeathFXFire"/>
+        <PlacementModel value="Invisible"/>
+        <PortraitModel value="Invisible"/>
+        <WalkAnimMoveSpeed value="2.25"/>
+        <AbilSoundArray AbilCmd="GhostCloak,On" Sound="Ghost_CloakOnVO"/>
+        <AbilSoundArray AbilCmd="EMP,Execute" Sound="Ghost_EmpVO"/>
+        <AbilSoundArray AbilCmd="TacNukeStrike,Execute" Sound="Ghost_NuclearStrikeVO"/>
+        <BarOffset value="50"/>
+        <BarWidth value="42"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-Terran-Ghost.dds"/>
+        </GroupIcon>
+        <HeroIcon value="Assets\Textures\btn-unit-terran-ghost.dds"/>
+        <HighlightTooltip value="Unit/Name/Ghost22"/>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel0.dds"/>
+        <SelectAbilCmd value="EMP,Execute"/>
+        <SoundArray index="Ready" value="Ghost_Ready"/>
+        <SoundArray index="Help" value="Ghost_Help"/>
+        <SoundArray index="What" value="Ghost_What"/>
+        <SoundArray index="Yes" value="Ghost_Yes"/>
+        <SoundArray index="Attack" value="Ghost_Attack"/>
+        <SoundArray index="Pissed" value="Ghost_Pissed"/>
+        <UnitIcon value="Assets\Textures\btn-unit-terran-ghost.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-Terran-Ghost.dds"/>
+        </Wireframe>
+    </CActorUnit>
+    <CActorModel id="GhostNukeCollateralFire">
+        <Scale value="2.000000"/>
+    </CActorModel>
+    <CActorSquib id="GhostNukeLaunch">
+        <Map index="None" Model="" Sound=""/>
+    </CActorSquib>
+    <!--                                                                                         -->
+    <!-- Goliath ............................................................................... -->
+    <!--                                                                                         -->
+    <CActorUnit id="Goliath">
+        <BarOffset value="40"/>
+        <BarWidth value="45"/>
+        <On Terms="Behavior.MercGoliath.On" Send="ModelSwap MercGoliath"/>
+        <On Terms="Behavior.BlackopsGoliath.On" Send="ModelSwap BlackopsGoliath"/>
+        <On Terms="Behavior.Goliath.On" Send="ModelSwap Goliath"/>
+    </CActorUnit>
+    <!--                                                                                         -->
+    <!-- Hammer Security ....................................................................... -->
+    <!--                                                                                         -->
+    <CActorUnit id="HammerSecurity">
+        <BarOffset value="30"/>
+        <BarWidth value="25"/>
+    </CActorUnit>
+    <!--                                                                                         -->
+    <!-- Hellion ............................................................................... -->
+    <!--                                                                                         -->
+    <CActorUnit id="Hellion">
+        <BarOffset value="22"/>
+        <BarWidth value="30"/>
+        <TerrainSquibs index="0">
+            <MovementDistance value="0.150000,0.150000"/>
+            <IdlePeriod value="0.100000,0.250000"/>
+            <RangeUp value="1.000000"/>
+            <RangeDown value="1.000000"/>
+            <Visuals index="0" TerrainPhysicsMaterial="" ActorModel="" ModelLink=""/>
+        </TerrainSquibs>
+        <On Terms="Behavior.Hellion.On" Send="ModelSwap Hellion"/>
+        <On Terms="Behavior.MercHellion.On" Send="ModelSwap MercHellion"/>
+        <On Terms="Behavior.CovertopsHellion.On" Send="ModelSwap CovertopsHellion"/>
+        <On Terms="Behavior.UmojanHellion.On" Send="ModelSwap UmojanHellion"/>
+        <On Terms="Behavior.JunkerHellion.On" Send="ModelSwap JunkerHellion"/>
+        <On Terms="Behavior.CruiserHellion.On" Send="ModelSwap CruiserHellion"/>
+    </CActorUnit>
+    <!--                                                                                         -->
+    <!-- Hercules .............................................................................. -->
+    <!--                                                                                         -->
+    <CActorUnit id="Hercules">
+        <BarOffset value="25"/>
+        <BarWidth value="50"/>
+        <On Terms="Behavior.Medivac.On" Send="ModelSwap Medivac"/>
+        <On Terms="Behavior.Medivac.On" Send="SetTintColor 214,160,208"/>
+    </CActorUnit>
+    <CActorBeamSimple id="InterceptorAttackBeam">
+        <Model value="DarkInterceptorAttackBeam"/>
+    </CActorBeamSimple>
+    <!--                                                                                         -->
+    <!--                                                                                         -->
+    <!-- Merc Units ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!--                                                                                         -->
+    <!--                                                                                         -->
+    <!--                                                                                         -->
+    <!-- Kelmorian Miner ....................................................................... -->
+    <!--                                                                                         -->
+    <CActorUnit id="KelmorianMiner">
+        <BarWidth value="18"/>
+        <Scale value="1.200000"/>
+    </CActorUnit>
+    <CActorDoodad id="KorhalFlag">
+        <FogVisibility value="Hidden"/>
+    </CActorDoodad>
+    <!--                                                                                         -->
+    <!-- Marauder .............................................................................. -->
+    <!--                                                                                         -->
+    <CActorUnit id="Marauder">
+        <BarOffset value="25"/>
+        <BarWidth value="25"/>
+        <On Terms="Behavior.MarauderCamo.On" Send="ModelSwap DominionKillTeam 0"/>
+        <On Terms="Behavior.MercMarauder.On" Send="ModelSwap HammerSecurity 0"/>
+        <On Terms="Behavior.Marauder.On" Send="ModelSwap Marauder"/>
+        <On Terms="Behavior.DeluxeMarauder.On" Send="ModelSwap DeluxeMarauder"/>
+        <On Terms="Behavior.BlackopsMarauder.On" Send="ModelSwap BlackopsMarauder"/>
+        <On Terms="Behavior.CovertopsMarauder.On" Send="ModelSwap CovertopsMarauder"/>
+        <On Terms="Behavior.SwannMarauder.On" Send="ModelSwap SwannMarauder"/>
+        <On Terms="Behavior.JunkerMarauder.On" Send="ModelSwap JunkerMarauder"/>
+        <On Terms="Behavior.UmojanMarauder.On" Send="ModelSwap UmojanMarauder"/>
+        <TerrainSquibs index="0">
+            <MovementDistance value="0.150000,0.150000"/>
+            <IdlePeriod value="0.100000,0.250000"/>
+            <RangeUp value="0.800000"/>
+            <RangeDown value="0.800000"/>
+            <Visuals index="0" TerrainPhysicsMaterial="" ActorModel="" ModelLink=""/>
+        </TerrainSquibs>
+    </CActorUnit>
+    <!--                                                                                         -->
+    <!-- Marine ................................................................................ -->
+    <!--                                                                                         -->
+    <CActorUnit id="Marine">
+        <On Terms="Behavior.InfestedMarine.On" Send="ModelSwap InfestedTerran 0"/>
+        <On Terms="Behavior.Warpig.On" Send="ModelSwap WarPig 0"/>
+        <On Terms="Behavior.TaurenMarine.On" Send="ModelSwap TaurenSpaceMarine 0"/>
+        <On Terms="Behavior.MurlockMarine.On" Send="ModelSwap MurlocMarine"/>
+        <On Terms="Behavior.Spectre.On" Send="ModelSwap Spectre"/>
+        <On Terms="Behavior.Marine.On" Send="ModelSwap Marine"/>
+        <On Terms="Behavior.Nova.On" Send="ModelSwap Nova"/>
+        <On Terms="Behavior.JunkerMarine.On" Send="ModelSwap MarineJunker 0"/>
+        <On Terms="Behavior.BlackOpsMarine" Send="ModelSwap BlackOpsMarine 0"/>
+        <On Terms="Behavior.UmojanMarine" Send="ModelSwap UmojanMarine 0"/>
+        <Scale value="1.300000"/>
+        <TerrainSquibs index="0">
+            <Visuals index="0" TerrainPhysicsMaterial="" ActorModel="" ModelLink=""/>
+        </TerrainSquibs>
+        <BarOffset value="19"/>
+        <BarWidth value="18"/>
+    </CActorUnit>
+    <CActorUnit id="Marine2" parent="Marine" unitName="ConscriptMarine">
+        <On index="0" Terms="UnitBirth.ConscriptMarine"/>
+        <On index="1" Terms="UnitBirth.ConscriptMarine"/>
+        <On index="2" Terms="UnitRevive.ConscriptMarine"/>
+        <On index="3" Terms="UnitRevive.ConscriptMarine"/>
+        <On index="4" Terms="UnitConstruction.ConscriptMarine.Start"/>
+        <On index="5" Terms="UnitConstruction.ConscriptMarine.Finish"/>
+        <On index="67" Terms="UnitDeath.ConscriptMarine; AnimPlaying Cover"/>
+        <On Terms="Behavior.InfestedMarine.On" Send="ModelSwap InfestedTerran 0"/>
+        <On Terms="Behavior.Warpig.On" Send="ModelSwap WarPig 0"/>
+        <On Terms="Behavior.TaurenMarine.On" Send="ModelSwap TaurenSpaceMarine 0"/>
+        <On Terms="Behavior.MurlockMarine.On" Send="ModelSwap MurlocMarine"/>
+        <On Terms="Behavior.Spectre.On" Send="ModelSwap Spectre"/>
+        <On Terms="Behavior.Marine.On" Send="ModelSwap Marine"/>
+        <On Terms="Behavior.Nova.On" Send="ModelSwap Nova"/>
+        <Model value="Marine2"/>
+        <BuildModel value="Marine2"/>
+        <PlacementModel value="Marine2"/>
+        <HighlightTooltip value="Unit/Name/Marine2"/>
+    </CActorUnit>
+    <!--                                                                                         -->
+    <!-- Medic ................................................................................. -->
+    <!--                                                                                         -->
+    <CActorUnit id="Medic">
+        <BarOffset value="10"/>
+        <BarWidth value="18"/>
+        <Scale value="1.100000"/>
+        <On Terms="Behavior.EliteMedic.On" Send="ModelSwap EliteMedic"/>
+        <On Terms="Behavior.KillsquadMedic.On" Send="ModelSwap KillsquadMedic"/>
+        <On Terms="Behavior.Medic.On" Send="ModelSwap Medic"/>
+    </CActorUnit>
+    <!--                                                                                         -->
+    <!-- Missile turret extra campaign data..................................................... -->
+    <!--                                                                                         -->
+    <CActorUnit id="MissileTurret">
+        <Model value="RockLarge"/>
+        <BuildModel value="RockLarge"/>
+    </CActorUnit>
+    <!--                                                                                         -->
+    <!-- Doodad Death                                                                            -->
+    <!--                                                                                         -->
+    <CActorRegionCircle id="NukeTreeKiller">
+        <Radius value="25.000000"/>
+    </CActorRegionCircle>
+    <!-- Dummy Units for the AC Gluescreen End -->
+    <!-- Ping panel beacons, created via effects -->
+    <CActorModel id="PingPanelBeaconAttack"/>
+    <CActorModel id="PingPanelBeaconDefend"/>
+    <!--                                                                                         -->
+    <!-- Predator .............................................................................. -->
+    <!--                                                                                         -->
+    <CActorUnit id="Predator">
+        <BarOffset value="25"/>
+        <BarWidth value="30"/>
+    </CActorUnit>
+    <!--                                                                                         -->
+    <!-- Raven ................................................................................. -->
+    <!--                                                                                         -->
+    <CActorUnit id="Raven">
+        <BarOffset value="50"/>
+        <TerrainSquibs index="0">
+            <MovementDistance value="0.150000,0.150000"/>
+            <IdlePeriod value="0.250000,0.500000"/>
+            <RangeDown value="5.000000"/>
+            <RangeDownFade value="1.000000"/>
+            <Visuals index="0" TerrainPhysicsMaterial="" ActorModel="" ModelLink=""/>
+        </TerrainSquibs>
+    </CActorUnit>
+    <CActorUnit id="SCV">
+        <BarOffset value="10"/>
+        <BarWidth value="18"/>
+        <On Terms="Behavior.SCV.On" Send="ModelSwap SCV"/>
+        <On Terms="Behavior.InfestedSCV.On" Send="ModelSwap InfestedSCV"/>
+        <On Terms="Behavior.MercSCV.On" Send="ModelSwap MercSCV"/>
+        <On Terms="Behavior.UmojanSCV.On" Send="ModelSwap UmojanSCV"/>
+        <On Terms="Behavior.CovertopsSCV" Send="ModelSwap CovertopsSCV"/>
+        <On Terms="Behavior.MuleSCV" Send="ModelSwap MuleSCV"/>
+    </CActorUnit>
+    <!--                                                                                         -->
+    <!-- Science Vessel ........................................................................ -->
+    <!--                                                                                         -->
+    <CActorUnit id="ScienceVessel">
+        <BarOffset value="50"/>
+        <BarWidth value="60"/>
+        <On Terms="Behavior.SciencevesselMatrixDrone.On" Send="ModelSwap SciencevesselBiomechanicalDrone"/>
+        <On Terms="Behavior.Sciencevessel.On" Send="ModelSwap ScienceVessel"/>
+        <On Terms="Behavior.SciencevesselTargetingDrone.On" Send="ModelSwap SciencevesselHologram"/>
+        <On Terms="Behavior.SciencevesselPDD.On" Send="ModelSwap SciencevesselPDD"/>
+    </CActorUnit>
+    <!--                                                                                         -->
+    <!-- Siege Breaker ......................................................................... -->
+    <!--                                                                                         -->
+    <CActorUnit id="SiegeBreaker">
+        <BarOffset value="40"/>
+        <BarWidth value="51"/>
+    </CActorUnit>
+    <!--                                                                                         -->
+    <!-- Siege Tank ............................................................................ -->
+    <!--                                                                                         -->
+    <CActorUnit id="SiegeTank">
+        <BarOffset value="31"/>
+        <BarWidth value="50"/>
+        <On Terms="Behavior.SiegeBreaker.On" Send="ModelSwap SiegeBreaker 0"/>
+        <On Terms="Behavior.SiegeTank.On" Send="ModelSwap SiegeTank 0"/>
+        <On Terms="Behavior.MercBanshee.On" Send="SetTintColor 255,255,70"/>
+        <On Terms="Behavior.JunkerTank.On" Send="ModelSwap JunkerTank 0"/>
+        <On Terms="Behavior.CovertopsTank.On" Send="ModelSwap CovertopsTank 0"/>
+        <On Terms="Behavior.BlackopsTank.On" Send="ModelSwap BlackopsTank 0"/>
+        <On Terms="Behavior.UmojanTank.On" Send="ModelSwap UmojanTank 0"/>
+        <On Terms="Behavior.CommandoTank.On" Send="ModelSwap CommandoTank 0"/>
+        <TerrainSquibs index="0">
+            <MovementDistance value="0.150000,0.150000"/>
+            <IdlePeriod value="0.100000,0.250000"/>
+            <RangeUp value="1.000000"/>
+            <RangeDown value="1.000000"/>
+            <Visuals index="0" TerrainPhysicsMaterial="" ActorModel="" ModelLink=""/>
+        </TerrainSquibs>
+    </CActorUnit>
+    <CActorUnit id="SpacePlatformReactorPathingBlocker2">
+        <On Terms="UnitBirth.WaterPathBlocker" Send="Create"/>
+        <Model value="Invisible"/>
+        <EditorModel value="Ball1x1"/>
+        <BarHeight value="1"/>
+        <BarWidth value="1"/>
+    </CActorUnit>
+    <CActorUnit id="SpacePlatformReactorPathingBlocker22">
+        <On Terms="UnitBirth.GroundPathBlocker" Send="Create"/>
+        <Model value="Invisible"/>
+        <EditorModel value="Ball1x1"/>
+        <BarHeight value="1"/>
+        <BarWidth value="1"/>
+    </CActorUnit>
+    <!-- Ground AA attack.                                                                       -->
+    <CActorMissile id="SpartanCompanyAirAttackMissile">
+        <Model value="CycloneMissile"/>
+    </CActorMissile>
+    <!--                                                                                         -->
+    <!-- Starport .............................................................................. -->
+    <!--                                                                                         -->
+    <CActorUnit id="Starport">
+        <BarOffset value="70"/>
+        <BarWidth value="100"/>
+        <StatusBarFlags index="Shields" value="0"/>
+        <StatusBarFlags index="Life" value="0"/>
+        <StatusBarFlags index="Energy" value="0"/>
+        <StatusBarFlags index="Cargo" value="0"/>
+        <StatusBarFlags index="Progress" value="0"/>
+        <Scale value="1.200000"/>
+        <On Terms="Behavior.Starport.On" Send="ModelSwap Starport"/>
+        <On Terms="Behavior.MercStarport.On" Send="ModelSwap BioDomeCommand"/>
+        <TerrainSquibs index="0">
+            <MovementDistance value="0.150000,0.150000"/>
+            <IdlePeriod value="0.250000,0.500000"/>
+            <RangeDown value="5.000000"/>
+            <RangeDownFade value="1.000000"/>
+            <Visuals index="0" TerrainPhysicsMaterial="" ActorModel="" ModelLink=""/>
+        </TerrainSquibs>
+    </CActorUnit>
+    <CActorSplat id="StarportSplat">
+        <On index="0" removed="1"/>
+        <On index="1" removed="1"/>
+        <On index="2" removed="1"/>
+        <On index="3" removed="1"/>
+        <On index="4" removed="1"/>
+        <Model value="Invisible"/>
+    </CActorSplat>
+    <!--                                                                                         -->
+    <!-- TaurenSpaceMarine ..................................................................... -->
+    <!--                                                                                         -->
+    <CActorUnit id="TaurenSpaceMarine">
+        <BarOffset value="20"/>
+        <BarWidth value="18"/>
+    </CActorUnit>
+    <!--                                                                                         -->
+    <!-- Thor .................................................................................. -->
+    <!--                                                                                         -->
+    <CActorUnit id="Thor">
+        <BarOffset value="40"/>
+        <BarWidth value="51"/>
+        <StatusBarFlags index="Energy" value="0"/>
+    </CActorUnit>
+    <CActorSimple id="TriggerPerPlayerActorAgent">
+        <On Terms="Signal.*.Show; FlyerHelper All" Target="_TriggerTarget" Send="SetVisibility 1"/>
+        <On Terms="Signal.*.Hide; FlyerHelper All" Target="_TriggerTarget" Send="SetVisibility"/>
+        <On Terms="Signal.*.Destroy_Immediate; FlyerHelper All" Target="_TriggerTarget" Send="Destroy Immediate"/>
+        <On Terms="Signal.*.Destroy_Normal; FlyerHelper All" Target="_TriggerTarget" Send="Destroy"/>
+    </CActorSimple>
+    <CActorUnit id="UnbuildableRocksDestructible">
+        <Model value="HavenTree"/>
+        <BuildModel value="HavenTree"/>
+        <PlacementModel value="HavenTree"/>
+        <BarHeight value="1"/>
+        <BarOffset value="0"/>
+        <BarWidth value="1"/>
+        <StatusBarFlags index="Shields" value="0"/>
+        <StatusBarFlags index="Life" value="0"/>
+        <StatusBarFlags index="Energy" value="0"/>
+        <StatusBarFlags index="Cargo" value="0"/>
+        <StatusBarFlags index="Progress" value="0"/>
+        <StatusBarFlags index="Duration" value="0"/>
+        <StatusBarFlags index="Magazine" value="0"/>
+        <StatusBarFlags index="Workers" value="0"/>
+        <StatusBarFlags index="Custom" value="0"/>
+    </CActorUnit>
+    <!--                                                                                         -->
+    <!-- Viking ................................................................................ -->
+    <!--                                                                                         -->
+    <CActorUnit id="VikingFighter">
+        <BarOffset value="30"/>
+        <BarWidth value="50"/>
+        <On Terms="Behavior.MercViking.On" Send="ModelSwap HelsAngelFighter"/>
+        <On Terms="Behavior.Viking.On" Send="ModelSwap VikingFighter"/>
+        <On Terms="Behavior.MechaViking.On" Send="ModelSwap MechaViking"/>
+        <On Terms="Behavior.UmojanViking.On" Send="ModelSwap UmojanViking"/>
+        <On Terms="Behavior.CovertopsViking.On" Send="ModelSwap CovertopsViking"/>
+        <TerrainSquibs index="0">
+            <MovementDistance value="0.150000,0.150000"/>
+            <IdlePeriod value="0.250000,0.500000"/>
+            <RangeDown value="5.000000"/>
+            <RangeDownFade value="1.000000"/>
+            <Visuals index="0" TerrainPhysicsMaterial="" ActorModel="" ModelLink=""/>
+        </TerrainSquibs>
+    </CActorUnit>
+    <!--                                                                                         -->
+    <!-- Vulture ............................................................................... -->
+    <!--                                                                                         -->
+    <CActorUnit id="Vulture">
+        <BarOffset value="22"/>
+        <BarWidth value="30"/>
+    </CActorUnit>
+    <!--                                                                                         -->
+    <!-- Wraith ................................................................................ -->
+    <!--                                                                                         -->
+    <CActorUnit id="Wraith">
+        <On Terms="Behavior.Banshee.On" Send="ModelSwap Battlecruiser"/>
+        <On Terms="Behavior.Banshee.On" Send="SetTintColor 233,227,18"/>
+    </CActorUnit>
+</Catalog>

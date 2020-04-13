@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+    <Frame type="Frame" name="GameUI/UIContainer/FullscreenUpperContainer" file="GameUI">
+        <Frame type="GameMessageDisplay" name="ChatDisplay">
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="100"/>
+        </Frame>
+    </Frame>
+
+    <Frame type="ResourcePanel" name="GameUI/UIContainer/FullscreenUpperContainer/ResourcePanel" file="GameUI">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+    </Frame>
+
+    <!-- hide certain panels -->
+    <Frame type="ConsolePanel" name="GameUI/UIContainer/ConsolePanel" file="GameUI">
+      <Frame type="Model" name="InfopanelModel">
+        <Visible val="false"/>
+      </Frame>
+
+      <Frame type="Model" name="MinimapModel">
+        <Visible val="false"/>
+      </Frame>
+
+      <Frame type="Model" name="CommandPanelModel">
+        <Visible val="false"/>
+      </Frame>
+
+      <Frame type="PortraitPanel" name="PortraitPanel">
+        <Visible val="false"/>
+      </Frame>
+
+      <Frame type="Frame" name="MinimapStub">
+        <Visible val="false"/>
+      </Frame>
+
+      <Frame type="Frame" name="InfoStub">
+        <Visible val="false"/>
+      </Frame>
+
+      <Frame type="Frame" name="CommandStub">
+        <Visible val="false"/>
+      </Frame>
+    </Frame>
+    
+    <!-- Chanes left anchor from background 3 to 1-->
+    
+    <Frame type="ResourceFrame" name="GameUI/UIContainer/FullscreenUpperContainer/ResourcePanel/ResourceFrame" file="GameUI">
+      <Frame type="Image" name="SupplyBackground" template="ResourcePanel/ResourcePanelIconBackgroundTemplate">
+        <Anchor side="Top" relative="$parent" pos="Min" offset="5"/>
+        <Anchor side="Right" relative="$parent\SupplyLabel" pos="Min" offset="-5"/>
+      </Frame>
+
+      <Frame type="Image" name="SupplyIcon" template="ResourcePanel/ResourcePanelIconTemplate">
+        <Anchor side="Top" relative="$parent" pos="Min" offset="5"/>
+        <Anchor side="Right" relative="$parent\SupplyLabel" pos="Min" offset="-5"/>
+        <TooltipAnchorPosition val="BottomLeft"/>
+      </Frame>
+
+      <Frame type="CountdownLabel" name="ResourceLabel1" template="ResourcePanel/ResourcePanelLabelTemplate">
+        <Anchor side="Top" relative="$parent/SupplyLabel" pos="Min" offset="0"/>
+        <Anchor side="Right" relative="$parent/SupplyIcon" pos="Min" offset="-5"/>
+      </Frame>
+
+      <Frame type="Image" name="ResourceIconBackground1" template="ResourcePanel/ResourcePanelIconBackgroundTemplate">
+        <Anchor side="Top" relative="$parent/SupplyIcon" pos="Min" offset="0"/>
+        <Anchor side="Right" relative="$parent/ResourceLabel1" pos="Min" offset="-5"/>
+      </Frame>
+
+      <Frame type="Image" name="ResourceIcon1" template="ResourcePanel/ResourcePanelIconTemplate">
+          <Anchor side="Top" relative="$parent/SupplyIcon" pos="Min" offset="0"/>
+          <Anchor side="Left" relative="$parent/ResourceIconBackground1" pos="Min" offset="0"/>
+          <TooltipAnchorPosition val="BottomLeft"/>
+      </Frame>
+
+      <Frame type="CountdownLabel" name="ResourceLabel0" template="ResourcePanel/ResourcePanelLabelTemplate">
+          <Anchor side="Top" relative="$parent/ResourceLabel1" pos="Min" offset="0"/>
+          <Anchor side="Right" relative="$parent/ResourceIcon1" pos="Min" offset="-5"/>
+      </Frame>
+
+      <Frame type="Image" name="ResourceIconBackground0" template="ResourcePanel/ResourcePanelIconBackgroundTemplate">
+          <Anchor side="Top" relative="$parent/ResourceIconBackground1" pos="Min" offset="0"/>
+          <Anchor side="Right" relative="$parent/ResourceLabel0" pos="Min" offset="-5"/>
+      </Frame>
+
+      <Frame type="Image" name="ResourceIcon0" template="ResourcePanel/ResourcePanelIconTemplate">
+          <Anchor side="Top" relative="$parent/ResourceIcon1" pos="Min" offset="0"/>
+          <Anchor side="Left" relative="$parent/ResourceIconBackground0" pos="Min" offset="0"/>
+          <TooltipAnchorPosition val="BottomLeft"/>
+      </Frame>
+
+      <Frame type="CountdownLabel" name="ResourceLabel3" template="ResourcePanel/ResourcePanelLabelTemplate">
+        <Anchor side="Top" relative="$parent/ResourceLabel0" pos="Min" offset="0"/>
+        <Anchor side="Right" relative="$parent/ResourceIcon0" pos="Min" offset="-5"/>
+    </Frame>
+
+      <Frame type="Image" name="ResourceIconBackground3" template="ResourcePanel/ResourcePanelIconBackgroundTemplate">
+          <Anchor side="Top" relative="$parent/ResourceIconBackground0" pos="Min" offset="0"/>
+          <Anchor side="Right" relative="$parent/ResourceLabel3" pos="Min" offset="-5"/>
+      </Frame>
+
+      <Frame type="Image" name="ResourceIcon3" template="ResourcePanel/ResourcePanelIconTemplate">
+          <Anchor side="Top" relative="$parent/ResourceIcon0" pos="Min" offset="0"/>
+          <Anchor side="Left" relative="$parent/ResourceIconBackground3" pos="Min" offset="0"/>
+          <TooltipAnchorPosition val="BottomLeft"/>
+      </Frame>
+
+      <Frame type="CountdownLabel" name="ResourceLabel2" template="ResourcePanel/ResourcePanelLabelTemplate">
+          <Anchor side="Top" relative="$parent/ResourceLabel3" pos="Min" offset="0"/>
+          <Anchor side="Right" relative="$parent/ResourceIcon3" pos="Min" offset="-5"/>
+      </Frame>
+
+      <Frame type="Image" name="ResourceIconBackground2" template="ResourcePanel/ResourcePanelIconBackgroundTemplate">
+          <Anchor side="Top" relative="$parent/ResourceIconBackground3" pos="Min" offset="0"/>
+          <Anchor side="Right" relative="$parent/ResourceLabel2" pos="Min" offset="-5"/>
+      </Frame>
+
+      <Frame type="Image" name="ResourceIcon2" template="ResourcePanel/ResourcePanelIconTemplate">
+          <Anchor side="Top" relative="$parent/ResourceIcon3" pos="Min" offset="0"/>
+          <Anchor side="Left" relative="$parent/ResourceIconBackground2" pos="Min" offset="0"/>
+          <TooltipAnchorPosition val="BottomLeft"/>
+      </Frame>
+
+    </Frame>
+
+
+    <Frame type="MinimapPanel" name="GameUI/UIContainer/ConsoleUIContainer/MinimapPanel" file="GameUI">
+      <Frame type="Button" name="PingButton">
+        <Anchor side="Left" relative="$parent" pos="Min" offset="-700"/>
+        <Anchor side="Bottom" relative="$parent" pos="Min" offset="196"/>
+        <Visible val="true"/>
+      </Frame>
+
+      <Frame type="Button" name="TerrainButton">
+        <Anchor side="Left" relative="$parent" pos="Min" offset="-615"/>
+        <Anchor side="Bottom" relative="$parent" pos="Min" offset="196"/>
+        <Visible val="true"/>
+      </Frame>
+
+      <Frame type="Button" name="ColorButton">
+        <Anchor side="Left" relative="$parent" pos="Min" offset="-530"/>
+        <Anchor side="Bottom" relative="$parent" pos="Min" offset="196"/>
+        <Visible val="true"/>
+      </Frame>
+    </Frame>
+
+    <!-- Top UI -->
+    <Frame type="ObjectivePanel" name="GameUI/UIContainer/FullscreenUpperContainer/ObjectivePanel" file="GameUI">
+      <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+      <Anchor side="Right" relative="$parent" pos="Min" offset="660"/>
+      <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+      <Anchor side="Bottom" relative="$parent" pos="Min" offset="580"/>
+    </Frame>
+
+    <!-- Bottom UI -->
+    <Frame type="ChatBar" name="GameUI/UIContainer/FullscreenUpperContainer/ChatBar" file="GameUI">
+      <Anchor side="Right" relative="$parent" pos="Mid" offset="100"/>
+    </Frame>
+
+    <Frame type="Frame" name="GameUI/UIContainer/ConsoleUIContainer" file="GameUI">
+      <Frame type="MinimapPanel" name="MinimapPanel">
+        <Width val="1500"/>
+        <Height val="500"/>
+        <Frame type="Minimap" name="Minimap">
+          <Anchor side="Left" relative="$parent" pos="Min" offset="25"/>
+          <Anchor side="Bottom" relative="$parent" pos="Max" offset="90"/>
+          <Width val="340"/>
+          <Height val="320"/>
+        </Frame>
+      </Frame>
+
+      <Frame type="Image" name="MinimapPanelBorder">
+        <Anchor side="Left" relative="$parent/MinimapPanel" pos="Min" offset="0"/>
+        <Anchor side="Bottom" relative="$parent/MinimapPanel" pos="Max" offset="0"/>
+        <Width val="1500"/>
+        <Height val="369"/>
+        <RenderPriority val="490"/>
+        <Texture val="Risk/trythisone.tga"/>
+        <TextureType val="Normal"/>
+        <Tiled val="false"/>
+      </Frame>
+    </Frame>
+
+  <Frame type="CommandPanel" name="GameUI/UIContainer/ConsoleUIContainer/CommandPanel" file="GameUI">
+    <Width val="1682"/>
+    <Height val="125"/>
+    <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+    <Anchor side="Right" relative="$parent" pos="Max" offset="300"/>
+    <Frame type="CommandButton" name="CommandButton00">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="18"/>
+      <Anchor side="Left" relative="$parent" pos="Min" offset="60"/>
+    </Frame>
+
+    <Frame type="CommandButton" name="CommandButton04">
+      <Anchor side="Top" relative="$parent/CommandButton03" pos="Min" offset="0"/>
+      <Anchor side="Left" relative="$parent/CommandButton03" pos="Max" offset="12"/>
+    </Frame>
+
+    <Frame type="CommandButton" name="CommandButton05">
+      <Anchor side="Top" relative="$parent/CommandButton04" pos="Min" offset="0"/>
+      <Anchor side="Left" relative="$parent/CommandButton04" pos="Max" offset="0"/>
+    </Frame>
+
+    <Frame type="CommandButton" name="CommandButton09">
+      <Anchor side="Top" relative="$parent/CommandButton08" pos="Min" offset="0"/>
+      <Anchor side="Left" relative="$parent/CommandButton08" pos="Max" offset="8"/>
+    </Frame>
+
+    <Frame type="CommandButton" name="CommandButton10">
+      <Anchor side="Top" relative="$parent/CommandButton09" pos="Min" offset="0"/>
+      <Anchor side="Left" relative="$parent/CommandButton09" pos="Max" offset="#CommandButtonGap"/>
+    </Frame>
+
+      <Frame type="Image" name="CommandPanelFrame">
+        <Visible val="true"/>
+        <Anchor side="Top" relative="$parent" pos="Mid" offset="0"/>
+        <Anchor side="Bottom" relative="$parent" pos="Mid" offset="6"/>
+        <Anchor side="Left" relative="$parent" pos="Mid" offset="0"/>
+        <Anchor side="Right" relative="$parent" pos="Mid" offset="0"/>
+        <Width val="1082"/>
+        <Height val="123"/>
+        <Texture val="Risk/CommandBar.dds"/>
+        <TextureType val="Normal"/>
+        <Tiled val="false"/>
+        <RenderPriority val="500"/>
+      </Frame>
+    </Frame>
+
+    <Frame type="PortraitPanel" name="GameUI/UIContainer/ConsolePanel/PortraitPanel" file="GameUI">
+      <Anchor side="Bottom" relative="$parent" pos="Max" offset="-5000"/>
+    </Frame>
+
+    <Frame type="ControlGroupPanel" name="GameUI/UIContainer/ConsoleUIContainer/ControlGroupPanel" file="GameUI">
+      <Anchor side="Right" relative="$parent" pos="Min" offset="275"/>
+      <Anchor side="Left" relative="$parent" pos="Max" offset="500"/>
+      <Anchor side="Bottom" relative="$parent" pos="Max" offset="-103"/>
+    </Frame>
+
+    <Frame type="MissionTimePanel" name="GameUI/UIContainer/ConsoleUIContainer/MissionTimePanel" file="GameUI">
+      <Anchor side="Bottom" relative="$parent" pos="Max" offset="-5000"/>
+    </Frame>
+
+    <Frame type="HelpPanel" name="MessageLogDialogTemplate\BackgroundFrame\MessageLogPanel" file="MessageLogDialog">
+      <Visible val="false"/>
+    </Frame>
+
+    <Frame type="MenuBar" name="GameUI/UIContainer/FullscreenUpperContainer/MenuBar" file="GameUI">
+      <Anchor side="Left" relative="$parent" pos="Mid" offset="0"/>
+      <Anchor side="Right" relative="$parent" pos="Mid" offset="100000"/>
+    </Frame>
+  </Desc>

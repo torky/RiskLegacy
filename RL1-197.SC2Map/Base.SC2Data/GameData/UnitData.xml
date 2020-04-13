@@ -1,0 +1,1121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <!--asd-->
+    <CUnit id="Banshee">
+        <FlagArray index="Unclickable" value="0"/>
+        <FlagArray index="IgnoreTerrainZInit" value="1"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Flying6" value="1"/>
+        <Attributes index="Light" value="0"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Hover" value="1"/>
+        <LifeStart value="220"/>
+        <LifeMax value="220"/>
+        <EnergyStart value="0"/>
+        <EnergyMax value="0"/>
+        <EnergyRegenRate value="0"/>
+        <Speed value="2.5"/>
+        <Sight value="5"/>
+        <Height value="7.75"/>
+        <CostResource index="Minerals" value="25"/>
+        <CostResource index="Vespene" value="0"/>
+        <AbilArray index="3" removed="1"/>
+        <BehaviorArray index="0" Link="WaterUnit"/>
+        <BehaviorArray index="1" removed="1"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="3" Column="3"/>
+            <LayoutButtons index="4" Column="4"/>
+            <LayoutButtons index="5" Face="CommanderRaynorBansheeAirStrike" Type="Passive" AbilCmd="" Row="1" Column="4"/>
+            <LayoutButtons index="6" removed="1"/>
+            <LayoutButtons index="7" removed="1"/>
+            <LayoutButtons index="8" removed="1"/>
+        </CardLayouts>
+        <SeparationRadius value="0.5"/>
+        <InnerRadius value="1"/>
+        <ScoreMake value="20"/>
+        <ScoreKill value="20"/>
+        <MinimapRadius value="0.3"/>
+        <Acceleration value="1000"/>
+        <ScoreLost value="20"/>
+    </CUnit>
+    <CUnit id="Barracks">
+        <Footprint value="Footprint2x2Contour"/>
+        <PlacementFootprint value="Footprint2x2"/>
+        <MinimapRadius value="1"/>
+        <FlagArray index="Turnable" value="1"/>
+        <FlagArray index="Invulnerable" value="1"/>
+        <LifeStart value="100000"/>
+        <LifeMax value="100000"/>
+        <LifeRegenRate value="100000"/>
+        <AbilArray index="4" Link="stop"/>
+        <AbilArray index="5" Link="SelectDefender2"/>
+        <AbilArray Link="BuildNydusCanal"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Row="1"/>
+            <LayoutButtons index="1" Face="SiegeTank" AbilCmd="BarracksTrain,Train3" Row="1" Column="2"/>
+            <LayoutButtons index="2" Face="SelectDefense" AbilCmd="SelectDefender2,Execute" Column="0"/>
+            <LayoutButtons index="3" Face="Medic" AbilCmd="BarracksTrain,Train5" Row="1"/>
+            <LayoutButtons index="4" Face="Stop" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons index="5" Face="Attack" AbilCmd="attack,Execute" Row="0" Column="2"/>
+            <LayoutButtons index="6" Face="Rally" AbilCmd="Rally,Rally1" Row="0"/>
+            <LayoutButtons index="7" Face="Cancel" AbilCmd="que5,CancelLast" Row="0" Column="4"/>
+            <LayoutButtons index="8" Face="Hellion" AbilCmd="BarracksTrain,Train2" Row="1" Column="4"/>
+            <LayoutButtons index="9" Face="Marauder2" AbilCmd="BarracksTrain,Train4" Row="1" Column="1"/>
+            <LayoutButtons index="10" Face="Vulture" AbilCmd="BarracksTrain,Train6" Column="0"/>
+            <LayoutButtons index="11" Face="Goliath" AbilCmd="BarracksTrain,Train9" Column="1"/>
+            <LayoutButtons index="12" Face="SCV" Type="AbilCmd" AbilCmd="BarracksTrain,Train10" Row="2" Column="2"/>
+            <LayoutButtons index="13" removed="1"/>
+            <LayoutButtons index="14" removed="1"/>
+            <LayoutButtons index="15" removed="1"/>
+            <LayoutButtons index="16" removed="1"/>
+            <LayoutButtons index="17" removed="1"/>
+        </CardLayouts>
+        <CardLayouts CardId="0002">
+            <LayoutButtons Face="Goliath" Type="AbilCmd" AbilCmd="BarracksTrain,Train9" Row="2" Column="0"/>
+            <LayoutButtons Face="SCV" Type="AbilCmd" AbilCmd="BarracksTrain,Train10" Row="1" Column="3"/>
+            <LayoutButtons Face="TerranBuildAdvanced" Type="Submenu" SubmenuIsSticky="1" Row="0" Column="4"/>
+            <LayoutButtons Face="SelectDefense" Type="AbilCmd" AbilCmd="SelectDefender2,Execute" Row="0" Column="0"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="2"/>
+            <LayoutButtons Face="Rally" Type="AbilCmd" AbilCmd="Rally,Rally1" Row="0" Column="2"/>
+            <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="que5,CancelLast" Row="0" Column="3"/>
+            <LayoutButtons Face="Marine" Type="AbilCmd" AbilCmd="BarracksTrain,Train1" Row="1" Column="0"/>
+            <LayoutButtons Face="Marauder" Type="AbilCmd" AbilCmd="BarracksTrain,Train4" Row="1" Column="1"/>
+            <LayoutButtons Face="Hellion" Type="AbilCmd" AbilCmd="BarracksTrain,Train2" Row="1" Column="4"/>
+            <LayoutButtons Face="SiegeTank" Type="AbilCmd" AbilCmd="BarracksTrain,Train3" Row="1" Column="2"/>
+        </CardLayouts>
+        <WeaponArray Link="AutoTurret" Turret="AutoTurret"/>
+        <ScoreMake value="10"/>
+        <ScoreKill value="10"/>
+        <LifeArmor value="100000"/>
+        <BehaviorArray index="0" Link="Detector102"/>
+        <BehaviorArray index="1" removed="1"/>
+        <BehaviorArray index="2" removed="1"/>
+        <Radius value="0"/>
+        <SeparationRadius value="1.16"/>
+        <Collide index="Burrow" value="0"/>
+        <Collide index="Ground" value="0"/>
+        <Collide index="Structure" value="0"/>
+        <Collide index="RoachBurrow" value="0"/>
+        <Collide index="ForceField" value="0"/>
+        <Sight value="7"/>
+    </CUnit>
+    <CUnit id="Barracks22" parent="Barracks">
+        <Name value="Unit/Name/Barracks22"/>
+        <Description value="Button/Tooltip/Barracks22"/>
+        <Facing value="0"/>
+        <Attributes index="Armored" value="0"/>
+        <Attributes index="Mechanical" value="0"/>
+        <Attributes index="Psionic" value="1"/>
+        <StationaryTurningRate value="0"/>
+        <TurningRate value="0"/>
+        <AbilArray index="0" Link="Rally"/>
+        <AbilArray index="1" Link="BarracksTrain2"/>
+        <AbilArray index="2" removed="1"/>
+        <AbilArray index="3" removed="1"/>
+        <AbilArray index="4" removed="1"/>
+        <AbilArray index="5" removed="1"/>
+        <AbilArray index="6" removed="1"/>
+        <WeaponArray index="0" removed="1"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="Rally" AbilCmd="Rally,Rally1" Row="0"/>
+            <LayoutButtons index="1" removed="1"/>
+            <LayoutButtons index="2" removed="1"/>
+            <LayoutButtons index="3" removed="1"/>
+            <LayoutButtons index="4" removed="1"/>
+            <LayoutButtons index="5" removed="1"/>
+            <LayoutButtons index="6" removed="1"/>
+            <LayoutButtons index="7" removed="1"/>
+            <LayoutButtons index="8" removed="1"/>
+            <LayoutButtons index="9" removed="1"/>
+            <LayoutButtons index="10" removed="1"/>
+            <LayoutButtons index="11" removed="1"/>
+            <LayoutButtons index="12" removed="1"/>
+        </CardLayouts>
+        <CardLayouts index="1" removed="1"/>
+        <SeparationRadius value="0"/>
+        <Footprint value=""/>
+        <PlacementFootprint value=""/>
+        <MinimapRadius value="0"/>
+        <Race value="Neut"/>
+        <ScoreMake value="0"/>
+        <ScoreKill value="0"/>
+        <ScoreResult value=""/>
+        <ReviveType value="Barracks22"/>
+        <LeaderAlias value="Barracks22"/>
+        <SelectAlias value="Barracks22"/>
+        <SubgroupAlias value="Barracks22"/>
+        <TechAliasArray index="0" removed="1"/>
+        <BehaviorArray index="0" Link="TerranBuildingBurnDown"/>
+        <BehaviorArray Link="ReactorQueue"/>
+        <BehaviorArray Link="FireSuppressionSystem"/>
+        <Collide index="Burrow" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Collide index="Structure" value="1"/>
+        <Collide index="RoachBurrow" value="1"/>
+        <Collide index="ForceField" value="1"/>
+        <Sight value="9"/>
+        <FlagArray index="Turnable" value="0"/>
+    </CUnit>
+    <!--asdfadssdf-->
+    <CUnit id="Battlecruiser">
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Flying6" value="1"/>
+        <Attributes index="Hover" value="1"/>
+        <LifeStart value="300"/>
+        <LifeMax value="300"/>
+        <LifeArmor value="2"/>
+        <EnergyStart value="0"/>
+        <EnergyMax value="0"/>
+        <EnergyRegenRate value="0"/>
+        <Height value="7.8"/>
+        <Food value="-3"/>
+        <CostResource index="Minerals" value="30"/>
+        <CostResource index="Vespene" value="0"/>
+        <AbilArray index="3" removed="1"/>
+        <AbilArray index="4" removed="1"/>
+        <AbilArray index="5" removed="1"/>
+        <AbilArray index="6" removed="1"/>
+        <BehaviorArray index="0" Link="WaterUnit"/>
+        <BehaviorArray index="1" removed="1"/>
+        <WeaponArray index="1" removed="1"/>
+        <SeparationRadius value="0.6875"/>
+        <Radius value="0.875"/>
+        <FlagArray index="Unclickable" value="0"/>
+        <FlagArray index="IgnoreTerrainZInit" value="1"/>
+        <FlagArray index="ForceCollisionCheck" value="1"/>
+        <InnerRadius value="0.6875"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="3" Column="4"/>
+            <LayoutButtons index="4" Column="3"/>
+            <LayoutButtons index="5" Face="CommanderHornerLevel12" Type="Passive" AbilCmd="" Row="1" Column="4"/>
+            <LayoutButtons index="6" removed="1"/>
+            <LayoutButtons index="7" removed="1"/>
+        </CardLayouts>
+        <GlossaryStrongArray index="0" removed="1"/>
+        <GlossaryStrongArray index="1" removed="1"/>
+        <GlossaryStrongArray index="2" removed="1"/>
+        <GlossaryWeakArray index="0" value="Banshee"/>
+        <GlossaryWeakArray index="1" removed="1"/>
+        <GlossaryWeakArray index="2" removed="1"/>
+        <Sight value="6"/>
+        <Speed value="1.5507"/>
+        <ScoreMake value="25"/>
+        <ScoreKill value="25"/>
+        <Deceleration value="0.8125"/>
+        <Acceleration value="0.8125"/>
+        <TurningRate value="360"/>
+        <ScoreLost value="25"/>
+    </CUnit>
+    <CUnit id="Beacon_TerranSmall">
+        <FlagArray index="Unselectable" value="1"/>
+        <LifeStart value="10000"/>
+        <LifeMax value="10000"/>
+        <LifeRegenRate value="10000"/>
+        <Radius value="0"/>
+        <SeparationRadius value="0"/>
+        <MinimapRadius value="0"/>
+        <EditorCategories value="ObjectType:Structure,ObjectFamily:Melee"/>
+        <LifeArmor value="100000"/>
+        <Attributes index="Psionic" value="1"/>
+        <WeaponArray Link="AutoTurret" Turret="AutoTurret"/>
+    </CUnit>
+    <CUnit id="Bunker">
+        <CostResource index="Minerals" value="0"/>
+        <CostResource index="Terrazine" value="100"/>
+    </CUnit>
+    <CUnit id="DestructibleKorhalFlag">
+        <FlagArray index="Invulnerable" value="1"/>
+        <LifeStart value="100000"/>
+        <LifeMax value="100000"/>
+        <LifeArmor value="385279"/>
+        <LifeRegenRate value="385279"/>
+        <Attributes index="Armored" value="0"/>
+        <Attributes index="Psionic" value="1"/>
+        <Attributes index="Structure" value="1"/>
+        <Attributes index="Heroic" value="1"/>
+        <BehaviorArray Link="Flag"/>
+        <FogVisibility value="Hidden"/>
+    </CUnit>
+    <CUnit id="Diamondback">
+        <PlaneArray index="Air" value="1"/>
+        <Collide index="Ground" value="0"/>
+        <Collide index="Flying" value="1"/>
+        <Collide index="Flying6" value="1"/>
+        <Attributes index="Massive" value="1"/>
+        <Attributes index="Hover" value="1"/>
+        <LifeStart value="300"/>
+        <LifeMax value="300"/>
+        <LifeArmor value="3"/>
+        <Mover value="Fly"/>
+        <Speed value="1.8007"/>
+        <Acceleration value="1.8125"/>
+        <LateralAcceleration value="0"/>
+        <StationaryTurningRate value="720"/>
+        <TurningRate value="360"/>
+        <Sight value="8"/>
+        <CostResource index="Minerals" value="40"/>
+        <CostResource index="Vespene" value="0"/>
+        <RepairTime value="100"/>
+        <AbilArray Link="CarrierHangar"/>
+        <AbilArray Link="HangarQueue5"/>
+        <WeaponArray index="0" Link="InterceptorLaunch" Turret=""/>
+        <CardLayouts index="0">
+            <LayoutButtons index="3" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="3"/>
+            <LayoutButtons index="4" Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="4"/>
+            <LayoutButtons index="5" Face="Interceptor" Type="AbilCmd" AbilCmd="CarrierHangar,Ammo1" Row="1" Column="0"/>
+            <LayoutButtons index="6" removed="1"/>
+            <LayoutButtons index="7" removed="1"/>
+        </CardLayouts>
+        <Radius value="1"/>
+        <SeparationRadius value="0.8"/>
+        <InnerRadius value="0.6875"/>
+        <CargoSize value="0"/>
+        <AddedOnArray/>
+        <ScoreMake value="40"/>
+        <ScoreKill value="40"/>
+        <Mass value="0.7"/>
+        <Height value="0.3"/>
+        <BehaviorArray Link="WaterUnit"/>
+        <ScoreLost value="40"/>
+        <FlagArray index="Unclickable" value="0"/>
+    </CUnit>
+    <CUnit id="DominionKillTeam">
+        <CardLayouts index="0">
+            <LayoutButtons index="5" Face="JackhammerConcussionGrenade" Type="Passive" AbilCmd="255" Row="1" Column="0"/>
+        </CardLayouts>
+        <LifeRegenDelay value="1"/>
+        <LifeRegenRate value="0.1992"/>
+        <ScoreMake value="5"/>
+        <ScoreKill value="5"/>
+        <ScoreLost value="5"/>
+    </CUnit>
+    <CUnit id="Factory">
+        <FlagArray index="Turnable" value="1"/>
+        <FlagArray index="PenaltyRevealed" value="0"/>
+        <FlagArray index="Invulnerable" value="1"/>
+        <LifeStart value="100000"/>
+        <LifeMax value="100000"/>
+        <LifeArmor value="100000"/>
+        <LifeRegenRate value="100000"/>
+        <Sight value="7"/>
+        <AbilArray Link="SelectDefender2"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="attack"/>
+        <AbilArray Link="BarracksTrain"/>
+        <WeaponArray Turret="AutoTurret"/>
+        <WeaponArray Link="AutoTurret"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="SiegeTank" AbilCmd="BarracksTrain,Train3" Row="1" Column="2"/>
+            <LayoutButtons index="1" Face="Cancel" AbilCmd="que5,CancelLast" Column="4"/>
+            <LayoutButtons index="2" Face="Marauder" Type="Undefined" AbilCmd="BarracksTrain,Train4" Row="1" Column="1"/>
+            <LayoutButtons index="3" Face="SCV" AbilCmd="BarracksTrain,Train10" Column="3"/>
+            <LayoutButtons index="4" Face="Marine" AbilCmd="BarracksTrain,Train1" Row="1" Column="0"/>
+            <LayoutButtons index="5" Face="SelectDefense" AbilCmd="SelectDefender2,Execute" Row="0" Column="0"/>
+            <LayoutButtons index="6" Face="Stop" AbilCmd="stop,Stop" Row="0"/>
+            <LayoutButtons index="7" Face="Rally" AbilCmd="Rally,Rally1" Row="0" Column="2"/>
+            <LayoutButtons index="8" Face="Attack" AbilCmd="attack,Execute" Row="0" Column="3"/>
+            <LayoutButtons index="9" Face="Ghost" AbilCmd="BarracksTrain,Train11" Row="1"/>
+            <LayoutButtons index="10" Face="Goliath" AbilCmd="BarracksTrain,Train9" Column="0"/>
+            <LayoutButtons index="11" removed="1"/>
+            <LayoutButtons index="12" removed="1"/>
+            <LayoutButtons index="13" removed="1"/>
+            <LayoutButtons index="14" removed="1"/>
+            <LayoutButtons index="15" removed="1"/>
+            <LayoutButtons index="16" removed="1"/>
+            <LayoutButtons index="17" removed="1"/>
+            <LayoutButtons index="18" removed="1"/>
+        </CardLayouts>
+        <ScoreMake value="10"/>
+        <MinimapRadius value="1"/>
+    </CUnit>
+    <CUnit id="Ghost">
+        <Collide index="Locust" value="1"/>
+        <EnergyStart value="0"/>
+        <EnergyMax value="0"/>
+        <EnergyRegenRate value="0"/>
+        <Speed value="1.6992"/>
+        <CostResource index="Minerals" value="0"/>
+        <CostResource index="Vespene" value="0"/>
+        <CostResource index="Terrazine" value="7"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="7" Face="CloakOnGhost" AbilCmd="GhostCloak,On" Column="2"/>
+            <LayoutButtons index="8" Face="CloakOff" Type="AbilCmd" AbilCmd="GhostCloak,Off" Row="2" Column="2"/>
+            <LayoutButtons index="9" Face="EMP" AbilCmd="EMP,Execute" Column="1"/>
+            <LayoutButtons index="10" Face="WeaponsFree" Type="AbilCmd" AbilCmd="GhostWeaponsFree,Execute" Row="1" Column="3"/>
+            <LayoutButtons index="11" removed="1"/>
+            <LayoutButtons index="12" removed="1"/>
+            <LayoutButtons index="13" removed="1"/>
+            <LayoutButtons index="14" removed="1"/>
+        </CardLayouts>
+        <Radius value="0.3125"/>
+        <InnerRadius value="0.3125"/>
+        <ScoreMake value="7"/>
+        <ScoreKill value="7"/>
+        <LifeStart value="80"/>
+        <LifeMax value="80"/>
+        <MinimapRadius value="0.2"/>
+        <Attributes index="Psionic" value="0"/>
+    </CUnit>
+    <CUnit id="Goliath">
+        <LifeStart value="165"/>
+        <LifeMax value="165"/>
+        <LifeArmor value="2"/>
+        <Speed value="1.6484"/>
+        <CostResource index="Minerals" value="15"/>
+        <CostResource index="Vespene" value="0"/>
+        <Radius value="0.4375"/>
+        <SeparationRadius value="0.41"/>
+        <CargoSize value="4"/>
+        <ScoreMake value="15"/>
+        <ScoreKill value="15"/>
+        <MinimapRadius value="0.35"/>
+        <StationaryTurningRate value="599.9414"/>
+        <TurningRate value="599.9414"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="3" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="3"/>
+            <LayoutButtons index="4" Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="4"/>
+            <LayoutButtons index="5">
+                <Face value="MultiLockTargetingSystem"/>
+                <Type value="Passive"/>
+                <AbilCmd value="255,255"/>
+                <Requirements value=""/>
+                <Row value="1"/>
+                <Column value="4"/>
+            </LayoutButtons>
+            <LayoutButtons index="6">
+                <Face value="AresClassWeaponsSystem"/>
+                <Type value="Passive"/>
+                <AbilCmd value="255,255"/>
+                <Requirements value="UseAresClassWeaponsSystem"/>
+                <Row value="2"/>
+                <Column value="4"/>
+            </LayoutButtons>
+            <LayoutButtons Face="KillerPhantasm" Type="Passive" Requirements="UnknownRequirement" Row="2" Column="0"/>
+        </CardLayouts>
+        <ScoreLost value="15"/>
+        <BehaviorArray Link="Detector102"/>
+        <Attributes index="MapBoss" value="1"/>
+        <SubgroupPriority value="6"/>
+        <WeaponArray Link="SpartanCompanyA" Turret="SpartanCompany"/>
+        <WeaponArray Link="SpartanCompanyAUpgraded" Turret="FreeRotate"/>
+        <FlagArray index="Unclickable" value="0"/>
+    </CUnit>
+    <CUnit id="Hellion">
+        <Food value="-1"/>
+        <CostResource index="Minerals" value="7"/>
+        <LifeStart value="105"/>
+        <LifeMax value="105"/>
+        <Speed value="3.3984"/>
+        <Radius value="0.375"/>
+        <SeparationRadius value="0.375"/>
+        <InnerRadius value="0.3125"/>
+        <CargoSize value="4"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="1" Face="MoveHoldPosition" AbilCmd="move,HoldPos" Column="2"/>
+            <LayoutButtons index="2" Face="Attack" AbilCmd="attack,Execute" Column="3"/>
+            <LayoutButtons index="3" Face="MovePatrol" AbilCmd="move,Patrol"/>
+            <LayoutButtons index="4" Face="Stop" AbilCmd="stop,Stop" Column="1"/>
+            <LayoutButtons index="5">
+                <Face value="CommanderTraitAlarakDestructionWave"/>
+                <Type value="Passive"/>
+                <AbilCmd value=""/>
+                <Requirements value=""/>
+                <Row value="1"/>
+                <Column value="4"/>
+            </LayoutButtons>
+            <LayoutButtons index="6">
+                <Face value="MorphToHellionTank"/>
+                <Type value="AbilCmd"/>
+                <AbilCmd value="MorphToHellionTank,Execute"/>
+                <Requirements value=""/>
+                <Row value="1"/>
+                <Column value="4"/>
+            </LayoutButtons>
+            <LayoutButtons index="7">
+                <Face value="CommanderNovaBaseTrait"/>
+                <Type value="Passive"/>
+                <AbilCmd value=""/>
+                <Requirements value="UnknownRequirement"/>
+                <Row value="2"/>
+                <Column value="0"/>
+            </LayoutButtons>
+        </CardLayouts>
+        <GlossaryStrongArray index="0" value="Marine"/>
+        <GlossaryStrongArray index="1" removed="1"/>
+        <GlossaryWeakArray index="0" value="Marauder"/>
+        <GlossaryWeakArray index="1" value="Hellion"/>
+        <GlossaryWeakArray index="2" value="Vulture"/>
+        <GlossaryWeakArray value="Wraith"/>
+        <ScoreMake value="7"/>
+        <ScoreKill value="7"/>
+        <MinimapRadius value="0.3"/>
+        <BehaviorArray index="0" removed="1"/>
+        <LifeArmor value="1"/>
+        <Collide index="ForceField" value="0"/>
+        <Collide index="Locust" value="1"/>
+        <Sight value="5"/>
+        <ScoreLost value="7"/>
+        <Attributes index="Robotic" value="1"/>
+        <FlagArray index="Unclickable" value="0"/>
+    </CUnit>
+    <CUnit id="Hercules">
+        <CostResource index="Minerals" value="3"/>
+        <CostResource index="Vespene" value="0"/>
+        <LifeStart value="175"/>
+        <LifeMax value="175"/>
+        <LifeArmor value="1"/>
+        <Speed value="2.2382"/>
+        <Acceleration value="2"/>
+        <Height value="7.6"/>
+        <Food value="-1"/>
+        <Radius value="1"/>
+        <SeparationRadius value="0.5"/>
+        <MinimapRadius value="0.4"/>
+        <ScoreMake value="3"/>
+        <ScoreKill value="3"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
+        <BehaviorArray index="0" Link="WaterUnit"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Flying6" value="1"/>
+        <Attributes index="Massive" value="0"/>
+        <Attributes index="Hover" value="1"/>
+        <FlagArray index="Unclickable" value="0"/>
+        <FlagArray index="PreventDestroy" value="1"/>
+        <FlagArray index="IgnoreTerrainZInit" value="1"/>
+        <FlagArray index="ForceCollisionCheck" value="1"/>
+        <InnerRadius value="1"/>
+        <Sight value="5.5"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="3" Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="4"/>
+            <LayoutButtons index="4" Face="HerculesLoad" Type="AbilCmd" AbilCmd="HerculesTransport,Load" Row="1" Column="1"/>
+            <LayoutButtons index="5" Face="HerculesUnloadAll" Type="AbilCmd" AbilCmd="HerculesTransport,UnloadAt" Row="1" Column="2"/>
+            <LayoutButtons index="6" Face="AcquireMove" Type="AbilCmd" AbilCmd="move,AcquireMove" Row="0" Column="3"/>
+        </CardLayouts>
+        <ScoreLost value="3"/>
+    </CUnit>
+    <CUnit id="InfestedTerranCampaign">
+        <StationaryTurningRate value="999.8437"/>
+        <TurningRate value="999.8437"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="1" Face="Stop" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="0"/>
+        </CardLayouts>
+    </CUnit>
+    <CUnit id="Interceptor">
+        <CostResource index="Minerals" value="0"/>
+        <CostResource index="Terrazine" value="1"/>
+        <Collide index="FlyingEscorts" value="0"/>
+        <LifeStart value="70"/>
+        <LifeMax value="70"/>
+        <ShieldsStart value="0"/>
+        <ShieldsMax value="0"/>
+        <ShieldRegenDelay value="0"/>
+        <ShieldRegenRate value="0"/>
+        <ShieldDamageRatio value="0"/>
+        <Speed value="4.5"/>
+        <Height value="10"/>
+        <PawnItemReduction value="0"/>
+        <BehaviorArray Link="WaterUnit"/>
+        <Radius value="0"/>
+        <AddedOnArray/>
+        <ScoreMake value="1"/>
+        <ScoreKill value="1"/>
+        <FlagArray index="IgnoreTerrainZInit" value="1"/>
+        <Attributes index="Robotic" value="1"/>
+        <Attributes index="Heroic" value="1"/>
+        <ScoreLost value="1"/>
+    </CUnit>
+    <CUnit id="Marauder">
+        <Food value="-1"/>
+        <CostResource index="Minerals" value="5"/>
+        <CostResource index="Vespene" value="0"/>
+        <LifeStart value="110"/>
+        <LifeMax value="110"/>
+        <Speed value="1.6992"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="1" Face="MoveHoldPosition" AbilCmd="move,HoldPos" Column="2"/>
+            <LayoutButtons index="2" Face="Attack" AbilCmd="attack,Execute" Column="3"/>
+            <LayoutButtons index="3" Column="4"/>
+            <LayoutButtons index="4" Face="Stop" AbilCmd="stop,Stop" Column="1"/>
+            <LayoutButtons index="5">
+                <Face value="ConcussiveGrenade"/>
+                <Type value="Passive"/>
+                <AbilCmd value="255,255"/>
+                <Requirements value=""/>
+                <Row value="1"/>
+                <Column value="4"/>
+            </LayoutButtons>
+            <LayoutButtons index="6" removed="1"/>
+        </CardLayouts>
+        <Radius value="0.3125"/>
+        <SeparationRadius value="0.3"/>
+        <InnerRadius value="0.25"/>
+        <GlossaryStrongArray index="0" value="VikingFighter"/>
+        <GlossaryStrongArray index="1" value="Wraith"/>
+        <GlossaryStrongArray index="2" removed="1"/>
+        <GlossaryWeakArray index="0" value="Marine"/>
+        <GlossaryWeakArray index="1" value="Vulture"/>
+        <GlossaryWeakArray index="2" removed="1"/>
+        <ScoreMake value="5"/>
+        <ScoreKill value="5"/>
+        <LifeArmor value="2"/>
+        <MinimapRadius value="0.3"/>
+        <Collide index="ForceField" value="0"/>
+        <Collide index="Locust" value="1"/>
+        <Sight value="5"/>
+        <ScoreLost value="5"/>
+        <FlagArray index="Unclickable" value="0"/>
+    </CUnit>
+    <CUnit id="Marine">
+        <CostResource index="Minerals" value="1"/>
+        <ScoreMake value="1"/>
+        <ScoreKill value="1"/>
+        <LifeStart value="70"/>
+        <LifeMax value="70"/>
+        <Speed value="1.6992"/>
+        <Radius value="0.3125"/>
+        <InnerRadius value="0.3125"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="1" Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
+            <LayoutButtons index="2" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="3"/>
+            <LayoutButtons index="3" Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="4"/>
+            <LayoutButtons index="4" Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons index="5" removed="1"/>
+            <LayoutButtons index="6" removed="1"/>
+        </CardLayouts>
+        <GlossaryStrongArray index="0" value="Goliath"/>
+        <GlossaryStrongArray index="1" value="VikingFighter"/>
+        <GlossaryStrongArray index="2" value="Wraith"/>
+        <GlossaryWeakArray index="0" value="Marauder"/>
+        <GlossaryWeakArray index="1" value="Hellion"/>
+        <MinimapRadius value="0.2"/>
+        <Collide index="ForceField" value="0"/>
+        <Collide index="Locust" value="1"/>
+        <Sight value="4.5"/>
+        <ScoreLost value="1"/>
+        <ScoreMakeCostFactor index="Minerals" value="1"/>
+        <ScoreResult value="Graphs"/>
+        <FlagArray index="Unclickable" value="0"/>
+    </CUnit>
+    <CUnit id="ConscriptMarine" parent="Marine">
+        <Name value="Unit/Name/ConscriptMarine"/>
+        <Description value="Button/Tooltip/ConscriptMarine"/>
+        <CostResource index="Minerals" value="0"/>
+        <CostResource index="Terrazine" value="1"/>
+        <FlagArray index="Unclickable" value="1"/>
+    </CUnit>
+    <CUnit id="Medic">
+        <Collide index="Locust" value="1"/>
+        <LifeStart value="75"/>
+        <LifeMax value="75"/>
+        <EnergyMax value="80"/>
+        <EnergyRegenRate value="0.6992"/>
+        <Speed value="1.6992"/>
+        <Sight value="5"/>
+        <Food value="-1"/>
+        <CostResource index="Minerals" value="3"/>
+        <CostResource index="Vespene" value="0"/>
+        <AbilArray index="3" Link="MedivacDoubleBeamHeal"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="3" Face="Heal" Type="AbilCmd" AbilCmd="MedivacDoubleBeamHeal,Execute" Row="1" Column="4"/>
+            <LayoutButtons index="4" Face="Flare" Type="AbilCmd" AbilCmd="Flare,255" Row="2" Column="1"/>
+            <LayoutButtons index="5" Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="4"/>
+            <LayoutButtons index="6" Face="AcquireMove" Type="AbilCmd" AbilCmd="move,AcquireMove" Row="0" Column="3"/>
+            <LayoutButtons index="7" Face="MedicHeal" Type="AbilCmd" AbilCmd="heal,Execute" Row="1" Column="4"/>
+            <LayoutButtons index="8" removed="1"/>
+        </CardLayouts>
+        <Radius value="0.3125"/>
+        <InnerRadius value="0.3125"/>
+        <ScoreMake value="3"/>
+        <ScoreKill value="3"/>
+        <ScoreLost value="3"/>
+        <MinimapRadius value="0.2"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
+        <FlagArray index="Unclickable" value="0"/>
+    </CUnit>
+    <CUnit id="Medivac">
+        <FlagArray index="IgnoreTerrainZInit" value="1"/>
+        <Collide index="Flying" value="0"/>
+        <Speed value="2.2304"/>
+        <Height value="10"/>
+        <CostResource index="Minerals" value="0"/>
+        <CostResource index="Vespene" value="0"/>
+        <CostResource index="Terrazine" value="15"/>
+        <MinimapRadius value="0.3"/>
+    </CUnit>
+    <CUnit id="MissileTurret">
+        <FlagArray index="Invulnerable" value="1"/>
+        <LifeStart value="10000"/>
+        <LifeMax value="10000"/>
+        <LifeRegenRate value="10000"/>
+    </CUnit>
+    <CUnit id="Nuke">
+        <CostResource index="Minerals" value="0"/>
+        <CostResource index="Vespene" value="0"/>
+    </CUnit>
+    <CUnit id="Predator">
+        <Collide index="Locust" value="1"/>
+        <Attributes index="Light" value="1"/>
+        <Attributes index="Armored" value="0"/>
+        <Attributes index="Mechanical" value="0"/>
+        <LifeStart value="250"/>
+        <LifeMax value="250"/>
+        <LifeArmor value="3"/>
+        <Sight value="4.5"/>
+        <Food value="0"/>
+        <CostResource index="Minerals" value="0"/>
+        <CostResource index="Vespene" value="0"/>
+        <CostResource index="Terrazine" value="8"/>
+        <Radius value="0.4375"/>
+        <SeparationRadius value="0.375"/>
+        <ScoreMake value="8"/>
+        <ScoreKill value="8"/>
+        <MinimapRadius value="0.3"/>
+    </CUnit>
+    <CUnit id="Raven">
+        <FlagArray index="Unclickable" value="0"/>
+        <FlagArray index="Cloaked" value="1"/>
+        <Attributes index="Light" value="0"/>
+        <Attributes index="Psionic" value="1"/>
+        <Attributes index="Hover" value="1"/>
+        <LifeStart value="220"/>
+        <LifeMax value="220"/>
+        <EnergyStart value="0"/>
+        <EnergyMax value="0"/>
+        <Speed value="1.6992"/>
+        <Sight value="5"/>
+        <Height value="0.2"/>
+        <Food value="0"/>
+        <CostResource index="Minerals" value="25"/>
+        <CostResource index="Vespene" value="0"/>
+        <AbilArray index="2" Link="attack"/>
+        <AbilArray index="3" removed="1"/>
+        <AbilArray index="4" removed="1"/>
+        <BehaviorArray index="0" Link="WaterUnit"/>
+        <BehaviorArray Link="Detector102"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="4" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons index="5" Face="KillerPhantasm" Type="Passive" AbilCmd="" Row="1" Column="1"/>
+            <LayoutButtons index="6" Face="PermanentlyCloakedZeratul" Type="Passive" AbilCmd="" Row="1" Column="0"/>
+            <LayoutButtons index="7" removed="1"/>
+            <LayoutButtons index="8" removed="1"/>
+            <LayoutButtons index="9" removed="1"/>
+            <LayoutButtons index="10" removed="1"/>
+        </CardLayouts>
+        <InnerRadius value="0.625"/>
+        <ScoreMake value="25"/>
+        <ScoreKill value="25"/>
+        <MinimapRadius value="0.3"/>
+        <WeaponArray Link="WraithA"/>
+        <PlaneArray index="Ground" value="1"/>
+        <LifeArmor value="2"/>
+        <ScoreLost value="25"/>
+    </CUnit>
+    <CUnit id="SCV">
+        <EnergyStart value="40"/>
+        <EnergyMax value="50"/>
+        <EnergyRegenRate value="0.6992"/>
+        <Speed value="1.6992"/>
+        <CostResource index="Minerals" value="6"/>
+        <AbilArray index="3" Link="SCVHarvest"/>
+        <AbilArray index="4" Link="TerranBuild"/>
+        <AbilArray index="5" Link="GatherSpecialObject"/>
+        <AbilArray index="6" Link="CancelTerrazineHarvest"/>
+        <AbilArray index="7" Link="TerranBuildDrop"/>
+        <AbilArray index="8" Link="SprayTerran"/>
+        <AbilArray Link="NanoRepair"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="3" Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="4"/>
+            <LayoutButtons index="4" Face="NanoRepair" Type="AbilCmd" AbilCmd="NanoRepair,Execute" Row="1" Column="4"/>
+            <LayoutButtons index="5" Face="AcquireMove" Type="AbilCmd" AbilCmd="move,AcquireMove" Row="0" Column="3"/>
+            <LayoutButtons index="6" removed="1"/>
+            <LayoutButtons index="7" removed="1"/>
+            <LayoutButtons index="8" removed="1"/>
+            <LayoutButtons index="9" removed="1"/>
+            <LayoutButtons index="10" removed="1"/>
+            <LayoutButtons index="11" removed="1"/>
+        </CardLayouts>
+        <Radius value="0.3125"/>
+        <SeparationRadius value="0.275"/>
+        <ScoreMake value="6"/>
+        <ScoreKill value="6"/>
+        <MinimapRadius value="0.2"/>
+        <Attributes index="Biological" value="0"/>
+        <Attributes index="Mechanical" value="0"/>
+        <Attributes index="Robotic" value="1"/>
+        <LifeStart value="70"/>
+        <LifeMax value="70"/>
+        <WeaponArray index="0" Link=""/>
+        <ScoreLost value="6"/>
+        <SubgroupPriority value="1"/>
+        <FlagArray index="Unclickable" value="0"/>
+    </CUnit>
+    <CUnit id="ScienceVessel">
+        <LifeStart value="220"/>
+        <LifeMax value="220"/>
+        <Acceleration value="2"/>
+        <Height value="7.6"/>
+        <CostResource index="Minerals" value="13"/>
+        <CostResource index="Vespene" value="0"/>
+        <AbilArray index="2" Link="NanoRepair"/>
+        <AbilArray index="3" removed="1"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="3" Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="4"/>
+            <LayoutButtons index="4" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="3"/>
+            <LayoutButtons index="5" Face="AcquireMove" Type="AbilCmd" AbilCmd="move,AcquireMove" Row="0" Column="3"/>
+            <LayoutButtons index="6" Face="NanoRepair" Type="AbilCmd" AbilCmd="NanoRepair,Execute" Row="1" Column="4"/>
+            <LayoutButtons index="7">
+                <Face value="KillerPhantasm"/>
+                <Type value="Passive"/>
+                <AbilCmd value=""/>
+                <Requirements value="UnknownRequirement"/>
+                <Row value="2"/>
+                <Column value="0"/>
+            </LayoutButtons>
+            <LayoutButtons index="8" removed="1"/>
+        </CardLayouts>
+        <ScoreMake value="15"/>
+        <ScoreKill value="15"/>
+        <MinimapRadius value="0.3"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
+        <EnergyStart value="75"/>
+        <BehaviorArray index="0" Link="WaterUnit"/>
+        <BehaviorArray Link="Detector102"/>
+        <FlagArray index="Unclickable" value="0"/>
+        <FlagArray index="IgnoreTerrainZInit" value="1"/>
+        <FlagArray index="ForceCollisionCheck" value="1"/>
+        <Attributes index="Hover" value="1"/>
+        <InnerRadius value="0.625"/>
+        <Sight value="5.5"/>
+        <EnergyMax value="150"/>
+        <EnergyRegenRate value="0.9101"/>
+        <Radius value="0.8125"/>
+        <ScoreLost value="15"/>
+    </CUnit>
+    <CUnit id="SiegeTank">
+        <CostResource index="Minerals" value="20"/>
+        <CostResource index="Vespene" value="0"/>
+        <AbilArray index="3" removed="1"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="1" Face="MoveHoldPosition" AbilCmd="move,HoldPos" Column="2"/>
+            <LayoutButtons index="2" Face="Attack" AbilCmd="attack,Execute" Column="3"/>
+            <LayoutButtons index="3" Face="MovePatrol" AbilCmd="move,Patrol"/>
+            <LayoutButtons index="4" Face="Stop" AbilCmd="stop,Stop" Column="1"/>
+            <LayoutButtons index="5" removed="1"/>
+            <LayoutButtons index="6" removed="1"/>
+            <LayoutButtons index="7" removed="1"/>
+        </CardLayouts>
+        <ScoreMake value="20"/>
+        <ScoreKill value="20"/>
+        <LifeStart value="200"/>
+        <LifeMax value="200"/>
+        <Speed value="1.3984"/>
+        <Radius value="0.625"/>
+        <SeparationRadius value="0.6"/>
+        <InnerRadius value="0.625"/>
+        <CargoSize value="8"/>
+        <GlossaryStrongArray index="0" value="Marine"/>
+        <GlossaryStrongArray index="1" value="Hellion"/>
+        <GlossaryStrongArray index="2" value="Vulture"/>
+        <GlossaryWeakArray index="0" value="Marauder"/>
+        <GlossaryWeakArray index="1" value="Wraith"/>
+        <LifeArmor value="2"/>
+        <MinimapRadius value="0.4"/>
+        <BehaviorArray index="0" removed="1"/>
+        <BehaviorArray index="1" removed="1"/>
+        <Attributes index="Armored" value="0"/>
+        <Attributes index="Massive" value="1"/>
+        <Collide index="ForceField" value="0"/>
+        <Collide index="Locust" value="1"/>
+        <Sight value="6"/>
+        <ScoreLost value="20"/>
+        <FlagArray index="Unclickable" value="0"/>
+    </CUnit>
+    <CUnit id="SiegeTankSieged">
+        <WeaponArray index="0" removed="1"/>
+    </CUnit>
+    <CUnit id="Spectre">
+        <Food value="0"/>
+    </CUnit>
+    <CUnit id="Thor">
+        <LifeStart value="280"/>
+        <LifeMax value="280"/>
+        <LifeArmor value="3"/>
+        <Speed value="1.3007"/>
+        <CostResource index="Minerals" value="0"/>
+        <CostResource index="Vespene" value="0"/>
+        <CostResource index="Terrazine" value="40"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="5" Face="ArmorpiercingMode" AbilCmd="ThorAPMode,Execute" Row="1" Column="1"/>
+            <LayoutButtons index="9" AbilCmd="255,255"/>
+        </CardLayouts>
+        <Radius value="0.625"/>
+        <SeparationRadius value="0.6"/>
+        <CargoSize value="0"/>
+        <ScoreMake value="40"/>
+        <ScoreKill value="40"/>
+    </CUnit>
+    <CUnit id="ThorAP">
+        <CostResource index="Minerals" value="0"/>
+        <CostResource index="Vespene" value="0"/>
+        <CostResource index="Terrazine" value="50"/>
+        <LifeStart value="300"/>
+        <LifeMax value="300"/>
+        <LifeArmor value="3"/>
+        <Speed value="1.6992"/>
+        <Acceleration value="500"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="4"/>
+            <LayoutButtons index="1" Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="1" Column="0"/>
+            <LayoutButtons index="2" Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="1" Column="1"/>
+            <LayoutButtons index="3" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="1" Column="3"/>
+            <LayoutButtons index="4" Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="1" Column="2"/>
+            <LayoutButtons index="5" Face="Cancel" Type="AbilCmd" AbilCmd="ThorNormalMode,Cancel" Row="2" Column="4"/>
+            <LayoutButtons index="6" removed="1"/>
+        </CardLayouts>
+        <ScoreMake value="300"/>
+        <ScoreKill value="300"/>
+    </CUnit>
+    <CUnit id="UnbuildableRocksDestructible">
+        <Attributes index="Armored" value="0"/>
+        <Attributes index="Structure" value="0"/>
+        <Attributes index="Summoned" value="1"/>
+        <Attributes index="User1" value="1"/>
+        <Radius value="0.125"/>
+        <SeparationRadius value="0.125"/>
+        <Footprint value="Footprint1x1"/>
+        <LifeStart value="175"/>
+        <LifeMax value="175"/>
+        <LifeRegenDelay value="10"/>
+        <LifeRegenRate value="0.5"/>
+    </CUnit>
+    <CUnit id="WaterPathBlocker">
+        <ReviveType value=""/>
+        <FlagArray index="Turnable" value="0"/>
+        <FlagArray index="Uncommandable" value="1"/>
+        <FlagArray index="Unselectable" value="1"/>
+        <FlagArray index="Untargetable" value="1"/>
+        <FlagArray index="Undetectable" value="1"/>
+        <FlagArray index="KillCredit" value="0"/>
+        <FlagArray index="Invulnerable" value="1"/>
+        <FlagArray index="ForceCollisionCheck" value="1"/>
+        <Collide index="Locust" value="1"/>
+        <Attributes index="Psionic" value="1"/>
+        <Attributes index="Structure" value="1"/>
+        <LifeStart value="10000"/>
+        <LifeMax value="10000"/>
+        <LifeArmor value="100000"/>
+        <LifeRegenRate value="10000"/>
+        <MinimapRadius value="0"/>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Melee"/>
+        <TacticalAI value=""/>
+        <LeaderAlias value=""/>
+        <HotkeyAlias value=""/>
+        <AIEvaluateAlias value=""/>
+    </CUnit>
+    <CUnit id="SpawnZone">
+        <DeathRevealRadius value="3"/>
+        <Mob value="Multiplayer"/>
+        <FlagArray index="Turnable" value="0"/>
+        <FlagArray index="IndividualSubgroups" value="1"/>
+        <FlagArray index="PreventDefeat" value="1"/>
+        <FlagArray index="PreventDestroy" value="1"/>
+        <FlagArray index="PenaltyRevealed" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="TownAlert" value="1"/>
+        <FlagArray index="Invulnerable" value="1"/>
+        <FlagArray index="NoPortraitTalk" value="1"/>
+        <FlagArray index="ArmorDisabledWhileConstructing" value="1"/>
+        <FogVisibility value="Snapshot"/>
+        <Attributes index="Psionic" value="1"/>
+        <Attributes index="Structure" value="1"/>
+        <LifeStart value="100000"/>
+        <LifeMax value="100000"/>
+        <LifeArmor value="100000"/>
+        <LifeRegenRate value="100000"/>
+        <LifeArmorName value="Unit/LifeArmorName/TerranBuildingPlating"/>
+        <Sight value="4"/>
+        <AttackTargetPriority value="11"/>
+        <AbilArray Link="Rally"/>
+        <AbilArray Link="BarracksTrain2"/>
+        <AbilArray Link="SelectCountry"/>
+        <CardLayouts>
+            <LayoutButtons Face="Rally" Type="AbilCmd" AbilCmd="Rally,Rally1" Row="0" Column="3"/>
+            <LayoutButtons Face="CommanderHornerLevel06" Type="Passive" Row="2" Column="0"/>
+            <LayoutButtons Face="SelectDefense2" Type="AbilCmd" AbilCmd="SelectCountry,Execute" Row="1" Column="4"/>
+        </CardLayouts>
+        <Radius value="0"/>
+        <SeparationRadius value="1.16"/>
+        <SubgroupPriority value="3"/>
+        <MinimapRadius value="0"/>
+        <EditorCategories value="ObjectType:Structure,ObjectFamily:Melee"/>
+        <TacticalAI value="Barracks"/>
+        <GlossaryPriority value="31"/>
+        <AIEvaluateAlias value="Barracks"/>
+    </CUnit>
+    <CUnit id="Starport">
+        <Footprint value="Footprint2x2Contour"/>
+        <PlacementFootprint value="Footprint2x2"/>
+        <FlagArray index="Turnable" value="1"/>
+        <FlagArray index="Invulnerable" value="1"/>
+        <LifeStart value="100000"/>
+        <LifeMax value="100000"/>
+        <LifeRegenRate value="100000"/>
+        <AbilArray index="3" Link="Rally"/>
+        <AbilArray index="4" Link="stop"/>
+        <AbilArray index="5" Link="SelectDefender2"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="Marine" AbilCmd="StarportTrain,Train1" Row="1"/>
+            <LayoutButtons index="1" Face="Stop" AbilCmd="stop,Stop"/>
+            <LayoutButtons index="2" Face="Attack" AbilCmd="attack,Execute"/>
+            <LayoutButtons index="3" Face="Rally" AbilCmd="Rally,Rally1"/>
+            <LayoutButtons index="4" Face="SelectDefense" AbilCmd="SelectDefender2,Execute" Column="0"/>
+            <LayoutButtons index="5" Face="Cancel" AbilCmd="que5,CancelLast" Row="0"/>
+            <LayoutButtons index="6" Face="VikingFighter" AbilCmd="StarportTrain,Train5" Row="1" Column="3"/>
+            <LayoutButtons index="7" Face="Banshee" AbilCmd="StarportTrain,Train4" Row="1" Column="4"/>
+            <LayoutButtons index="8" Face="Battlecruiser" AbilCmd="StarportTrain,Train8" Column="0"/>
+            <LayoutButtons index="9" Face="BuildHercules2" AbilCmd="StarportTrain,Train6" Row="1" Column="1"/>
+            <LayoutButtons index="10" Face="BuildScienceVessel" AbilCmd="StarportTrain,Train7" Row="1" Column="2"/>
+            <LayoutButtons index="11" Face="Raven" AbilCmd="StarportTrain,Train3" Column="1"/>
+            <LayoutButtons index="12" Face="Carrier" AbilCmd="StarportTrain,Train10" Column="2"/>
+            <LayoutButtons index="13" removed="1"/>
+            <LayoutButtons index="14" removed="1"/>
+            <LayoutButtons index="15" removed="1"/>
+            <LayoutButtons index="16" removed="1"/>
+            <LayoutButtons index="17" removed="1"/>
+            <LayoutButtons index="18" removed="1"/>
+        </CardLayouts>
+        <MinimapRadius value="1"/>
+        <WeaponArray Link="AutoTurret" Turret="AutoTurret"/>
+        <ScoreMake value="10"/>
+        <ScoreKill value="10"/>
+        <LifeArmor value="100000"/>
+        <BehaviorArray index="0" Link="Detector102"/>
+        <BehaviorArray index="1" removed="1"/>
+        <BehaviorArray index="2" removed="1"/>
+        <Sight value="7"/>
+    </CUnit>
+    <CUnit id="VikingFighter">
+        <LifeArmor value="2"/>
+        <Acceleration value="2"/>
+        <Height value="7.75"/>
+        <CostResource index="Minerals" value="10"/>
+        <CostResource index="Vespene" value="0"/>
+        <AbilArray index="3" removed="1"/>
+        <BehaviorArray index="0" Link="WaterUnit"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="1" Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="4"/>
+            <LayoutButtons index="4" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="3"/>
+            <LayoutButtons index="5" removed="1"/>
+            <LayoutButtons index="6" removed="1"/>
+            <LayoutButtons index="7" removed="1"/>
+        </CardLayouts>
+        <ScoreMake value="10"/>
+        <ScoreKill value="10"/>
+        <MinimapRadius value="0.25"/>
+        <GlossaryStrongArray index="0" value="Wraith"/>
+        <GlossaryStrongArray index="1" removed="1"/>
+        <GlossaryStrongArray index="2" removed="1"/>
+        <GlossaryWeakArray index="0" value="Marine"/>
+        <GlossaryWeakArray index="1" value="Goliath"/>
+        <GlossaryWeakArray index="2" removed="1"/>
+        <GlossaryWeakArray index="3" removed="1"/>
+        <SeparationRadius value="0.4375"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Flying6" value="1"/>
+        <Attributes index="Hover" value="1"/>
+        <Radius value="0.625"/>
+        <FlagArray index="Unclickable" value="0"/>
+        <FlagArray index="IgnoreTerrainZInit" value="1"/>
+        <FlagArray index="AIThreatGround" value="0"/>
+        <FlagArray index="AIThreatAir" value="0"/>
+        <FlagArray index="ForceCollisionCheck" value="1"/>
+        <LifeStart value="135"/>
+        <LifeMax value="135"/>
+        <Speed value="2.8007"/>
+        <Sight value="5"/>
+        <ScoreLost value="10"/>
+    </CUnit>
+    <CUnit id="Vulture">
+        <Mob value="Multiplayer"/>
+        <LifeStart value="130"/>
+        <LifeMax value="130"/>
+        <LifeArmor value="2"/>
+        <Speed value="2.3007"/>
+        <CostResource index="Minerals" value="8"/>
+        <AbilArray index="3" removed="1"/>
+        <AbilArray index="4" removed="1"/>
+        <AbilArray index="5" removed="1"/>
+        <BehaviorArray index="0" Link="WaterUnit2"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="3" Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="3"/>
+            <LayoutButtons index="4" Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="4"/>
+            <LayoutButtons index="5" Face="" Type="Undefined" AbilCmd="" Row="0" Column="0"/>
+            <LayoutButtons index="6">
+                <Face value="CommanderNovaBaseTrait"/>
+                <Type value="Passive"/>
+                <AbilCmd value=""/>
+                <Requirements value="UnknownRequirement"/>
+                <Row value="2"/>
+                <Column value="3"/>
+            </LayoutButtons>
+            <LayoutButtons index="7" removed="1"/>
+            <LayoutButtons index="8" removed="1"/>
+        </CardLayouts>
+        <Radius value="0.4375"/>
+        <SeparationRadius value="0.375"/>
+        <CargoSize value="4"/>
+        <ScoreMake value="8"/>
+        <ScoreKill value="8"/>
+        <ScoreResult value="BuildOrder"/>
+        <MinimapRadius value="0.3"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
+        <GlossaryPriority value="130"/>
+        <GlossaryStrongArray index="0" value="Hellion"/>
+        <GlossaryStrongArray index="1" value="Marauder"/>
+        <GlossaryStrongArray index="2" value="Goliath"/>
+        <GlossaryWeakArray index="0" value="SiegeTank"/>
+        <GlossaryWeakArray index="1" value="Wraith"/>
+        <GlossaryWeakArray index="2" removed="1"/>
+        <Attributes index="Mechanical" value="0"/>
+        <Attributes index="Robotic" value="1"/>
+        <Collide index="Locust" value="1"/>
+        <Sight value="4.5"/>
+        <ScoreLost value="8"/>
+        <FlagArray index="Unclickable" value="0"/>
+    </CUnit>
+    <CUnit id="GroundPathBlocker">
+        <ReviveType value=""/>
+        <FlagArray index="Turnable" value="0"/>
+        <FlagArray index="Uncommandable" value="1"/>
+        <FlagArray index="Unselectable" value="1"/>
+        <FlagArray index="Untargetable" value="1"/>
+        <FlagArray index="Undetectable" value="1"/>
+        <FlagArray index="KillCredit" value="0"/>
+        <FlagArray index="Invulnerable" value="1"/>
+        <FlagArray index="ForceCollisionCheck" value="1"/>
+        <Collide index="CreepTumor" value="1"/>
+        <Attributes index="Psionic" value="1"/>
+        <Attributes index="Structure" value="1"/>
+        <LifeStart value="10000"/>
+        <LifeMax value="10000"/>
+        <LifeArmor value="100000"/>
+        <LifeRegenRate value="10000"/>
+        <MinimapRadius value="0"/>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Melee"/>
+        <TacticalAI value=""/>
+        <LeaderAlias value=""/>
+        <HotkeyAlias value=""/>
+        <AIEvaluateAlias value=""/>
+    </CUnit>
+    <CUnit id="Wraith">
+        <EnergyStart value="0"/>
+        <EnergyMax value="0"/>
+        <EnergyRegenRate value="0"/>
+        <CostResource index="Minerals" value="0"/>
+        <CostResource index="Vespene" value="0"/>
+        <CostResource index="Terrazine" value="10"/>
+        <ScoreMake value="10"/>
+        <ScoreKill value="10"/>
+    </CUnit>
+</Catalog>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Catalog>
+    <CRequirementConst id="3"/>
+    <CRequirementAnd id="AndCountUnitNoPresentNukesTotalCountUnitTurn50Total">
+        <Tooltip value=""/>
+        <OperandArray value="CountUnitNoPresentNukesTotal"/>
+        <OperandArray value="CountUnitTurn50Total"/>
+    </CRequirementAnd>
+    <CRequirementCountUnit id="CountUnitNoPresentNukesTotal">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="NoPresentNukes" State="Total"/>
+    </CRequirementCountUnit>
+    <CRequirementCountUnit id="CountUnitTurn50Total">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="Turn50" State="Total"/>
+    </CRequirementCountUnit>
+    <CRequirementCountUpgrade id="CountUpgradeUnknownUpgradeCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="UnknownUpgrade" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementLT id="LT172494085CountUnitInterceptorQueuedOrBetterAtUnit3">
+        <OperandArray index="0" value="CountUnitInterceptorQueuedOrBetterAtUnit"/>
+        <OperandArray index="1" value="3"/>
+    </CRequirementLT>
+</Catalog>

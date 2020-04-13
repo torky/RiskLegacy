@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Catalog>
+    <CTerrain id="Agria">
+        <CreepBaseTexture value="Risk\Transparent.dds"/>
+        <CreepBaseSpecularMap value="Risk\Transparent.dds"/>
+        <CreepEdgeNormalMap value="Risk\Transparent.dds"/>
+        <CreepHeightMap value="Risk\Transparent.dds"/>
+        <CreepNoiseMap value="Risk\Transparent.dds"/>
+        <CreepSettingsArray index="Low" CreepNoiseSpeed="0.000000" CreepNoiseTiling="0.000000" CreepNoiseStrength="0.000000"/>
+        <CreepSettingsArray index="Medium" CreepNoiseSpeed="0.000000" CreepNoiseTiling="0.000000" CreepNoiseStrength="0.000000"/>
+        <CreepSettingsArray index="High" CreepNoiseSpeed="0.000000" CreepNoiseTiling="0.000000" CreepNoiseStrength="0.000000"/>
+        <CreepSettingsArray index="Ultra" CreepNoiseSpeed="0.000000" CreepNoiseTiling="0.000000" CreepNoiseStrength="0.000000"/>
+        <CreepSettingsArray index="Extreme" CreepNoiseSpeed="0.000000" CreepNoiseTiling="0.000000" CreepNoiseStrength="0.000000"/>
+    </CTerrain>
+</Catalog>
