@@ -1,0 +1,50 @@
+struct Base {
+    unit flag;
+    unit defender;
+    unit beacon;
+    unit structure;
+    point position;
+    int owner;
+};
+
+const int totalBases = 250; //250 is arbitrary. Just needs to be larger than the number of total bases
+Base[totalBases] allBases; 
+
+void InitializeBase (int player, int baseID, unit base) {
+    // Variable Declarations
+    point basePosition;
+
+    allBases[baseID].structure = base;
+    basePosition = UnitGetPosition(allBases[baseID].structure);
+
+    libNtve_gf_CreateUnitsWithDefaultFacing(1, "Beacon_TerranSmall", 0, player, PointWithOffsetPolar(basePosition, 1.5, 320.0));
+    allBases[baseID].beacon = UnitLastCreated();
+    UnitBehaviorAdd(UnitLastCreated(), "NoDefenderAura", UnitLastCreated(), 1);
+    allBases[baseID].position = UnitGetPosition(allBases[baseID].beacon);
+    
+    UnitCreate(1, "DestructibleKorhalFlag", c_unitCreateIgnorePlacement, 0, PointWithOffsetPolar(basePosition, 0.8, 60.0), 90.0);
+    allBases[baseID].flag = UnitLastCreated();
+    ActorSend(libNtve_gf_MainActorofUnit(UnitLastCreated()), libNtve_gf_TextureSelectByID("Nothing"));
+    libNtve_gf_ShowHideUnit(UnitLastCreated(), false);
+    
+    libNtve_gf_CreateUnitsWithDefaultFacing(1, "Marine", 0, player, PointWithOffsetPolar(basePosition, 1.5, 320.0));
+    allBases[baseID].defender = UnitLastCreated();
+    UnitBehaviorAdd(UnitLastCreated(), "Defender", UnitLastCreated(), 1);
+}
+
+void InitializeBases () {
+    int i;
+    int j;
+    int count;
+    int x = 0;
+    unit u;
+    for (i = 0; i < totalCountries; i+=1) {
+        count = UnitGroupCount(countries[i].bases, c_unitCountAll);
+        for(;;count-=1){
+            u = UnitGroupUnitFromEnd(countries[i].bases, count);
+            if(u == null) {break;}
+            InitializeBase(0, x, u);
+            x+=1;
+        }
+    }
+}

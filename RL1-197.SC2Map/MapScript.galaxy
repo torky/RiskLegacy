@@ -6,18 +6,18 @@
 // 
 //==================================================================================================
 include "TriggerLibs/NativeLib"
-include "scripts/start/Start.galaxy"
+include "scripts/start/Start"
 
-include "scripts/modes/1v1.galaxy"
-include "scripts/modes/Custom.galaxy"
-include "scripts/modes/Empire.galaxy"
-include "scripts/modes/Quick.galaxy"
-include "scripts/modes/Solo.galaxy"
-include "scripts/modes/Teams.galaxy"
-include "scripts/modes/Tutorial.galaxy"
+include "scripts/modes/1v1"
+include "scripts/modes/Custom"
+include "scripts/modes/Empire"
+include "scripts/modes/Quick"
+include "scripts/modes/Solo"
+include "scripts/modes/Teams"
+include "scripts/modes/Tutorial"
 
-
-
+include "scripts/bases/PredefineCountries"
+include "scripts/bases/Bases"
 
 //--------------------------------------------------------------------------------------------------
 // Library Initialization
@@ -53,6 +53,10 @@ bool gt_GameModeSelect_Func (bool testConds, bool runActions) {
     modeTeams = "0005";
 
     gameMode = GameAttributeGameValue("1");
+    VisEnable(c_visTypeMask, false);
+    VisEnable(c_visTypeFog, false);
+    PredefineCountries();
+    InitializeBases();
 
     if (gameMode == modeQuick) {
         UIDisplayMessage(PlayerGroupActive(), c_messageAreaChat, StringToText("Quick"));
@@ -77,6 +81,8 @@ bool gt_GameModeSelect_Func (bool testConds, bool runActions) {
 
     }
 
+    UIDisplayMessage(PlayerGroupActive(), c_messageAreaChat, StringToText("Display"));
+
     return true;
 }
 
@@ -91,12 +97,6 @@ void gt_GameModeSelect_Init () {
 //--------------------------------------------------------------------------------------------------
 void InitTriggers () {
     gt_GameModeSelect_Init();
-    gogoTriggers();
-    
-    
-    
-    
-
 }
 
 //--------------------------------------------------------------------------------------------------
