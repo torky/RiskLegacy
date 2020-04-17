@@ -8,6 +8,16 @@
 include "TriggerLibs/NativeLib"
 include "scripts/start/Start.galaxy"
 
+include "scripts/modes/1v1.galaxy"
+include "scripts/modes/Custom.galaxy"
+include "scripts/modes/Empire.galaxy"
+include "scripts/modes/Quick.galaxy"
+include "scripts/modes/Solo.galaxy"
+include "scripts/modes/Teams.galaxy"
+include "scripts/modes/Tutorial.galaxy"
+
+
+
 
 //--------------------------------------------------------------------------------------------------
 // Library Initialization
