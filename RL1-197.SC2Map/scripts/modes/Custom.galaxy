@@ -1,11 +1,5 @@
 trigger gt_CustomGame;
 
-bool SetOptions (){
-    UIDisplayMessage(PlayerGroupActive(), c_messageAreaChat, StringToText("Setting Options"));
-
-    return true;
-}
-
 bool gt_CustomGame_func (bool TestConds, bool RunActions){
     SetOptions();
     return true;

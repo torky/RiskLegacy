@@ -1,0 +1,3 @@
+void SetOptions (){
+    UIDisplayMessage(PlayerGroupActive(), c_messageAreaChat, StringToText("Setting Options"));
+}
