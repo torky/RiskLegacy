@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PlacedObjects Version="27">
+    <ObjectUnit Id="1909665776" Position="97.364,82.108,0" Rotation="0.7915" Scale="1,1,1" UnitType="Zergling" Player="1"/>
+    <ObjectUnit Id="1538989570" Position="81.8862,99.0925,0" Rotation="0.8684" Scale="1,1,1" UnitType="Zergling" Player="3"/>
+    <ObjectUnit Id="378964660" Position="119.8986,91.4321,0" Rotation="4.8156" Scale="1,1,1" UnitType="Zergling" Player="6"/>
+    <ObjectUnit Id="17634637" Position="85.2604,81.5117,0" Rotation="3.8813" Scale="1,1,1" UnitType="Zergling" Player="1"/>
+    <ObjectUnit Id="792138617" Position="95.4345,92.4384,0" Rotation="1.823" Scale="1,1,1" UnitType="Zergling" Player="3"/>
+    <ObjectUnit Id="1965945792" Position="93.092,98.8115,0" Rotation="4.3461" Scale="1,1,1" UnitType="Zergling" Player="3"/>
+</PlacedObjects>

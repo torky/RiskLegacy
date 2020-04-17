@@ -1,0 +1,64 @@
+//==================================================================================================
+// 
+// Generated Map Script
+// 
+// Name:   Just Another StarCraft II Map
+// 
+//==================================================================================================
+include "TriggerLibs/NativeLib"
+
+//--------------------------------------------------------------------------------------------------
+// Library Initialization
+//--------------------------------------------------------------------------------------------------
+void InitLibs () {
+    libNtve_InitLib();
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger Variables
+//--------------------------------------------------------------------------------------------------
+trigger gt_MeleeInitialization;
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Melee Initialization
+//--------------------------------------------------------------------------------------------------
+bool gt_MeleeInitialization_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    unitgroup autoC985F7EA_g;
+    int autoC985F7EA_u;
+    unit autoC985F7EA_var;
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    autoC985F7EA_g = UnitLastCreatedGroup();
+    autoC985F7EA_u = UnitGroupCount(autoC985F7EA_g, c_unitCountAll);
+    for (;; autoC985F7EA_u -= 1) {
+        autoC985F7EA_var = UnitGroupUnitFromEnd(autoC985F7EA_g, autoC985F7EA_u);
+        if (autoC985F7EA_var == null) { break; }
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_MeleeInitialization_Init () {
+    gt_MeleeInitialization = TriggerCreate("gt_MeleeInitialization_Func");
+    TriggerAddEventMapInit(gt_MeleeInitialization);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger Initialization
+//--------------------------------------------------------------------------------------------------
+void InitTriggers () {
+    gt_MeleeInitialization_Init();
+}
+
+//--------------------------------------------------------------------------------------------------
+// Map Initialization
+//--------------------------------------------------------------------------------------------------
+void InitMap () {
+    InitLibs();
+    InitTriggers();
+}
