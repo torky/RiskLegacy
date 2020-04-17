@@ -1,0 +1,26 @@
+
+
+trigger gt_StartGame;
+
+bool gt_StartGame_func (bool TestConds, bool RunActions){
+    
+    GameUserDisplayMessage(1, c_messageAreaChat, StringToText("Lol"));
+    UIDisplayMessage(PlayerGroupActive(), c_messageAreaChat, StringToText("WE lol"));
+
+    return true;
+
+}
+
+void gt_StartGame_Init () {
+    gt_StartGame = TriggerCreate("gt_StartGame_func");
+    TriggerAddEventMapInit(gt_StartGame);
+}
+
+void gogoTriggers () {
+  
+    gt_StartGame_Init();
+    
+    
+    
+
+}
