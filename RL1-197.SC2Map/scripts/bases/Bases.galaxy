@@ -48,3 +48,9 @@ void InitializeBases () {
         }
     }
 }
+
+void SetBaseOwnership(structref<Base> b, int player) {
+    b.owner = player;
+    UnitSetOwner(b.defender, player, true);
+    UnitSetOwner(b.structure, player, true);
+}

@@ -27,7 +27,6 @@ void InitLibs () {
     libNtve_InitLib();
 }
 
-
 //--------------------------------------------------------------------------------------------------
 // Trigger Variables
 //--------------------------------------------------------------------------------------------------
@@ -36,10 +35,6 @@ trigger gt_GameModeSelect;
 //--------------------------------------------------------------------------------------------------
 // Trigger: Melee Initialization
 //--------------------------------------------------------------------------------------------------
-
-
-
-
 
 bool gt_GameModeSelect_Func (bool testConds, bool runActions) {
     string gameMode;
@@ -50,16 +45,7 @@ bool gt_GameModeSelect_Func (bool testConds, bool runActions) {
     string modeTutorial;
     string modeSolo;
     string modeTeams;
-
-    Modes mode;
-    mode.modeQuick = "0001";
-    mode.mode1v1 = "0007";
-    mode.modeEmpire = "0006";
-    mode.modeCustom = "0002";
-    mode.modeTutorial = "0003";
-    mode.modeSolo = "0004";
-    mode.modeTeams = "0005";
-
+    playergroup players;
 
     modeQuick = "0001";
     mode1v1 = "0007";
@@ -69,15 +55,16 @@ bool gt_GameModeSelect_Func (bool testConds, bool runActions) {
     modeSolo = "0004";
     modeTeams = "0005";
     
-    
-
     gameMode = GameAttributeGameValue("1");
     VisEnable(c_visTypeMask, false);
     VisEnable(c_visTypeFog, false);
     PredefineCountries();
     InitializeBases();
-    
-    
+
+    players = PlayerGroupEmpty();
+    PlayerGroupAdd(players, 0);
+    PlayerGroupAdd(players, 1);
+    DistributeTerritories(players);
 
     if (gameMode == modeQuick) {
         UIDisplayMessage(PlayerGroupActive(), c_messageAreaChat, StringToText("Quick"));
@@ -96,7 +83,6 @@ bool gt_GameModeSelect_Func (bool testConds, bool runActions) {
 
     }else if (gameMode == modeSolo) {
         UIDisplayMessage(PlayerGroupActive(), c_messageAreaChat, StringToText("Solo"));
-        DistributeTerritories();
 
     }else if (gameMode == modeTeams) {
         UIDisplayMessage(PlayerGroupActive(), c_messageAreaChat, StringToText("Teams"));
