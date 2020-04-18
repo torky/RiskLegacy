@@ -1,61 +1,65 @@
 
-struct PickedPlayer{
-    int player;
+struct Picked{
+    int value;
     bool picked;
 };
-typedef PickedPlayer[15] PlayerArray;
+
+typedef Picked[16] PlayerArray;
 
 void GeneratePickedPlayers(playergroup players, int count, arrayref<PlayerArray> pickedPlayers){
     int i;
     int p;
     for(i = 1; i <= count; i += 1){
-        p = PlayerGroupPlayer(players, i);
-
-        pickedPlayers[i-1].player = p;
+        pickedPlayers[i-1].value = PlayerGroupPlayer(players, i);;
         pickedPlayers[i-1].picked = false;
     }
 }
 
-int GetNextPlayer(arrayref<PlayerArray> players, int i){
-    int j = 0;
-    while(i > 0){
-        while(players[j].picked){ j+=1; }
-        j+=1;
-        i-=1;
-    }
-    return j;
-}
-
 void DistributeTerritories(playergroup players) {
-    int x;
-    int count;
     int i;
-    int j;
+    int count;
     int r;
     int p;
+    int j;
+    int c;
+    structref<Base> b;
+    int bi;
     PlayerArray pickedPlayers;
 
     count = PlayerGroupCount(players);
-    j = 0;
-    for(i = 0; i < totalBases; i+=1){
-        if(j == 0){
+    j = -1;
+    c = 0;
+    i = 0;
+    while(i < totalCountries){
+        if(j == -1){
             j = count-1;
             GeneratePickedPlayers(players, count, pickedPlayers);
         }
+        bi = countries[i].baseIDs[c];
+        b = allBases[bi];
+
+        if(b.structure == null){
+            c = 0;
+            i+=1;
+            bi = countries[i].baseIDs[c];
+            b = allBases[bi];
+        }
 
         r = RandomInt(0, j);
-        p = GetNextPlayer(pickedPlayers, r);
-        pickedPlayers[p].picked = true;
-        p = pickedPlayers[p].player;
-        SetBaseOwnership(allBases[i], p);
+
+        while(pickedPlayers[r].picked) {
+            r+=1;
+        }
+
+        pickedPlayers[r].picked = true;
+        p = pickedPlayers[r].value;
+        
+        SetBaseOwnership(b, p);
+        c+=1;
         j-=1;
     }
     
 }
-
-
-
-
 
 
 

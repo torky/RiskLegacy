@@ -1,7 +1,8 @@
 struct Country {
     string name;
-    unitgroup bases;
-    unit structure;
+    unitgroup structures;
+    int[10] baseIDs;
+    unit spawn;
     string flagTexture;
     string flagImage;
 };
@@ -15,7 +16,7 @@ void PredefineCountries(){
     
 
     for( i = 0; i < totalCountries; i+=1){
-        countries[i].bases = UnitGroupEmpty();
+        countries[i].structures = UnitGroupEmpty();
         if (i == 0) {
             countries[i].name = "No Nationality";
             countries[i].flagTexture = "Nothing";
@@ -23,768 +24,768 @@ void PredefineCountries(){
         }
         else if (i == 1) {
             countries[i].name = "Iceland";
-            countries[i].structure = UnitFromId(2287);
+            countries[i].spawn = UnitFromId(2287);
             countries[i].flagTexture = "Iceland";
             countries[i].flagImage = "Risk\\Flag\\Iceland.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(174));
-            UnitGroupAdd(countries[i].bases, UnitFromId(923877051));
-            UnitGroupAdd(countries[i].bases, UnitFromId(175));
+            UnitGroupAdd(countries[i].structures, UnitFromId(174));
+            UnitGroupAdd(countries[i].structures, UnitFromId(923877051));
+            UnitGroupAdd(countries[i].structures, UnitFromId(175));
         }
         else if (i == 2) {
             countries[i].name = "Ireland";
-            countries[i].structure = UnitFromId(2289);
+            countries[i].spawn = UnitFromId(2289);
             countries[i].flagTexture = "Ireland";
             countries[i].flagImage = "Risk\\Flag\\Ireland.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(15));
-            UnitGroupAdd(countries[i].bases, UnitFromId(570545106));
+            UnitGroupAdd(countries[i].structures, UnitFromId(15));
+            UnitGroupAdd(countries[i].structures, UnitFromId(570545106));
         }
         else if (i == 3) {
             countries[i].name = "England";
-            countries[i].structure = UnitFromId(2288);
+            countries[i].spawn = UnitFromId(2288);
             countries[i].flagTexture = "England";
             countries[i].flagImage = "Risk\\Flag\\England.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(14));
-            UnitGroupAdd(countries[i].bases, UnitFromId(2101162448));
-            UnitGroupAdd(countries[i].bases, UnitFromId(13));
-            UnitGroupAdd(countries[i].bases, UnitFromId(1460));
+            UnitGroupAdd(countries[i].structures, UnitFromId(14));
+            UnitGroupAdd(countries[i].structures, UnitFromId(2101162448));
+            UnitGroupAdd(countries[i].structures, UnitFromId(13));
+            UnitGroupAdd(countries[i].structures, UnitFromId(1460));
         }
         else if (i == 4) {
             countries[i].name = "Norway";
-            countries[i].structure = UnitFromId(2286);
+            countries[i].spawn = UnitFromId(2286);
             countries[i].flagTexture = "NorwaySvalbard";
             countries[i].flagImage = "Risk\\Flag\\Norway.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(168));
-            UnitGroupAdd(countries[i].bases, UnitFromId(171));
-            UnitGroupAdd(countries[i].bases, UnitFromId(169));
-            UnitGroupAdd(countries[i].bases, UnitFromId(173));
-            UnitGroupAdd(countries[i].bases, UnitFromId(170));
+            UnitGroupAdd(countries[i].structures, UnitFromId(168));
+            UnitGroupAdd(countries[i].structures, UnitFromId(171));
+            UnitGroupAdd(countries[i].structures, UnitFromId(169));
+            UnitGroupAdd(countries[i].structures, UnitFromId(173));
+            UnitGroupAdd(countries[i].structures, UnitFromId(170));
         }
         else if (i == 5) {
             countries[i].name = "Sweden";
-            countries[i].structure = UnitFromId(2285);
+            countries[i].spawn = UnitFromId(2285);
             countries[i].flagTexture = "Sweden";
             countries[i].flagImage = "Risk\\Flag\\Sweden.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(167));
-            UnitGroupAdd(countries[i].bases, UnitFromId(165));
-            UnitGroupAdd(countries[i].bases, UnitFromId(164));
-            UnitGroupAdd(countries[i].bases, UnitFromId(163));
-            UnitGroupAdd(countries[i].bases, UnitFromId(1810338160));
+            UnitGroupAdd(countries[i].structures, UnitFromId(167));
+            UnitGroupAdd(countries[i].structures, UnitFromId(165));
+            UnitGroupAdd(countries[i].structures, UnitFromId(164));
+            UnitGroupAdd(countries[i].structures, UnitFromId(163));
+            UnitGroupAdd(countries[i].structures, UnitFromId(1810338160));
         }
         else if (i == 6) {
             countries[i].name = "Finland";
-            countries[i].structure = UnitFromId(2284);
+            countries[i].spawn = UnitFromId(2284);
             countries[i].flagTexture = "Finland";
             countries[i].flagImage = "Risk\\Flag\\Finland.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(18758739));
-            UnitGroupAdd(countries[i].bases, UnitFromId(158));
-            UnitGroupAdd(countries[i].bases, UnitFromId(161));
-            UnitGroupAdd(countries[i].bases, UnitFromId(588667052));
+            UnitGroupAdd(countries[i].structures, UnitFromId(18758739));
+            UnitGroupAdd(countries[i].structures, UnitFromId(158));
+            UnitGroupAdd(countries[i].structures, UnitFromId(161));
+            UnitGroupAdd(countries[i].structures, UnitFromId(588667052));
         }
         else if (i == 7) {
             countries[i].name = "Denmark";
-            countries[i].structure = UnitFromId(2298);
+            countries[i].spawn = UnitFromId(2298);
             countries[i].flagTexture = "Denmark";
             countries[i].flagImage = "Risk\\Flag\\Denmark.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(141));
-            UnitGroupAdd(countries[i].bases, UnitFromId(142));
-            UnitGroupAdd(countries[i].bases, UnitFromId(1193437273));
+            UnitGroupAdd(countries[i].structures, UnitFromId(141));
+            UnitGroupAdd(countries[i].structures, UnitFromId(142));
+            UnitGroupAdd(countries[i].structures, UnitFromId(1193437273));
         }
         else if (i == 8) {
             countries[i].name = "Morocco";
-            countries[i].structure = UnitFromId(2248);
+            countries[i].spawn = UnitFromId(2248);
             countries[i].flagTexture = "Morocco";
             countries[i].flagImage = "Risk\\Flag\\Morocco.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(185));
-            UnitGroupAdd(countries[i].bases, UnitFromId(113598715));
-            UnitGroupAdd(countries[i].bases, UnitFromId(187));
+            UnitGroupAdd(countries[i].structures, UnitFromId(185));
+            UnitGroupAdd(countries[i].structures, UnitFromId(113598715));
+            UnitGroupAdd(countries[i].structures, UnitFromId(187));
         }
         else if (i == 9) {
             countries[i].name = "Ouargla (Algeria)";
-            countries[i].structure = UnitFromId(2247);
+            countries[i].spawn = UnitFromId(2247);
             countries[i].flagTexture = "Algeria";
             countries[i].flagImage = "Risk\\Flag\\Algeria.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(1656236068));
-            UnitGroupAdd(countries[i].bases, UnitFromId(192));
+            UnitGroupAdd(countries[i].structures, UnitFromId(1656236068));
+            UnitGroupAdd(countries[i].structures, UnitFromId(192));
         }
         else if (i == 10) {
             countries[i].name = "Tunisia";
-            countries[i].structure = UnitFromId(2246);
+            countries[i].spawn = UnitFromId(2246);
             countries[i].flagTexture = "Tunisia";
             countries[i].flagImage = "Risk\\Flag\\Tunisia.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(181));
-            UnitGroupAdd(countries[i].bases, UnitFromId(180));
+            UnitGroupAdd(countries[i].structures, UnitFromId(181));
+            UnitGroupAdd(countries[i].structures, UnitFromId(180));
         }
         else if (i == 11) {
             countries[i].name = "Tripoli (Libya)";
-            countries[i].structure = UnitFromId(2245);
+            countries[i].spawn = UnitFromId(2245);
             countries[i].flagTexture = "Libya";
             countries[i].flagImage = "Risk\\Flag\\Libya.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(450980156));
-            UnitGroupAdd(countries[i].bases, UnitFromId(182));
-            UnitGroupAdd(countries[i].bases, UnitFromId(183));
+            UnitGroupAdd(countries[i].structures, UnitFromId(450980156));
+            UnitGroupAdd(countries[i].structures, UnitFromId(182));
+            UnitGroupAdd(countries[i].structures, UnitFromId(183));
         }
         else if (i == 12) {
             countries[i].name = "Benghazi (Libya)";
-            countries[i].structure = UnitFromId(2243);
+            countries[i].spawn = UnitFromId(2243);
             countries[i].flagTexture = "Libya";
             countries[i].flagImage = "Risk\\Flag\\Libya.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(89));
-            UnitGroupAdd(countries[i].bases, UnitFromId(90));
+            UnitGroupAdd(countries[i].structures, UnitFromId(89));
+            UnitGroupAdd(countries[i].structures, UnitFromId(90));
         }
         else if (i == 13) {
             countries[i].name = "Corsica (France)";
-            countries[i].structure = UnitFromId(2291);
+            countries[i].spawn = UnitFromId(2291);
             countries[i].flagTexture = "France";
             countries[i].flagImage = "Risk\\Flag\\France.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(179));
-            UnitGroupAdd(countries[i].bases, UnitFromId(4359));
+            UnitGroupAdd(countries[i].structures, UnitFromId(179));
+            UnitGroupAdd(countries[i].structures, UnitFromId(4359));
         }
         else if (i == 14) {
             countries[i].name = "Crete (Greece)";
-            countries[i].structure = UnitFromId(2244);
+            countries[i].spawn = UnitFromId(2244);
             countries[i].flagTexture = "Greece";
             countries[i].flagImage = "Risk\\Flag\\Greece.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(107));
+            UnitGroupAdd(countries[i].structures, UnitFromId(107));
         }
         else if (i == 15) {
             countries[i].name = "Egypt";
-            countries[i].structure = UnitFromId(2242);
+            countries[i].spawn = UnitFromId(2242);
             countries[i].flagTexture = "Egypt";
             countries[i].flagImage = "Risk\\Flag\\Egypt.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(85));
-            UnitGroupAdd(countries[i].bases, UnitFromId(86));
-            UnitGroupAdd(countries[i].bases, UnitFromId(88));
+            UnitGroupAdd(countries[i].structures, UnitFromId(85));
+            UnitGroupAdd(countries[i].structures, UnitFromId(86));
+            UnitGroupAdd(countries[i].structures, UnitFromId(88));
         }
         else if (i == 16) {
             countries[i].name = "Israel";
-            countries[i].structure = UnitFromId(2275);
+            countries[i].spawn = UnitFromId(2275);
             countries[i].flagTexture = "Israel";
             countries[i].flagImage = "Risk\\Flag\\Israel.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(84));
-            UnitGroupAdd(countries[i].bases, UnitFromId(800818469));
+            UnitGroupAdd(countries[i].structures, UnitFromId(84));
+            UnitGroupAdd(countries[i].structures, UnitFromId(800818469));
         }
         else if (i == 17) {
             countries[i].name = "Cyprus";
-            countries[i].structure = UnitFromId(2272);
+            countries[i].spawn = UnitFromId(2272);
             countries[i].flagTexture = "Cyprus";
             countries[i].flagImage = "risk\\Flag\\Cyprus.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(104));
+            UnitGroupAdd(countries[i].structures, UnitFromId(104));
         }
         else if (i == 18) {
             countries[i].name = "Lebanon";
-            countries[i].structure = UnitFromId(2274);
+            countries[i].spawn = UnitFromId(2274);
             countries[i].flagTexture = "Lebanon";
             countries[i].flagImage = "Risk\\Flag\\Lebanon.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(81));
-            UnitGroupAdd(countries[i].bases, UnitFromId(1283761315));
+            UnitGroupAdd(countries[i].structures, UnitFromId(81));
+            UnitGroupAdd(countries[i].structures, UnitFromId(1283761315));
         }
         else if (i == 19) {
             countries[i].name = "Jordan";
-            countries[i].structure = UnitFromId(2276);
+            countries[i].spawn = UnitFromId(2276);
             countries[i].flagTexture = "Jordan";
             countries[i].flagImage = "Risk\\Flag\\Jordan.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(91));
-            UnitGroupAdd(countries[i].bases, UnitFromId(92));
+            UnitGroupAdd(countries[i].structures, UnitFromId(91));
+            UnitGroupAdd(countries[i].structures, UnitFromId(92));
         }
         else if (i == 20) {
             countries[i].name = "Saudi Arabia";
-            countries[i].structure = UnitFromId(2277);
+            countries[i].spawn = UnitFromId(2277);
             countries[i].flagTexture = "SaudiArabia";
             countries[i].flagImage = "Risk\\Flag\\SaudiArabia.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(95));
-            UnitGroupAdd(countries[i].bases, UnitFromId(94));
-            UnitGroupAdd(countries[i].bases, UnitFromId(1879904876));
+            UnitGroupAdd(countries[i].structures, UnitFromId(95));
+            UnitGroupAdd(countries[i].structures, UnitFromId(94));
+            UnitGroupAdd(countries[i].structures, UnitFromId(1879904876));
         }
         else if (i == 21) {
             countries[i].name = "Syria";
-            countries[i].structure = UnitFromId(2273);
+            countries[i].spawn = UnitFromId(2273);
             countries[i].flagTexture = "Syria";
             countries[i].flagImage = "Risk\\Flag\\Syria.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(101));
-            UnitGroupAdd(countries[i].bases, UnitFromId(103));
-            UnitGroupAdd(countries[i].bases, UnitFromId(367210451));
+            UnitGroupAdd(countries[i].structures, UnitFromId(101));
+            UnitGroupAdd(countries[i].structures, UnitFromId(103));
+            UnitGroupAdd(countries[i].structures, UnitFromId(367210451));
         }
         else if (i == 22) {
             countries[i].name = "Iraq";
-            countries[i].structure = UnitFromId(2278);
+            countries[i].spawn = UnitFromId(2278);
             countries[i].flagTexture = "Iraq";
             countries[i].flagImage = "Risk\\Flag\\Iraq.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(97));
-            UnitGroupAdd(countries[i].bases, UnitFromId(99));
-            UnitGroupAdd(countries[i].bases, UnitFromId(98));
+            UnitGroupAdd(countries[i].structures, UnitFromId(97));
+            UnitGroupAdd(countries[i].structures, UnitFromId(99));
+            UnitGroupAdd(countries[i].structures, UnitFromId(98));
         }
         else if (i == 23) {
             countries[i].name = "Iran";
-            countries[i].structure = UnitFromId(2279);
+            countries[i].spawn = UnitFromId(2279);
             countries[i].flagTexture = "Iran";
             countries[i].flagImage = "Risk\\Flag\\Iran.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(1487086642));
-            UnitGroupAdd(countries[i].bases, UnitFromId(707921808));
+            UnitGroupAdd(countries[i].structures, UnitFromId(1487086642));
+            UnitGroupAdd(countries[i].structures, UnitFromId(707921808));
         }
         else if (i == 24) {
             countries[i].name = "Turkey";
-            countries[i].structure = UnitFromId(2271);
+            countries[i].spawn = UnitFromId(2271);
             countries[i].flagTexture = "Turkey";
             countries[i].flagImage = "Risk\\Flag\\Turkey.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(68));
-            UnitGroupAdd(countries[i].bases, UnitFromId(71));
-            UnitGroupAdd(countries[i].bases, UnitFromId(1488658118));
-            UnitGroupAdd(countries[i].bases, UnitFromId(69));
-            UnitGroupAdd(countries[i].bases, UnitFromId(516147626));
-            UnitGroupAdd(countries[i].bases, UnitFromId(73));
-            UnitGroupAdd(countries[i].bases, UnitFromId(74));
+            UnitGroupAdd(countries[i].structures, UnitFromId(68));
+            UnitGroupAdd(countries[i].structures, UnitFromId(71));
+            UnitGroupAdd(countries[i].structures, UnitFromId(1488658118));
+            UnitGroupAdd(countries[i].structures, UnitFromId(69));
+            UnitGroupAdd(countries[i].structures, UnitFromId(516147626));
+            UnitGroupAdd(countries[i].structures, UnitFromId(73));
+            UnitGroupAdd(countries[i].structures, UnitFromId(74));
         }
         else if (i == 25) {
             countries[i].name = "Azerbaijan";
-            countries[i].structure = UnitFromId(2280);
+            countries[i].spawn = UnitFromId(2280);
             countries[i].flagTexture = "Azerbaijan";
             countries[i].flagImage = "risk\\Flag\\Azerbaijan.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(143));
-            UnitGroupAdd(countries[i].bases, UnitFromId(1723427203));
+            UnitGroupAdd(countries[i].structures, UnitFromId(143));
+            UnitGroupAdd(countries[i].structures, UnitFromId(1723427203));
         }
         else if (i == 26) {
             countries[i].name = "Georgia";
-            countries[i].structure = UnitFromId(2281);
+            countries[i].spawn = UnitFromId(2281);
             countries[i].flagTexture = "Georgia";
             countries[i].flagImage = "Risk\\Flag\\Georgia.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(75));
-            UnitGroupAdd(countries[i].bases, UnitFromId(76));
+            UnitGroupAdd(countries[i].structures, UnitFromId(75));
+            UnitGroupAdd(countries[i].structures, UnitFromId(76));
         }
         else if (i == 27) {
             countries[i].name = "Western (Russia)";
-            countries[i].structure = UnitFromId(2283);
+            countries[i].spawn = UnitFromId(2283);
             countries[i].flagTexture = "Russia";
             countries[i].flagImage = "Risk\\Flag\\Russia.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(149));
-            UnitGroupAdd(countries[i].bases, UnitFromId(152));
-            UnitGroupAdd(countries[i].bases, UnitFromId(148));
-            UnitGroupAdd(countries[i].bases, UnitFromId(151));
-            UnitGroupAdd(countries[i].bases, UnitFromId(147));
-            UnitGroupAdd(countries[i].bases, UnitFromId(1885824088));
-            UnitGroupAdd(countries[i].bases, UnitFromId(154));
-            UnitGroupAdd(countries[i].bases, UnitFromId(1932078869));
-            UnitGroupAdd(countries[i].bases, UnitFromId(115));
+            UnitGroupAdd(countries[i].structures, UnitFromId(149));
+            UnitGroupAdd(countries[i].structures, UnitFromId(152));
+            UnitGroupAdd(countries[i].structures, UnitFromId(148));
+            UnitGroupAdd(countries[i].structures, UnitFromId(151));
+            UnitGroupAdd(countries[i].structures, UnitFromId(147));
+            UnitGroupAdd(countries[i].structures, UnitFromId(1885824088));
+            UnitGroupAdd(countries[i].structures, UnitFromId(154));
+            UnitGroupAdd(countries[i].structures, UnitFromId(1932078869));
+            UnitGroupAdd(countries[i].structures, UnitFromId(115));
         }
         else if (i == 28) {
             countries[i].name = "Kazakhstan";
-            countries[i].structure = UnitFromId(2282);
+            countries[i].spawn = UnitFromId(2282);
             countries[i].flagTexture = "Kazakhstan";
             countries[i].flagImage = "Risk\\Flag\\Kazakhstan.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(750833424));
-            UnitGroupAdd(countries[i].bases, UnitFromId(144));
+            UnitGroupAdd(countries[i].structures, UnitFromId(750833424));
+            UnitGroupAdd(countries[i].structures, UnitFromId(144));
         }
         else if (i == 29) {
             countries[i].name = "Portugal";
-            countries[i].structure = UnitFromId(2250);
+            countries[i].spawn = UnitFromId(2250);
             countries[i].flagTexture = "Portugal";
             countries[i].flagImage = "Risk\\Flag\\Portugal.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(3945));
-            UnitGroupAdd(countries[i].bases, UnitFromId(1));
+            UnitGroupAdd(countries[i].structures, UnitFromId(3945));
+            UnitGroupAdd(countries[i].structures, UnitFromId(1));
         }
         else if (i == 30) {
             countries[i].name = "Spain";
-            countries[i].structure = UnitFromId(2249);
+            countries[i].spawn = UnitFromId(2249);
             countries[i].flagTexture = "Spain";
             countries[i].flagImage = "Risk\\Flag\\Spain.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(6));
-            UnitGroupAdd(countries[i].bases, UnitFromId(3));
-            UnitGroupAdd(countries[i].bases, UnitFromId(4));
-            UnitGroupAdd(countries[i].bases, UnitFromId(7));
-            UnitGroupAdd(countries[i].bases, UnitFromId(472372993));
+            UnitGroupAdd(countries[i].structures, UnitFromId(6));
+            UnitGroupAdd(countries[i].structures, UnitFromId(3));
+            UnitGroupAdd(countries[i].structures, UnitFromId(4));
+            UnitGroupAdd(countries[i].structures, UnitFromId(7));
+            UnitGroupAdd(countries[i].structures, UnitFromId(472372993));
         }
         else if (i == 31) {
             countries[i].name = "France";
-            countries[i].structure = UnitFromId(2251);
+            countries[i].spawn = UnitFromId(2251);
             countries[i].flagTexture = "France";
             countries[i].flagImage = "Risk\\Flag\\France.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(23));
-            UnitGroupAdd(countries[i].bases, UnitFromId(27));
-            UnitGroupAdd(countries[i].bases, UnitFromId(25));
-            UnitGroupAdd(countries[i].bases, UnitFromId(21));
-            UnitGroupAdd(countries[i].bases, UnitFromId(22));
-            UnitGroupAdd(countries[i].bases, UnitFromId(26));
-            UnitGroupAdd(countries[i].bases, UnitFromId(472126351));
+            UnitGroupAdd(countries[i].structures, UnitFromId(23));
+            UnitGroupAdd(countries[i].structures, UnitFromId(27));
+            UnitGroupAdd(countries[i].structures, UnitFromId(25));
+            UnitGroupAdd(countries[i].structures, UnitFromId(21));
+            UnitGroupAdd(countries[i].structures, UnitFromId(22));
+            UnitGroupAdd(countries[i].structures, UnitFromId(26));
+            UnitGroupAdd(countries[i].structures, UnitFromId(472126351));
         }
         else if (i == 32) {
             countries[i].name = "Belgium";
-            countries[i].structure = UnitFromId(2253);
+            countries[i].spawn = UnitFromId(2253);
             countries[i].flagTexture = "Belgium";
             countries[i].flagImage = "Risk\\Flag\\Belgium.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(20));
-            UnitGroupAdd(countries[i].bases, UnitFromId(677914755));
+            UnitGroupAdd(countries[i].structures, UnitFromId(20));
+            UnitGroupAdd(countries[i].structures, UnitFromId(677914755));
         }
         else if (i == 33) {
             countries[i].name = "Netherlands";
-            countries[i].structure = UnitFromId(2254);
+            countries[i].spawn = UnitFromId(2254);
             countries[i].flagTexture = "Netherlands";
             countries[i].flagImage = "Risk\\Flag\\Netherlands.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(18));
-            UnitGroupAdd(countries[i].bases, UnitFromId(19));
+            UnitGroupAdd(countries[i].structures, UnitFromId(18));
+            UnitGroupAdd(countries[i].structures, UnitFromId(19));
         }
         else if (i == 34) {
             countries[i].name = "Switzerland";
-            countries[i].structure = UnitFromId(2252);
+            countries[i].spawn = UnitFromId(2252);
             countries[i].flagTexture = "Switzerland";
             countries[i].flagImage = "Risk\\Flag\\Switzerland.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(33));
-            UnitGroupAdd(countries[i].bases, UnitFromId(34));
+            UnitGroupAdd(countries[i].structures, UnitFromId(33));
+            UnitGroupAdd(countries[i].structures, UnitFromId(34));
         }
         else if (i == 35) {
             countries[i].name = "Italy";
-            countries[i].structure = UnitFromId(2290);
+            countries[i].spawn = UnitFromId(2290);
             countries[i].flagTexture = "Italy";
             countries[i].flagImage = "Risk\\Flag\\Italy.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(28));
-            UnitGroupAdd(countries[i].bases, UnitFromId(2141726269));
-            UnitGroupAdd(countries[i].bases, UnitFromId(2576));
-            UnitGroupAdd(countries[i].bases, UnitFromId(31));
+            UnitGroupAdd(countries[i].structures, UnitFromId(28));
+            UnitGroupAdd(countries[i].structures, UnitFromId(2141726269));
+            UnitGroupAdd(countries[i].structures, UnitFromId(2576));
+            UnitGroupAdd(countries[i].structures, UnitFromId(31));
         }
         else if (i == 36) {
             countries[i].name = "Germany";
-            countries[i].structure = UnitFromId(2255);
+            countries[i].spawn = UnitFromId(2255);
             countries[i].flagTexture = "Germany";
             countries[i].flagImage = "Risk\\Flag\\Germany.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(136));
-            UnitGroupAdd(countries[i].bases, UnitFromId(134));
-            UnitGroupAdd(countries[i].bases, UnitFromId(137));
-            UnitGroupAdd(countries[i].bases, UnitFromId(135));
-            UnitGroupAdd(countries[i].bases, UnitFromId(93688063));
-            UnitGroupAdd(countries[i].bases, UnitFromId(138));
-            UnitGroupAdd(countries[i].bases, UnitFromId(1503));
+            UnitGroupAdd(countries[i].structures, UnitFromId(136));
+            UnitGroupAdd(countries[i].structures, UnitFromId(134));
+            UnitGroupAdd(countries[i].structures, UnitFromId(137));
+            UnitGroupAdd(countries[i].structures, UnitFromId(135));
+            UnitGroupAdd(countries[i].structures, UnitFromId(93688063));
+            UnitGroupAdd(countries[i].structures, UnitFromId(138));
+            UnitGroupAdd(countries[i].structures, UnitFromId(1503));
         }
         else if (i == 37) {
             countries[i].name = "Austria";
-            countries[i].structure = UnitFromId(2257);
+            countries[i].spawn = UnitFromId(2257);
             countries[i].flagTexture = "Austria";
             countries[i].flagImage = "Risk\\Flag\\Austria.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(37));
-            UnitGroupAdd(countries[i].bases, UnitFromId(449324886));
+            UnitGroupAdd(countries[i].structures, UnitFromId(37));
+            UnitGroupAdd(countries[i].structures, UnitFromId(449324886));
         }
         else if (i == 38) {
             countries[i].name = "Czech Republic";
-            countries[i].structure = UnitFromId(2256);
+            countries[i].spawn = UnitFromId(2256);
             countries[i].flagTexture = "CzechRepublic";
             countries[i].flagImage = "Risk\\Flag\\CzechRepublic.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(38));
-            UnitGroupAdd(countries[i].bases, UnitFromId(39));
+            UnitGroupAdd(countries[i].structures, UnitFromId(38));
+            UnitGroupAdd(countries[i].structures, UnitFromId(39));
         }
         else if (i == 39) {
             countries[i].name = "Poland";
-            countries[i].structure = UnitFromId(2258);
+            countries[i].spawn = UnitFromId(2258);
             countries[i].flagTexture = "Poland";
             countries[i].flagImage = "Risk\\Flag\\Poland.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(42));
-            UnitGroupAdd(countries[i].bases, UnitFromId(40));
-            UnitGroupAdd(countries[i].bases, UnitFromId(43));
-            UnitGroupAdd(countries[i].bases, UnitFromId(803974834));
+            UnitGroupAdd(countries[i].structures, UnitFromId(42));
+            UnitGroupAdd(countries[i].structures, UnitFromId(40));
+            UnitGroupAdd(countries[i].structures, UnitFromId(43));
+            UnitGroupAdd(countries[i].structures, UnitFromId(803974834));
         }
         else if (i == 40) {
             countries[i].name = "Kalingrad (Russia)";
-            countries[i].structure = UnitFromId(2295);
+            countries[i].spawn = UnitFromId(2295);
             countries[i].flagTexture = "Russia";
             countries[i].flagImage = "Risk\\Flag\\Russia.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(126));
+            UnitGroupAdd(countries[i].structures, UnitFromId(126));
         }
         else if (i == 41) {
             countries[i].name = "Lithuania";
-            countries[i].structure = UnitFromId(2294);
+            countries[i].spawn = UnitFromId(2294);
             countries[i].flagTexture = "Lithuania";
             countries[i].flagImage = "Risk\\Flag\\Lithuania.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(130));
-            UnitGroupAdd(countries[i].bases, UnitFromId(131));
+            UnitGroupAdd(countries[i].structures, UnitFromId(130));
+            UnitGroupAdd(countries[i].structures, UnitFromId(131));
         }
         else if (i == 42) {
             countries[i].name = "Latvia";
-            countries[i].structure = UnitFromId(2293);
+            countries[i].spawn = UnitFromId(2293);
             countries[i].flagTexture = "Latvia";
             countries[i].flagImage = "Risk\\Flag\\Latvia.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(312368496));
-            UnitGroupAdd(countries[i].bases, UnitFromId(129));
+            UnitGroupAdd(countries[i].structures, UnitFromId(312368496));
+            UnitGroupAdd(countries[i].structures, UnitFromId(129));
         }
         else if (i == 43) {
             countries[i].name = "Estonia";
-            countries[i].structure = UnitFromId(2292);
+            countries[i].spawn = UnitFromId(2292);
             countries[i].flagTexture = "Estonia";
             countries[i].flagImage = "Risk\\Flag\\Estonia.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(127));
-            UnitGroupAdd(countries[i].bases, UnitFromId(128));
+            UnitGroupAdd(countries[i].structures, UnitFromId(127));
+            UnitGroupAdd(countries[i].structures, UnitFromId(128));
         }
         else if (i == 44) {
             countries[i].name = "Belarus";
-            countries[i].structure = UnitFromId(2296);
+            countries[i].spawn = UnitFromId(2296);
             countries[i].flagTexture = "Belarus";
             countries[i].flagImage = "Risk\\Flag\\Belarus.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(122));
-            UnitGroupAdd(countries[i].bases, UnitFromId(123));
-            UnitGroupAdd(countries[i].bases, UnitFromId(125));
+            UnitGroupAdd(countries[i].structures, UnitFromId(122));
+            UnitGroupAdd(countries[i].structures, UnitFromId(123));
+            UnitGroupAdd(countries[i].structures, UnitFromId(125));
         }
         else if (i == 45) {
             countries[i].name = "Ukraine";
-            countries[i].structure = UnitFromId(2259);
+            countries[i].spawn = UnitFromId(2259);
             countries[i].flagTexture = "Ukraine";
             countries[i].flagImage = "Risk\\Flag\\Ukraine.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(120));
-            UnitGroupAdd(countries[i].bases, UnitFromId(119));
-            UnitGroupAdd(countries[i].bases, UnitFromId(1798887913));
-            UnitGroupAdd(countries[i].bases, UnitFromId(121));
-            UnitGroupAdd(countries[i].bases, UnitFromId(116));
-            UnitGroupAdd(countries[i].bases, UnitFromId(1562828240));
+            UnitGroupAdd(countries[i].structures, UnitFromId(120));
+            UnitGroupAdd(countries[i].structures, UnitFromId(119));
+            UnitGroupAdd(countries[i].structures, UnitFromId(1798887913));
+            UnitGroupAdd(countries[i].structures, UnitFromId(121));
+            UnitGroupAdd(countries[i].structures, UnitFromId(116));
+            UnitGroupAdd(countries[i].structures, UnitFromId(1562828240));
         }
         else if (i == 46) {
             countries[i].name = "Moldova";
-            countries[i].structure = UnitFromId(2260);
+            countries[i].spawn = UnitFromId(2260);
             countries[i].flagTexture = "Moldova";
             countries[i].flagImage = "Risk\\Flag\\Moldova.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(112));
-            UnitGroupAdd(countries[i].bases, UnitFromId(113));
+            UnitGroupAdd(countries[i].structures, UnitFromId(112));
+            UnitGroupAdd(countries[i].structures, UnitFromId(113));
         }
         else if (i == 47) {
             countries[i].name = "Slovakia";
-            countries[i].structure = UnitFromId(2297);
+            countries[i].spawn = UnitFromId(2297);
             countries[i].flagTexture = "Slovakia";
             countries[i].flagImage = "Risk\\Flag\\Slovakia.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(44));
-            UnitGroupAdd(countries[i].bases, UnitFromId(622539741));
+            UnitGroupAdd(countries[i].structures, UnitFromId(44));
+            UnitGroupAdd(countries[i].structures, UnitFromId(622539741));
         }
         else if (i == 48) {
             countries[i].name = "Hungary";
-            countries[i].structure = UnitFromId(2262);
+            countries[i].spawn = UnitFromId(2262);
             countries[i].flagTexture = "Hungary";
             countries[i].flagImage = "Risk\\Flag\\Hungary.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(46));
-            UnitGroupAdd(countries[i].bases, UnitFromId(1005337656));
+            UnitGroupAdd(countries[i].structures, UnitFromId(46));
+            UnitGroupAdd(countries[i].structures, UnitFromId(1005337656));
         }
         else if (i == 49) {
             countries[i].name = "Slovenia";
-            countries[i].structure = UnitFromId(2263);
+            countries[i].spawn = UnitFromId(2263);
             countries[i].flagTexture = "Slovenia";
             countries[i].flagImage = "Risk\\Flag\\Slovenia.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(50));
-            UnitGroupAdd(countries[i].bases, UnitFromId(1324292879));
+            UnitGroupAdd(countries[i].structures, UnitFromId(50));
+            UnitGroupAdd(countries[i].structures, UnitFromId(1324292879));
         }
         else if (i == 50) {
             countries[i].name = "Croatia";
-            countries[i].structure = UnitFromId(2264);
+            countries[i].spawn = UnitFromId(2264);
             countries[i].flagTexture = "Croatia";
             countries[i].flagImage = "Risk\\Flag\\Croatia.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(49));
-            UnitGroupAdd(countries[i].bases, UnitFromId(48));
+            UnitGroupAdd(countries[i].structures, UnitFromId(49));
+            UnitGroupAdd(countries[i].structures, UnitFromId(48));
         }
         else if (i == 51) {
             countries[i].name = "Bosnia";
-            countries[i].structure = UnitFromId(2265);
+            countries[i].spawn = UnitFromId(2265);
             countries[i].flagTexture = "Bosnia";
             countries[i].flagImage = "Risk\\Flag\\Bosnia.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(52));
-            UnitGroupAdd(countries[i].bases, UnitFromId(1046745870));
+            UnitGroupAdd(countries[i].structures, UnitFromId(52));
+            UnitGroupAdd(countries[i].structures, UnitFromId(1046745870));
         }
         else if (i == 52) {
             countries[i].name = "Serbia";
-            countries[i].structure = UnitFromId(2266);
+            countries[i].spawn = UnitFromId(2266);
             countries[i].flagTexture = "Serbia";
             countries[i].flagImage = "Risk\\Flag\\Serbia.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(54));
-            UnitGroupAdd(countries[i].bases, UnitFromId(604979798));
+            UnitGroupAdd(countries[i].structures, UnitFromId(54));
+            UnitGroupAdd(countries[i].structures, UnitFromId(604979798));
         }
         else if (i == 53) {
             countries[i].name = "Romania";
-            countries[i].structure = UnitFromId(2261);
+            countries[i].spawn = UnitFromId(2261);
             countries[i].flagTexture = "Romania";
             countries[i].flagImage = "Risk\\Flag\\Romania.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(108));
-            UnitGroupAdd(countries[i].bases, UnitFromId(110));
-            UnitGroupAdd(countries[i].bases, UnitFromId(1651458832));
+            UnitGroupAdd(countries[i].structures, UnitFromId(108));
+            UnitGroupAdd(countries[i].structures, UnitFromId(110));
+            UnitGroupAdd(countries[i].structures, UnitFromId(1651458832));
         }
         else if (i == 54) {
             countries[i].name = "Bulgaria";
-            countries[i].structure = UnitFromId(2268);
+            countries[i].spawn = UnitFromId(2268);
             countries[i].flagTexture = "Bulgaria";
             countries[i].flagImage = "Risk\\Flag\\Bulgaria.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(65));
-            UnitGroupAdd(countries[i].bases, UnitFromId(66));
-            UnitGroupAdd(countries[i].bases, UnitFromId(67));
+            UnitGroupAdd(countries[i].structures, UnitFromId(65));
+            UnitGroupAdd(countries[i].structures, UnitFromId(66));
+            UnitGroupAdd(countries[i].structures, UnitFromId(67));
         }
         else if (i == 55) {
             countries[i].name = "Macedonia";
-            countries[i].structure = UnitFromId(2267);
+            countries[i].spawn = UnitFromId(2267);
             countries[i].flagTexture = "Macedonia";
             countries[i].flagImage = "Risk\\Flag\\Macedonia.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(60));
-            UnitGroupAdd(countries[i].bases, UnitFromId(1713487376));
+            UnitGroupAdd(countries[i].structures, UnitFromId(60));
+            UnitGroupAdd(countries[i].structures, UnitFromId(1713487376));
         }
         else if (i == 56) {
             countries[i].name = "Albania";
-            countries[i].structure = UnitFromId(2270);
+            countries[i].spawn = UnitFromId(2270);
             countries[i].flagTexture = "Albania";
             countries[i].flagImage = "Risk\\Flag\\Albania.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(58));
-            UnitGroupAdd(countries[i].bases, UnitFromId(57));
+            UnitGroupAdd(countries[i].structures, UnitFromId(58));
+            UnitGroupAdd(countries[i].structures, UnitFromId(57));
         }
         else if (i == 57) {
             countries[i].name = "Greece";
-            countries[i].structure = UnitFromId(2269);
+            countries[i].spawn = UnitFromId(2269);
             countries[i].flagTexture = "Greece";
             countries[i].flagImage = "Risk\\Flag\\Greece.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(62));
-            UnitGroupAdd(countries[i].bases, UnitFromId(61));
-            UnitGroupAdd(countries[i].bases, UnitFromId(2051283650));
-            UnitGroupAdd(countries[i].bases, UnitFromId(411753828));
+            UnitGroupAdd(countries[i].structures, UnitFromId(62));
+            UnitGroupAdd(countries[i].structures, UnitFromId(61));
+            UnitGroupAdd(countries[i].structures, UnitFromId(2051283650));
+            UnitGroupAdd(countries[i].structures, UnitFromId(411753828));
         }
         else if (i == 58) {
             countries[i].name = "Svalbard";
-            countries[i].structure = UnitFromId(2321);
+            countries[i].spawn = UnitFromId(2321);
             countries[i].flagTexture = "NorwaySvalbard";
             countries[i].flagImage = "Risk\\Flag\\Norway.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(2320));
+            UnitGroupAdd(countries[i].structures, UnitFromId(2320));
         }
         else if (i == 59) {
             countries[i].name = "Greenland";
-            countries[i].structure = UnitFromId(2325);
+            countries[i].spawn = UnitFromId(2325);
             countries[i].flagTexture = "Greenland";
             countries[i].flagImage = "Risk\\Flag\\Greenland.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(2323));
-            UnitGroupAdd(countries[i].bases, UnitFromId(2324));
-            UnitGroupAdd(countries[i].bases, UnitFromId(787648957));
+            UnitGroupAdd(countries[i].structures, UnitFromId(2323));
+            UnitGroupAdd(countries[i].structures, UnitFromId(2324));
+            UnitGroupAdd(countries[i].structures, UnitFromId(787648957));
         }
         else if (i == 60) {
             countries[i].name = "Malta";
-            countries[i].structure = UnitFromId(2844);
+            countries[i].spawn = UnitFromId(2844);
             countries[i].flagTexture = "Malta";
             countries[i].flagImage = "Risk\\Flag\\Malta.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(2842));
-            UnitGroupAdd(countries[i].bases, UnitFromId(87115904));
+            UnitGroupAdd(countries[i].structures, UnitFromId(2842));
+            UnitGroupAdd(countries[i].structures, UnitFromId(87115904));
         }
         else if (i == 61) {
             countries[i].name = "Mallorca (Spain)";
-            countries[i].structure = UnitFromId(4352);
+            countries[i].spawn = UnitFromId(4352);
             countries[i].flagTexture = "Spain";
             countries[i].flagImage = "Risk\\Flag\\Spain.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(520));
+            UnitGroupAdd(countries[i].structures, UnitFromId(520));
         }
         else if (i == 62) {
             countries[i].name = "Sardinia (Italy)";
-            countries[i].structure = UnitFromId(4355);
+            countries[i].spawn = UnitFromId(4355);
             countries[i].flagTexture = "Italy";
             countries[i].flagImage = "Risk\\Flag\\Italy.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(154338916));
-            UnitGroupAdd(countries[i].bases, UnitFromId(178));
+            UnitGroupAdd(countries[i].structures, UnitFromId(154338916));
+            UnitGroupAdd(countries[i].structures, UnitFromId(178));
         }
         else if (i == 63) {
             countries[i].name = "Gotland (Sweden)";
-            countries[i].structure = UnitFromId(257179117);
+            countries[i].spawn = UnitFromId(257179117);
             countries[i].flagTexture = "Gotland";
             countries[i].flagImage = "risk\\Flag\\gotland.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(867936237));
+            UnitGroupAdd(countries[i].structures, UnitFromId(867936237));
         }
         else if (i == 64) {
             countries[i].name = "Shetland Island (Scotland)";
-            countries[i].structure = UnitFromId(764410931);
+            countries[i].spawn = UnitFromId(764410931);
             countries[i].flagTexture = "Shetland";
             countries[i].flagImage = "risk\\Flag\\Shetland.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(80420212));
+            UnitGroupAdd(countries[i].structures, UnitFromId(80420212));
         }
         else if (i == 65) {
             countries[i].name = "Wales";
-            countries[i].structure = UnitFromId(1429);
+            countries[i].spawn = UnitFromId(1429);
             countries[i].flagTexture = "Wales";
             countries[i].flagImage = "Risk\\Flag\\Wales.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(1420667981));
-            UnitGroupAdd(countries[i].bases, UnitFromId(12));
+            UnitGroupAdd(countries[i].structures, UnitFromId(1420667981));
+            UnitGroupAdd(countries[i].structures, UnitFromId(12));
         }
         else if (i == 66) {
             countries[i].name = "Scotland";
-            countries[i].structure = UnitFromId(1430);
+            countries[i].spawn = UnitFromId(1430);
             countries[i].flagTexture = "Scotland";
             countries[i].flagImage = "Risk\\Flag\\Scotland.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(1428));
-            UnitGroupAdd(countries[i].bases, UnitFromId(9));
-            UnitGroupAdd(countries[i].bases, UnitFromId(1689960942));
+            UnitGroupAdd(countries[i].structures, UnitFromId(1428));
+            UnitGroupAdd(countries[i].structures, UnitFromId(9));
+            UnitGroupAdd(countries[i].structures, UnitFromId(1689960942));
         }
         else if (i == 67) {
             countries[i].name = "Faroe Islands";
-            countries[i].structure = UnitFromId(1477);
+            countries[i].spawn = UnitFromId(1477);
             countries[i].flagTexture = "FaroeIslands";
             countries[i].flagImage = "Risk\\Flag\\FaroeIslands.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(1462));
+            UnitGroupAdd(countries[i].structures, UnitFromId(1462));
         }
         else if (i == 68) {
             countries[i].name = "Sicily";
-            countries[i].structure = UnitFromId(2578);
+            countries[i].spawn = UnitFromId(2578);
             countries[i].flagTexture = "Sicily";
             countries[i].flagImage = "risk\\Flag\\Sicily.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(32));
-            UnitGroupAdd(countries[i].bases, UnitFromId(2577));
+            UnitGroupAdd(countries[i].structures, UnitFromId(32));
+            UnitGroupAdd(countries[i].structures, UnitFromId(2577));
         }
         else if (i == 69) {
             countries[i].name = "Crimea (Russia)";
             countries[i].flagTexture = "Russia";
             countries[i].flagImage = "risk\\Flag\\Russia.tga";
-            countries[i].structure = UnitFromId(1524138640);
-            UnitGroupAdd(countries[i].bases, UnitFromId(114));
-            UnitGroupAdd(countries[i].bases, UnitFromId(1099634241));
+            countries[i].spawn = UnitFromId(1524138640);
+            UnitGroupAdd(countries[i].structures, UnitFromId(114));
+            UnitGroupAdd(countries[i].structures, UnitFromId(1099634241));
         }
         else if (i == 70) {
             countries[i].name = "Luxembourg";
             countries[i].flagTexture = "Luxembourg";
             countries[i].flagImage = "risk\\Flag\\Luxembourg.tga";
-            countries[i].structure = UnitFromId(599634781);
-            UnitGroupAdd(countries[i].bases, UnitFromId(1482914946));
+            countries[i].spawn = UnitFromId(599634781);
+            UnitGroupAdd(countries[i].structures, UnitFromId(1482914946));
         }
         else if (i == 71) {
             countries[i].name = "Northern Ireland";
-            countries[i].structure = UnitFromId(1521896083);
+            countries[i].spawn = UnitFromId(1521896083);
             countries[i].flagTexture = "Nireland";
             countries[i].flagImage = "risk\\Flag\\Northern_Ireland.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(8));
+            UnitGroupAdd(countries[i].structures, UnitFromId(8));
         }
         else if (i == 72) {
             countries[i].name = "Nenets (Russia)";
-            countries[i].structure = UnitFromId(1125761983);
+            countries[i].spawn = UnitFromId(1125761983);
             countries[i].flagTexture = "Russia";
             countries[i].flagImage = "risk\\Flag\\Russia.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(1302181260));
-            UnitGroupAdd(countries[i].bases, UnitFromId(661886199));
+            UnitGroupAdd(countries[i].structures, UnitFromId(1302181260));
+            UnitGroupAdd(countries[i].structures, UnitFromId(661886199));
         }
         else if (i == 73) {
             countries[i].name = "Caucasus (Russia)";
-            countries[i].structure = UnitFromId(1377338735);
+            countries[i].spawn = UnitFromId(1377338735);
             countries[i].flagTexture = "Russia";
             countries[i].flagImage = "risk\\Flag\\Russia.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(145));
-            UnitGroupAdd(countries[i].bases, UnitFromId(1012626920));
+            UnitGroupAdd(countries[i].structures, UnitFromId(145));
+            UnitGroupAdd(countries[i].structures, UnitFromId(1012626920));
         }
         else if (i == 74) {
             countries[i].name = "Constantine (Algeria)";
             countries[i].flagTexture = "Algeria";
             countries[i].flagImage = "risk\\Flag\\Algeria.tga";
-            countries[i].structure = UnitFromId(1938008689);
-            UnitGroupAdd(countries[i].bases, UnitFromId(1775808176));
-            UnitGroupAdd(countries[i].bases, UnitFromId(188));
+            countries[i].spawn = UnitFromId(1938008689);
+            UnitGroupAdd(countries[i].structures, UnitFromId(1775808176));
+            UnitGroupAdd(countries[i].structures, UnitFromId(188));
         }
         else if (i == 75) {
             countries[i].name = "Western Sahara";
             countries[i].flagTexture = "Sahara";
             countries[i].flagImage = "risk\\Flag\\sahara.tga";
-            countries[i].structure = UnitFromId(893897702);
-            UnitGroupAdd(countries[i].bases, UnitFromId(699284225));
-            UnitGroupAdd(countries[i].bases, UnitFromId(409428069));
+            countries[i].spawn = UnitFromId(893897702);
+            UnitGroupAdd(countries[i].structures, UnitFromId(699284225));
+            UnitGroupAdd(countries[i].structures, UnitFromId(409428069));
         }
         else if (i == 76) {
             countries[i].name = "Andorra";
             countries[i].flagTexture = "Andorra";
             countries[i].flagImage = "risk\\Flag\\Andorra.tga";
-            countries[i].structure = UnitFromId(1718350512);
-            UnitGroupAdd(countries[i].bases, UnitFromId(1330489692));
+            countries[i].spawn = UnitFromId(1718350512);
+            UnitGroupAdd(countries[i].structures, UnitFromId(1330489692));
         }
         else if (i == 77) {
             countries[i].name = "Blida (Algeria)";
             countries[i].flagTexture = "Algeria";
             countries[i].flagImage = "risk\\Flag\\Algeria.tga";
-            countries[i].structure = UnitFromId(438139361);
-            UnitGroupAdd(countries[i].bases, UnitFromId(168325527));
-            UnitGroupAdd(countries[i].bases, UnitFromId(824415056));
+            countries[i].spawn = UnitFromId(438139361);
+            UnitGroupAdd(countries[i].structures, UnitFromId(168325527));
+            UnitGroupAdd(countries[i].structures, UnitFromId(824415056));
         }
         else if (i == 78) {
             countries[i].name = "Oran (Algeria)";
             countries[i].flagTexture = "Algeria";
             countries[i].flagImage = "risk\\Flag\\Algeria.tga";
-            countries[i].structure = UnitFromId(896040646);
-            UnitGroupAdd(countries[i].bases, UnitFromId(246));
-            UnitGroupAdd(countries[i].bases, UnitFromId(248));
+            countries[i].spawn = UnitFromId(896040646);
+            UnitGroupAdd(countries[i].structures, UnitFromId(246));
+            UnitGroupAdd(countries[i].structures, UnitFromId(248));
         }
         else if (i == 79) {
             countries[i].name = "Armenia";
-            countries[i].structure = UnitFromId(497077167);
+            countries[i].spawn = UnitFromId(497077167);
             countries[i].flagTexture = "Armenia";
             countries[i].flagImage = "risk\\Flag\\Armenia.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(962189919));
+            UnitGroupAdd(countries[i].structures, UnitFromId(962189919));
         }
         else if (i == 80) {
             countries[i].name = "Montenegro";
-            countries[i].structure = UnitFromId(192399502);
+            countries[i].spawn = UnitFromId(192399502);
             countries[i].flagTexture = "Montenegro";
             countries[i].flagImage = "risk\\Flag\\Montenegro.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(1890119321));
+            UnitGroupAdd(countries[i].structures, UnitFromId(1890119321));
         }
         else if (i == 81) {
             countries[i].name = "Franz Josef Land";
-            countries[i].structure = UnitFromId(1093204136);
+            countries[i].spawn = UnitFromId(1093204136);
             countries[i].flagTexture = "Russia";
             countries[i].flagImage = "risk\\Flag\\Russia.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(924591972));
+            UnitGroupAdd(countries[i].structures, UnitFromId(924591972));
         }
         else if (i == 82) {
             countries[i].name = "Madeira (Portugal)";
-            countries[i].structure = UnitFromId(1655296033);
+            countries[i].spawn = UnitFromId(1655296033);
             countries[i].flagTexture = "Madeira";
             countries[i].flagImage = "risk\\Flag\\Madeira.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(965565179));
+            UnitGroupAdd(countries[i].structures, UnitFromId(965565179));
         }
         else if (i == 83) {
             countries[i].name = "Monaco";
-            countries[i].structure = UnitFromId(1438760257);
+            countries[i].spawn = UnitFromId(1438760257);
             countries[i].flagTexture = "Albania2";
             countries[i].flagImage = "risk\\donate\\monaco.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(1682480212));
+            UnitGroupAdd(countries[i].structures, UnitFromId(1682480212));
         }
         else if (i == 84) {
             countries[i].name = "Palestine";
-            countries[i].structure = UnitFromId(1042819902);
+            countries[i].spawn = UnitFromId(1042819902);
             countries[i].flagTexture = "Jordan";
             countries[i].flagImage = "risk\\Flag\\Jordan.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(1850370128));
+            UnitGroupAdd(countries[i].structures, UnitFromId(1850370128));
         }
         else if (i == 85) {
             countries[i].name = "Kosovo";
-            countries[i].structure = UnitFromId(484449185);
+            countries[i].spawn = UnitFromId(484449185);
             countries[i].flagTexture = "CrazyRusski";
             countries[i].flagImage = "risk\\donate\\UnitedNations.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(157092271));
+            UnitGroupAdd(countries[i].structures, UnitFromId(157092271));
         }
         else if (i == 86) {
             countries[i].name = "North Cyprus";
-            countries[i].structure = UnitFromId(1911453022);
+            countries[i].spawn = UnitFromId(1911453022);
             countries[i].flagTexture = "Turkey";
             countries[i].flagImage = "risk\\Flag\\Turkey.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(669742393));
+            UnitGroupAdd(countries[i].structures, UnitFromId(669742393));
         }
         else if (i == 87) {
             countries[i].name = "Vatican City";
-            countries[i].structure = UnitFromId(1982469176);
+            countries[i].spawn = UnitFromId(1982469176);
             countries[i].flagTexture = "Italy";
             countries[i].flagImage = "risk\\Flag\\Italy.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(485233611));
+            UnitGroupAdd(countries[i].structures, UnitFromId(485233611));
         }
         else if (i == 88) {
             countries[i].name = "Karelia (Russia)";
-            countries[i].structure = UnitFromId(1412013931);
+            countries[i].spawn = UnitFromId(1412013931);
             countries[i].flagTexture = "Russia";
             countries[i].flagImage = "risk\\Flag\\Russia.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(500825370));
-            UnitGroupAdd(countries[i].bases, UnitFromId(155));
-            UnitGroupAdd(countries[i].bases, UnitFromId(1664490278));
+            UnitGroupAdd(countries[i].structures, UnitFromId(500825370));
+            UnitGroupAdd(countries[i].structures, UnitFromId(155));
+            UnitGroupAdd(countries[i].structures, UnitFromId(1664490278));
         }
         else if (i == 89) {
             countries[i].name = "Liechtenstein";
-            countries[i].structure = UnitFromId(1652265686);
+            countries[i].spawn = UnitFromId(1652265686);
             countries[i].flagTexture = "Austria";
             countries[i].flagImage = "risk\\Flag\\Austria.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(36));
+            UnitGroupAdd(countries[i].structures, UnitFromId(36));
         }
         else if (i == 90) {
             countries[i].name = "Bechar (Algeria)";
-            countries[i].structure = UnitFromId(2007991594);
+            countries[i].spawn = UnitFromId(2007991594);
             countries[i].flagTexture = "Algeria";
             countries[i].flagImage = "risk\\Flag\\Algeria.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(1906930315));
-            UnitGroupAdd(countries[i].bases, UnitFromId(226016423));
+            UnitGroupAdd(countries[i].structures, UnitFromId(1906930315));
+            UnitGroupAdd(countries[i].structures, UnitFromId(226016423));
         }
         else if (i == 91) {
             countries[i].name = "Central (Algeria)";
-            countries[i].structure = UnitFromId(1380432297);
+            countries[i].spawn = UnitFromId(1380432297);
             countries[i].flagTexture = "Algeria";
             countries[i].flagImage = "risk\\Flag\\Algeria.tga";
-            UnitGroupAdd(countries[i].bases, UnitFromId(219));
+            UnitGroupAdd(countries[i].structures, UnitFromId(219));
         }
         else {
         }

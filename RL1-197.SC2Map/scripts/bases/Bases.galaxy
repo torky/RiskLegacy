@@ -7,6 +7,8 @@ struct Base {
     int owner;
 };
 
+include "scripts/bases/PredefineCountries"
+
 const int totalBases = 250; //250 is arbitrary. Just needs to be larger than the number of total bases
 Base[totalBases] allBases; 
 
@@ -37,17 +39,27 @@ void InitializeBases () {
     int j;
     int count;
     int x = 0;
+    int y;
     unit u;
+    structref<Base> b;
     for (i = 0; i < totalCountries; i+=1) {
-        count = UnitGroupCount(countries[i].bases, c_unitCountAll);
+        count = UnitGroupCount(countries[i].structures, c_unitCountAll);
+        y = 0;
         for(;;count-=1){
-            u = UnitGroupUnitFromEnd(countries[i].bases, count);
+            u = UnitGroupUnitFromEnd(countries[i].structures, count);
             if(u == null) {break;}
             InitializeBase(0, x, u);
+
+            countries[i].baseIDs[y] = x;
+            UIDisplayMessage(PlayerGroupActive(), c_messageAreaChat, IntToText(y));
+
             x+=1;
+            y+=1;
         }
     }
 }
+
+
 
 void SetBaseOwnership(structref<Base> b, int player) {
     b.owner = player;

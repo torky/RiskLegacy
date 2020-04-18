@@ -16,7 +16,6 @@ include "scripts/modes/Solo"
 include "scripts/modes/Teams"
 include "scripts/modes/Tutorial"
 
-include "scripts/bases/PredefineCountries"
 include "scripts/bases/Bases"
 include "scripts/bases/DistributeTerritories"
 
