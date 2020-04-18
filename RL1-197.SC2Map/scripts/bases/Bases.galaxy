@@ -43,7 +43,7 @@ void InitializeBases () {
     unit u;
     structref<Base> b;
     for (i = 0; i < totalCountries; i+=1) {
-        count = UnitGroupCount(countries[i].structures, c_unitCountAll);
+        count = countries[i].income;
         y = 0;
         for(;;count-=1){
             u = UnitGroupUnitFromEnd(countries[i].structures, count);

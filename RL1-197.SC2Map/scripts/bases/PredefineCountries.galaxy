@@ -5,15 +5,20 @@ struct Country {
     unit spawn;
     string flagTexture;
     string flagImage;
+    int income;
 };
 
 const int totalCountries = 100; //100 is arbitrary. Just needs to be larger than the number of total countries
 Country[totalCountries] countries;
 
+void AddTextTags(int i){
+    if(countries[i].income == 0) { return; }
+    TextTagCreate(StringToText((countries[i].name + (": " + IntToString(countries[i].income)))), 25, UnitGetPosition(countries[i].spawn), 0.5, true, false, PlayerGroupAll());
+    TextTagSetColor(TextTagLastCreated(), c_textTagColorText, Color(100.00, 100.00, 100.00));
+}
+
 void PredefineCountries(){
-    int i;
-    int count;
-    
+    int i;    
 
     for( i = 0; i < totalCountries; i+=1){
         countries[i].structures = UnitGroupEmpty();
@@ -789,6 +794,9 @@ void PredefineCountries(){
         }
         else {
         }
+        
+        countries[i].income = UnitGroupCount(countries[i].structures, c_unitCountAll);
+        AddTextTags(i);
     }
 
 }

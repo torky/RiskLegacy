@@ -63,7 +63,7 @@ void DistributeTerritories(playergroup players) {
         }
 
         //Insure picked player is not the same player previously picked
-        while(prevI == i && prevR == r){
+        while(prevI == i && prevR == r && count != 1){
             r = RandomInt(0, j);
             while(pickedPlayers[r].picked) {
                 r+=1;
