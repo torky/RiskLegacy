@@ -12,6 +12,7 @@ Country[totalCountries] countries;
 void PredefineCountries(){
     int i;
     int count;
+    
 
     for( i = 0; i < totalCountries; i+=1){
         countries[i].bases = UnitGroupEmpty();

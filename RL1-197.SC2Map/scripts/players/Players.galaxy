@@ -1,0 +1,24 @@
+playerGroup PlayersAndComputers(){
+    
+    int i;
+    int currentPlayer = -1;
+
+    //Existing players contains all npc and players playing
+    playergroup ExistingPlayers;
+    players = PlayergroupEmpty();
+    
+    for(i = currentPlayer; 0 <= currentPlayer; currentPlayer = PlayerGroupNextPlayer(PlayerGroupAll(), currentPlayer)){
+        if((PlayerType(currentPlayer) == c_playerTypeComputer) && (currentPlayer != 0)) {
+            PlayerGroupAdd(ExistingPlayers, currentPlayer);
+        }
+
+        if (PlayerType(currentPlayer) == c_playerTypeUser) {
+        //&& (PlayerStatus(currentPlayer) != c_playerStatusUnused) && (PlayerStatus(currentPlayer) != c_playerStatusLeft)) {
+            PlayerGroupAdd(ExistingPlayers, currentPlayer);
+        }
+
+
+    }
+    return ExistingPlayers;
+    
+}

@@ -1,0 +1,30 @@
+
+void DistributeTerritories() {
+    UIDisplayMessage(PlayerGroupActive(), c_messageAreaChat, StringToText("Distributing Territories"));
+
+    
+
+   
+    
+}
+
+void TDOneVsOne () {
+    int i = 0;
+    if (PlayerGroupCount(PlayersAndComputers()) != 1){
+        
+        for(i = 0; i < totalBases; i = +1){
+                
+        }
+
+    } else {
+        
+    }
+}
+
+
+
+
+
+
+
+
