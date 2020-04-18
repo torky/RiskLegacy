@@ -24,6 +24,10 @@ void DistributeTerritories(playergroup players) {
     int c;
     structref<Base> b;
     int bi;
+
+    int prevR = -1;
+    int prevI = -1;
+
     PlayerArray pickedPlayers;
 
     count = PlayerGroupCount(players);
@@ -38,9 +42,14 @@ void DistributeTerritories(playergroup players) {
         bi = countries[i].baseIDs[c];
         b = allBases[bi];
 
-        if(b.structure == null){
+        if(bi == 0){
             c = 0;
             i+=1;
+            if(i == totalCountries) { break; }
+            while(UnitGroupCount(countries[i].structures, c_unitCountAll) == 1){//Skip 1 income countries
+                i+=1;
+                if(i == totalCountries) { break; }
+            }
             bi = countries[i].baseIDs[c];
             b = allBases[bi];
         }
@@ -50,11 +59,19 @@ void DistributeTerritories(playergroup players) {
         while(pickedPlayers[r].picked) {
             r+=1;
         }
+        while(prevI == i && prevR == r){
+            r = RandomInt(0, j);
+            while(pickedPlayers[r].picked) {
+                r+=1;
+            }
+        }
 
         pickedPlayers[r].picked = true;
         p = pickedPlayers[r].value;
         
         SetBaseOwnership(b, p);
+        prevR = r;
+        prevI = i;
         c+=1;
         j-=1;
     }

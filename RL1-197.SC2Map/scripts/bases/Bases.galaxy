@@ -51,15 +51,12 @@ void InitializeBases () {
             InitializeBase(0, x, u);
 
             countries[i].baseIDs[y] = x;
-            UIDisplayMessage(PlayerGroupActive(), c_messageAreaChat, IntToText(y));
 
             x+=1;
             y+=1;
         }
     }
 }
-
-
 
 void SetBaseOwnership(structref<Base> b, int player) {
     b.owner = player;
