@@ -61,9 +61,8 @@ bool gt_GameModeSelect_Func (bool testConds, bool runActions) {
     PredefineCountries();
     InitializeBases();
 
-    players = PlayerGroupEmpty();
-    PlayerGroupAdd(players, 0);
-    PlayerGroupAdd(players, 1);
+    players = PlayerGroupActive();
+    PlayerGroupAdd(players, 2);
     DistributeTerritories(players);
 
     if (gameMode == modeQuick) {
@@ -88,8 +87,6 @@ bool gt_GameModeSelect_Func (bool testConds, bool runActions) {
         UIDisplayMessage(PlayerGroupActive(), c_messageAreaChat, StringToText("Teams"));
 
     }
-
-    UIDisplayMessage(PlayerGroupActive(), c_messageAreaChat, StringToText("Display"));
 
     return true;
 }
