@@ -24,3 +24,18 @@ void gogoTriggers () {
     
 
 }
+
+void DeleteStupidRocks(){
+    unitgroup rocks;
+    int count;
+    unit u;
+    if ((GameAttributeGameValue("1") != "0003")) {
+        rocks = UnitGroup("MissileTurret", 0, RegionFromId(1), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+        count = UnitGroupCount(rocks, c_unitCountAll);
+        for (;; count -= 1) {
+            u = UnitGroupUnitFromEnd(rocks, count);
+            if (u == null) { break; }
+            UnitRemove(u);
+        }
+    }
+}

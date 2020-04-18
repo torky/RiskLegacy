@@ -1,0 +1,104 @@
+struct InfoPanel {
+    int[11] mainMenuButtons;
+    int backgroundDialog;
+};
+
+InfoPanel infoPanel;
+
+void SetupUI () {
+    int player;
+
+    GameSetSpeedValue(c_gameSpeedNormal);
+    GameSetSpeedLocked(true);
+    UISetFrameVisible(PlayerGroupAll(), c_syncFrameTypeSupply, false);
+    //UISetFrameVisible(PlayerGroupAll(), c_syncFrameTypeResourcePanel, false);
+    UISetFrameVisible(PlayerGroupAll(), c_syncFrameTypeAllianceButton, false);
+    UISetFrameVisible(PlayerGroupAll(), c_syncFrameTypeAchievementMenuButton, false);
+    HelpPanelEnableTechGlossaryButton(PlayerGroupAll(), false);
+    HelpPanelEnableTechTreeButton(PlayerGroupAll(), false);
+    UISetFrameVisible(PlayerGroupAll(), c_syncFrameTypeMenuBar, false);
+    UISetFrameVisible(PlayerGroupAll(), c_syncFrameTypeInfoPanel, false);
+    UISetFrameVisible(PlayerGroupAll(), c_syncFrameTypeTipAlertPanel, false);
+    //UISetFrameVisible(PlayerGroupAll(), c_syncFrameTypeMinimapPanel, false);
+    UISetFrameVisible(PlayerGroupAll(), c_syncFrameTypeConsolePanel, false);
+    UISetFrameVisible(PlayerGroupAll(), c_syncFrameTypeArmyButton, false);
+    UISetFrameVisible(PlayerGroupAll(), c_syncFrameTypeIdleWorkerButton, false);
+    player = -1;
+    while (true) {
+        player = PlayerGroupNextPlayer(PlayerGroupAll(), player);
+        if (player < 0) { break; }
+        TechTreeUnitHelpDefault(player, false);
+        PlayerOptionOverride(player, "simplecommandcard", "0");
+    }
+}
+
+void InfoCreate () {
+    int i;
+
+    DialogCreate(500, 500, c_anchorBottomLeft, 0, 360, true);
+    DialogSetImageVisible(DialogLastCreated(), true);
+    infoPanel.backgroundDialog = DialogLastCreated();
+    libNtve_gf_CreateDialogItemImage(DialogLastCreated(), DialogGetWidth(DialogLastCreated()), DialogGetHeight(DialogLastCreated()), c_anchorCenter, 0, 0, StringToText(""), "Assets\\Textures\\ui_camapaignmenu_dialogbox_base.dds", c_triggerImageTypeHorizontalBorder, false, Color(100,100,100), c_triggerBlendModeNormal);
+    DialogCreate(707, 500, c_anchorTopLeft, 100, 25, true);
+    DialogSetFullscreen(DialogLastCreated(), true);
+    libNtve_gf_DisplayScreenButton(1, TextWithColor(StringToText("Menu"), Color(58.43, 79.22, 100.00)), 121, 86, c_anchorBottomRight, 24, 26, null);
+    libNtve_gf_SetDialogItemStyle(DialogControlLastCreated(), "RobotoCondensed15", PlayerGroupAll());
+    libNtve_gf_SetScreenButtonBorderImage(1, "Risk\\ui_battlenet_challenge_button_normalpressed.dds", "Risk\\ui_battlenet_challenge_button_normaloverpressedover.dds", c_triggerImageTypeNormal);
+    infoPanel.mainMenuButtons[1] = DialogControlLastCreated();
+    libNtve_gf_DisplayScreenButton(2, TextWithColor(StringToText("Profile"), Color(58.43, 79.22, 100.00)), 136, 86, c_anchorBottomLeft, 372, 117, null);
+    libNtve_gf_SetDialogItemStyle(DialogControlLastCreated(), "RobotoCondensed15", PlayerGroupAll());
+    libNtve_gf_SetScreenButtonBorderImage(2, "Risk\\ui_battlenet_challenge_button_normalpressed.dds", "Risk\\ui_battlenet_challenge_button_normaloverpressedover.dds", c_triggerImageTypeNormal);
+    infoPanel.mainMenuButtons[2] = DialogControlLastCreated();
+    DialogControlSetEnabled(infoPanel.mainMenuButtons[2], PlayerGroupAll(), true);
+    libNtve_gf_DisplayScreenButton(3, TextWithColor(StringToText("Log"), Color(58.43, 79.22, 100.00)), 136, 86, c_anchorBottomLeft, 372, 26, null);
+    libNtve_gf_SetDialogItemStyle(DialogControlLastCreated(), "RobotoCondensed15", PlayerGroupAll());
+    libNtve_gf_SetScreenButtonBorderImage(3, "Risk\\ui_battlenet_challenge_button_normalpressed.dds", "Risk\\ui_battlenet_challenge_button_normaloverpressedover.dds", c_triggerImageTypeNormal);
+    infoPanel.mainMenuButtons[3] = DialogControlLastCreated();
+    DialogControlSetEnabled(infoPanel.mainMenuButtons[3], PlayerGroupAll(), true);
+    libNtve_gf_DisplayScreenButton(4, TextWithColor(StringToText("Skins"), Color(58.43, 79.22, 100.00)), 136, 86, c_anchorBottomLeft, 372, 208, null);
+    libNtve_gf_SetDialogItemStyle(DialogControlLastCreated(), "RobotoCondensed15", PlayerGroupAll());
+    libNtve_gf_SetScreenButtonBorderImage(4, "Risk\\ui_battlenet_challenge_button_normalpressed.dds", "Risk\\ui_battlenet_challenge_button_normaloverpressedover.dds", c_triggerImageTypeNormal);
+    infoPanel.mainMenuButtons[4] = DialogControlLastCreated();
+    DialogControlSetEnabled(infoPanel.mainMenuButtons[4], PlayerGroupAll(), true);
+    libNtve_gf_DisplayScreenButton(5, TextWithColor(StringToText(""), Color(58.43, 79.22, 100.00)), 64, 64, c_anchorBottomLeft, 508, 228, null);
+    libNtve_gf_SetDialogItemHotkey(DialogControlLastCreated(), c_keyNone, PlayerGroupAll());
+    libNtve_gf_SetDialogItemTooltip(DialogControlLastCreated(), StringExternal("Param/Value/BF595410"), PlayerGroupAll());
+    libNtve_gf_SetDialogItemStyle(DialogControlLastCreated(), "RobotoCondensed15", PlayerGroupAll());
+    libNtve_gf_SetScreenButtonBorderImage(5, "risk\\Flag\\tgacardnormalpressed1.tga", "risk\\Flag\\tgacardhoverpressed1.tga", c_triggerImageTypeNormal);
+    infoPanel.mainMenuButtons[5] = DialogControlLastCreated();
+    DialogControlSetEnabled(infoPanel.mainMenuButtons[5], PlayerGroupAll(), true);
+    libNtve_gf_DisplayScreenButton(6, TextWithColor(StringToText("Kills"), Color(58.43, 79.22, 100.00)), 133, 90, c_anchorBottomLeft, 0, 372, null);
+    libNtve_gf_SetDialogItemStyle(DialogControlLastCreated(), "RobotoCondensed15", PlayerGroupAll());
+    libNtve_gf_SetScreenButtonBorderImage(6, "risk\\ui_battlenet_challenge_button_normalpressed.dds", "Risk\\ui_battlenet_challenge_button_normaloverpressedover.dds", c_triggerImageTypeNormal);
+    infoPanel.mainMenuButtons[6] = DialogControlLastCreated();
+    DialogControlSetVisible(infoPanel.mainMenuButtons[6], PlayerGroupAll(), true);
+    libNtve_gf_DisplayScreenButton(7, TextWithColor(StringToText("Wins"), Color(58.43, 79.22, 100.00)), 133, 90, c_anchorBottomLeft, 133, 372, null);
+    libNtve_gf_SetDialogItemStyle(DialogControlLastCreated(), "RobotoCondensed15", PlayerGroupAll());
+    libNtve_gf_SetScreenButtonBorderImage(7, "Risk\\ui_battlenet_challenge_button_normalpressed.dds", "Risk\\ui_battlenet_challenge_button_normaloverpressedover.dds", c_triggerImageTypeNormal);
+    infoPanel.mainMenuButtons[7] = DialogControlLastCreated();
+    DialogControlSetVisible(infoPanel.mainMenuButtons[7], PlayerGroupAll(), true);
+    libNtve_gf_DisplayScreenButton(8, TextWithColor(StringToText("Win Rate"), Color(58.43, 79.22, 100.00)), 133, 90, c_anchorBottomLeft, 266, 372, null);
+    libNtve_gf_SetDialogItemStyle(DialogControlLastCreated(), "RobotoCondensed15", PlayerGroupAll());
+    libNtve_gf_SetScreenButtonBorderImage(8, "risk\\ui_battlenet_challenge_button_normalpressed.dds", "Risk\\ui_battlenet_challenge_button_normaloverpressedover.dds", c_triggerImageTypeNormal);
+    infoPanel.mainMenuButtons[8] = DialogControlLastCreated();
+    DialogControlSetVisible(infoPanel.mainMenuButtons[8], PlayerGroupAll(), true);
+    libNtve_gf_DisplayScreenButton(9, TextWithColor(StringToText(""), Color(58.43, 79.22, 100.00)), 64, 64, c_anchorBottomLeft, 508, 164, null);
+    libNtve_gf_SetDialogItemTooltip(DialogControlLastCreated(), StringExternal("Param/Value/28A48EFB"), PlayerGroupAll());
+    libNtve_gf_SetDialogItemStyle(DialogControlLastCreated(), "RobotoCondensed15", PlayerGroupAll());
+    libNtve_gf_SetScreenButtonBorderImage(9, "risk\\tgaselectinactivenormalpressed1.tga", "risk\\tgaselectinactivenormalpressed1.tga", c_triggerImageTypeNormal);
+    infoPanel.mainMenuButtons[9] = DialogControlLastCreated();
+    DialogControlSetEnabled(infoPanel.mainMenuButtons[9], PlayerGroupAll(), true);
+    libNtve_gf_DisplayScreenButton(10, TextWithColor(StringToText(""), Color(58.43, 79.22, 100.00)), 64, 64, c_anchorBottomLeft, 508, 164, null);
+    libNtve_gf_SetDialogItemTooltip(DialogControlLastCreated(), StringExternal("Param/Value/D2B562BD"), PlayerGroupAll());
+    libNtve_gf_SetDialogItemStyle(DialogControlLastCreated(), "RobotoCondensed15", PlayerGroupAll());
+    libNtve_gf_SetScreenButtonBorderImage(10, "risk\\tgaselectactivenormalpressed1.tga", "risk\\tgaselectactivehoverpressed1.tga", c_triggerImageTypeNormal);
+    infoPanel.mainMenuButtons[10] = DialogControlLastCreated();
+    DialogControlSetEnabled(infoPanel.mainMenuButtons[10], PlayerGroupAll(), true);
+    
+    for(i = 1; i < 11; i+=1){
+        DialogControlSetVisible(infoPanel.mainMenuButtons[i], PlayerGroupAll(), true);
+    }
+
+    //gf_InfoPanelLog();
+    //gf_InfoPanelProfile();
+}
