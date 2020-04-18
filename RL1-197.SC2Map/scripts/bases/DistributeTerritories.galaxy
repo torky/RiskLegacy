@@ -36,6 +36,7 @@ void DistributeTerritories(playergroup players) {
     i = 0;
     while(i < totalCountries){
         if(j == -1){
+            //Reset # of random players, and picked players
             j = count-1;
             GeneratePickedPlayers(players, count, pickedPlayers);
         }
@@ -46,7 +47,8 @@ void DistributeTerritories(playergroup players) {
             c = 0;
             i+=1;
             if(i == totalCountries) { break; }
-            while(UnitGroupCount(countries[i].structures, c_unitCountAll) == 1){//Skip 1 income countries
+            //Skip 1 income countries
+            while(UnitGroupCount(countries[i].structures, c_unitCountAll) == 1){ 
                 i+=1;
                 if(i == totalCountries) { break; }
             }
@@ -54,11 +56,13 @@ void DistributeTerritories(playergroup players) {
             b = allBases[bi];
         }
 
+        //Pick next random player
         r = RandomInt(0, j);
-
         while(pickedPlayers[r].picked) {
             r+=1;
         }
+
+        //Insure picked player is not the same player previously picked
         while(prevI == i && prevR == r){
             r = RandomInt(0, j);
             while(pickedPlayers[r].picked) {
@@ -66,6 +70,7 @@ void DistributeTerritories(playergroup players) {
             }
         }
 
+        //Mark picked player as picked
         pickedPlayers[r].picked = true;
         p = pickedPlayers[r].value;
         
