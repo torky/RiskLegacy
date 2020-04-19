@@ -1,24 +1,27 @@
-playerGroup PlayersAndComputers(){
-    
+struct Player{
+    int income;
+};
+
+Player[16] allPlayers;
+
+trigger gt_SetupPlayers;
+
+bool SetupPlayers(bool TestConds, bool RunActions){
+    playergroup players;
+    int player;
     int i;
-    int currentPlayer = -1;
 
-    //Existing players contains all npc and players playing
-    playergroup ExistingPlayers;
-    players = PlayergroupEmpty();
-    
-    for(i = currentPlayer; 0 <= currentPlayer; currentPlayer = PlayerGroupNextPlayer(PlayerGroupAll(), currentPlayer)){
-        if((PlayerType(currentPlayer) == c_playerTypeComputer) && (currentPlayer != 0)) {
-            PlayerGroupAdd(ExistingPlayers, currentPlayer);
-        }
+    players = PlayerGroupActive();
 
-        if (PlayerType(currentPlayer) == c_playerTypeUser) {
-        //&& (PlayerStatus(currentPlayer) != c_playerStatusUnused) && (PlayerStatus(currentPlayer) != c_playerStatusLeft)) {
-            PlayerGroupAdd(ExistingPlayers, currentPlayer);
-        }
-
-
+    for(i = 1; i <= PlayerGroupCount(players); i += 1){
+        player = PlayerGroupPlayer(players, i);
+        PlayerModifyPropertyInt(player, c_playerPropSuppliesMade, c_playerPropOperSetTo, 1750);
     }
-    return ExistingPlayers;
-    
+
+    return true;
+}
+
+void gt_SetupPlayers_Init () {
+    gt_SetupPlayers = TriggerCreate("SetupPlayers");
+    TriggerAddEventMapInit(gt_SetupPlayers);
 }

@@ -32,13 +32,15 @@ void InitializeBase (int player, int baseID, unit base) {
     libNtve_gf_CreateUnitsWithDefaultFacing(1, "Marine", 0, player, PointWithOffsetPolar(basePosition, 1.5, 320.0));
     allBases[baseID].defender = UnitLastCreated();
     UnitBehaviorAdd(UnitLastCreated(), "Defender", UnitLastCreated(), 1);
+    
+    SetBaseIDOfUnit(base, baseID);
+    SetBaseIDOfUnit(UnitLastCreated(), baseID);
 }
 
 void InitializeBases () {
     int i;
-    int j;
     int count;
-    int x = 0;
+    int baseID = 0;
     int y;
     unit u;
     structref<Base> b;
@@ -48,11 +50,12 @@ void InitializeBases () {
         for(;;count-=1){
             u = UnitGroupUnitFromEnd(countries[i].structures, count);
             if(u == null) {break;}
-            InitializeBase(0, x, u);
+            InitializeBase(0, baseID, u);
 
-            countries[i].baseIDs[y] = x;
+            countries[i].baseIDs[y] = baseID;
+            SetCountryIDOfUnit(allBases[baseID].defender, i);
 
-            x+=1;
+            baseID+=1;
             y+=1;
         }
     }

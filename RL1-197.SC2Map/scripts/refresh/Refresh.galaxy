@@ -1,0 +1,32 @@
+trigger gt_Income;
+
+bool RefreshIncome (bool TestConds, bool RunActions){
+    
+    playergroup players;
+    int player;
+    int i;
+
+    players = PlayerGroupActive();
+
+    //Reset income
+    for(i = 1; i <= PlayerGroupCount(players); i += 1){
+        player = PlayerGroupPlayer(players, i);
+        allPlayers[player].income = 4;
+    }
+
+    //Calculate income
+
+    //Add Income
+    for(i = 1; i <= PlayerGroupCount(players); i += 1){
+        player = PlayerGroupPlayer(players, i);
+        PlayerModifyPropertyInt(player, c_playerPropMinerals, c_playerPropOperAdd, allPlayers[player].income);
+    }
+
+    return true;
+
+}
+
+void gt_Income_Init () {
+    gt_Income = TriggerCreate("RefreshIncome");
+    TriggerAddEventMapInit(gt_Income);
+}

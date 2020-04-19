@@ -8,6 +8,13 @@
 include "TriggerLibs/NativeLib"
 include "scripts/start/Start"
 include "scripts/ui/UI"
+include "scripts/players/Players"
+include "scripts/refresh/Refresh"
+include "scripts/units/Units"
+
+include "scripts/bases/Bases"
+include "scripts/bases/DistributeTerritories"
+include "scripts/bases/Defender"
 
 include "scripts/modes/1v1"
 include "scripts/modes/Custom"
@@ -17,8 +24,7 @@ include "scripts/modes/Solo"
 include "scripts/modes/Teams"
 include "scripts/modes/Tutorial"
 
-include "scripts/bases/Bases"
-include "scripts/bases/DistributeTerritories"
+
 
 //--------------------------------------------------------------------------------------------------
 // Library Initialization
@@ -103,7 +109,10 @@ void gt_GameModeSelect_Init () {
 // Trigger Initialization
 //--------------------------------------------------------------------------------------------------
 void InitTriggers () {
+    gt_SetupPlayers_Init();
+    gt_Income_Init();
     gt_GameModeSelect_Init();
+    gt_SwapDefender_Init();
 }
 
 //--------------------------------------------------------------------------------------------------

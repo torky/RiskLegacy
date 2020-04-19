@@ -1,4 +1,19 @@
+const int c_countryIDOfUnit = 10;
+const int c_baseIDOfUnit = 11;
 
+int GetCountryIDOfUnit(unit u){
+    return FixedToInt(UnitGetCustomValue(u, c_countryIDOfUnit));
+}
 
+void SetCountryIDOfUnit(unit u, int countryID){
+    UnitSetCustomValue(u, c_countryIDOfUnit, IntToFixed(countryID));
+}
 
+int GetBaseIDOfUnit(unit u){
+    return FixedToInt(UnitGetCustomValue(u, c_baseIDOfUnit));
+}
+
+void SetBaseIDOfUnit(unit u, int baseID){
+    UnitSetCustomValue(u, c_baseIDOfUnit, IntToFixed(baseID));
+}
 

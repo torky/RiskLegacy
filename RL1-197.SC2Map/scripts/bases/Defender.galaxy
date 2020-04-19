@@ -1,0 +1,90 @@
+trigger gt_SwapDefenderAbility;
+
+void SwapDefender (unit newUnit, unit oldUnit) {
+    // Variable Declarations
+    point swapPoint;
+    int countryID;
+    int baseID;
+
+    countryID = GetCountryIDOfUnit(oldUnit);
+    baseID = GetBaseIDOfUnit(oldUnit);
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    swapPoint = UnitGetPosition(newUnit);
+
+    // Implementation
+    UnitSetPosition(oldUnit, swapPoint, false);
+    UnitSetPosition(newUnit, allBases[baseID].position, false);
+    UnitBehaviorRemove(oldUnit, "Defender", 1);
+    UnitBehaviorAdd(oldUnit, "Loadable", oldUnit, 1);
+    UnitBehaviorRemove(newUnit, "Loadable", 1);
+    UnitBehaviorAdd(newUnit, "Defender", newUnit, 1);
+    SetCountryIDOfUnit(newUnit, countryID);
+    SetBaseIDOfUnit(newUnit, baseID);
+    allBases[baseID].defender = newUnit;
+    UnitSetPropertyFixed(newUnit, c_unitPropLife, (UnitGetPropertyFixed(newUnit, c_unitPropLife, c_unitPropCurrent) - 20.0));
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Change Defender
+//--------------------------------------------------------------------------------------------------
+bool SwapDefenderAbility (bool testConds, bool runActions) {
+    // Variable Declarations
+    int newOwner;
+    int currentOwner;
+    int countryID;
+    int baseID;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    newOwner = UnitGetOwner(EventUnitTargetUnit());
+    currentOwner = UnitGetOwner(EventUnit());
+    countryID = GetCountryIDOfUnit(EventUnit());
+    baseID = GetBaseIDOfUnit(EventUnit());
+
+    // Conditions
+    if (testConds) {
+        if (EventUnitTargetUnit() == null 
+        || PointPathingPassable(UnitGetPosition(EventUnitTargetUnit())) == false
+        ||UnitHasBehavior(EventUnitTargetUnit(), "Defender") == true) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    if ((UnitHasBehavior(EventUnitTargetUnit(), "WaterUnit") == true) && (UnitGetType(EventUnit()) == "Barracks") && (UnitGetType(EventUnit()) == "Factory")) {
+        return true;
+    }
+    else {
+        if ((UnitHasBehavior(allBases[baseID].defender, "WaterUnit") == true) && (WorldHeight(c_heightMapGround, UnitGetPosition(EventUnitTargetUnit())) > 7.8)) {
+            libNtve_gf_UIErrorMessage(PlayerGroupSingle(currentOwner), StringToText("Cannot be moved on land!"), SoundLink("Alert_TerranBuildError", -1));
+            return true;
+        }
+
+    }
+    SwapDefender(EventUnitTargetUnit(), allBases[baseID].defender);
+    if ((currentOwner != newOwner)) {
+        SetBaseOwnership(allBases[baseID], newOwner);
+        //gf_CountryConquestSequence(newOwner, currentOwner, gf_getCustomUnitValue(EventUnit(), 10));
+        //if ((gv_player[newOwner].lv_showHideNationality == true)) {
+        //    gf_ShowHideIndvFlag(true, baseID);
+        //}
+        //else {
+        //    gf_ShowHideIndvFlag(false, baseID);
+        //}
+    }
+
+    UnitIssueOrder(EventUnit(), Order(AbilityCommand("stop", 0)), c_orderQueueReplace);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_SwapDefender_Init () {
+    gt_SwapDefenderAbility = TriggerCreate("SwapDefenderAbility");
+    TriggerAddEventUnitAbility(gt_SwapDefenderAbility, null, AbilityCommand("SelectDefender2", 0), c_unitAbilStageExecute, false);
+}
