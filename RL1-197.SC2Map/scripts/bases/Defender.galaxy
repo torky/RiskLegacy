@@ -88,9 +88,3 @@ void gt_SwapDefender_Init () {
     gt_SwapDefenderAbility = TriggerCreate("SwapDefenderAbility");
     TriggerAddEventUnitAbility(gt_SwapDefenderAbility, null, AbilityCommand("SelectDefender2", 0), c_unitAbilStageExecute, false);
 }
-
-trigger gt_DefenderDies;
-
-bool DefenderDies(bool testConds, bool runActions){
-
-}
