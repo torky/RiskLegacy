@@ -1,0 +1,67 @@
+const int maxBasesInCountry = 10; //Can be changed
+
+struct Country {
+    string name;
+    unitgroup structures;
+    int[maxBasesInCountry] baseIDs;
+    unit spawn;
+    string flagTexture;
+    string flagImage;
+    int income;
+    int owner;
+};
+
+const int totalCountries = 100; //100 is arbitrary. Just needs to be larger than the number of total countries
+Country[totalCountries] countries;
+
+void AddTextTags(int i){
+    if(countries[i].income == 0) { return; }
+    TextTagCreate(StringToText((countries[i].name + (": " + IntToString(countries[i].income)))), 25, UnitGetPosition(countries[i].spawn), 0.5, true, false, PlayerGroupAll());
+    TextTagSetColor(TextTagLastCreated(), c_textTagColorText, Color(100.00, 100.00, 100.00));
+}
+
+void UpdateCountryOwner(int countryID){
+    structref<Country> country;
+    int i;
+    int newOwner;
+    int owner;
+    structref<Base> base;
+
+    country = countries[countryID];
+    base = allBases[country.baseIDs[0]];
+    newOwner = UnitGetOwner(base.structure);
+
+    for(i = 1; i < country.income; i+=1){
+        base = allBases[country.baseIDs[i]];
+        owner = UnitGetOwner(base.structure);
+        if(owner != newOwner){
+            country.owner = 0;
+            return;
+        }
+    }
+    country.owner = newOwner;
+}
+
+void InitializeBases () {
+    int i;
+    int count;
+    int baseID = 0;
+    int y;
+    unit u;
+    structref<Base> b;
+    for (i = 0; i < totalCountries; i+=1) {
+        count = countries[i].income;
+        y = 0;
+        for(;;count-=1){
+            u = UnitGroupUnitFromEnd(countries[i].structures, count);
+            if(u == null) {break;}
+            InitializeBase(0, baseID, u);
+
+            countries[i].baseIDs[y] = baseID;
+            SetCountryIDOfUnit(allBases[baseID].defender, i);
+
+            baseID+=1;
+            y+=1;
+        }
+    }
+}

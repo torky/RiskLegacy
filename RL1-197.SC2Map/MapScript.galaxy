@@ -9,10 +9,11 @@ include "TriggerLibs/NativeLib"
 include "scripts/start/Start"
 include "scripts/ui/UI"
 include "scripts/players/Players"
-include "scripts/refresh/Refresh"
 include "scripts/units/Units"
 
 include "scripts/bases/Bases"
+include "scripts/countries/Country"
+include "scripts/countries/PredefineCountries"
 include "scripts/bases/DistributeTerritories"
 include "scripts/bases/Defender"
 
@@ -24,6 +25,7 @@ include "scripts/modes/Solo"
 include "scripts/modes/Teams"
 include "scripts/modes/Tutorial"
 
+include "scripts/refresh/Refresh"
 
 
 //--------------------------------------------------------------------------------------------------
@@ -70,6 +72,9 @@ bool gt_GameModeSelect_Func (bool testConds, bool runActions) {
 
     players = PlayerGroupActive();
     DistributeTerritories(players);
+
+    RefreshIncome();
+
     SetupUI();
     InfoCreate();
 
@@ -110,7 +115,6 @@ void gt_GameModeSelect_Init () {
 //--------------------------------------------------------------------------------------------------
 void InitTriggers () {
     gt_SetupPlayers_Init();
-    gt_Income_Init();
     gt_GameModeSelect_Init();
     gt_SwapDefender_Init();
 }

@@ -1,10 +1,10 @@
-trigger gt_Income;
-
-bool RefreshIncome (bool TestConds, bool RunActions){
+void RefreshIncome(){
     
     playergroup players;
     int player;
     int i;
+    int countryOwner;
+    int countryIncome;
 
     players = PlayerGroupActive();
 
@@ -15,18 +15,16 @@ bool RefreshIncome (bool TestConds, bool RunActions){
     }
 
     //Calculate income
+    for(i = 0; i < totalCountries; i+=1){
+        UpdateCountryOwner(i);
+        countryIncome = countries[i].income;
+        countryOwner = countries[i].owner;
+        allPlayers[countryOwner].income += countryIncome;
+    }
 
     //Add Income
     for(i = 1; i <= PlayerGroupCount(players); i += 1){
         player = PlayerGroupPlayer(players, i);
         PlayerModifyPropertyInt(player, c_playerPropMinerals, c_playerPropOperAdd, allPlayers[player].income);
     }
-
-    return true;
-
-}
-
-void gt_Income_Init () {
-    gt_Income = TriggerCreate("RefreshIncome");
-    TriggerAddEventMapInit(gt_Income);
 }
