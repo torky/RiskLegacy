@@ -2,27 +2,30 @@
 include "TriggerLibs/NativeLib"
 
 //Level 0
+include "scripts/players/Players"
 include "scripts/start/Start"
 include "scripts/ui/UI"
-include "scripts/players/Players"
 include "scripts/units/Units"
-include "scripts/bases/Bases" 
 
 //Level 1
+include "scripts/bases/Bases"
+
+//Level 2
 include "scripts/countries/Country"
 
-//Level 2 
+//Level 3 
 include "scripts/countries/PredefineCountries"
 
-//Level 2.5 Should run after Level 2, but Level 2 isn't required for level 2.5 to compile
+//Level 3.5 Should run after Level 3, but Level 3 isn't required for Level 3.5 to compile
+include "scripts/bases/BaseCapture"
 include "scripts/bases/Defender"
 include "scripts/bases/DistributeTerritories" 
 include "scripts/income/Income"
 
-//Level 3
+//Level 4
 include "scripts/refresh/Refresh"
 
-//Level 4
+//Level 5
 include "scripts/modes/1v1"
 include "scripts/modes/Custom"
 include "scripts/modes/Empire"
@@ -38,23 +41,24 @@ void InitLibs () {
 trigger gt_GameModeSelect;
 
 bool gt_GameModeSelect_Func (bool testConds, bool runActions) {
-    string gameMode;
-    string modeQuick;
     string mode1v1;
-    string modeEmpire;
     string modeCustom;
-    string modeTutorial;
+    string modeEmpire;
+    string modeQuick;
     string modeSolo;
     string modeTeams;
+    string modeTutorial;
+
+    string gameMode;
     playergroup players;
 
-    modeQuick = "0001";
     mode1v1 = "0007";
-    modeEmpire = "0006";
     modeCustom = "0002";
-    modeTutorial = "0003";
+    modeEmpire = "0006";
+    modeQuick = "0001";
     modeSolo = "0004";
     modeTeams = "0005";
+    modeTutorial = "0003";
     
     gameMode = GameAttributeGameValue("1");
     DeleteStupidRocks();
@@ -64,33 +68,34 @@ bool gt_GameModeSelect_Func (bool testConds, bool runActions) {
     InitializeBases();
 
     players = PlayerGroupActive();
+    PlayerGroupAdd(players, 2);
     DistributeTerritories(players);
 
     RefreshIncome();
 
     SetupUI();
     InfoCreate();
-
-    if (gameMode == modeQuick) {
-        UIDisplayMessage(PlayerGroupActive(), c_messageAreaChat, StringToText("Quick"));
-
-    }else if (gameMode == mode1v1) {
+    
+    if (gameMode == mode1v1) {
         UIDisplayMessage(PlayerGroupActive(), c_messageAreaChat, StringToText("1v1"));
+
+    }else if (gameMode == modeCustom) {
+        UIDisplayMessage(PlayerGroupActive(), c_messageAreaChat, StringToText("Custom"));
 
     }else if (gameMode == modeEmpire) {
         UIDisplayMessage(PlayerGroupActive(), c_messageAreaChat, StringToText("Empire"));
 
-    }else if (gameMode == modeCustom) {
-        UIDisplayMessage(PlayerGroupActive(), c_messageAreaChat, StringToText("Custom"));
-        
-    }else if (gameMode == modeTutorial) {
-        UIDisplayMessage(PlayerGroupActive(), c_messageAreaChat, StringToText("Tutorial"));
+    }else if (gameMode == modeQuick) {
+        UIDisplayMessage(PlayerGroupActive(), c_messageAreaChat, StringToText("Quick"));
 
     }else if (gameMode == modeSolo) {
         UIDisplayMessage(PlayerGroupActive(), c_messageAreaChat, StringToText("Solo"));
 
     }else if (gameMode == modeTeams) {
         UIDisplayMessage(PlayerGroupActive(), c_messageAreaChat, StringToText("Teams"));
+        
+    }else if (gameMode == modeTutorial) {
+        UIDisplayMessage(PlayerGroupActive(), c_messageAreaChat, StringToText("Tutorial"));
 
     }
 
@@ -104,8 +109,8 @@ void gt_GameModeSelect_Init () {
 
 void InitTriggers () {
     gt_SetupPlayers_Init();
-    gt_GameModeSelect_Init();
     gt_SwapDefender_Init();
+    gt_GameModeSelect_Init();
 }
 
 void InitMap () {

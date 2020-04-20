@@ -1,49 +1,46 @@
 trigger gt_SwapDefenderAbility;
 
-void SwapDefender (unit newUnit, unit oldUnit) {
-    // Variable Declarations
+void SwapDefender (unit newUnit, int baseID) {
+    //Variable Declarations
     point swapPoint;
     int countryID;
-    int baseID;
+    unit oldUnit;
 
+    oldUnit = allBases[baseID].defender;
     countryID = GetCountryIDOfUnit(oldUnit);
-    baseID = GetBaseIDOfUnit(oldUnit);
-
-    // Automatic Variable Declarations
-    // Variable Initialization
     swapPoint = UnitGetPosition(newUnit);
 
-    // Implementation
-    UnitSetPosition(oldUnit, swapPoint, false);
+    //Implementation
+    //Move old Unit
+    if(oldUnit != null && UnitIsAlive(oldUnit)){
+        UnitSetPosition(oldUnit, swapPoint, false);
+        UnitBehaviorRemove(oldUnit, "Defender", 1);
+        UnitBehaviorAdd(oldUnit, "Loadable", oldUnit, 1);
+    }
+    
+    //Move new Unit
     UnitSetPosition(newUnit, allBases[baseID].position, false);
-    UnitBehaviorRemove(oldUnit, "Defender", 1);
-    UnitBehaviorAdd(oldUnit, "Loadable", oldUnit, 1);
     UnitBehaviorRemove(newUnit, "Loadable", 1);
     UnitBehaviorAdd(newUnit, "Defender", newUnit, 1);
+    UnitSetPropertyFixed(newUnit, c_unitPropLife, (UnitGetPropertyFixed(newUnit, c_unitPropLife, c_unitPropCurrent) - 20.0));
+    
+    //Assign game values
     SetCountryIDOfUnit(newUnit, countryID);
     SetBaseIDOfUnit(newUnit, baseID);
     allBases[baseID].defender = newUnit;
-    UnitSetPropertyFixed(newUnit, c_unitPropLife, (UnitGetPropertyFixed(newUnit, c_unitPropLife, c_unitPropCurrent) - 20.0));
 }
 
-//--------------------------------------------------------------------------------------------------
-// Trigger: Change Defender
-//--------------------------------------------------------------------------------------------------
 bool SwapDefenderAbility (bool testConds, bool runActions) {
-    // Variable Declarations
     int newOwner;
     int currentOwner;
     int countryID;
     int baseID;
 
-    // Automatic Variable Declarations
-    // Variable Initialization
     newOwner = UnitGetOwner(EventUnitTargetUnit());
     currentOwner = UnitGetOwner(EventUnit());
     countryID = GetCountryIDOfUnit(EventUnit());
     baseID = GetBaseIDOfUnit(EventUnit());
 
-    // Conditions
     if (testConds) {
         if (EventUnitTargetUnit() == null 
         || PointPathingPassable(UnitGetPosition(EventUnitTargetUnit())) == false
@@ -52,7 +49,6 @@ bool SwapDefenderAbility (bool testConds, bool runActions) {
         }
     }
 
-    // Actions
     if (!runActions) {
         return true;
     }
@@ -67,7 +63,7 @@ bool SwapDefenderAbility (bool testConds, bool runActions) {
         }
 
     }
-    SwapDefender(EventUnitTargetUnit(), allBases[baseID].defender);
+    SwapDefender(EventUnitTargetUnit(), baseID);
     if ((currentOwner != newOwner)) {
         SetBaseOwnership(allBases[baseID], newOwner);
         //gf_CountryConquestSequence(newOwner, currentOwner, gf_getCustomUnitValue(EventUnit(), 10));
