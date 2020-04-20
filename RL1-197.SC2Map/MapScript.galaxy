@@ -68,7 +68,6 @@ bool gt_GameModeSelect_Func (bool testConds, bool runActions) {
     InitializeBases();
 
     players = PlayerGroupActive();
-    PlayerGroupAdd(players, 2);
     DistributeTerritories(players);
 
     RefreshIncome();
