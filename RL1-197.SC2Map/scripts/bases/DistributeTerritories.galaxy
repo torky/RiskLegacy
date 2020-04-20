@@ -22,7 +22,6 @@ void DistributeTerritories(playergroup players) {
     int p;
     int j;
     int c;
-    structref<Base> b;
     int bi;
 
     int prevR = -1;
@@ -41,7 +40,6 @@ void DistributeTerritories(playergroup players) {
             GeneratePickedPlayers(players, count, pickedPlayers);
         }
         bi = countries[i].baseIDs[c];
-        b = allBases[bi];
 
         if(bi == 0){
             c = 0;
@@ -53,7 +51,6 @@ void DistributeTerritories(playergroup players) {
                 if(i == totalCountries) { break; }
             }
             bi = countries[i].baseIDs[c];
-            b = allBases[bi];
         }
 
         //Pick next random player
@@ -74,7 +71,7 @@ void DistributeTerritories(playergroup players) {
         pickedPlayers[r].picked = true;
         p = pickedPlayers[r].value;
         
-        SetBaseOwnership(b, p);
+        SetBaseOwnership(bi, p);
         prevR = r;
         prevI = i;
         c+=1;

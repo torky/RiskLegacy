@@ -16,6 +16,9 @@ void SwapDefender (unit newUnit, int baseID) {
         UnitSetPosition(oldUnit, swapPoint, false);
         UnitBehaviorRemove(oldUnit, "Defender", 1);
         UnitBehaviorAdd(oldUnit, "Loadable", oldUnit, 1);
+        //Assign game values
+        SetCountryIDOfUnit(oldUnit, -1);
+        SetBaseIDOfUnit(oldUnit, -1);
     }
     
     //Move new Unit
@@ -27,6 +30,7 @@ void SwapDefender (unit newUnit, int baseID) {
     //Assign game values
     SetCountryIDOfUnit(newUnit, countryID);
     SetBaseIDOfUnit(newUnit, baseID);
+
     allBases[baseID].defender = newUnit;
 }
 
@@ -65,7 +69,7 @@ bool SwapDefenderAbility (bool testConds, bool runActions) {
     }
     SwapDefender(EventUnitTargetUnit(), baseID);
     if ((currentOwner != newOwner)) {
-        SetBaseOwnership(allBases[baseID], newOwner);
+        SetBaseOwnership(baseID, newOwner);
         //gf_CountryConquestSequence(newOwner, currentOwner, gf_getCustomUnitValue(EventUnit(), 10));
         //if ((gv_player[newOwner].lv_showHideNationality == true)) {
         //    gf_ShowHideIndvFlag(true, baseID);

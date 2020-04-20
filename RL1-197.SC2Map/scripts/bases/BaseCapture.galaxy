@@ -1,0 +1,84 @@
+// Radius 6.0
+
+unit FindNewDefender(unit killingUnit){
+    fixed radius = 6.0;
+    unitgroup potentialDefenders;
+    unit current;
+    fixed currentHealth;
+    fixed lowestHealth;
+    fixed maxHealth;
+    fixed currentMaxHealth;
+    unit newDefender;
+    int count;
+    unitfilter filter;
+
+    filter = UnitFilter(0, 
+        0, 
+        (1 << c_targetFilterStructure) | (1 << c_targetFilterMissile) | (1 << c_targetFilterDestructible), 
+        (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32)) | (1 << (c_targetFilterInvulnerable - 32))
+    );
+
+    potentialDefenders = UnitGroup(null, UnitGetOwner(killingUnit), RegionCircle(UnitGetPosition(killingUnit), radius), filter, 0);
+    newDefender = killingUnit;
+    lowestHealth = UnitGetPropertyFixed(killingUnit, c_unitPropLife, c_unitPropCurrent);
+    maxHealth = UnitGetPropertyFixed(killingUnit, c_unitPropLifeMax, c_unitPropCurrent);
+
+    count = UnitGroupCount(potentialDefenders, c_unitCountAll);
+    for(;;count-=1){
+        current = UnitGroupUnitFromEnd(potentialDefenders, count);
+        if(current == null) {break;}
+        currentHealth = UnitGetPropertyFixed(current, c_unitPropLife, c_unitPropCurrent);
+        currentMaxHealth = UnitGetPropertyFixed(current, c_unitPropLifeMax, c_unitPropCurrent);
+
+        if(!UnitHasBehavior2(current, "Defender") && 
+        (
+            (
+                currentHealth < lowestHealth &&
+                currentHealth > 0 &&
+                currentMaxHealth == maxHealth
+            )
+            ||
+            (
+                currentMaxHealth < maxHealth
+            )
+        )){
+            newDefender = current;
+            lowestHealth = currentHealth;
+            maxHealth = currentMaxHealth;
+        }
+    }
+
+    if(UnitHasBehavior2(newDefender, "WaterUnit")){
+        UnitCreate(1, "Marine", c_unitCreateIgnorePlacement, UnitGetOwner(killingUnit), UnitGetPosition(killingUnit), 0);
+        newDefender = UnitLastCreated();
+    }
+
+    return newDefender;
+}
+
+trigger gt_BaseCapture;
+
+bool baseCapture(bool testConds, bool runActions){
+    unit dyingUnit;
+    unit killingUnit;
+    unit newDefender;
+    int baseID;
+    Base base;
+
+    dyingUnit = EventUnit();
+    killingUnit = EventUnitDamageSourceUnit();
+    baseID = GetBaseIDOfUnit(dyingUnit);
+
+    if(dyingUnit == allBases[baseID].defender){
+        newDefender = FindNewDefender(killingUnit);
+        SwapDefender(newDefender, baseID);
+        SetBaseOwnership(baseID, UnitGetOwner(killingUnit));
+    }
+
+    return true;
+}
+
+void gt_BaseCapture_Init () {
+    gt_BaseCapture = TriggerCreate("baseCapture");
+    TriggerAddEventUnitDamaged(gt_BaseCapture, null, c_unitDamageTypeAny, c_unitDamageFatal, null);
+}

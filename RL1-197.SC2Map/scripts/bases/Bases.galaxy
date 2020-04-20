@@ -34,7 +34,9 @@ void InitializeBase (int player, int baseID, unit base) {
     SetBaseIDOfUnit(UnitLastCreated(), baseID);
 }
 
-void SetBaseOwnership(structref<Base> b, int player) {
+void SetBaseOwnership(int baseID, int player) {
+    structref<Base> b;
+    b = allBases[baseID];
     UnitSetOwner(b.defender, player, true);
     UnitSetOwner(b.structure, player, true);
 }

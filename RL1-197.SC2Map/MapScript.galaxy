@@ -17,12 +17,12 @@ include "scripts/countries/Country"
 include "scripts/countries/PredefineCountries"
 
 //Level 3.5 Should run after Level 3, but Level 3 isn't required for Level 3.5 to compile
-include "scripts/bases/BaseCapture"
 include "scripts/bases/Defender"
 include "scripts/bases/DistributeTerritories" 
 include "scripts/income/Income"
 
 //Level 4
+include "scripts/bases/BaseCapture"
 include "scripts/refresh/Refresh"
 
 //Level 5
@@ -110,6 +110,7 @@ void gt_GameModeSelect_Init () {
 void InitTriggers () {
     gt_SetupPlayers_Init();
     gt_SwapDefender_Init();
+    gt_BaseCapture_Init();
     gt_GameModeSelect_Init();
 }
 
