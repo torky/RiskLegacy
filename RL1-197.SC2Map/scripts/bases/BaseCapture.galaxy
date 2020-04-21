@@ -95,19 +95,21 @@ bool baseCapture(bool testConds, bool runActions){
     unit killingUnit;
     unit newDefender;
     int baseID;
+    int oldOwner;
     structref<Base> base;
 
     dyingUnit = EventUnit();
     killingUnit = EventUnitDamageSourceUnit();
     baseID = GetBaseIDOfUnit(dyingUnit);
     base = allBases[baseID];
+    oldOwner = UnitGetOwner(base.structure);
 
     if(dyingUnit == base.defender){
         newDefender = FindNewFriendlyDefender(base.structure);
         if(newDefender == null){
             newDefender = FindNewAttackerDefender(killingUnit);
-        }else if(PlayerGetAlliance(UnitGetOwner(newDefender), c_allianceIdTrade, UnitGetOwner(base.structure)) &&
-        UnitGetOwner(newDefender) != UnitGetOwner(base.structure)){
+        }else if(PlayerGetAlliance(UnitGetOwner(newDefender), c_allianceIdTrade, oldOwner) &&
+        UnitGetOwner(newDefender) != oldOwner){
             return true;
         }
 
@@ -115,6 +117,7 @@ bool baseCapture(bool testConds, bool runActions){
         SetBaseOwnership(baseID, UnitGetOwner(killingUnit));
 
         if(!UnitHasBehavior2(base.structure, "CardCoolDown") && 
+        UnitGetOwner(newDefender) != oldOwner &&
         PlayerGetPropertyInt(UnitGetOwner(killingUnit), c_playerPropVespene) < 30){
             PlayerModifyPropertyInt(UnitGetOwner(killingUnit), c_playerPropVespene, c_playerPropOperAdd, 1);
             UnitBehaviorAdd(base.structure, "CardCooldown", base.structure, 1);

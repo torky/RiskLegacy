@@ -1,10 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Preload>
+<Asset path="risk\riskrevulsionhistory.tga" Type="Image"/>
+<Asset path="risk\tgaselectactivenormalpressed1.tga" Type="Image"/>
+<Asset path="assets\textures\zergling_emissive.dds" Type="Image"/>
+<Asset path="assets\textures\storm_colorgrad_tealgreen.lvl0" Type="Image"/>
+<Asset path="risk\active.dds" Type="Image"/>
+<Asset path="risk\flag\tgacardnormalpressed1.tga" Type="Image"/>
+<Asset path="assets\textures\zergling_emissive.lvl0" Type="Image"/>
+<Asset path="risk\cardyellownormalpressed1.dds" Type="Image"/>
+<Asset path="assets\textures\white32.dds" Type="Image"/>
+<Asset path="assets\textures\ui_battlenet_challenge_button_normaloverpressedover.dds" Type="Image"/>
+<Asset path="assets\textures\ui_camapaignmenu_dialogbox_base.dds" Type="Image"/>
+<Asset path="assets\textures\ui_button_unbindkey_normalpressed_bnet.dds" Type="Image"/>
+<Asset path="assets\textures\ui_ingame_tutorial_stepbutton_hover_terr.dds" Type="Image"/>
+<Asset path="risk\flag\tgacardhoverpressed1.tga" Type="Image"/>
+<Asset path="assets\textures\ui_button_unbindkey_normaloverpressedover_bnet.dds" Type="Image"/>
+<Asset path="assets\textures\ui_techtree_iconframe_protoss.dds" Type="Image"/>
+<Asset path="risk\ui_battlenet_challenge_button_normalpressed.dds" Type="Image"/>
+<Asset path="risk\tgaselectactivehoverpressed1.tga" Type="Image"/>
+<Asset path="assets\textures\ui_ingame_tutorial_stepbutton_hover_prot.dds" Type="Image"/>
+<Asset path="assets\textures\aciddeath2purple2.dds" Type="Image"/>
+<Asset path="assets\textures\ui_void_bossbar_progressbar_blue.dds" Type="Image"/>
+<Asset path="assets\textures\storm_colorgrad_tealgreen.dds" Type="Image"/>
+<Asset path="risk\tgaselectinactivenormalpressed1.tga" Type="Image"/>
+<Asset path="risk\ui_battlenet_challenge_button_normaloverpressedover.dds" Type="Image"/>
+<Asset path="assets\textures\ui_battlenet_glues_dialogbox_base.dds" Type="Image"/>
+<Asset path="assets\textures\aciddeath2purple2.lvl0" Type="Image"/>
+<Asset path="risk\risk_loading.dds" Type="Image"/>
+<Asset path="risk\flag\tgacardyellownormalpressed1.tga" Type="Image"/>
+<Asset path="assets\textures\ui_battlenet_glue_navbuttons_blue_normalpressed.dds" Type="Image"/>
+<Asset path="assets\textures\ui_battlenet_glue_frame_mapcontainer.dds" Type="Image"/>
 <Actor id="SYSTEM_ActorConfig"/>
+<Actor id="TimeWarpLaunch"/>
+<Behavior id="CardCooldown"/>
+<Behavior id="Loadable"/>
+<Behavior id="TaurenMarine"/>
+<Behavior id="MurlockMarine"/>
+<Behavior id="Defender"/>
+<Model id="PingSimple"/>
+<Sound id="Alert_TerranBuildError"/>
+<Sound id="AC_UI_Countdown_5MxNone"/>
+<Sound id="UI_BnetCountdown"/>
+<Sound id="UI_ActionButtonSelect"/>
+<Sound id="TValerian02ASwann00059"/>
 <Terrain id="Agria"/>
+<Texture id="Nothing"/>
 <Unit id="Barracks"/>
 <Unit id="MissileTurret" Variations="7,8,10,12,15,19,21"/>
 <Unit id="Starport"/>
+<Unit id="SiegeTank"/>
+<Unit id="Marine"/>
+<Unit id="Marauder"/>
+<Unit id="Hellion"/>
+<Unit id="Banshee"/>
+<Unit id="Beacon_TerranSmall"/>
 <Unit id="UnbuildableRocksDestructible" Variations="0,1,2,3,4,5,6,7"/>
+<Unit id="DestructibleKorhalFlag"/>
+<Unit id="Medic"/>
 <Unit id="SpawnZone"/>
 </Preload>
