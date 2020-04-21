@@ -2,7 +2,8 @@ struct Player{
     int income;
 };
 
-Player[16] allPlayers;
+const int totalPlayers = 16;
+Player[totalPlayers] allPlayers;
 
 trigger gt_SetupPlayers;
 

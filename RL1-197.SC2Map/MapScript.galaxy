@@ -111,6 +111,7 @@ void InitTriggers () {
     gt_SwapDefender_Init();
     gt_BaseCapture_Init();
     gt_GameModeSelect_Init();
+    gt_Refresh_Init();
 }
 
 void InitMap () {

@@ -1,6 +1,38 @@
 // Radius 6.0
 
-unit FindNewDefender(unit killingUnit){
+unit FindNewFriendlyDefender(unit baseStructure){
+    unitgroup potentialDefenders;
+    int count;
+    unit newDefender;
+    unit allyUnit;
+    unitfilter filter;
+    int baseID = GetBaseIDOfUnit(baseStructure);
+    structref<Base> base = allBases[baseID];
+
+    filter = UnitFilter(0, 
+        0, 
+        (1 << c_targetFilterStructure) | (1 << c_targetFilterMissile) | (1 << c_targetFilterDestructible), 
+        (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32)) | (1 << (c_targetFilterInvulnerable - 32))
+    );
+
+    allyUnit = null;
+    potentialDefenders = UnitGroup(null, c_playerAny, RegionCircle(base.position, 1.6), filter, 0);
+    count = UnitGroupCount(potentialDefenders, c_unitCountAll);
+    for (;; count -= 1) {
+        newDefender = UnitGroupUnitFromEnd(potentialDefenders, count);
+        if (newDefender == null) { break; }
+        if (UnitGetOwner(newDefender) == UnitGetOwner(base.structure)){
+            return newDefender;
+        }else if(PlayerGetAlliance(UnitGetOwner(newDefender), c_allianceIdTrade, UnitGetOwner(base.structure))){
+            allyUnit = newDefender;
+        }
+        
+
+    }
+    return allyUnit;
+}
+
+unit FindNewAttackerDefender(unit killingUnit){
     fixed radius = 6.0;
     unitgroup potentialDefenders;
     unit current;
@@ -63,16 +95,33 @@ bool baseCapture(bool testConds, bool runActions){
     unit killingUnit;
     unit newDefender;
     int baseID;
-    Base base;
+    structref<Base> base;
 
     dyingUnit = EventUnit();
     killingUnit = EventUnitDamageSourceUnit();
     baseID = GetBaseIDOfUnit(dyingUnit);
+    base = allBases[baseID];
 
-    if(dyingUnit == allBases[baseID].defender){
-        newDefender = FindNewDefender(killingUnit);
+    if(dyingUnit == base.defender){
+        newDefender = FindNewFriendlyDefender(base.structure);
+        if(newDefender == null){
+            newDefender = FindNewAttackerDefender(killingUnit);
+        }else if(PlayerGetAlliance(UnitGetOwner(newDefender), c_allianceIdTrade, UnitGetOwner(base.structure)) &&
+        UnitGetOwner(newDefender) != UnitGetOwner(base.structure)){
+            return true;
+        }
+
         SwapDefender(newDefender, baseID);
         SetBaseOwnership(baseID, UnitGetOwner(killingUnit));
+
+        if(!UnitHasBehavior2(base.structure, "CardCoolDown") && 
+        PlayerGetPropertyInt(UnitGetOwner(killingUnit), c_playerPropVespene) < 30){
+            PlayerModifyPropertyInt(UnitGetOwner(killingUnit), c_playerPropVespene, c_playerPropOperAdd, 1);
+            UnitBehaviorAdd(base.structure, "CardCooldown", base.structure, 1);
+        }
+
+        libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(base.defender), c_animNameDefault, "Stand", 0, c_animTimeDefault);
+        libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(base.structure), c_animNameDefault, "Stand", 0, c_animTimeDefault);
     }
 
     return true;
@@ -80,5 +129,5 @@ bool baseCapture(bool testConds, bool runActions){
 
 void gt_BaseCapture_Init () {
     gt_BaseCapture = TriggerCreate("baseCapture");
-    TriggerAddEventUnitDamaged(gt_BaseCapture, null, c_unitDamageTypeAny, c_unitDamageFatal, null);
+    TriggerAddEventUnitDied(gt_BaseCapture, null);
 }
