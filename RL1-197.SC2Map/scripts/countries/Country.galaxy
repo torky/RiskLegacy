@@ -120,9 +120,7 @@ void gt_SpawnConscripts_Init(){
 
 void RefreshConscripts(){
     int i;
-    if(gt_SpawnConscripts == null){
-        gt_SpawnConscripts = TriggerCreate("SpawnConscripts");
-    }
+
     for(i = 0; i < totalCountries; i += 1){
         conscriptCountryID = i;
         TriggerExecute(gt_SpawnConscripts, false, false);
