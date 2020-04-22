@@ -1,0 +1,40 @@
+trigger gt_UnitTrained;
+
+bool UnitTrained(bool testConds, bool runActions){
+    unit trained;
+    unit building;
+    int i;
+    int orderCount;
+    order[10] orders;
+    order queuedOrder;
+    order stop;
+    abilcmd abilitycommand; 
+
+    trained = EventUnitCreatedUnit();
+    building = EventUnit();
+    stop = Order(AbilityCommand("stop", 0));
+    orderCount = 0;
+
+    UnitBehaviorAdd(EventUnitCreatedUnit(), "Loadable", EventUnitCreatedUnit(), 1);
+    
+    for(i = 1; i <= UnitRallyPointTargetCount(building, 1); i += 1){
+        queuedOrder = OrderTargetingPoint(AbilityCommand("attack", 0), UnitRallyPointTargetPoint(EventUnit(), 1, i));
+        orders[i-1] = queuedOrder;
+        orderCount+=1;
+    }
+
+    UnitIssueOrder(trained, stop, c_orderQueueReplace);
+
+    for(i = 0; i < orderCount; i+=1){
+        UnitIssueOrder(trained, orders[i], c_orderQueueAddToEnd);
+    }
+
+    return true;
+}
+
+void gt_UnitTrained_Init(){
+    gt_UnitTrained = TriggerCreate("UnitTrained");
+    TriggerAddEventUnitCreated(gt_UnitTrained, null, "BarracksTrain", null);
+    TriggerAddEventUnitCreated(gt_UnitTrained, null, "StarportTrain", null);
+    TriggerAddEventUnitCreated(gt_UnitTrained, null, "BarracksTrain2", null);
+}

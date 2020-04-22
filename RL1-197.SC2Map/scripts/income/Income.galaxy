@@ -16,9 +16,8 @@ void RefreshIncome(){
 
     //Calculate income
     for(i = 0; i < totalCountries; i+=1){
-        UpdateCountry(i);
-        countryIncome = countries[i].income;
-        countryOwner = countries[i].owner;
+        countryIncome = allCountries[i].income;
+        countryOwner = allCountries[i].owner;
         allPlayers[countryOwner].income += countryIncome;
     }
 

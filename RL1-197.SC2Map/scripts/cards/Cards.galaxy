@@ -1,0 +1,6 @@
+void IncrementCards(int player, unit structure){
+    if(!UnitHasBehavior2(structure, "CardCoolDown") && PlayerGetPropertyInt(player, c_playerPropVespene) < 30){
+        PlayerModifyPropertyInt(player, c_playerPropVespene, c_playerPropOperAdd, 1);
+        UnitBehaviorAdd(structure, "CardCooldown", structure, 1);
+    }
+}

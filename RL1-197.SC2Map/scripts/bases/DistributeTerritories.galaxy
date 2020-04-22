@@ -39,18 +39,18 @@ void DistributeTerritories(playergroup players) {
             j = count-1;
             GeneratePickedPlayers(players, count, pickedPlayers);
         }
-        bi = countries[i].baseIDs[c];
+        bi = allCountries[i].baseIDs[c];
 
         if(bi == 0){
             c = 0;
             i+=1;
             if(i == totalCountries) { break; }
             //Skip 1 income countries
-            while(UnitGroupCount(countries[i].structures, c_unitCountAll) == 1){ 
+            while(UnitGroupCount(allCountries[i].structures, c_unitCountAll) == 1){ 
                 i+=1;
                 if(i == totalCountries) { break; }
             }
-            bi = countries[i].baseIDs[c];
+            bi = allCountries[i].baseIDs[c];
         }
 
         //Pick next random player

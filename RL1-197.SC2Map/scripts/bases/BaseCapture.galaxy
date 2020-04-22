@@ -90,12 +90,14 @@ unit FindNewAttackerDefender(unit killingUnit){
 
 trigger gt_BaseCapture;
 
-bool baseCapture(bool testConds, bool runActions){
+bool BaseCapture(bool testConds, bool runActions){
     unit dyingUnit;
     unit killingUnit;
     unit newDefender;
     int baseID;
     int oldOwner;
+    int newOwner;
+    unitgroup spawns;
     structref<Base> base;
 
     dyingUnit = EventUnit();
@@ -112,25 +114,33 @@ bool baseCapture(bool testConds, bool runActions){
         UnitGetOwner(newDefender) != oldOwner){
             return true;
         }
+        newOwner = UnitGetOwner(newDefender);
 
         SwapDefender(newDefender, baseID);
-        SetBaseOwnership(baseID, UnitGetOwner(killingUnit));
+        SetBaseOwnership(baseID, newOwner);
 
-        if(!UnitHasBehavior2(base.structure, "CardCoolDown") && 
-        UnitGetOwner(newDefender) != oldOwner &&
-        PlayerGetPropertyInt(UnitGetOwner(killingUnit), c_playerPropVespene) < 30){
-            PlayerModifyPropertyInt(UnitGetOwner(killingUnit), c_playerPropVespene, c_playerPropOperAdd, 1);
-            UnitBehaviorAdd(base.structure, "CardCooldown", base.structure, 1);
+        if(newOwner != oldOwner){
+            IncrementCards(newOwner, base.structure);
         }
 
-        libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(base.defender), c_animNameDefault, "Stand", 0, c_animTimeDefault);
-        libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(base.structure), c_animNameDefault, "Stand", 0, c_animTimeDefault);
+        UpdateCountry(GetCountryIDOfUnit(base.defender));
+        UnitControlGroupClear(newOwner, 9);
+
+        spawns = UnitGroup("SpawnZone", newOwner, RegionPlayableMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+        UnitControlGroupClear(newOwner, 9);
+        UnitControlGroupAddUnits(newOwner, 9, spawns);
+
+        spawns = UnitGroup("SpawnZone", oldOwner, RegionPlayableMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+        UnitControlGroupClear(oldOwner, 9);
+        UnitControlGroupAddUnits(oldOwner, 9, spawns);
+
+        libNtve_gf_AttachActorToUnit(base.defender, "TimeWarpLaunch", "Ref_Origin");
     }
 
     return true;
 }
 
 void gt_BaseCapture_Init () {
-    gt_BaseCapture = TriggerCreate("baseCapture");
+    gt_BaseCapture = TriggerCreate("BaseCapture");
     TriggerAddEventUnitDied(gt_BaseCapture, null);
 }

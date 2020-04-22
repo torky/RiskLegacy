@@ -1,0 +1,74 @@
+void SetupConscripts(int countryID){
+    int i;
+    int count;
+    structref<Country> country;
+
+    country = allCountries[countryID];
+    count = UnitGroupCount(country.structures, c_unitCountAlive);
+    country.conscriptSpawnLimit = country.income * 2;
+    country.conscripts = UnitGroupEmpty();
+    country.conscriptsSpawnedPerTurn = FixedToInt((IntToFixed(count) / 2.0) * 1.5);
+    if(country.conscriptsSpawnedPerTurn < 1){
+        country.conscriptsSpawnedPerTurn = 1;
+    }
+}
+
+trigger gt_SpawnConscripts;
+int conscriptCountryID;
+bool SpawnConscripts (bool testConds, bool runActions){
+    int i;
+    order trainMarine;
+    int unitsToBeSpawned;
+    int countryID;
+    structref<Country> country;
+
+    countryID = conscriptCountryID;
+    country = allCountries[countryID];
+    trainMarine = Order(AbilityCommand("BarracksTrain2", 0));
+
+    if(country.owner != 0 && UnitGroupCount(country.conscripts, c_unitCountAlive) < country.conscriptSpawnLimit){
+        for (i = 0; i < country.conscriptsSpawnedPerTurn; i += 1){
+            PlayerModifyPropertyInt(country.owner, c_playerPropMinerals, c_playerPropOperAdd, 1);
+            UnitIssueOrder(country.spawn, trainMarine, c_orderQueueReplace);
+            Wait(0.5, c_timeGame);
+        }
+    }
+
+    return true;
+}
+
+void gt_SpawnConscripts_Init(){
+    gt_SpawnConscripts = TriggerCreate("SpawnConscripts");
+}
+
+void RefreshConscripts(){
+    int i;
+
+    for(i = 0; i < totalCountries; i += 1){
+        conscriptCountryID = i;
+        TriggerExecute(gt_SpawnConscripts, false, false);
+    }  
+}
+
+trigger gt_ConscriptSpawned;
+
+bool ConscriptSpawned(bool testConds, bool runActions){
+    int countryID;
+    structref<Country> country;
+    unit spawn;
+    unit conscript;
+
+    spawn = EventUnit();
+    conscript = EventUnitCreatedUnit();
+    countryID = GetCountryIDOfUnit(spawn);
+    country = allCountries[countryID];
+
+    UnitGroupAdd(country.conscripts, conscript);
+
+    return true;
+}
+
+void gt_ConscriptSpawned_Init(){
+    gt_ConscriptSpawned = TriggerCreate("ConscriptSpawned");
+    TriggerAddEventUnitCreated(gt_ConscriptSpawned, null, "BarracksTrain2", null);
+}
