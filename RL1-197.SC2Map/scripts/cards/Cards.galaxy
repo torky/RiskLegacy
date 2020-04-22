@@ -1,6 +1,43 @@
+trigger gt_Cards;
+
+bool Cards(bool testConds, bool runActions){
+    int player;
+    
+    player = EventPlayer();
+    if(PlayerGetPropertyInt(player, c_playerPropVespene) >= 3){
+        PlayerModifyPropertyInt(player, c_playerPropVespene, c_playerPropOperSubtract, 3);
+        PlayerModifyPropertyInt(player, c_playerPropMinerals, c_playerPropOperAdd, 5);
+        if(PlayerGetPropertyInt(player, c_playerPropVespene) < 3){
+            libNtve_gf_SetScreenButtonBorderImage(buttons.cards.screenButtonID, "risk\\Flag\\tgacardnormalpressed1.tga", "risk\\Flag\\tgacardhoverpressed1.tga", c_triggerImageTypeNormal);
+        }
+    }
+
+    return true;
+}
+
+void gt_Cards_Init(){
+    gt_Cards = TriggerCreate("Cards");
+}
+
+void InitializeCardsButton(){
+    libNtve_gf_DisplayScreenButton(nextButtonID, TextWithColor(StringToText(""), Color(58.43, 79.22, 100.00)), 64, 64, c_anchorBottomLeft, 508, 228, gt_Cards);
+    buttons.cards.screenButtonID = nextButtonID;
+    libNtve_gf_SetDialogItemHotkey(DialogControlLastCreated(), c_keyNone, PlayerGroupAll());
+    libNtve_gf_SetDialogItemTooltip(DialogControlLastCreated(), StringExternal("Param/Value/BF595410"), PlayerGroupAll());
+    libNtve_gf_SetDialogItemStyle(DialogControlLastCreated(), "RobotoCondensed15", PlayerGroupAll());
+    libNtve_gf_SetScreenButtonBorderImage(buttons.cards.screenButtonID, "risk\\Flag\\tgacardnormalpressed1.tga", "risk\\Flag\\tgacardhoverpressed1.tga", c_triggerImageTypeNormal);
+    buttons.cards.id = DialogControlLastCreated();
+    DialogControlSetEnabled(buttons.cards.id, PlayerGroupAll(), true);
+    nextButtonID+=1;
+}
+
 void IncrementCards(int player, unit structure){
     if(!UnitHasBehavior2(structure, "CardCoolDown") && PlayerGetPropertyInt(player, c_playerPropVespene) < 30){
         PlayerModifyPropertyInt(player, c_playerPropVespene, c_playerPropOperAdd, 1);
         UnitBehaviorAdd(structure, "CardCooldown", structure, 1);
+        if(PlayerGetPropertyInt(player, c_playerPropVespene) >= 3){
+            libNtve_gf_SetDialogItemImage(buttons.cards.id, "risk\\cardyellownormalpressed1.dds", PlayerGroupSingle(player));
+            libNtve_gf_SetDialogItemImage2(buttons.cards.id, "risk\\cardyellowhoverpressed1.dds", PlayerGroupSingle(player));
+        }
     }
 }

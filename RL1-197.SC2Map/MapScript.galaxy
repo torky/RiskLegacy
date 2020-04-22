@@ -4,15 +4,16 @@ include "TriggerLibs/NativeLib"
 //Level 0
 include "scripts/players/Players"
 include "scripts/start/Start"
-include "scripts/ui/UI"
 include "scripts/units/Units"
 include "scripts/units/UnitTrained"
-include "scripts/cards/Cards"
+include "scripts/ui/Buttons"
 
 //Level 1
+include "scripts/cards/Cards"
 include "scripts/bases/Bases"
 
 //Level 2
+include "scripts/ui/UI"
 include "scripts/countries/Country"
 
 //Level 3 
@@ -73,7 +74,6 @@ bool gt_GameModeSelect_Func (bool testConds, bool runActions) {
     InitializeBases();
 
     players = PlayerGroupActive();
-    PlayerGroupAdd(players, 2);
     DistributeTerritories(players);
     RefreshIncome();
 
@@ -112,6 +112,7 @@ void gt_GameModeSelect_Init () {
 }
 
 void InitTriggers () {
+    gt_Cards_Init();
     gt_UnitTrained_Init();
     gt_SetupPlayers_Init();
     gt_SwapDefender_Init();

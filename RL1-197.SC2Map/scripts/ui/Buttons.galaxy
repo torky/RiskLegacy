@@ -1,0 +1,38 @@
+struct Button{
+    int id;
+    int screenButtonID;
+};
+
+struct Buttons {
+    Button backgroundDialog;
+    Button menu;
+    Button profile;
+    Button log;
+    Button skins;
+    Button cards;
+    Button kills;
+    Button wins;
+    Button winRate;
+    Button selectUnit;
+    Button deselectUnit;
+};
+
+Buttons buttons;
+
+int nextButtonID = 1;
+
+void InitializeBasicButton(structref<Button> b, string name, int width, int height, int anchor, int x, int y, trigger t){
+    color buttonColor = Color(58.43, 79.22, 100.00);
+
+    libNtve_gf_DisplayScreenButton(nextButtonID, TextWithColor(StringToText(name), buttonColor), width, height, anchor, x, y, t);
+    b.id = DialogControlLastCreated();
+    b.screenButtonID = nextButtonID;
+    libNtve_gf_SetDialogItemStyle(b.id, "RobotoCondensed15", PlayerGroupAll());
+    DialogControlSetEnabled(b.id, PlayerGroupAll(), true);
+    DialogControlSetVisible(b.id, PlayerGroupAll(), true);
+    nextButtonID+=1;
+}
+
+void SetDefaultButtonBorderImage(int nextButtonID){
+    libNtve_gf_SetScreenButtonBorderImage(nextButtonID, "Risk\\ui_battlenet_challenge_button_normalpressed.dds", "Risk\\ui_battlenet_challenge_button_normaloverpressedover.dds", c_triggerImageTypeNormal);
+}

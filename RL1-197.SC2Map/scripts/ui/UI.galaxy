@@ -1,23 +1,4 @@
-struct Button{
-    int id;
-    int screenButtonID;
-};
 
-struct Buttons {
-    Button backgroundDialog;
-    Button menu;
-    Button profile;
-    Button log;
-    Button skins;
-    Button cards;
-    Button kills;
-    Button wins;
-    Button winRate;
-    Button selectUnit;
-    Button deselectUnit;
-};
-
-Buttons buttons;
 
 void SetupUI () {
     int player;
@@ -46,39 +27,9 @@ void SetupUI () {
     }
 }
 
-int nextButtonID = 1;
-
-void InitializeBasicButton(structref<Button> b, string name, int width, int height, int anchor, int x, int y, trigger t){
-    color buttonColor = Color(58.43, 79.22, 100.00);
-
-    libNtve_gf_DisplayScreenButton(nextButtonID, TextWithColor(StringToText(name), buttonColor), width, height, anchor, x, y, t);
-    b.id = DialogControlLastCreated();
-    b.screenButtonID = nextButtonID;
-    libNtve_gf_SetDialogItemStyle(b.id, "RobotoCondensed15", PlayerGroupAll());
-    DialogControlSetEnabled(b.id, PlayerGroupAll(), true);
-    DialogControlSetVisible(b.id, PlayerGroupAll(), true);
-    nextButtonID+=1;
-}
-
-void SetDefaultButtonBorderImage(int nextButtonID){
-    libNtve_gf_SetScreenButtonBorderImage(nextButtonID, "Risk\\ui_battlenet_challenge_button_normalpressed.dds", "Risk\\ui_battlenet_challenge_button_normaloverpressedover.dds", c_triggerImageTypeNormal);
-}
-
-void InitializeCardsButton(){
-    libNtve_gf_DisplayScreenButton(nextButtonID, TextWithColor(StringToText(""), Color(58.43, 79.22, 100.00)), 64, 64, c_anchorBottomLeft, 508, 228, null);
-    buttons.cards.screenButtonID = nextButtonID;
-    libNtve_gf_SetDialogItemHotkey(DialogControlLastCreated(), c_keyNone, PlayerGroupAll());
-    libNtve_gf_SetDialogItemTooltip(DialogControlLastCreated(), StringExternal("Param/Value/BF595410"), PlayerGroupAll());
-    libNtve_gf_SetDialogItemStyle(DialogControlLastCreated(), "RobotoCondensed15", PlayerGroupAll());
-    libNtve_gf_SetScreenButtonBorderImage(buttons.cards.screenButtonID, "risk\\Flag\\tgacardnormalpressed1.tga", "risk\\Flag\\tgacardhoverpressed1.tga", c_triggerImageTypeNormal);
-    buttons.cards.id = DialogControlLastCreated();
-    DialogControlSetEnabled(buttons.cards.id, PlayerGroupAll(), true);
-    nextButtonID+=1;
-}
-
 void InitializeSelectUnitButtons(){
     libNtve_gf_DisplayScreenButton(nextButtonID, TextWithColor(StringToText(""), Color(58.43, 79.22, 100.00)), 64, 64, c_anchorBottomLeft, 508, 164, null);
-    libNtve_gf_SetDialogItemTooltip(DialogControlLastCreated(), StringExternal("Param/Value/28A48EFB"), PlayerGroupAll());
+    libNtve_gf_SetDialogItemTooltip(DialogControlLastCreated(), StringToText("Displays unit information panel."), PlayerGroupAll());
     libNtve_gf_SetDialogItemStyle(DialogControlLastCreated(), "RobotoCondensed15", PlayerGroupAll());
     libNtve_gf_SetScreenButtonBorderImage(nextButtonID, "risk\\tgaselectinactivenormalpressed1.tga", "risk\\tgaselectinactivenormalpressed1.tga", c_triggerImageTypeNormal);
     buttons.selectUnit.id = DialogControlLastCreated();
@@ -87,7 +38,7 @@ void InitializeSelectUnitButtons(){
     nextButtonID+=1;
     
     libNtve_gf_DisplayScreenButton(nextButtonID, TextWithColor(StringToText(""), Color(58.43, 79.22, 100.00)), 64, 64, c_anchorBottomLeft, 508, 164, null);
-    libNtve_gf_SetDialogItemTooltip(DialogControlLastCreated(), StringExternal("Param/Value/D2B562BD"), PlayerGroupAll());
+    libNtve_gf_SetDialogItemTooltip(DialogControlLastCreated(), StringExternal("Hides unit information panel."), PlayerGroupAll());
     libNtve_gf_SetDialogItemStyle(DialogControlLastCreated(), "RobotoCondensed15", PlayerGroupAll());
     libNtve_gf_SetScreenButtonBorderImage(nextButtonID, "risk\\tgaselectactivenormalpressed1.tga", "risk\\tgaselectactivehoverpressed1.tga", c_triggerImageTypeNormal);
     buttons.deselectUnit.id = DialogControlLastCreated();

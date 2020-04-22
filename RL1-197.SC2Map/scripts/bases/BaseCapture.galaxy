@@ -121,10 +121,8 @@ bool BaseCapture(bool testConds, bool runActions){
 
         if(newOwner != oldOwner){
             IncrementCards(newOwner, base.structure);
+            UpdateCountry(GetCountryIDOfUnit(base.defender));
         }
-
-        UpdateCountry(GetCountryIDOfUnit(base.defender));
-        UnitControlGroupClear(newOwner, 9);
 
         spawns = UnitGroup("SpawnZone", newOwner, RegionPlayableMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
         UnitControlGroupClear(newOwner, 9);

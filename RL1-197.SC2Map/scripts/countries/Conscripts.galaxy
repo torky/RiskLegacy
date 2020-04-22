@@ -5,6 +5,7 @@ void SetupConscripts(int countryID){
 
     country = allCountries[countryID];
     count = UnitGroupCount(country.structures, c_unitCountAlive);
+    SetCountryIDOfUnit(country.spawn, countryID);
     country.conscriptSpawnLimit = country.income * 2;
     country.conscripts = UnitGroupEmpty();
     country.conscriptsSpawnedPerTurn = FixedToInt((IntToFixed(count) / 2.0) * 1.5);
@@ -26,6 +27,10 @@ bool SpawnConscripts (bool testConds, bool runActions){
     country = allCountries[countryID];
     trainMarine = Order(AbilityCommand("BarracksTrain2", 0));
 
+    if(UnitGroupCount(country.conscripts, c_unitCountAlive) > 0){
+        UIDisplayMessage(PlayerGroupAll(), c_messageAreaChat, IntToText(UnitGroupCount(country.conscripts, c_unitCountAlive)));
+        UIDisplayMessage(PlayerGroupAll(), c_messageAreaChat, IntToText(country.conscriptSpawnLimit));
+    }
     if(country.owner != 0 && UnitGroupCount(country.conscripts, c_unitCountAlive) < country.conscriptSpawnLimit){
         for (i = 0; i < country.conscriptsSpawnedPerTurn; i += 1){
             PlayerModifyPropertyInt(country.owner, c_playerPropMinerals, c_playerPropOperAdd, 1);
@@ -64,6 +69,7 @@ bool ConscriptSpawned(bool testConds, bool runActions){
     country = allCountries[countryID];
 
     UnitGroupAdd(country.conscripts, conscript);
+    UIDisplayMessage(PlayerGroupAll(), c_messageAreaChat, IntToText(UnitGroupCount(country.conscripts, c_unitCountAlive)));
 
     return true;
 }

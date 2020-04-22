@@ -47,7 +47,6 @@ void UpdateCountry(int countryID){
     }
 
     if(newOwner != oldOwner){
-        country.conscriptsSpawned = 0;
         country.conscripts = UnitGroupEmpty();
     }
     

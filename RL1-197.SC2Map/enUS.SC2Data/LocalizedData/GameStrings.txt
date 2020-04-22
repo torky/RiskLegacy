@@ -913,6 +913,7 @@ Param/Value/BBD6BD2E=
 Param/Value/BC3C6807= kills
 Param/Value/BD9C6570=
 Param/Value/BDB8EAAF=Help
+Param/Value/BF595410=<c val="FFFFFF">Trades three cards for five currency.</c></n>Enter into the chat <c val="87CBE8">-resetkey</c> then </n>press any key to bind.
 Param/Value/BF67DB89=Previous
 Param/Value/BFBDF467=Enabled
 Param/Value/BFF8C890=Deactivated [Default]
