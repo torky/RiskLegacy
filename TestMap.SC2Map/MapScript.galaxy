@@ -28,6 +28,13 @@ bool gt_MeleeInitialization_Func (bool testConds, bool runActions) {
     int autoC985F7EA_u;
     unit autoC985F7EA_var;
 
+    // Conditions
+    if (testConds) {
+        if (!((UnitHasBehavior2(EventUnit(), "PointDefenseReady") == true))) {
+            return false;
+        }
+    }
+
     // Actions
     if (!runActions) {
         return true;

@@ -11,12 +11,12 @@ void RefreshIncome(){
     //Reset income
     for(i = 1; i <= PlayerGroupCount(players); i += 1){
         player = PlayerGroupPlayer(players, i);
-        allPlayers[player].income = 400;
+        allPlayers[player].income = 4;
     }
 
     //Calculate income
     for(i = 0; i < totalCountries; i+=1){
-        UpdateCountryOwner(i);
+        UpdateCountry(i);
         countryIncome = countries[i].income;
         countryOwner = countries[i].owner;
         allPlayers[countryOwner].income += countryIncome;

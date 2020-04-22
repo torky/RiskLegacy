@@ -3,6 +3,9 @@ const int maxBasesInCountry = 10; //Can be changed
 struct Country {
     string name;
     unitgroup structures;
+    int conscriptsSpawned;
+    int conscriptSpawnLimit;
+    int conscriptsSpawnedPerTurn;
     int[maxBasesInCountry] baseIDs;
     unit spawn;
     string flagTexture;
@@ -20,26 +23,34 @@ void AddTextTags(int i){
     TextTagSetColor(TextTagLastCreated(), c_textTagColorText, Color(100.00, 100.00, 100.00));
 }
 
-void UpdateCountryOwner(int countryID){
+void UpdateCountry(int countryID){
     structref<Country> country;
     int i;
     int newOwner;
-    int owner;
+    int oldOwner;
+    int baseOwner;
     structref<Base> base;
 
     country = countries[countryID];
+    oldOwner = country.owner;
     base = allBases[country.baseIDs[0]];
     newOwner = UnitGetOwner(base.structure);
 
     for(i = 1; i < country.income; i+=1){
         base = allBases[country.baseIDs[i]];
-        owner = UnitGetOwner(base.structure);
-        if(owner != newOwner){
+        baseOwner = UnitGetOwner(base.structure);
+        if(baseOwner != newOwner){
             country.owner = 0;
             return;
         }
     }
+
+    if(newOwner != oldOwner){
+        country.conscriptsSpawned = 0;
+    }
+    
     country.owner = newOwner;
+    UnitSetOwner(country.spawn, newOwner, true);
 }
 
 void InitializeBases () {
@@ -64,4 +75,57 @@ void InitializeBases () {
             y+=1;
         }
     }
+}
+
+void SetupConscripts(int countryID){
+    int i;
+    int count;
+    structref<Country> country;
+    for(i = 0; i < totalCountries; i += 1){
+        country = countries[countryID];
+        count = UnitGroupCount(country.structures, c_unitCountAlive);
+        country.conscriptSpawnLimit = country.income * 2;
+        country.conscriptsSpawned = FixedToInt((IntToFixed(count) / 2.0) * 1.5);
+    }
+}
+
+trigger gt_SpawnConscripts;
+int conscriptCountryID;
+bool SpawnConscripts (bool testConds, bool runActions){
+    int owner;
+    int i;
+    unit spawner;
+    order trainMarine;
+    int unitsToBeSpawned;
+    int countryID;
+
+    countryID = conscriptCountryID;
+    owner = countries[countryID].owner;
+    spawner = countries[countryID].spawn;
+    trainMarine = Order(AbilityCommand("BarracksTrain2", 0));
+
+    if(owner != 0 && countries[i].conscriptsSpawned < countries[i].conscriptSpawnLimit){
+        for (i = 0; i < unitsToBeSpawned; i += 1){
+            PlayerModifyPropertyInt(owner, c_playerPropMinerals, c_playerPropOperAdd, 1);
+            UnitIssueOrder(spawner, trainMarine, c_orderQueueReplace);
+            Wait(0.5, c_timeGame);
+        }
+    }
+
+    return true;
+}
+
+void gt_SpawnConscripts_Init(){
+    gt_SpawnConscripts = TriggerCreate("SpawnConscripts");
+}
+
+void RefreshConscripts(){
+    int i;
+    if(gt_SpawnConscripts == null){
+        gt_SpawnConscripts = TriggerCreate("SpawnConscripts");
+    }
+    for(i = 0; i < totalCountries; i += 1){
+        conscriptCountryID = i;
+        TriggerExecute(gt_SpawnConscripts,true,false);
+    }  
 }

@@ -2,7 +2,7 @@ trigger gt_Refresh;
 
 int remainingTime = 0;
 int turns = 0;
-int totalTurnTime = 45;
+int totalTurnTime = 10;
 
 bool Refresh(bool testConds, bool runActions){
     int count;
@@ -20,6 +20,7 @@ bool Refresh(bool testConds, bool runActions){
         turns+=1;
         remainingTime=totalTurnTime;
         RefreshIncome();
+        RefreshConscripts();
     }else if (remainingTime < 4) {
         SoundPlay(SoundLink("UI_BnetCountdown", -1), players, 100.0, 0.0);
     }

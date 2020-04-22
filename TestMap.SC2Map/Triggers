@@ -5,11 +5,49 @@
     </Root>
     <Element Type="Trigger" Id="E5108E48">
         <Event Type="FunctionCall" Id="B00E7B81"/>
+        <Condition Type="FunctionCall" Id="6C6EBC09"/>
         <Action Type="FunctionCall" Id="40CF9E49"/>
         <Action Type="FunctionCall" Id="C985F7EA"/>
     </Element>
     <Element Type="FunctionCall" Id="B00E7B81">
         <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000120"/>
+    </Element>
+    <Element Type="FunctionCall" Id="6C6EBC09">
+        <FunctionDef Type="FunctionDef" Library="Ntve" Id="C439C375"/>
+        <Parameter Type="Param" Id="6217CF98"/>
+        <Parameter Type="Param" Id="FDA051C6"/>
+        <Parameter Type="Param" Id="2392D26A"/>
+    </Element>
+    <Element Type="Param" Id="6217CF98">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="ABB380C4"/>
+        <FunctionCall Type="FunctionCall" Id="97F6135E"/>
+    </Element>
+    <Element Type="FunctionCall" Id="97F6135E">
+        <FunctionDef Type="FunctionDef" Library="Ntve" Id="142FF15A"/>
+        <Parameter Type="Param" Id="C0D98EF5"/>
+        <Parameter Type="Param" Id="169DAD8A"/>
+    </Element>
+    <Element Type="Param" Id="C0D98EF5">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="033DFD05"/>
+        <FunctionCall Type="FunctionCall" Id="F93EC9BC"/>
+    </Element>
+    <Element Type="FunctionCall" Id="F93EC9BC">
+        <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000092"/>
+    </Element>
+    <Element Type="Param" Id="169DAD8A">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="B29EDD13"/>
+        <Value>PointDefenseReady</Value>
+        <ValueType Type="gamelink"/>
+        <ValueGameType Type="Behavior"/>
+    </Element>
+    <Element Type="Param" Id="FDA051C6">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="51567265"/>
+        <Preset Type="PresetValue" Library="Ntve" Id="1E7A4625"/>
+    </Element>
+    <Element Type="Param" Id="2392D26A">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="4A15EC5F"/>
+        <Value>true</Value>
+        <ValueType Type="bool"/>
     </Element>
     <Element Type="FunctionCall" Id="40CF9E49">
         <Disabled/>

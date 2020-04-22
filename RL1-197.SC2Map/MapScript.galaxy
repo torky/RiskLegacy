@@ -69,7 +69,6 @@ bool gt_GameModeSelect_Func (bool testConds, bool runActions) {
 
     players = PlayerGroupActive();
     DistributeTerritories(players);
-
     RefreshIncome();
 
     SetupUI();
@@ -111,6 +110,7 @@ void InitTriggers () {
     gt_SwapDefender_Init();
     gt_BaseCapture_Init();
     gt_GameModeSelect_Init();
+    gt_SpawnConscripts_Init();
     gt_Refresh_Init();
 }
 
