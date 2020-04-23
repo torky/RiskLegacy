@@ -1,40 +1,48 @@
 // Radius 6.0
 
-unit FindNewFriendlyDefender(unit baseStructure){
-    unitgroup potentialDefenders;
-    int count;
-    unit newDefender;
-    unit allyUnit;
+unitgroup NearbyUnits(point position, int player, fixed radius){
     unitfilter filter;
-    int baseID = GetBaseIDOfUnit(baseStructure);
-    structref<Base> base = allBases[baseID];
-
     filter = UnitFilter(0, 
         0, 
         (1 << c_targetFilterStructure) | (1 << c_targetFilterMissile) | (1 << c_targetFilterDestructible), 
         (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32)) | (1 << (c_targetFilterInvulnerable - 32))
     );
 
-    allyUnit = null;
-    potentialDefenders = UnitGroup(null, c_playerAny, RegionCircle(base.position, 1.6), filter, 0);
+    return UnitGroup(null, player, RegionCircle(position, radius), filter, 0);
+}
+
+//Prioritizes finding a unit the player owns in a 1.6 radius. If it doesn't find one, it returns a random unit within that 1.6 radius. If there are no units, it returns null.
+unit FindNewFriendlyDefender(unit baseStructure){
+    fixed radius = 1.6;
+    int count;
+    unitgroup potentialDefenders;
+    unit newDefender;
+    unit allyUnit;
+    unitfilter filter;
+    int baseID;
+    structref<Base> base;
+
+    newDefender = null;
+    baseID = GetBaseIDOfUnit(baseStructure);
+    base = allBases[baseID];
+    potentialDefenders = NearbyUnits(base.position, c_playerAny, radius);
+
     count = UnitGroupCount(potentialDefenders, c_unitCountAll);
     for (;; count -= 1) {
         newDefender = UnitGroupUnitFromEnd(potentialDefenders, count);
         if (newDefender == null) { break; }
         if (UnitGetOwner(newDefender) == UnitGetOwner(base.structure)){
             return newDefender;
-        }else if(PlayerGetAlliance(UnitGetOwner(newDefender), c_allianceIdTrade, UnitGetOwner(base.structure))){
-            allyUnit = newDefender;
         }
-        
-
     }
-    return allyUnit;
+
+    return newDefender;
 }
 
 unit FindNewAttackerDefender(unit killingUnit){
     fixed radius = 6.0;
     unitgroup potentialDefenders;
+    unitgroup surroundingUnits;
     unit current;
     fixed currentHealth;
     fixed lowestHealth;
@@ -43,14 +51,12 @@ unit FindNewAttackerDefender(unit killingUnit){
     unit newDefender;
     int count;
     unitfilter filter;
+    point killingUnitPosition;
+    int killingPlayer;
 
-    filter = UnitFilter(0, 
-        0, 
-        (1 << c_targetFilterStructure) | (1 << c_targetFilterMissile) | (1 << c_targetFilterDestructible), 
-        (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32)) | (1 << (c_targetFilterInvulnerable - 32))
-    );
-
-    potentialDefenders = UnitGroup(null, UnitGetOwner(killingUnit), RegionCircle(UnitGetPosition(killingUnit), radius), filter, 0);
+    killingUnitPosition = UnitGetPosition(killingUnit);
+    killingPlayer = UnitGetOwner(killingUnit);
+    potentialDefenders = NearbyUnits(killingUnitPosition, killingPlayer, radius);
     newDefender = killingUnit;
     lowestHealth = UnitGetPropertyFixed(killingUnit, c_unitPropLife, c_unitPropCurrent);
     maxHealth = UnitGetPropertyFixed(killingUnit, c_unitPropLifeMax, c_unitPropCurrent);
@@ -88,6 +94,66 @@ unit FindNewAttackerDefender(unit killingUnit){
     return newDefender;
 }
 
+void ChangeBaseOwner(int baseID, unit newDefender){
+    structref<Base> base;
+    int newOwner;
+    int oldOwner;
+
+    base = allBases[baseID];
+
+    newOwner = UnitGetOwner(newDefender);
+    oldOwner = UnitGetOwner(base.structure);
+
+    SwapDefender(newDefender, baseID);
+    SetBaseOwnership(baseID, newOwner);
+
+    if(newOwner != oldOwner){
+        IncrementCards(newOwner, base.structure);
+        UpdateCountry(GetCountryIDOfUnit(base.defender));
+    }
+
+    UpdatePlayerSpawnControlGroup(newOwner);
+    UpdatePlayerSpawnControlGroup(oldOwner);
+    
+    libNtve_gf_AttachActorToUnit(base.defender, "TimeWarpLaunch", "Ref_Origin");
+}
+
+trigger gt_EmptyBaseCapture;
+
+bool EmptyBaseCapture(bool testConds, bool runActions){
+    unitgroup baseBeacons;
+    region nearby;
+    unitfilter filter;
+    unitfilter noBeacons;
+    unit newDefender;
+    unit beacon;
+    int baseID;
+
+    nearby = RegionCircle(UnitGetPosition(EventUnit()), 1);
+    filter = UnitFilter(0, 0, 0, 0);
+    newDefender = EventUnit();
+    noBeacons = UnitFilter(0, 
+        0, 
+        (1 << c_targetFilterStructure) | (1 << c_targetFilterMissile) | (1 << c_targetFilterDestructible), 
+        (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32)) | (1 << (c_targetFilterInvulnerable - 32))
+    );
+
+    if(UnitFilterMatch(newDefender, UnitGetOwner(newDefender), noBeacons)){
+        baseBeacons = UnitGroup("Beacon_TerranSmall", c_playerAny, nearby, filter, 0);
+
+        beacon = UnitGroupClosestToPoint(baseBeacons, UnitGetPosition(newDefender));
+        baseID = GetBaseIDOfUnit(beacon);
+    
+        ChangeBaseOwner(baseID, newDefender);
+    }
+
+    return true;
+}
+
+void gt_EmptyBaseCapture_Init(){
+    gt_EmptyBaseCapture = TriggerCreate("EmptyBaseCapture");
+}
+
 trigger gt_BaseCapture;
 
 bool BaseCapture(bool testConds, bool runActions){
@@ -110,24 +176,13 @@ bool BaseCapture(bool testConds, bool runActions){
         newDefender = FindNewFriendlyDefender(base.structure);
         if(newDefender == null){
             newDefender = FindNewAttackerDefender(killingUnit);
-        }else if(PlayerGetAlliance(UnitGetOwner(newDefender), c_allianceIdTrade, oldOwner) &&
-        UnitGetOwner(newDefender) != oldOwner){
+        //If the new defender isn't the previous owner, choose no defender.
+        }else if(UnitGetOwner(newDefender) != oldOwner){
+            TriggerAddEventUnitRegion(gt_EmptyBaseCapture, null, RegionCircle(base.position, 0.25), true);
             return true;
         }
-        newOwner = UnitGetOwner(newDefender);
 
-        SwapDefender(newDefender, baseID);
-        SetBaseOwnership(baseID, newOwner);
-
-        if(newOwner != oldOwner){
-            IncrementCards(newOwner, base.structure);
-            UpdateCountry(GetCountryIDOfUnit(base.defender));
-        }
-
-        UpdatePlayerSpawnControlGroup(newOwner);
-        UpdatePlayerSpawnControlGroup(oldOwner);
-        
-        libNtve_gf_AttachActorToUnit(base.defender, "TimeWarpLaunch", "Ref_Origin");
+        ChangeBaseOwner(baseID, newDefender);
     }
 
     return true;

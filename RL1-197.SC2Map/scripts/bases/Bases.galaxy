@@ -9,29 +9,33 @@ struct Base {
 const int totalBases = 250; //250 is arbitrary. Just needs to be larger than the number of total bases
 Base[totalBases] allBases; 
 
-void InitializeBase (int player, int baseID, unit base) {
+void InitializeBase (int player, int baseID, unit structure) {
     // Variable Declarations
     point basePosition;
+    structref<Base> base;
 
-    allBases[baseID].structure = base;
-    basePosition = UnitGetPosition(allBases[baseID].structure);
+    base = allBases[baseID];
+
+    base.structure = structure;
+    basePosition = UnitGetPosition(base.structure);
 
     libNtve_gf_CreateUnitsWithDefaultFacing(1, "Beacon_TerranSmall", 0, player, PointWithOffsetPolar(basePosition, 1.5, 320.0));
-    allBases[baseID].beacon = UnitLastCreated();
+    base.beacon = UnitLastCreated();
     UnitBehaviorAdd(UnitLastCreated(), "NoDefenderAura", UnitLastCreated(), 1);
-    allBases[baseID].position = UnitGetPosition(allBases[baseID].beacon);
+    base.position = UnitGetPosition(base.beacon);
     
     UnitCreate(1, "DestructibleKorhalFlag", c_unitCreateIgnorePlacement, 0, PointWithOffsetPolar(basePosition, 0.8, 60.0), 90.0);
-    allBases[baseID].flag = UnitLastCreated();
-    ActorSend(libNtve_gf_MainActorofUnit(UnitLastCreated()), libNtve_gf_TextureSelectByID("Nothing"));
-    libNtve_gf_ShowHideUnit(UnitLastCreated(), false);
+    base.flag = UnitLastCreated();
+    ActorSend(libNtve_gf_MainActorofUnit(base.flag), libNtve_gf_TextureSelectByID("Nothing"));
+    libNtve_gf_ShowHideUnit(base.flag, false);
     
-    libNtve_gf_CreateUnitsWithDefaultFacing(1, "Marine", 0, player, PointWithOffsetPolar(basePosition, 1.5, 320.0));
-    allBases[baseID].defender = UnitLastCreated();
-    UnitBehaviorAdd(UnitLastCreated(), "Defender", UnitLastCreated(), 1);
+    UnitCreate(1, "Marine", 0, player, PointWithOffsetPolar(basePosition, 1.5, 320.0), 0);
+    base.defender = UnitLastCreated();
+    UnitBehaviorAdd(base.defender, "Defender", base.defender, 1);
     
-    SetBaseIDOfUnit(base, baseID);
-    SetBaseIDOfUnit(UnitLastCreated(), baseID);
+    SetBaseIDOfUnit(base.structure, baseID);
+    SetBaseIDOfUnit(base.defender, baseID);
+    SetBaseIDOfUnit(base.beacon, baseID);
 }
 
 void SetBaseOwnership(int baseID, int player) {

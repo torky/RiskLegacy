@@ -118,6 +118,7 @@ void InitTriggers () {
     gt_SetupPlayers_Init();
     gt_SwapDefender_Init();
     gt_BaseCapture_Init();
+    gt_EmptyBaseCapture_Init();
     gt_GameModeSelect_Init();
     gt_SpawnConscripts_Init();
     gt_ConscriptSpawned_Init();
