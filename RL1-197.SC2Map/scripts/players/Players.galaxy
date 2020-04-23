@@ -26,3 +26,18 @@ void gt_SetupPlayers_Init () {
     gt_SetupPlayers = TriggerCreate("SetupPlayers");
     TriggerAddEventMapInit(gt_SetupPlayers);
 }
+
+void UpdatePlayerSpawnControlGroup(int player){
+    unitgroup spawns;
+    spawns = UnitGroup("SpawnZone", player, RegionPlayableMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+    UnitControlGroupClear(player, 9);
+    UnitControlGroupAddUnits(player, 9, spawns);
+}
+
+void updatePlayerSpawnControlGroups(){
+    int i;
+    
+    for(i = 0; i < totalPlayers; i+=1){
+        UpdatePlayerSpawnControlGroup(i);
+    }
+}

@@ -124,14 +124,9 @@ bool BaseCapture(bool testConds, bool runActions){
             UpdateCountry(GetCountryIDOfUnit(base.defender));
         }
 
-        spawns = UnitGroup("SpawnZone", newOwner, RegionPlayableMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-        UnitControlGroupClear(newOwner, 9);
-        UnitControlGroupAddUnits(newOwner, 9, spawns);
-
-        spawns = UnitGroup("SpawnZone", oldOwner, RegionPlayableMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-        UnitControlGroupClear(oldOwner, 9);
-        UnitControlGroupAddUnits(oldOwner, 9, spawns);
-
+        UpdatePlayerSpawnControlGroup(newOwner);
+        UpdatePlayerSpawnControlGroup(oldOwner);
+        
         libNtve_gf_AttachActorToUnit(base.defender, "TimeWarpLaunch", "Ref_Origin");
     }
 
@@ -140,5 +135,6 @@ bool BaseCapture(bool testConds, bool runActions){
 
 void gt_BaseCapture_Init () {
     gt_BaseCapture = TriggerCreate("BaseCapture");
-    TriggerAddEventUnitDied(gt_BaseCapture, null);
+    TriggerAddEventUnitDamaged(gt_BaseCapture, null, c_unitDamageTypeAny, c_unitDamageFatal, null);
+
 }

@@ -54,6 +54,14 @@ void UpdateCountry(int countryID){
     UnitSetOwner(country.spawn, newOwner, true);
 }
 
+void UpdateCountries(){
+    int i;
+    
+    for(i = 0; i < totalCountries; i+=1){
+        UpdateCountry(i);
+    }
+}
+
 void InitializeBases () {
     int i;
     int count;

@@ -75,7 +75,8 @@ bool gt_GameModeSelect_Func (bool testConds, bool runActions) {
 
     players = PlayerGroupActive();
     DistributeTerritories(players);
-    RefreshIncome();
+    UpdateCountries();
+    updatePlayerSpawnControlGroups();
 
     SetupUI();
     CreateButtons();
