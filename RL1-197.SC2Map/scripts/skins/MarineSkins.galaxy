@@ -1,4 +1,4 @@
-const string c_marineSkinUpgrade = "MarineSkin";
+const string c_marineSkinUpgrade = "DefaultMarineSkin";
 
 Skin DefaultMarine;
 Skin InfestedMarine;
