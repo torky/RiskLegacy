@@ -1,0 +1,10 @@
+trigger gt_Skins;
+
+bool Skins(){
+    
+}
+
+
+void gt_Skins_Init(){
+    gt_Skins = TriggerCreate("Skins");
+}

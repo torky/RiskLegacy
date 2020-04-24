@@ -1,0 +1,35 @@
+
+struct Skins{
+    string image;
+    string tooltipName;
+    string valueType;
+    string value;
+};
+
+const int totalSkins = 500;
+Skins[totalSkins] skins;
+void initializeSkinsUI(){
+
+    addskin("lol.dds","marine","wins","500");
+    addskin("lol.dds","marine","wins","500");
+    addskin("lol.dds","marine","wins","500");
+    addskin("lol.dds","marine","wins","500");
+
+
+}
+
+void addSkin(string image, string unitName, string valueType, string value, string behaviourName){
+        
+    if (valueType == "wins"){
+
+    } else if (valueType == "kills") {
+
+    } else if (valueType == "winPercentage") {
+        
+    } else if (valueType == "") {
+        
+    }
+
+
+
+}
