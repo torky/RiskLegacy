@@ -1,8 +1,8 @@
 trigger gt_Refresh;
 
-int remainingTime = 0;
-int turns = 0;
 int totalTurnTime = 10;
+int remainingTime = 5;
+int turns = 0;
 
 bool Refresh(bool testConds, bool runActions){
     int count;
@@ -37,4 +37,13 @@ bool Refresh(bool testConds, bool runActions){
 void gt_Refresh_Init(){
     gt_Refresh = TriggerCreate("Refresh");
     TriggerAddEventTimePeriodic(gt_Refresh, 1.0, c_timeGame);
+    TriggerEnable(gt_Refresh, false);
+}
+
+void StartRefresh(){
+    TriggerEnable(gt_Refresh, true);
+}
+
+void StopRefresh(){
+    TriggerEnable(gt_Refresh, false);
 }

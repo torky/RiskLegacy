@@ -15,6 +15,7 @@ struct Player{
     int showFlags;
     int showProfile;
     int showKillValue;
+    bool isAdmin;
 };
 
 const int totalPlayers = 16;
@@ -32,6 +33,7 @@ bool SetupPlayers(bool TestConds, bool RunActions){
     for(i = 1; i <= PlayerGroupCount(players); i += 1){
         player = PlayerGroupPlayer(players, i);
         PlayerModifyPropertyInt(player, c_playerPropSuppliesMade, c_playerPropOperSetTo, 1750);
+        allPlayers[i].isAdmin = false;
     }
 
     return true;
@@ -49,7 +51,7 @@ void UpdatePlayerSpawnControlGroup(int player){
     UnitControlGroupAddUnits(player, 9, spawns);
 }
 
-void updatePlayerSpawnControlGroups(){
+void UpdatePlayerSpawnControlGroups(){
     int i;
     
     for(i = 0; i < totalPlayers; i+=1){
@@ -72,4 +74,23 @@ int GetPlayerDeaths(int player){
 int GetPlayerLostValue(int player){
     return PlayerScoreValueGetAsInt(player, "UnitsLostValue");
 
+}
+
+void SetPlayerAdmins(){
+    int player;
+    int i;
+    int admin;
+    int count;
+    playergroup players;
+
+    players = PlayerGroupActive();
+    count = PlayerGroupCount(players);
+    for(i = 1; i <= count; i+=1){
+        player = PlayerGroupPlayer(players, i);
+        for(admin = 0; admin < totalAdmins; admin+=1){
+            if(PlayerHandle(player) == allAdmins[admin].sc2ID){
+                allPlayers[player].isAdmin = true;
+            }
+        }
+    }
 }
