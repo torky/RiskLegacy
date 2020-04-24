@@ -366,7 +366,7 @@ void PredefineCountries(){
             UnitGroupAdd(allCountries[i].structures, UnitFromId(803974834));
         }
         else if (i == 40) {
-            allCountries[i].name = "Kalingrad (Russia)";
+            allCountries[i].name = "Kaliningrad (Russia)";
             allCountries[i].spawn = UnitFromId(2295);
             allCountries[i].flagTexture = "Russia";
             allCountries[i].flagImage = "Risk\\Flag\\Russia.tga";

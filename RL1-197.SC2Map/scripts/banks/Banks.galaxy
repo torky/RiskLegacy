@@ -6,8 +6,6 @@ const string c_Win25 = "65326";
 const string c_Win27 = "25715";
 const string c_Win26 = "23214";
 const string c_Win252 = "45762";
-const string c_playerELO = "9856412";
-const string c_playerELO1v1 = "16223";
 const string c_playerCardKey = "126395";
 const string c_playerFastestWin = "269664";
 const string c_sectionSettingAchieve = "978127";
@@ -40,6 +38,10 @@ void LoadBankForPlayer(int player){
     b = BankLoad("RiskRevulsionv3", player);
     BankOptionSet(b, c_bankOptionSignature, true);
     allPlayers[player].infoBank = b;
+}
+
+void SetPlayerValuesFromBank(){
+    
 }
 
 void UpdateBank (int playerID) {
