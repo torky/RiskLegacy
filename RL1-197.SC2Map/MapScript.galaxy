@@ -10,6 +10,7 @@ include "scripts/ui/Buttons"
 
 //Level 1
 include "scripts/cards/Cards"
+include "scripts/banks/Banks"
 include "scripts/bases/Bases"
 
 //Level 2
