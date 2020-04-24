@@ -12,31 +12,33 @@ unitgroup NearbyUnits(point position, int player, fixed radius){
 }
 
 //Prioritizes finding a unit the player owns in a 1.6 radius. If it doesn't find one, it returns a random unit within that 1.6 radius. If there are no units, it returns null.
-unit FindNewFriendlyDefender(unit baseStructure){
+unit FindUnitNearBaseNotOwnedByPlayer(int baseID, int player){
     fixed radius = 1.6;
     int count;
     unitgroup potentialDefenders;
     unit newDefender;
     unit allyUnit;
     unitfilter filter;
-    int baseID;
     structref<Base> base;
+    unit previous;
 
     newDefender = null;
-    baseID = GetBaseIDOfUnit(baseStructure);
     base = allBases[baseID];
     potentialDefenders = NearbyUnits(base.position, c_playerAny, radius);
 
     count = UnitGroupCount(potentialDefenders, c_unitCountAll);
     for (;; count -= 1) {
+        if(newDefender == null || player != UnitGetOwner(newDefender)){
+            previous = newDefender;
+        }
         newDefender = UnitGroupUnitFromEnd(potentialDefenders, count);
-        if (newDefender == null) { break; }
+        if (newDefender == null) { return previous; }
         if (UnitGetOwner(newDefender) == UnitGetOwner(base.structure)){
             return newDefender;
         }
     }
 
-    return newDefender;
+    return null;
 }
 
 unit FindNewAttackerDefender(unit killingUnit){
@@ -173,7 +175,7 @@ bool BaseCapture(bool testConds, bool runActions){
     oldOwner = UnitGetOwner(base.structure);
 
     if(dyingUnit == base.defender){
-        newDefender = FindNewFriendlyDefender(base.structure);
+        newDefender = FindUnitNearBaseNotOwnedByPlayer(baseID, UnitGetOwner(killingUnit));
         if(newDefender == null){
             newDefender = FindNewAttackerDefender(killingUnit);
         //If the new defender isn't the previous owner, choose no defender.
