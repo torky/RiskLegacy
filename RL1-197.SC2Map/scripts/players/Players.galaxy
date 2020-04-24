@@ -1,7 +1,7 @@
 struct Player{
     int income;
     int wins;
-    int loses;
+    int losses;
     int kills;
     int deaths;
     int rekt;
@@ -55,4 +55,21 @@ void updatePlayerSpawnControlGroups(){
     for(i = 0; i < totalPlayers; i+=1){
         UpdatePlayerSpawnControlGroup(i);
     }
+}
+
+int GetPlayerKills(int player){
+    return PlayerScoreValueGetAsInt(player, "UnitsKilledCount");
+}
+
+int GetPlayerKillValue(int player){
+    return PlayerScoreValueGetAsInt(player, "UnitsKilledValue");
+}
+
+int GetPlayerDeaths(int player){
+    return PlayerScoreValueGetAsInt(player, "UnitsLostCount");
+}
+
+int GetPlayerLostValue(int player){
+    return PlayerScoreValueGetAsInt(player, "UnitsLostValue");
+
 }

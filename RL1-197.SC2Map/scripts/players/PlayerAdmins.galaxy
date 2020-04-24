@@ -1,0 +1,345 @@
+struct Admin{
+    string sc2ID;
+    int status;
+    string flagImage;
+    string flagTexture;
+    string name;
+};
+
+const int totalAdmins = 100;
+Admin[totalAdmins] allAdmins;
+
+const int c_adminStatus = 2;
+const int c_donator4Status = 6;
+const int c_donator3Status = 5;
+const int c_donator2Status = 4;
+const int c_donator1Status = 3;
+
+void LoadPlayerAdmins () {
+    // Variable Declarations
+    int i = 0;
+
+    i = (i + 1);
+
+    allAdmins[i].name = "CrazyRusski.925";
+    allAdmins[i].sc2ID = "1-S2-1-840619";
+    allAdmins[i].status = c_adminStatus;
+    allAdmins[i].flagImage = "risk\\donate\\UnitedNations.tga";
+    allAdmins[i].flagTexture = "CrazyRusski";
+    i = (i + 1);
+
+    allAdmins[i].name = "CrazyRusski.925";
+    allAdmins[i].sc2ID = "2-S2-1-3133830";
+    allAdmins[i].status = c_adminStatus;
+    allAdmins[i].flagImage = "risk\\donate\\UnitedNations.tga";
+    allAdmins[i].flagTexture = "CrazyRusski";
+    i = (i + 1);
+
+    allAdmins[i].name = "Microhive";
+    allAdmins[i].sc2ID = "1-S2-1-3055377";
+    allAdmins[i].status = c_adminStatus;
+    allAdmins[i].flagImage = "Risk\\Flag\\FaroeIslands.tga";
+    allAdmins[i].flagTexture = "FaroeIslands";
+    i = (i + 1);
+
+    allAdmins[i].name = "Microhive.109";
+    allAdmins[i].sc2ID = "2-S2-1-232528";
+    allAdmins[i].status = c_adminStatus;
+    allAdmins[i].flagImage = "Risk\\Flag\\FaroeIslands.tga";
+    allAdmins[i].flagTexture = "FaroeIslands";
+    i = (i + 1);
+
+    allAdmins[i].name = "PsychoPyro";
+    allAdmins[i].sc2ID = "1-S2-1-7563095";
+    allAdmins[i].status = c_donator4Status;
+    allAdmins[i].flagImage = "risk\\donate\\PsychoPyro.tga";
+    allAdmins[i].flagTexture = "PsychoPyro";
+    i = (i + 1);
+
+    allAdmins[i].name = "Axis";
+    allAdmins[i].sc2ID = "1-S2-1-4635003";
+    allAdmins[i].status = c_donator4Status;
+    allAdmins[i].flagImage = "risk\\Flag\\Germany.tga";
+    allAdmins[i].flagTexture = "Germany";
+    i = (i + 1);
+
+    allAdmins[i].name = "AxisEU";
+    allAdmins[i].sc2ID = "2-S2-1-3964889";
+    allAdmins[i].status = c_donator4Status;
+    allAdmins[i].flagImage = "risk\\Flag\\joepasta.tga";
+    allAdmins[i].flagTexture = "Joepasta";
+    i = (i + 1);
+
+    allAdmins[i].name = "Veno";
+    allAdmins[i].sc2ID = "1-S2-1-3135671";
+    allAdmins[i].status = c_adminStatus;
+    allAdmins[i].flagImage = "risk\\donate\\gadsden.tga";
+    allAdmins[i].flagTexture = "Gadsden";
+    i = (i + 1);
+
+    allAdmins[i].name = "poogs";
+    allAdmins[i].sc2ID = "1-S2-1-1971994";
+    allAdmins[i].status = c_donator4Status;
+    allAdmins[i].flagImage = "risk\\donate\\RoyalFrench.tga";
+    allAdmins[i].flagTexture = "Albania22";
+    i = (i + 1);
+
+    allAdmins[i].name = "Opex";
+    allAdmins[i].sc2ID = "1-S2-1-3719067";
+    allAdmins[i].status = c_donator4Status;
+    allAdmins[i].flagImage = "risk\\donate\\Opex.tga";
+    allAdmins[i].flagTexture = "Sovietflag";
+    i = (i + 1);
+
+    allAdmins[i].name = "JoePasta";
+    allAdmins[i].sc2ID = "1-S2-1-1407364";
+    allAdmins[i].status = c_donator4Status;
+    allAdmins[i].flagImage = "risk\\donate\\pasta.tga";
+    allAdmins[i].flagTexture = "Albania3";
+    i = (i + 1);
+
+    allAdmins[i].name = "notmars";
+    allAdmins[i].sc2ID = "1-S2-1-9783362";
+    allAdmins[i].status = c_donator4Status;
+    allAdmins[i].flagImage = "risk\\donate\\mars.tga";
+    allAdmins[i].flagTexture = "Mars";
+    i = (i + 1);
+
+    allAdmins[i].name = "lilpeep";
+    allAdmins[i].sc2ID = "1-S2-1-8506406";
+    allAdmins[i].status = c_donator4Status;
+    allAdmins[i].flagImage = "risk\\donate\\lilpeep.tga";
+    allAdmins[i].flagTexture = "lilpeep";
+    i = (i + 1);
+
+    allAdmins[i].name = "Player";
+    allAdmins[i].sc2ID = "1-S2-1-20840500";
+    allAdmins[i].status = c_donator4Status;
+    allAdmins[i].flagImage = "risk\\Flag\\ConfederateFlag.tga";
+    allAdmins[i].flagTexture = "Confederate";
+    i = (i + 1);
+
+    allAdmins[i].name = "SCV destroyer";
+    allAdmins[i].sc2ID = "1-S2-1-3338162";
+    allAdmins[i].status = c_donator4Status;
+    allAdmins[i].flagImage = "risk\\donate\\demonskull.tga";
+    allAdmins[i].flagTexture = "Demonskull";
+    i = (i + 1);
+
+    allAdmins[i].name = "Sean";
+    allAdmins[i].sc2ID = "1-S2-1-3896133";
+    allAdmins[i].status = c_donator4Status;
+    allAdmins[i].flagImage = "risk\\donate\\soviet flag.tga";
+    allAdmins[i].flagTexture = "Sovietflag";
+    i = (i + 1);
+
+    allAdmins[i].name = "||||||||";
+    allAdmins[i].sc2ID = "1-S2-1-8625078";
+    allAdmins[i].status = c_donator4Status;
+    allAdmins[i].flagImage = "risk\\donate\\lllllllllll.tga";
+    allAdmins[i].flagTexture = "lllllllllll";
+    i = (i + 1);
+
+    allAdmins[i].name = "Gamma";
+    allAdmins[i].sc2ID = "1-S2-1-838925";
+    allAdmins[i].status = c_donator4Status;
+    allAdmins[i].flagImage = "risk\\donate\\Lewiddyion.tga";
+    allAdmins[i].flagTexture = "Lewiddyion";
+    i = (i + 1);
+
+    allAdmins[i].name = "Formic";
+    allAdmins[i].sc2ID = "1-S2-1-552169";
+    allAdmins[i].status = c_donator4Status;
+    allAdmins[i].flagImage = "risk\\donate\\Slimrim.tga";
+    allAdmins[i].flagTexture = "Slimrim";
+    i = (i + 1);
+
+    allAdmins[i].name = "pain";
+    allAdmins[i].sc2ID = "1-S2-1-2504012";
+    allAdmins[i].status = c_donator3Status;
+    i = (i + 1);
+
+    allAdmins[i].name = "Reagansquad";
+    allAdmins[i].sc2ID = "1-S2-1-3411995";
+    allAdmins[i].status = c_donator1Status;
+    i = (i + 1);
+
+    allAdmins[i].name = "jacob_imek@yahoo.com";
+    allAdmins[i].sc2ID = "1-S2-1-2480827";
+    allAdmins[i].status = c_donator2Status;
+    i = (i + 1);
+
+    allAdmins[i].name = "Erecticus";
+    allAdmins[i].sc2ID = "1-S2-1-2383405";
+    allAdmins[i].status = c_donator4Status;
+    allAdmins[i].flagImage = "risk\\Flag\\UnitedKingdom.tga";
+    allAdmins[i].flagTexture = "UnitedKingdom";
+    i = (i + 1);
+
+    allAdmins[i].name = "DoMiNo";
+    allAdmins[i].sc2ID = "1-S2-1-2252468";
+    allAdmins[i].status = c_donator3Status;
+    i = (i + 1);
+
+    allAdmins[i].name = "Hunrune";
+    allAdmins[i].sc2ID = "1-S2-1-3893874";
+    allAdmins[i].status = c_donator1Status;
+    i = (i + 1);
+
+    allAdmins[i].name = "Slimrim";
+    allAdmins[i].sc2ID = "1-S2-1-3732625";
+    allAdmins[i].status = c_donator4Status;
+    allAdmins[i].flagImage = "risk\\Donate\\Slimrim.tga";
+    allAdmins[i].flagTexture = "Slimrim";
+    i = (i + 1);
+
+    allAdmins[i].name = "digitek";
+    allAdmins[i].sc2ID = "1-S2-1-1245555";
+    allAdmins[i].status = c_donator4Status;
+    allAdmins[i].flagImage = "risk\\Donate\\digitek.dds";
+    allAdmins[i].flagTexture = "digitek";
+    i = (i + 1);
+
+    allAdmins[i].name = "Spartacus";
+    allAdmins[i].sc2ID = "1-S2-1-3687071";
+    allAdmins[i].status = c_donator3Status;
+    i = (i + 1);
+
+    allAdmins[i].name = "Adam";
+    allAdmins[i].sc2ID = "1-S2-1-4635007";
+    allAdmins[i].status = c_adminStatus;
+    allAdmins[i].flagImage = "risk\\donate\\Axis.tga";
+    allAdmins[i].flagTexture = "Axis";
+    i = (i + 1);
+
+    allAdmins[i].name = "Mograine";
+    allAdmins[i].sc2ID = "2-S2-1-1416808";
+    allAdmins[i].status = c_donator3Status;
+    i = (i + 1);
+
+    allAdmins[i].name = "HsGSnorri";
+    allAdmins[i].sc2ID = "1-S2-1-4013216";
+    allAdmins[i].status = c_donator2Status;
+    i = (i + 1);
+
+    allAdmins[i].name = "Karjala";
+    allAdmins[i].sc2ID = "1-S2-1-293981";
+    allAdmins[i].status = c_donator4Status;
+    allAdmins[i].flagImage = "Risk\\Donate\\Karjala.tga";
+    allAdmins[i].flagTexture = "Karjala";
+    i = (i + 1);
+
+    allAdmins[i].name = "Lewiddyion";
+    allAdmins[i].sc2ID = "1-S2-1-344678";
+    allAdmins[i].status = c_donator4Status;
+    allAdmins[i].flagImage = "Risk\\Donate\\Lewiddyion.tga";
+    allAdmins[i].flagTexture = "Lewiddyion";
+    i = (i + 1);
+
+    allAdmins[i].name = "Feature";
+    allAdmins[i].sc2ID = "1-S2-1-4185367";
+    allAdmins[i].status = c_donator4Status;
+    allAdmins[i].flagImage = "risk\\Donate\\Feature.tga";
+    allAdmins[i].flagTexture = "Feature";
+    i = (i + 1);
+
+    allAdmins[i].name = "naver";
+    allAdmins[i].sc2ID = "2-S2-1-1182412";
+    allAdmins[i].status = c_donator2Status;
+    i = (i + 1);
+
+    allAdmins[i].name = "Fieryfury";
+    allAdmins[i].sc2ID = "1-S2-1-3527912";
+    allAdmins[i].status = c_donator3Status;
+    i = (i + 1);
+
+    allAdmins[i].name = "VMGThorN";
+    allAdmins[i].sc2ID = "1-S2-1-3247769";
+    allAdmins[i].status = c_donator3Status;
+    i = (i + 1);
+
+    allAdmins[i].name = "MercifulZlot";
+    allAdmins[i].sc2ID = "1-S2-1-1072636";
+    allAdmins[i].status = c_donator3Status;
+    i = (i + 1);
+
+    allAdmins[i].name = "Nublets";
+    allAdmins[i].sc2ID = "1-S2-1-114649";
+    allAdmins[i].status = c_donator2Status;
+    i = (i + 1);
+
+    allAdmins[i].name = "TombStone";
+    allAdmins[i].sc2ID = "1-S2-1-3978363";
+    allAdmins[i].status = c_donator4Status;
+    allAdmins[i].flagImage = "Risk\\Donate\\TombStone.tga";
+    allAdmins[i].flagTexture = "TombStone";
+    i = (i + 1);
+
+    allAdmins[i].name = "Grimreaper";
+    allAdmins[i].sc2ID = "1-S2-1-290944";
+    allAdmins[i].status = c_donator1Status;
+    i = (i + 1);
+
+    allAdmins[i].name = "OZYMANDIAS";
+    allAdmins[i].sc2ID = "1-S2-1-3348053";
+    allAdmins[i].status = c_donator1Status;
+    i = (i + 1);
+
+    allAdmins[i].name = "OpTIMaL";
+    allAdmins[i].sc2ID = "1-S2-1-1536358";
+    allAdmins[i].status = c_donator4Status;
+    allAdmins[i].flagImage = "risk\\donate\\UnitedNations.tga";
+    allAdmins[i].flagTexture = "Optimal";
+    i = (i + 1);
+
+    allAdmins[i].name = "Snow";
+    allAdmins[i].sc2ID = "1-S2-1-3808079";
+    allAdmins[i].status = c_donator4Status;
+    allAdmins[i].flagImage = "Risk\\Donate\\Snow.dds";
+    allAdmins[i].flagTexture = "Snow";
+    i = (i + 1);
+
+    allAdmins[i].name = "Passingcow";
+    allAdmins[i].sc2ID = "1-S2-1-465240";
+    allAdmins[i].status = c_donator2Status;
+    i = (i + 1);
+
+    allAdmins[i].name = "LongStand";
+    allAdmins[i].sc2ID = "1-S2-1-529990";
+    allAdmins[i].status = c_donator3Status;
+    i = (i + 1);
+
+    allAdmins[i].name = "wingcrafter";
+    allAdmins[i].sc2ID = "1-S2-1-3049049";
+    allAdmins[i].status = c_donator4Status;
+    allAdmins[i].flagImage = "Risk\\Donate\\Wingcrafter.tga";
+    allAdmins[i].flagTexture = "Wingcrafter";
+    i = (i + 1);
+
+    allAdmins[i].name = "torky";
+    allAdmins[i].sc2ID = "1-S2-1-3719067";
+    allAdmins[i].status = c_adminStatus;
+    allAdmins[i].flagImage = "risk\\donate\\UnitedNations.tga";
+    allAdmins[i].flagTexture = "CrazyRusski";
+    i = (i + 1);
+
+    allAdmins[i].name = "daboss";
+    allAdmins[i].sc2ID = "1-S2-1-3391721";
+    allAdmins[i].status = c_adminStatus;
+    allAdmins[i].flagImage = "risk\\donate\\UnitedNations.tga";
+    allAdmins[i].flagTexture = "Wingcrafter";
+    i = (i + 1);
+
+    allAdmins[i].name = "wonky";
+    allAdmins[i].sc2ID = "1-S2-1-1951839";
+    allAdmins[i].status = c_adminStatus;
+    allAdmins[i].flagImage = "risk\\donate\\UnitedNations.tga";
+    allAdmins[i].flagTexture = "CrazyRusski";
+    i = (i + 1);
+
+    allAdmins[i].name = "Nanos";
+    allAdmins[i].sc2ID = "1-S2-1-1547074";
+    allAdmins[i].status = c_adminStatus;
+    allAdmins[i].flagImage = "risk\\donate\\UnitedNations.tga";
+    allAdmins[i].flagTexture = "CrazyRusski";
+}

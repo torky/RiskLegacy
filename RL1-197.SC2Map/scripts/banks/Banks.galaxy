@@ -40,23 +40,42 @@ void LoadBankForPlayer(int player){
     allPlayers[player].infoBank = b;
 }
 
-void SetPlayerValuesFromBank(){
-    
-}
-
-void UpdateBank (int playerID) {
-
+void SetPlayerValuesFromBank(int playerID){
     structref<Player> player = allPlayers[playerID];
     bank playerBank = player.infoBank;
 
-    BankValueSetFromInt(playerBank, c_sectionPlayer, c_Win2, player.wins);
-    BankValueSetFromInt(playerBank, c_sectionPlayer, c_Win23, player.loses);
-    BankValueSetFromInt(playerBank, c_sectionPlayer, c_Win24, player.kills);
-    BankValueSetFromInt(playerBank, c_sectionPlayer, c_Win25, player.deaths);
-    BankValueSetFromInt(playerBank, c_sectionPlayer, c_Win27, player.kills);
-    BankValueSetFromInt(playerBank, c_sectionPlayer, c_Win26, player.lost);
+    player.wins = BankValueGetAsInt(playerBank, c_sectionPlayer, c_Win2);
+    player.losses = BankValueGetAsInt(playerBank, c_sectionPlayer, c_Win23);
+    player.kills = BankValueGetAsInt(playerBank, c_sectionPlayer, c_Win24);
+    player.deaths = BankValueGetAsInt(playerBank, c_sectionPlayer, c_Win25);
+    player.rekt = BankValueGetAsInt(playerBank, c_sectionPlayer, c_Win27);
+    player.lost = BankValueGetAsInt(playerBank, c_sectionPlayer, c_Win26);
+    player.cardsKey = BankValueGetAsInt(playerBank, c_sectionPlayer, c_playerCardKey);
+    player.fastestWin = BankValueGetAsInt(playerBank, c_sectionPlayer, c_playerFastestWin);
+    player.pingBases = BankValueGetAsInt(playerBank, c_sectionSettingAchieve, c_pingBases);
+    player.showProfile = BankValueGetAsInt(playerBank, c_sectionSettingAchieve, c_showProfile);
+    player.showFlags = BankValueGetAsInt(playerBank, c_sectionSettingAchieve, c_showFlags);
+    player.showKillValue = BankValueGetAsInt(playerBank, c_sectionSettingAchieve, c_showKillValue);
+    player.skins.marine.upgrade = BankValueGetAsString(playerBank, c_sectionSettingAchieve, c_marineSkin);
+    player.skins.medic.upgrade = BankValueGetAsString(playerBank, c_sectionSettingAchieve, c_medicSkin);
+    player.skins.marauder.upgrade = BankValueGetAsString(playerBank, c_sectionSettingAchieve, c_marauderSkin);
+    player.skins.scv.upgrade = BankValueGetAsString(playerBank, c_sectionSettingAchieve, c_scvSkin);
+    player.skins.hellion.upgrade = BankValueGetAsString(playerBank, c_sectionSettingAchieve, c_hellionSkin);
+    player.skins.vulture.upgrade = BankValueGetAsString(playerBank, c_sectionSettingAchieve, c_vultureSkin);
+    player.skins.goliath.upgrade = BankValueGetAsString(playerBank, c_sectionSettingAchieve, c_goliathSkin);
+    player.skins.tank.upgrade = BankValueGetAsString(playerBank, c_sectionSettingAchieve, c_tankSkin);
+    player.skins.hercules.upgrade = BankValueGetAsString(playerBank, c_sectionSettingAchieve, c_herculesSkin);
+    player.skins.viking.upgrade = BankValueGetAsString(playerBank, c_sectionSettingAchieve, c_vikingSkin);
+    player.skins.scienceVessel.upgrade = BankValueGetAsString(playerBank, c_sectionSettingAchieve, c_scienceVesselSkin);
+    player.skins.banshee.upgrade = BankValueGetAsString(playerBank, c_sectionSettingAchieve, c_bansheeSkin);
+    player.skins.battleCruiser.upgrade = BankValueGetAsString(playerBank, c_sectionSettingAchieve, c_battleCruiserSkin);
+}
+
+void SavePlayerBankSettings (int playerID) {
+    structref<Player> player = allPlayers[playerID];
+    bank playerBank = player.infoBank;
+
     BankValueSetFromInt(playerBank, c_sectionPlayer, c_playerCardKey, player.cardsKey);
-    BankValueSetFromInt(playerBank, c_sectionPlayer, c_playerFastestWin, player.fastestWin);
     BankValueSetFromInt(playerBank, c_sectionSettingAchieve, c_pingBases, player.pingBases);
     BankValueSetFromInt(playerBank, c_sectionSettingAchieve, c_showProfile, player.showProfile);
     BankValueSetFromInt(playerBank, c_sectionSettingAchieve, c_showFlags, player.showFlags);
@@ -75,6 +94,55 @@ void UpdateBank (int playerID) {
     BankValueSetFromString(playerBank, c_sectionSettingAchieve, c_bansheeSkin, player.skins.banshee.upgrade);
     BankValueSetFromString(playerBank, c_sectionSettingAchieve, c_battleCruiserSkin, player.skins.battleCruiser.upgrade);
     BankValueSetFromString(playerBank, c_sectionPlayer, c_Win252, player.name);
+
     BankOptionSet(playerBank, c_bankOptionSignature, true);
     BankSave(playerBank);
+}
+
+void UpdatePlayerBankStats(int playerID){
+    structref<Player> player = allPlayers[playerID];
+    bank playerBank = player.infoBank;
+
+
+    BankValueSetFromInt(playerBank, c_sectionPlayer, c_Win24, player.kills + GetPlayerKills(playerID));
+    BankValueSetFromInt(playerBank, c_sectionPlayer, c_Win25, player.deaths + GetPlayerDeaths(playerID));
+    BankValueSetFromInt(playerBank, c_sectionPlayer, c_Win27, player.rekt + GetPlayerKillValue(playerID));
+    BankValueSetFromInt(playerBank, c_sectionPlayer, c_Win26, player.lost + GetPlayerLostValue(playerID));
+
+    BankOptionSet(playerBank, c_bankOptionSignature, true);
+    BankSave(playerBank);
+}
+
+void UpdatePlayerBankWinLoss(int playerID, int numberOfTurns){
+    structref<Player> player = allPlayers[playerID];
+    bank playerBank = player.infoBank;
+
+    BankValueSetFromInt(playerBank, c_sectionPlayer, c_Win2, player.wins + 1);
+    BankValueSetFromInt(playerBank, c_sectionPlayer, c_Win23, player.losses);
+
+    if (numberOfTurns < player.fastestWin){
+        BankValueSetFromInt(playerBank, c_sectionPlayer, c_playerFastestWin, numberOfTurns);
+    }
+
+    BankOptionSet(playerBank, c_bankOptionSignature, true);
+    BankSave(playerBank);
+}
+
+void PresetPlayerAsLoser(int playerID){
+    structref<Player> player = allPlayers[playerID];
+    bank playerBank = player.infoBank;
+
+    BankValueSetFromInt(playerBank, c_sectionPlayer, c_Win23, player.losses + 1);
+
+    BankOptionSet(playerBank, c_bankOptionSignature, true);
+    BankSave(playerBank);
+}
+
+void LoadBankInfoForPlayers(){
+    int i;
+
+    for(i = 1; i < totalPlayers; i+=1){
+        LoadBankForPlayer(i);
+        SetPlayerValuesFromBank(i);
+    }
 }
