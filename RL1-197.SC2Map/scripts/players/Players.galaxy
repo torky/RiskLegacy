@@ -10,6 +10,11 @@ struct Player{
     int cardsKey;
     int fastestWin;
     string name;
+    PlayerSkins skins;
+    int pingBases;
+    int showFlags;
+    int showProfile;
+    int showKillValue;
 };
 
 const int totalPlayers = 16;

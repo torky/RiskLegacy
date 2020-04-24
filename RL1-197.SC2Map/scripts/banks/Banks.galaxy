@@ -13,32 +13,33 @@ const string c_playerFastestWin = "269664";
 const string c_sectionSettingAchieve = "978127";
 const string c_Win2522 = "34645";
 const string c_Win2523 = "29474";
-const string c_Win2524 = "42346";
-const string c_Win2529 = "67365";
-const string c_Win2536 = "87666";
-const string c_Win2537 = "78865";
-const string c_Win2525 = "62378";
-const string c_Win2526 = "86342";
-const string c_Win2538 = "145234";
-const string c_Win2527 = "14366";
-const string c_Win2539 = "124511";
-const string c_Win2540 = "567124";
-const string c_Win2541 = "967458";
-const string c_Win2542 = "642783";
-const string c_Win2528 = "04704";
-const string c_Win2530 = "76598";
-const string c_Win2532 = "13634";
-const string c_Win2533 = "56756";
-const string c_Win2534 = "87232";
+const string c_pingBases = "42346";
+const string c_showProfile = "67365";
+const string c_showFlags = "87666";
+const string c_showKillValue = "78865";
+const string c_marineSkin = "marine";
+const string c_scvSkin = "scv";
+const string c_goliathSkin = "goliath";
+const string c_vultureSkin = "vulture";
+const string c_marauderSkin = "marauder";
+const string c_hellionSkin = "hellion";
+const string c_medicSkin = "medic";
+const string c_vikingSkin = "viking";
+const string c_tankSkin = "tank";
+const string c_herculesSkin = "hercules";
+const string c_scienceVesselSkin = "scienceVessel";
+const string c_bansheeSkin = "banshee";
+const string c_battleCruiserSkin = "battleCruiser";
 const string c_Win2531 = "43357";
 const string c_Win2535 = "45689";
 const string c_sectionRanking = "973423";
 const string c_Win22 = "78245";
 
 void LoadBankForPlayer(int player){
-    BankLoad("RiskRevulsionv3", player);
-    BankOptionSet(BankLastCreated(), c_bankOptionSignature, true);
-    allPlayers[player].infoBank = BankLastCreated();
+    bank b;
+    b = BankLoad("RiskRevulsionv3", player);
+    BankOptionSet(b, c_bankOptionSignature, true);
+    allPlayers[player].infoBank = b;
 }
 
 void UpdateBank (int playerID) {
@@ -54,27 +55,23 @@ void UpdateBank (int playerID) {
     BankValueSetFromInt(playerBank, c_sectionPlayer, c_Win26, player.lost);
     BankValueSetFromInt(playerBank, c_sectionPlayer, c_playerCardKey, player.cardsKey);
     BankValueSetFromInt(playerBank, c_sectionPlayer, c_playerFastestWin, player.fastestWin);
-    //BankValueSetFromInt(playerBank, c_sectionSettingAchieve, c_Win2522, gv_profile.lv_settingsProfileValue[1][player]); //swap priority
-    //BankValueSetFromInt(playerBank, c_sectionSettingAchieve, c_Win2523, gv_profile.lv_settingsProfileValue[2][player]); //swap priority
-    BankValueSetFromInt(playerBank, c_sectionSettingAchieve, c_Win2524, gv_profile.lv_settingsProfileValue[3][player]);// ping location of bases
-    BankValueSetFromInt(playerBank, c_sectionSettingAchieve, c_Win2529, gv_profile.lv_settingsProfileValue[4][player]);// profile visibility
-    BankValueSetFromInt(playerBank, c_sectionSettingAchieve, c_Win2536, gv_profile.lv_settingsProfileValue[5][player]);// flag visibility
-    BankValueSetFromInt(playerBank, c_sectionSettingAchieve, c_Win2537, gv_profile.lv_settingsProfileValue[6][player]);// kill value vs kills
-    BankValueSetFromInt(playerBank, c_sectionSettingAchieve, c_Win2525, gv_profile.lv_achieveUnitValue[1][player]);
-    BankValueSetFromInt(playerBank, c_sectionSettingAchieve, c_Win2541, gv_profile.lv_achieveUnitValue[2][player]);
-    BankValueSetFromInt(playerBank, c_sectionSettingAchieve, c_Win2539, gv_profile.lv_achieveUnitValue[3][player]);
-    BankValueSetFromInt(playerBank, c_sectionSettingAchieve, c_Win2526, gv_profile.lv_achieveUnitValue[4][player]);
-    BankValueSetFromInt(playerBank, c_sectionSettingAchieve, c_Win2540, gv_profile.lv_achieveUnitValue[5][player]);
-    BankValueSetFromInt(playerBank, c_sectionSettingAchieve, c_Win2527, gv_profile.lv_achieveUnitValue[6][player]);
-    BankValueSetFromInt(playerBank, c_sectionSettingAchieve, c_Win2538, gv_profile.lv_achieveUnitValue[7][player]);
-    BankValueSetFromInt(playerBank, c_sectionSettingAchieve, c_Win2528, gv_profile.lv_achieveUnitValue[8][player]);
-    BankValueSetFromInt(playerBank, c_sectionSettingAchieve, c_Win2530, gv_profile.lv_achieveUnitValue[9][player]);
-    BankValueSetFromInt(playerBank, c_sectionSettingAchieve, c_Win2542, gv_profile.lv_achieveUnitValue[10][player]);
-    BankValueSetFromInt(playerBank, c_sectionSettingAchieve, c_Win2532, gv_profile.lv_achieveUnitValue[11][player]);
-    BankValueSetFromInt(playerBank, c_sectionSettingAchieve, c_Win2533, gv_profile.lv_achieveUnitValue[12][player]);
-    BankValueSetFromInt(playerBank, c_sectionSettingAchieve, c_Win2534, gv_profile.lv_achieveUnitValue[13][player]);
-    //BankValueSetFromFlag(playerBank, c_sectionSettingAchieve, c_Win2531, player.playedTutorial);
-    //BankValueSetFromInt(playerBank, c_sectionSettingAchieve, c_Win2535, gv_profile.lv_achieveDonateValue[player]);
+    BankValueSetFromInt(playerBank, c_sectionSettingAchieve, c_pingBases, player.pingBases);
+    BankValueSetFromInt(playerBank, c_sectionSettingAchieve, c_showProfile, player.showProfile);
+    BankValueSetFromInt(playerBank, c_sectionSettingAchieve, c_showFlags, player.showFlags);
+    BankValueSetFromInt(playerBank, c_sectionSettingAchieve, c_showKillValue, player.showKillValue);
+    BankValueSetFromString(playerBank, c_sectionSettingAchieve, c_marineSkin, player.skins.marine.upgrade);
+    BankValueSetFromString(playerBank, c_sectionSettingAchieve, c_medicSkin, player.skins.medic.upgrade);
+    BankValueSetFromString(playerBank, c_sectionSettingAchieve, c_marauderSkin, player.skins.marauder.upgrade);
+    BankValueSetFromString(playerBank, c_sectionSettingAchieve, c_scvSkin, player.skins.scv.upgrade);
+    BankValueSetFromString(playerBank, c_sectionSettingAchieve, c_hellionSkin, player.skins.hellion.upgrade);
+    BankValueSetFromString(playerBank, c_sectionSettingAchieve, c_vultureSkin, player.skins.vulture.upgrade);
+    BankValueSetFromString(playerBank, c_sectionSettingAchieve, c_goliathSkin, player.skins.goliath.upgrade);
+    BankValueSetFromString(playerBank, c_sectionSettingAchieve, c_tankSkin, player.skins.tank.upgrade);
+    BankValueSetFromString(playerBank, c_sectionSettingAchieve, c_herculesSkin, player.skins.hercules.upgrade);
+    BankValueSetFromString(playerBank, c_sectionSettingAchieve, c_vikingSkin, player.skins.viking.upgrade);
+    BankValueSetFromString(playerBank, c_sectionSettingAchieve, c_scienceVesselSkin, player.skins.scienceVessel.upgrade);
+    BankValueSetFromString(playerBank, c_sectionSettingAchieve, c_bansheeSkin, player.skins.banshee.upgrade);
+    BankValueSetFromString(playerBank, c_sectionSettingAchieve, c_battleCruiserSkin, player.skins.battleCruiser.upgrade);
     BankValueSetFromString(playerBank, c_sectionPlayer, c_Win252, player.name);
     BankOptionSet(playerBank, c_bankOptionSignature, true);
     BankSave(playerBank);
