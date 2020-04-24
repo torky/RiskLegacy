@@ -1,13 +1,4 @@
 
-struct Skins{
-    string image;
-    string tooltipName;
-    string valueType;
-    string value;
-};
-
-const int totalSkins = 500;
-Skins[totalSkins] skins;
 void initializeSkinsUI(){
 
     addskin("lol.dds","marine","wins","500");

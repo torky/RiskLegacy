@@ -1,7 +1,36 @@
+struct Skin{
+    string image;
+    string tooltipName;
+    string requirement;
+    string upgrade;
+};
+
+struct PlayerSkins{
+    Skin marine;
+    Skin medic;
+    Skin marauder;
+    Skin scv;
+    Skin hellion;
+    Skin vulture;
+    Skin goliath;
+    Skin tank;
+    Skin hercules;
+    Skin viking;
+    Skin scienceVessel;
+    Skin banshee;
+    Skin battleCruiser;    
+};
+
 trigger gt_Skins;
 
-bool Skins(){
-    
+bool Skins(bool testConds, bool runActions){
+    int player = 0;
+    Skin skin;
+    int upgradeLevel;
+    bool test;
+
+
+    return true;
 }
 
 

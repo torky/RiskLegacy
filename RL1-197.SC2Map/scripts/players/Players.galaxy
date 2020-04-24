@@ -1,5 +1,15 @@
 struct Player{
     int income;
+    int wins;
+    int loses;
+    int kills;
+    int deaths;
+    int rekt;
+    int lost;
+    bank infoBank;
+    int cardsKey;
+    int fastestWin;
+    string name;
 };
 
 const int totalPlayers = 16;

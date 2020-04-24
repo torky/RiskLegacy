@@ -1,0 +1,81 @@
+const string c_sectionPlayer = "328977";
+const string c_Win2 = "98541";
+const string c_Win23 = "13495";
+const string c_Win24 = "98635";
+const string c_Win25 = "65326";
+const string c_Win27 = "25715";
+const string c_Win26 = "23214";
+const string c_Win252 = "45762";
+const string c_playerELO = "9856412";
+const string c_playerELO1v1 = "16223";
+const string c_playerCardKey = "126395";
+const string c_playerFastestWin = "269664";
+const string c_sectionSettingAchieve = "978127";
+const string c_Win2522 = "34645";
+const string c_Win2523 = "29474";
+const string c_Win2524 = "42346";
+const string c_Win2529 = "67365";
+const string c_Win2536 = "87666";
+const string c_Win2537 = "78865";
+const string c_Win2525 = "62378";
+const string c_Win2526 = "86342";
+const string c_Win2538 = "145234";
+const string c_Win2527 = "14366";
+const string c_Win2539 = "124511";
+const string c_Win2540 = "567124";
+const string c_Win2541 = "967458";
+const string c_Win2542 = "642783";
+const string c_Win2528 = "04704";
+const string c_Win2530 = "76598";
+const string c_Win2532 = "13634";
+const string c_Win2533 = "56756";
+const string c_Win2534 = "87232";
+const string c_Win2531 = "43357";
+const string c_Win2535 = "45689";
+const string c_sectionRanking = "973423";
+const string c_Win22 = "78245";
+
+void LoadBankForPlayer(int player){
+    BankLoad("RiskRevulsionv3", player);
+    BankOptionSet(BankLastCreated(), c_bankOptionSignature, true);
+    allPlayers[player].infoBank = BankLastCreated();
+}
+
+void UpdateBank (int playerID) {
+
+    structref<Player> player = allPlayers[playerID];
+    bank playerBank = player.infoBank;
+
+    BankValueSetFromInt(playerBank, c_sectionPlayer, c_Win2, player.wins);
+    BankValueSetFromInt(playerBank, c_sectionPlayer, c_Win23, player.loses);
+    BankValueSetFromInt(playerBank, c_sectionPlayer, c_Win24, player.kills);
+    BankValueSetFromInt(playerBank, c_sectionPlayer, c_Win25, player.deaths);
+    BankValueSetFromInt(playerBank, c_sectionPlayer, c_Win27, player.kills);
+    BankValueSetFromInt(playerBank, c_sectionPlayer, c_Win26, player.lost);
+    BankValueSetFromInt(playerBank, c_sectionPlayer, c_playerCardKey, player.cardsKey);
+    BankValueSetFromInt(playerBank, c_sectionPlayer, c_playerFastestWin, player.fastestWin);
+    //BankValueSetFromInt(playerBank, c_sectionSettingAchieve, c_Win2522, gv_profile.lv_settingsProfileValue[1][player]); //swap priority
+    //BankValueSetFromInt(playerBank, c_sectionSettingAchieve, c_Win2523, gv_profile.lv_settingsProfileValue[2][player]); //swap priority
+    BankValueSetFromInt(playerBank, c_sectionSettingAchieve, c_Win2524, gv_profile.lv_settingsProfileValue[3][player]);// ping location of bases
+    BankValueSetFromInt(playerBank, c_sectionSettingAchieve, c_Win2529, gv_profile.lv_settingsProfileValue[4][player]);// profile visibility
+    BankValueSetFromInt(playerBank, c_sectionSettingAchieve, c_Win2536, gv_profile.lv_settingsProfileValue[5][player]);// flag visibility
+    BankValueSetFromInt(playerBank, c_sectionSettingAchieve, c_Win2537, gv_profile.lv_settingsProfileValue[6][player]);// kill value vs kills
+    BankValueSetFromInt(playerBank, c_sectionSettingAchieve, c_Win2525, gv_profile.lv_achieveUnitValue[1][player]);
+    BankValueSetFromInt(playerBank, c_sectionSettingAchieve, c_Win2541, gv_profile.lv_achieveUnitValue[2][player]);
+    BankValueSetFromInt(playerBank, c_sectionSettingAchieve, c_Win2539, gv_profile.lv_achieveUnitValue[3][player]);
+    BankValueSetFromInt(playerBank, c_sectionSettingAchieve, c_Win2526, gv_profile.lv_achieveUnitValue[4][player]);
+    BankValueSetFromInt(playerBank, c_sectionSettingAchieve, c_Win2540, gv_profile.lv_achieveUnitValue[5][player]);
+    BankValueSetFromInt(playerBank, c_sectionSettingAchieve, c_Win2527, gv_profile.lv_achieveUnitValue[6][player]);
+    BankValueSetFromInt(playerBank, c_sectionSettingAchieve, c_Win2538, gv_profile.lv_achieveUnitValue[7][player]);
+    BankValueSetFromInt(playerBank, c_sectionSettingAchieve, c_Win2528, gv_profile.lv_achieveUnitValue[8][player]);
+    BankValueSetFromInt(playerBank, c_sectionSettingAchieve, c_Win2530, gv_profile.lv_achieveUnitValue[9][player]);
+    BankValueSetFromInt(playerBank, c_sectionSettingAchieve, c_Win2542, gv_profile.lv_achieveUnitValue[10][player]);
+    BankValueSetFromInt(playerBank, c_sectionSettingAchieve, c_Win2532, gv_profile.lv_achieveUnitValue[11][player]);
+    BankValueSetFromInt(playerBank, c_sectionSettingAchieve, c_Win2533, gv_profile.lv_achieveUnitValue[12][player]);
+    BankValueSetFromInt(playerBank, c_sectionSettingAchieve, c_Win2534, gv_profile.lv_achieveUnitValue[13][player]);
+    //BankValueSetFromFlag(playerBank, c_sectionSettingAchieve, c_Win2531, player.playedTutorial);
+    //BankValueSetFromInt(playerBank, c_sectionSettingAchieve, c_Win2535, gv_profile.lv_achieveDonateValue[player]);
+    BankValueSetFromString(playerBank, c_sectionPlayer, c_Win252, player.name);
+    BankOptionSet(playerBank, c_bankOptionSignature, true);
+    BankSave(playerBank);
+}
