@@ -24,14 +24,35 @@ bool gt_DialogItem_Func (bool testConds, bool runActions) {
     string property;
     int properties;
     int dialogItem;
+    int dialogID;
+    string unitName;
+    string skinName;
+    unitgroup units;
+    int count;
+    unit currentUnit;
+    string actorMessage;
+    
     // Automatic Variable Declarations
     dialogItem = EventDialogControl();
-    
-  
-    usedProperty  =  DialogControlGetPropertyAsString(dialogItem,c_triggerControlPropertyEditText,1); 
     triggeringPlayer = EventPlayer();
+
+    usedProperty = DialogControlGetPropertyAsString(dialogItem,c_triggerControlPropertyEditText,1); 
+    dialogID = StringToInt(usedProperty);
+
+    skinName = allSkinButtons[dialogID].skinName;
+    unitName = allSkinButtons[dialogID].unitName;
+
+    units = UnitGroupEmpty();
+    units = UnitGroup(unitName, triggeringPlayer, RegionPlayableMap(), UnitFilter(0, 0, (1 << c_targetFilterPsionic) | (1 << c_targetFilterStructure) | (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32)) | (1 << (c_targetFilterInvulnerable - 32))), 0);
+    count = UnitGroupCount(units, c_unitCountAll); 
     UIDisplayMessage(PlayerGroupActive(), c_messageAreaChat, StringToText(usedProperty));
-    
+
+    for (;; count -= 1) {
+        currentUnit = UnitGroupUnitFromEnd(units, count);
+        if (currentUnit == null) { break; }
+        actorMessage = libNtve_gf_ModelSwap(skinName,0);
+        libNtve_gf_SendActorMessageToUnit(currentUnit, actorMessage);
+    }
     return true;
 }
 

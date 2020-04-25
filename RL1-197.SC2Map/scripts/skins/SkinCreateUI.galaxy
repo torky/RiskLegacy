@@ -1,8 +1,10 @@
 struct SkinButton {
+    int skinID;
+    string unitName;
+    string skinName;
+    string requirementType;
+    string requirement;
     string image;
-    string tooltipName;
-    string valueType;
-    string value;
     int border;
     int portrait;
     int button;
@@ -10,6 +12,34 @@ struct SkinButton {
 
 const int totalSkins = 500;
 SkinButton[totalSkins] allSkinButtons;
+
+struct SkinMenuButton {
+    int buttonID;
+    int border;
+    int portrait;
+    int button;
+};
+
+const int totalMenuButtons = 15;
+SkinMenuButton[totalMenuButtons] allSkinMenuButtons;
+
+
+
+const int numberOfUnits = 15;
+
+
+struct UnitDialog{
+    string[numberOfUnits] unitName;
+    int[numberOfUnits] wins;
+    int[numberOfUnits] kills;
+    int[numberOfUnits] winPercent;
+    int[numberOfUnits] prize;
+};
+UnitDialog buttonsPerRow;
+
+
+
+
 void initializeSkinsUI(){
 
     //addskin("lol.dds","marine","wins","500");
@@ -33,77 +63,263 @@ void CreateDialog(){
         
         index = PlayerGroupNextPlayer(thesePlayers, index);
         if (index < 0) { break; }
-        DialogCreate(400, 400, c_anchorBottom, -870, 475, true);
-        libNtve_gf_CreateDialogItemImage(DialogLastCreated(), 400, 400, c_anchorBottom, 0, 0, StringToText(""), "Assets\\Textures\\ui_camapaignmenu_dialogbox_base.dds", c_triggerImageTypeHorizontalBorder, true, Color(100,100,100), c_triggerBlendModeNormal);
+        DialogCreate(1200, 700, c_anchorBottom, -870, 475, true);
+        libNtve_gf_CreateDialogItemImage(DialogLastCreated(), 1200, 700, c_anchorBottom, 0, 0, StringToText(""), "Assets\\Textures\\ui_camapaignmenu_dialogbox_base.dds", c_triggerImageTypeHorizontalBorder, true, Color(100,100,100), c_triggerBlendModeNormal);
         buttonDialog[index] = DialogLastCreated();
         DialogSetVisible(DialogLastCreated(), PlayerGroupAll(), true);
         DialogSetImageVisible(buttonDialog[index], false);
 
-        //createSkinButtons();
-       // for ( ; autoE08409A3_var <= autoE08409A3_ae; autoE08409A3_var += 1 ) {
-       //     gf_SkinsButtons(1, 1, autoE08409A3_var, auto4EDAB46F_var, "Assets\\Textures\\ui_ingame_tutorial_stepbutton_hover_terr.dds", (Color(20*100/255,134*100/255,107*100/255)), gv_images[1][1][autoE08409A3_var], 0);
-       //     gf_SkinsButtons(1, 2, autoE08409A3_var, auto4EDAB46F_var, "Assets\\Textures\\ui_ingame_tutorial_stepbutton_hover_prot.dds", (Color(100,100,100)), gv_images[1][2][autoE08409A3_var], 0);
-       //     gf_SkinsButtons(1, 3, autoE08409A3_var, auto4EDAB46F_var, "Assets\\Textures\\ui_ingame_tutorial_stepbutton_hover_terr.dds", (Color(20*100/255,134*100/255,107*100/255)), gv_images[1][3][autoE08409A3_var], 0);
-       //     gf_SkinsButtons(1, 4, autoE08409A3_var, auto4EDAB46F_var, "Assets\\Textures\\ui_ingame_tutorial_stepbutton_hover_terr.dds", (Color(20*100/255,134*100/255,107*100/255)), gv_images[1][4][autoE08409A3_var], 0);
-       //     gf_SkinsButtons(1, 5, 1, auto4EDAB46F_var, "Assets\\Textures\\ui_ingame_tutorial_stepbutton_hover_terr.dds", (Color(20*100/255,134*100/255,107*100/255)), gv_images[1][5][1], 0);
-       //     gf_SkinsButtons(1, 5, 2, auto4EDAB46F_var, "Assets\\Textures\\ui_ingame_tutorial_stepbutton_hover_terr.dds", (Color(20*100/255,134*100/255,107*100/255)), gv_images[1][5][2], 0);
-       //     gf_SkinsButtons(1, 5, 3, auto4EDAB46F_var, "Assets\\Textures\\ui_ingame_tutorial_stepbutton_hover_terr.dds", (Color(20*100/255,134*100/255,107*100/255)), gv_images[1][5][3], 0);
-       //     gf_SkinsButtons(1, 5, 4, auto4EDAB46F_var, "Assets\\Textures\\ui_ingame_tutorial_stepbutton_hover_terr.dds", (Color(20*100/255,134*100/255,107*100/255)), gv_images[1][5][4], 0);
-       // }
+    }
+}
+int DialogSkinMenu;
+void CreateSkinMenuDialog(){
+        DialogCreate(400, 200, c_anchorBottom, -860, 400, true);
+        libNtve_gf_CreateDialogItemImage(DialogLastCreated(), 400, 200, c_anchorBottom, 0, 0, StringToText(""), "Assets\\Textures\\ui_camapaignmenu_dialogbox_base.dds", c_triggerImageTypeHorizontalBorder, true, Color(100,100,100), c_triggerBlendModeNormal);
+        DialogSkinMenu = DialogLastCreated();
+        DialogSetVisible(DialogLastCreated(), PlayerGroupAll(), true);
+        DialogSetImageVisible(DialogSkinMenu, false);
+}
 
 
-     //   libNtve_gf_CreateDialogItemImage(DialogLastCreated(), 84, 84, c_anchorTopLeft, (lv_offsetwidth+lv_offSetButtonshorizontal), (lv_offsetheight+lv_offSetButtonsvertical), StringToText(""), "Assets\\Textures\\ui_techtree_iconframe_protoss.dds", c_triggerImageTypeNormal, true, Color(92.16, 79.61, 79.61), c_triggerBlendModeNormal);
-    //    libNtve_gf_SetDialogItemTintColor(DialogControlLastCreated(), Color(100.00, 50.20, 0.00), PlayerGroupAll());
-     //   libNtve_gf_SetDialogItemImage2(DialogControlLastCreated(), "Assets\\Textures\\ui_techtree_iconframe_protoss.dds", PlayerGroupAll());
-     //   gv_skinBorder[lp_firstDimension][lp_secondDimension][lp_thirdDimension][lp_fourthDimension] = DialogControlLastCreated();
-     //   libNtve_gf_CreateDialogItemImage(DialogLastCreated(), 76, 76, c_anchorTopLeft, ((lv_offsetwidth + lv_offSetButtonshorizontal) + 2), ((lv_offsetheight + lv_offSetButtonsvertical) + 2), StringToText(""), lp_buttonPortrait, c_triggerImageTypeNormal, true, Color(100,100,100), c_triggerBlendModeNormal);
-    //    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeNormal, PlayerGroupAll());
-   // //    gv_skinPortrait[lp_firstDimension][lp_secondDimension][lp_thirdDimension][lp_fourthDimension] = DialogControlLastCreated();
-     //   TextExpressionSetToken("Param/Expression/D2541D45", "A", StringToText(gv_tooltipName[lp_firstDimension][lp_secondDimension][lp_thirdDimension]));
-      //  libNtve_gf_CreateDialogItemButton(DialogLastCreated(), 74, 74, c_anchorTopLeft, ((lv_offSetButtonshorizontal + lv_offsetwidth) + 2), ((lv_offSetButtonsvertical + lv_offsetheight) + 2), TextExpressionAssemble("Param/Expression/D2541D45"), StringToText(""), "");
-     //   libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\zergling_emissive.dds", PlayerGroupAll());
-      //  libNtve_gf_SetDialogItemImageType2(DialogControlLastCreated(), true, PlayerGroupAll());
-      //  libNtve_gf_SetDialogItemImage2(DialogControlLastCreated(), "Assets\\Textures\\ui_battlenet_glues_pageassets_graphiclistitem_textbackground_selected.dds", PlayerGroupAll());
-     //   libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeNormal, PlayerGroupAll());
-      //  libNtve_gf_SetDialogItemImageType2(DialogControlLastCreated(), true, PlayerGroupAll());
-      //  gv_skinButton[lp_firstDimension][lp_secondDimension][lp_thirdDimension][lp_fourthDimension] = DialogControlLastCreated();
-      //  DialogControlFadeTransparency(DialogControlLastCreated(), PlayerGroupAll(), 0.0, 75.0);
+string currentName = "";
+
+string[numberOfUnits] button;
+const int numberOfRequirements = 4;
+string[numberOfRequirements] presetRequirementType;
+
+
+int buttonID = 0;
+void CalculateButtonsInAllRows(){
+    int i;
+    int j;
+    string rowType = "";
+    string unitType = "";
+    
+
+    for(i = 0; i < totalSkins; i += 1) {
+       
+        rowType = allSkinButtons[i].requirementType;
+        unitType = allSkinButtons[i].unitName;
         
-        //Buttons created
+        for(j = 0; j < numberOfUnits - 1; j += 1){
+           if(buttonsPerRow.unitName[j] == unitType){
+               if(rowType == "wins"){
+                    buttonsPerRow.wins[j] += 1;
+               }else if(rowType == "kills"){
+                    buttonsPerRow.kills[j] += 1;
+               }else if(rowType == "winPercent"){
+                    buttonsPerRow.winPercent[j] += 1;
+               }else if(rowType == "prize"){
+                    buttonsPerRow.prize[j] += 1;
+               }
+                   
+           }
+        }
+        
+        
     }
 }
 
-void CreateSkinButtons(string lp_buttonBorder, string buttonPortrait, int hori, string tooltipName){
-    int addedVerticalOffset = 10;    
-    int addedHorizontalOffset = 6;
-    int verticalOffset = 76 + 10;
-    int horizontalOffset = 6 + (hori * 76);
+struct UnitTypes{
+    string image;
+};
+
+UnitTypes[numberOfUnits] aUnit;
+void InitializeSkinMenu(){
+    //Marine
+    aUnit[0].image ="Assets\\Textures\\btn-unit-terran-marine.dds";
+    //Medic
+    aUnit[1].image ="Assets\\Textures\\btn-unit-terran-medicelite.dds";
+    //Marauder
+    aUnit[2].image ="Assets\\Textures\\btn-unit-terran-marauder-silver.dds";
+    //Scv
+    aUnit[3].image ="Assets\\Textures\\btn-unit-terran-merc-scv.dds";
+    //Hellion
+    aUnit[4].image ="Assets\\Textures\\btn-unit-terran-hellion-junker.dds";
+    //Vulture
+    aUnit[5].image ="Assets\\Textures\\btn-unit-terran-vulture.dds";
+    //Goliath
+    aUnit[6].image ="Assets\\Textures\\btn-unit-terran-goliathmercenary.dds";
+    //Tank
+    aUnit[7].image ="Assets\\Textures\\btn-unit-collection-siegetank-umojan.dds";
+    //Hercules
+    aUnit[8].image ="Assets\\Textures\\btn-unit-terran-hercules.dds";
+    //Viking
+    aUnit[9].image ="Assets\\Textures\\btn-unit-collection-vikingfighter-covertops.dds";
+    //ScienceVessel
+    aUnit[10].image ="Assets\\Textures\\btn-unit-terran-sciencevessel.dds";
+    //Banshee
+    aUnit[11].image ="Assets\\Textures\\btn-unit-terran-bansheeblackops.dds";
+    //Battlecruiser
+    aUnit[12].image ="Assets\\Textures\\btn-unit-collection-battlecruiser-covertops.dds";
+    //Barracks
+    aUnit[13].image ="Assets\\Textures\\btn-building-nova-barracks.dds";
+    //Starport
+    aUnit[14].image ="Assets\\Textures\\btn-building-terran-starport.dds";
     
 
+  
+}
 
-    //Button Border
-    libNtve_gf_CreateDialogItemImage(DialogLastCreated(), 84, 84, c_anchorTopLeft, horizontalOffset, verticalOffset, StringToText(""), "Assets\\Textures\\ui_techtree_iconframe_protoss.dds", c_triggerImageTypeNormal, true, Color(92.16, 79.61, 79.61), c_triggerBlendModeNormal);
+int currentSkinMenuButtonID = 0;
+
+void CreateSkinMenuButton(int multiplierHorizontal, int multiplierVeritcal, string buttonPortrait, int addedHorizontalOffset, int addedVerticalOffset){
+    
+    int horizontalOffset = 76;
+    int verticalOffset = 76;
+
+    horizontalOffset = multiplierHorizontal * horizontalOffset;
+    horizontalOffset = addedHorizontalOffset;
+
+    verticalOffset = multiplierVeritcal * verticalOffset;
+    verticalOffset += addedVerticalOffset;
+    
+    libNtve_gf_CreateDialogItemImage(DialogLastCreated(), 84, 84, c_anchorTop, horizontalOffset, verticalOffset, StringToText(""), "Assets\\Textures\\ui_techtree_iconframe_protoss.dds", c_triggerImageTypeNormal, true, Color(92.16, 79.61, 79.61), c_triggerBlendModeNormal);
     libNtve_gf_SetDialogItemTintColor(DialogControlLastCreated(), Color(100.00, 50.20, 0.00), PlayerGroupAll());
     libNtve_gf_SetDialogItemImage2(DialogControlLastCreated(), "Assets\\Textures\\ui_techtree_iconframe_protoss.dds", PlayerGroupAll());
-    allSkinButtons[hori].border = DialogControlLastCreated();
+    allSkinMenuButtons[currentSkinMenuButtonID].border = DialogControlLastCreated();
 
-    libNtve_gf_CreateDialogItemImage(DialogLastCreated(), 76, 76, c_anchorTopLeft, ((horizontalOffset) + 2), ((verticalOffset) + 2), StringToText(""), buttonPortrait, c_triggerImageTypeNormal, true, Color(100,100,100), c_triggerBlendModeNormal);
+    libNtve_gf_CreateDialogItemImage(DialogLastCreated(), 76, 76, c_anchorTop, ((horizontalOffset) + 2), ((verticalOffset) + 2), StringToText(""), buttonPortrait, c_triggerImageTypeNormal, true, Color(100,100,100), c_triggerBlendModeNormal);
     libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeNormal, PlayerGroupAll());
-    allSkinButtons[hori].portrait = DialogControlLastCreated();
+    allSkinMenuButtons[currentSkinMenuButtonID].portrait = DialogControlLastCreated();
 
-    TextExpressionSetToken("Param/Expression/D2541D45", "A", StringToText(tooltipName));
-    libNtve_gf_CreateDialogItemButton(DialogLastCreated(), 74, 74, c_anchorTopLeft, ((horizontalOffset) + 2), ((verticalOffset) + 2), TextExpressionAssemble("Param/Expression/D2541D45"), StringToText(""), "");
+    TextExpressionSetToken("Param/Expression/D2541D45", "A", StringToText(""));
+    libNtve_gf_CreateDialogItemButton(DialogLastCreated(), 74, 74, c_anchorTop, ((horizontalOffset) + 2), ((verticalOffset) + 2), TextExpressionAssemble("Param/Expression/D2541D45"), StringToText(""), "");
     libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\zergling_emissive.dds", PlayerGroupAll());
     libNtve_gf_SetDialogItemImageType2(DialogControlLastCreated(), true, PlayerGroupAll());
     libNtve_gf_SetDialogItemImage2(DialogControlLastCreated(), "Assets\\Textures\\ui_battlenet_glues_pageassets_graphiclistitem_textbackground_selected.dds", PlayerGroupAll());
     libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeNormal, PlayerGroupAll());
     libNtve_gf_SetDialogItemImageType2(DialogControlLastCreated(), true, PlayerGroupAll());
-    libNtve_gf_SetDialogItemEditorValue(DialogControlLastCreated(),"Marine", PlayerGroupActive());
-    allSkinButtons[hori].button = DialogControlLastCreated();
+    libNtve_gf_SetDialogItemEditorValue(DialogControlLastCreated(), IntToString(currentSkinMenuButtonID), PlayerGroupActive());
+    allSkinMenuButtons[currentSkinMenuButtonID].button = DialogControlLastCreated();
     DialogControlFadeTransparency(DialogControlLastCreated(), PlayerGroupAll(), 0.0, 75.0);
+    
+    
 }
 
+int currentButtonID = 0;
+void createSkinButton(int horizontalOffset, int verticalOffset){
+    string skinName = allSkinButtons[currentButtonID].skinName;
+    string buttonPortrait = allSkinButtons[currentButtonID].image;
+
+    libNtve_gf_CreateDialogItemImage(DialogLastCreated(), 84, 84, c_anchorTop, horizontalOffset, verticalOffset, StringToText(""), "Assets\\Textures\\ui_techtree_iconframe_protoss.dds", c_triggerImageTypeNormal, true, Color(92.16, 79.61, 79.61), c_triggerBlendModeNormal);
+    libNtve_gf_SetDialogItemTintColor(DialogControlLastCreated(), Color(100.00, 50.20, 0.00), PlayerGroupAll());
+    libNtve_gf_SetDialogItemImage2(DialogControlLastCreated(), "Assets\\Textures\\ui_techtree_iconframe_protoss.dds", PlayerGroupAll());
+    allSkinButtons[currentButtonID].border = DialogControlLastCreated();
+
+    libNtve_gf_CreateDialogItemImage(DialogLastCreated(), 76, 76, c_anchorTop, ((horizontalOffset) + 2), ((verticalOffset) + 2), StringToText(""), buttonPortrait, c_triggerImageTypeNormal, true, Color(100,100,100), c_triggerBlendModeNormal);
+    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeNormal, PlayerGroupAll());
+    allSkinButtons[currentButtonID].portrait = DialogControlLastCreated();
+
+    TextExpressionSetToken("Param/Expression/D2541D45", "A", StringToText(skinName));
+    libNtve_gf_CreateDialogItemButton(DialogLastCreated(), 74, 74, c_anchorTop, ((horizontalOffset) + 2), ((verticalOffset) + 2), TextExpressionAssemble("Param/Expression/D2541D45"), StringToText(""), "");
+    libNtve_gf_SetDialogItemImage(DialogControlLastCreated(), "Assets\\Textures\\zergling_emissive.dds", PlayerGroupAll());
+    libNtve_gf_SetDialogItemImageType2(DialogControlLastCreated(), true, PlayerGroupAll());
+    libNtve_gf_SetDialogItemImage2(DialogControlLastCreated(), "Assets\\Textures\\ui_battlenet_glues_pageassets_graphiclistitem_textbackground_selected.dds", PlayerGroupAll());
+    libNtve_gf_SetDialogItemImageType(DialogControlLastCreated(), c_triggerImageTypeNormal, PlayerGroupAll());
+    libNtve_gf_SetDialogItemImageType2(DialogControlLastCreated(), true, PlayerGroupAll());
+    libNtve_gf_SetDialogItemEditorValue(DialogControlLastCreated(), IntToString(currentButtonID), PlayerGroupActive());
+    allSkinButtons[currentButtonID].button = DialogControlLastCreated();
+    DialogControlFadeTransparency(DialogControlLastCreated(), PlayerGroupAll(), 0.0, 75.0);
+    currentButtonID += 1;
+}
+
+void createSkinUIOfTypeUnit(int unitIndex){   
+    int currentRow = 0;
+    int currentButton;
+    string rowType;
+    string unitType;
+    
+    int verticalOffsetBetweenButton = 86;
+    int verticalAdjustOffset = 200;
+    int verticalOffset;
+  
+    int horizontalOffsetFromNumberOfButtons;
+    int horizontalOffsetBetweenButton = 80;
+    int horizontalAdjustOffSet = 75;
+    int horizontalOffset;
+
+    const int numberOfRows = 4;
+    int[numberOfRows] NumberOfButtonsInRow;
+    NumberOfButtonsInRow[0] = buttonsPerRow.wins[unitIndex];
+    NumberOfButtonsInRow[1] = buttonsPerRow.kills[unitIndex];
+    NumberOfButtonsInRow[2] = buttonsPerRow.winPercent[unitIndex];
+    NumberOfButtonsInRow[3] = buttonsPerRow.prize[unitIndex];
+
+
+    UIDisplayMessage(PlayerGroupActive(), c_messageAreaDebug,  IntToText( NumberOfButtonsInRow[0]));
+    UIDisplayMessage(PlayerGroupActive(), c_messageAreaDebug,  IntToText( NumberOfButtonsInRow[1]));
+    while (currentRow < numberOfRows){
+        
+        UIDisplayMessage(PlayerGroupActive(), c_messageAreaChat, (StringToText("Row ")+ IntToText(currentRow)));
+        if(NumberOfButtonsInRow[currentRow] != 0){
+            while(currentButton < NumberOfButtonsInRow[currentRow]){
+                currentButton += 1;
+                UIDisplayMessage(PlayerGroupActive(), c_messageAreaChat, (StringToText("Button ")+ IntToText(currentButton)));
+                
+                horizontalOffsetFromNumberOfButtons = horizontalOffsetBetweenButton * NumberOfButtonsInRow[currentRow] / 2;   
+                horizontalOffset = currentButton * horizontalOffsetBetweenButton;
+                horizontalOffset += horizontalAdjustOffSet - horizontalOffsetFromNumberOfButtons;
+    
+                verticalOffset = currentRow * verticalOffsetBetweenButton;
+                verticalOffset += verticalAdjustOffset;
+                
+                createSkinButton(horizontalOffset, verticalOffset);
+                
+            }
+        }
+        
+        currentRow += 1;
+        currentButton = 0;
+        
+    }
+    
+}
+
+
+
+void AddDataSkin(string unitName, string skinName, string requirementType, string requirement, string buttonPortrait){ 
+    allSkinButtons[buttonID].skinID = buttonID;
+    allSkinButtons[buttonID].unitName = unitName;
+    allSkinButtons[buttonID].skinName = skinName;
+    allSkinButtons[buttonID].requirementType = requirementType;
+    allSkinButtons[buttonID].requirement = requirement;
+    allSkinButtons[buttonID].image = buttonPortrait;
+    buttonID += 1;
+
+  
+}
+
+
+void SetUnitNamesAndRequirements(){
+    
+    buttonsPerRow.unitName[0] = "Marine";
+    buttonsPerRow.unitName[1] = "Medic";
+    buttonsPerRow.unitName[2] = "Marauder";
+    buttonsPerRow.unitName[3] = "SCV";
+    buttonsPerRow.unitName[4] = "Hellion";
+    buttonsPerRow.unitName[5] = "Vulture";
+    buttonsPerRow.unitName[6] = "Goliath";
+    buttonsPerRow.unitName[7] = "Tank";
+    buttonsPerRow.unitName[8] = "Hercules";
+    buttonsPerRow.unitName[9] = "Viking";
+    buttonsPerRow.unitName[10] = "ScienceVessel";
+    buttonsPerRow.unitName[11] = "Banshee";
+    buttonsPerRow.unitName[12] = "Battlecruiser";
+    buttonsPerRow.unitName[13] = "Barracks";
+    buttonsPerRow.unitName[14] = "Starport";
+
+    presetRequirementType[0] = "wins";
+    presetRequirementType[1] = "kills";
+    presetRequirementType[2] = "winPercent";
+    presetRequirementType[3] = "prize";
+}
+
+
+
 void AddSkin(){
+
+    
     //gv_images[1][4][4] = "Assets\\Textures\\btn-unit-collection-marauder-covertops.dds";
    // gv_tooltipName[1][4][4] = "Marauder";
   //  gv_requirements[1][4][4] = "900000";
@@ -113,15 +329,71 @@ void AddSkin(){
     unit marine;
     point thispoint = Point(30,25);
     string actorMessage;
+    int addedHorizontalOffset;
+    int addedVerticalOffset;
     UnitCreate(1, "Marine", c_unitCreateIgnorePlacement,1, thispoint, libNtve_gf_RandomAngle());
     marine = UnitLastCreated();
     actorMessage = libNtve_gf_ModelSwap("MarineJunker",0);
     libNtve_gf_SendActorMessageToUnit(marine, actorMessage);
 
     UIDisplayMessage(PlayerGroupActive(),c_messageAreaChat,StringToText("Messages"));
+    CreateSkinMenuDialog();
+    
+
+    addedHorizontalOffset = 50;
+    addedVerticalOffset = 50;
+    
+    CreateSkinMenuButton(1,1,aUnit[0].image,addedHorizontalOffset,addedVerticalOffset);
+    CreateSkinMenuButton(2,1,aUnit[1].image,addedHorizontalOffset,addedVerticalOffset);
+    CreateSkinMenuButton(3,1,aUnit[2].image,addedHorizontalOffset,addedVerticalOffset);
+    CreateSkinMenuButton(4,1,aUnit[3].image,addedHorizontalOffset,addedVerticalOffset);
+    CreateSkinMenuButton(5,1,aUnit[4].image,addedHorizontalOffset,addedVerticalOffset);
+    CreateSkinMenuButton(1,2,aUnit[5].image,addedHorizontalOffset,addedVerticalOffset);
+    CreateSkinMenuButton(2,2,aUnit[6].image,addedHorizontalOffset,addedVerticalOffset);
+    CreateSkinMenuButton(3,2,aUnit[7].image,addedHorizontalOffset,addedVerticalOffset);
+    CreateSkinMenuButton(4,2,aUnit[8].image,addedHorizontalOffset,addedVerticalOffset);
+    CreateSkinMenuButton(5,2,aUnit[9].image,addedHorizontalOffset,addedVerticalOffset);
+    CreateSkinMenuButton(1,3,aUnit[10].image,addedHorizontalOffset,addedVerticalOffset);
+    CreateSkinMenuButton(2,3,aUnit[11].image,addedHorizontalOffset,addedVerticalOffset);
+    CreateSkinMenuButton(3,3,aUnit[12].image,addedHorizontalOffset,addedVerticalOffset);
+    CreateSkinMenuButton(4,3,aUnit[13].image, addedHorizontalOffset ,addedVerticalOffset);
+    CreateSkinMenuButton(5,3,aUnit[14].image,addedHorizontalOffset,addedVerticalOffset);
+    
+
+
     CreateDialog();
-    CreateSkinButtons("","Assets\\Textures\\btn-unit-terran-spectre.dds",1,"Marine");
-    CreateSkinButtons("","Assets\\Textures\\btn-unit-collection-marauder-covertops.dds",2,"Marauder");
+    
+    //Create Skin
+    //string unitName, string skinName, string requirementType, string requirement, string buttonPortrait
+    
+    AddDataSkin("Marine","Marine","wins","200","Assets\\Textures\\btn-unit-terran-marine-umojan.dds");
+    AddDataSkin("Marine","MarineJunker","wins","500","Assets\\Textures\\btn-unit-collection-marine-junker.dds");
+    AddDataSkin("Marine","MarineInfested","wins","200","Assets\\Textures\\btn-unit-zerg-infestedmarine.dds");
+    AddDataSkin("Marine","Marine","wins","200","Assets\\Textures\\btn-unit-terran-taurenspacemarine.dds");
+    AddDataSkin("Marine","Marine_Merc","kills","200","Assets\\Textures\\btn-unit-terran-marinemercenary.dds");
+    AddDataSkin("Marine","BlackOpsMarine","kills","200","Assets\\Textures\\btn-unit-terran-marineblackops.dds");
+    AddDataSkin("Marine","Shadow_MarineEX2","kills","200","Assets\\Textures\\btn-unit-terran-spectre.dds");
+    AddDataSkin("Marine","TaurenSpaceMarine","winPercent","200","Assets\\Textures\\btn-unit-terran-goliath.dds");
+    AddDataSkin("Marine","Marine","winPercent","200","Assets\\Textures\\btn-unit-terran-ghost.dds");
+    AddDataSkin("Marine","Marine","winPercent","200","Assets\\Textures\\btn-unit-terran-spectre.dds");
+    AddDataSkin("Marine","Marine","winPercent","200","Assets\\Textures\\btn-unit-terran-spectre.dds");
+    AddDataSkin("Marine","Marine","winPercent","200","Assets\\Textures\\btn-unit-terran-marine.dds");
+    AddDataSkin("Marine","Marine","prize","200","Assets\\Textures\\btn-unit-terran-marineblackops.dds");
+    AddDataSkin("Marine","Marine","prize","200","Assets\\Textures\\btn-unit-terran-spectre.dds");
+   
+
+    
+    
+
+    SetUnitNamesAndRequirements();
+    CalculateButtonsInAllRows();
+    createSkinUIOfTypeUnit(0);
+
+
+    
+    //CreateSkinButtons("","Assets\\Textures\\btn-unit-collection-marauder-covertops.dds",2,"Marauder");
+
+   
     
 
 
