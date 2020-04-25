@@ -19,6 +19,8 @@ struct PlayerSkins{
     Skin scienceVessel;
     Skin banshee;
     Skin battleCruiser;    
+    Skin barracks;
+    Skin starport;
 };
 
 trigger gt_Skins;

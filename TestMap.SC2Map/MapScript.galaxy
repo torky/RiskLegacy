@@ -18,6 +18,7 @@ void InitLibs () {
 // Trigger Variables
 //--------------------------------------------------------------------------------------------------
 trigger gt_MeleeInitialization;
+trigger gt_DialogItem;
 
 //--------------------------------------------------------------------------------------------------
 // Trigger: Melee Initialization
@@ -56,10 +57,32 @@ void gt_MeleeInitialization_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
+// Trigger: DialogItem
+//--------------------------------------------------------------------------------------------------
+bool gt_DialogItem_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((EventDialogControl() == c_invalidDialogControlId))) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_DialogItem_Init () {
+    gt_DialogItem = TriggerCreate("gt_DialogItem_Func");
+    TriggerAddEventDialogControl(gt_DialogItem, c_playerAny, c_invalidDialogControlId, c_triggerControlEventTypeClick);
+}
+
+//--------------------------------------------------------------------------------------------------
 // Trigger Initialization
 //--------------------------------------------------------------------------------------------------
 void InitTriggers () {
     gt_MeleeInitialization_Init();
+    gt_DialogItem_Init();
 }
 
 //--------------------------------------------------------------------------------------------------

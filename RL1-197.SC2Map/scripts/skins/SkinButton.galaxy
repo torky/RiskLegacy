@@ -1,0 +1,46 @@
+//--------------------------------------------------------------------------------------------------
+
+//--------------------------------------------------------------------------------------------------
+// Trigger Variables
+//--------------------------------------------------------------------------------------------------
+
+trigger gt_DialogItem;
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Melee Initialization
+//--------------------------------------------------------------------------------------------------
+
+
+//--------------------------------------------------------------------------------------------------
+
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: DialogItem
+//--------------------------------------------------------------------------------------------------
+bool gt_DialogItem_Func (bool testConds, bool runActions) {
+    int usedDialog;
+    string usedProperty;
+    int triggeringPlayer;
+    string property;
+    int properties;
+    int dialogItem;
+    // Automatic Variable Declarations
+    dialogItem = EventDialogControl();
+    
+  
+    usedProperty  =  DialogControlGetPropertyAsString(dialogItem,c_triggerControlPropertyEditText,1); 
+    triggeringPlayer = EventPlayer();
+    UIDisplayMessage(PlayerGroupActive(), c_messageAreaChat, StringToText(usedProperty));
+    
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_DialogItem_Init () {
+    gt_DialogItem = TriggerCreate("gt_DialogItem_Func");
+    TriggerAddEventDialogControl(gt_DialogItem, c_playerAny, c_invalidDialogControlId, c_triggerControlEventTypeClick);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger Initialization
+//--------------------------------------------------------------------------------------------------

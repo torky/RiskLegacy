@@ -17,15 +17,17 @@ include "scripts/players/Players"
 //Level 2
 include "scripts/banks/Banks"
 include "scripts/countries/Country"
-include "scripts/ui/UI"
+
 
 //Level 3 
 include "scripts/countries/Conscripts"
+include "scripts/ui/UI"
+include "scripts/skins/SkinCreateUI"
+include "scripts/skins/SkinButton"
+
 
 //Level 4
 include "scripts/countries/PredefineCountries"
-
-//Level 4.5 Should run after Level 3, but Level 3 isn't required for Level 3.5 to compile
 include "scripts/bases/Defender"
 include "scripts/bases/DistributeTerritories" 
 include "scripts/income/Income"
@@ -83,7 +85,8 @@ bool gt_GameModeSelect_Func (bool testConds, bool runActions) {
     DistributeTerritories(players);
     UpdateCountries();
     UpdatePlayerSpawnControlGroups();
-
+    AddSkin();
+    
     SetupUI();
     CreateButtons();
     
@@ -133,6 +136,7 @@ void InitTriggers () {
     gt_SpawnConscripts_Init();
     gt_ConscriptSpawned_Init();
     gt_Refresh_Init();
+    gt_DialogItem_Init();
 }
 
 void InitMap () {

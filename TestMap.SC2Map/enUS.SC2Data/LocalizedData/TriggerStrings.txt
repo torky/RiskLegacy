@@ -1,1 +1,2 @@
-﻿Trigger/Name/E5108E48=Melee Initialization
+﻿Trigger/Name/BD71BCEF=DialogItem
+Trigger/Name/E5108E48=Melee Initialization
