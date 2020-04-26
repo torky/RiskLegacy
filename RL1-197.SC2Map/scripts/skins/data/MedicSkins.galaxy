@@ -1,0 +1,20 @@
+Skin DefaultMedic;
+Skin EliteMedic;
+Skin KillsquadMedic;
+
+void InitializeMedicSkins(){
+    DefaultMedic.image = "image";
+    DefaultMedic.requirement = "None";
+    DefaultMedic.tooltipName = "ToolTip";
+    DefaultMedic.model = "Medic";
+
+    EliteMedic.image = "image";
+    EliteMedic.requirement = "None";
+    EliteMedic.tooltipName = "ToolTip";
+    EliteMedic.model = "Elite Medic";
+    
+    KillsquadMedic.image = "image";
+    KillsquadMedic.requirement = "None";
+    KillsquadMedic.tooltipName = "ToolTip";
+    KillsquadMedic.model = "Killsquad Medic";
+}

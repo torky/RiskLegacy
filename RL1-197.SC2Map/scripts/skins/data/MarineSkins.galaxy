@@ -1,58 +1,68 @@
-const string c_marineSkinUpgrade = "DefaultMarineSkin";
-
 Skin DefaultMarine;
 Skin InfestedMarine;
-Skin Warpig;
+Skin WarpigMarine;
 Skin UmojanMarine;
 Skin TaurenMarine;
 Skin MurlockMarine;
-Skin Spectre;
+Skin SpectreMarine;
 Skin BlackOpsMarine;
 Skin JunkerMarine;
+Skin NovaMarine;
+Skin GhostMarine;
 
 void InitializeMarineSkins(){
     DefaultMarine.image = "image";
     DefaultMarine.requirement = "None";
     DefaultMarine.tooltipName = "ToolTip";
-    DefaultMarine.upgrade = "DefaultMarineSkin";
+    DefaultMarine.model = "Marine";
 
     InfestedMarine.image = "image";
     InfestedMarine.requirement = "None";
     InfestedMarine.tooltipName = "ToolTip";
-    InfestedMarine.upgrade = "InfestorMarineSkin";
+    InfestedMarine.model = "InfestedTerran";
     
-    Warpig.image = "image";
-    Warpig.requirement = "None";
-    Warpig.tooltipName = "ToolTip";
-    Warpig.upgrade = "WarPigMarineSkin";
+    WarpigMarine.image = "image";
+    WarpigMarine.requirement = "None";
+    WarpigMarine.tooltipName = "ToolTip";
+    WarpigMarine.model = "WarPig";
 
     UmojanMarine.image = "image";
     UmojanMarine.requirement = "None";
     UmojanMarine.tooltipName = "ToolTip";
-    UmojanMarine.upgrade = "UmojanMarineSkin";
+    UmojanMarine.model = "Umojan Marine";
 
     TaurenMarine.image = "image";
     TaurenMarine.requirement = "None";
     TaurenMarine.tooltipName = "ToolTip";
-    TaurenMarine.upgrade = "TaurenMarineSkin";
+    TaurenMarine.model = "TaurenSpaceMarine";
 
     MurlockMarine.image = "image";
     MurlockMarine.requirement = "None";
     MurlockMarine.tooltipName = "ToolTip";
-    MurlockMarine.upgrade = "MurlocMarineSkin";
+    MurlockMarine.model = "MurlocMarine";
 
-    Spectre.image = "image";
-    Spectre.requirement = "None";
-    Spectre.tooltipName = "ToolTip";
-    Spectre.upgrade = "SpectreMarineSkin";
+    SpectreMarine.image = "image";
+    SpectreMarine.requirement = "None";
+    SpectreMarine.tooltipName = "ToolTip";
+    SpectreMarine.model = "Spectre";
 
     BlackOpsMarine.image = "image";
     BlackOpsMarine.requirement = "None";
     BlackOpsMarine.tooltipName = "ToolTip";
-    BlackOpsMarine.upgrade = "BlackOpsMarineSkin";
+    BlackOpsMarine.model = "BlackOps Marine";
 
     JunkerMarine.image = "image";
     JunkerMarine.requirement = "None";
     JunkerMarine.tooltipName = "ToolTip";
-    JunkerMarine.upgrade = "JunkerMarineSkin";
+    JunkerMarine.model = "Marine Junker";
+
+    NovaMarine.image = "image";
+    NovaMarine.requirement = "None";
+    NovaMarine.tooltipName = "ToolTip";
+    NovaMarine.model = "Nova";
+
+    GhostMarine.image = "image";
+    GhostMarine.requirement = "None";
+    GhostMarine.tooltipName = "ToolTip";
+    GhostMarine.model = "Ghost";
 }

@@ -1,0 +1,57 @@
+Skin DefaultMarauder;
+Skin DominionKillTeamMarauder;
+Skin HammerSecurityMarauder;
+Skin DeluxeMarauder;
+Skin BlackopsMarauder;
+Skin CovertopsMarauder;
+Skin SwannMarauder;
+Skin JunkerMarauder;
+Skin UmojanMarauder;
+
+
+void InitializeMarauderSkins(){
+    DefaultMarauder.image = "image";
+    DefaultMarauder.requirement = "None";
+    DefaultMarauder.tooltipName = "ToolTip";
+    DefaultMarauder.model = "Marauder";
+
+    DominionKillTeamMarauder.image = "image";
+    DominionKillTeamMarauder.requirement = "None";
+    DominionKillTeamMarauder.tooltipName = "ToolTip";
+    DominionKillTeamMarauder.model = "DominionKillTeam";
+    
+    HammerSecurityMarauder.image = "image";
+    HammerSecurityMarauder.requirement = "None";
+    HammerSecurityMarauder.tooltipName = "ToolTip";
+    HammerSecurityMarauder.model = "HammerSecurity";
+
+    DeluxeMarauder.image = "image";
+    DeluxeMarauder.requirement = "None";
+    DeluxeMarauder.tooltipName = "ToolTip";
+    DeluxeMarauder.model = "Deluxe Marauder";
+
+    BlackopsMarauder.image = "image";
+    BlackopsMarauder.requirement = "None";
+    BlackopsMarauder.tooltipName = "ToolTip";
+    BlackopsMarauder.model = "Blackops Marauder";
+
+    CovertopsMarauder.image = "image";
+    CovertopsMarauder.requirement = "None";
+    CovertopsMarauder.tooltipName = "ToolTip";
+    CovertopsMarauder.model = "Covertops Marauder";
+
+    SwannMarauder.image = "image";
+    SwannMarauder.requirement = "None";
+    SwannMarauder.tooltipName = "ToolTip";
+    SwannMarauder.model = "Swann Marauder";
+
+    JunkerMarauder.image = "image";
+    JunkerMarauder.requirement = "None";
+    JunkerMarauder.tooltipName = "ToolTip";
+    JunkerMarauder.model = "Junker Marauder";
+
+    UmojanMarauder.image = "image";
+    UmojanMarauder.requirement = "None";
+    UmojanMarauder.tooltipName = "ToolTip";
+    UmojanMarauder.model = "Umojan Marauder";
+}

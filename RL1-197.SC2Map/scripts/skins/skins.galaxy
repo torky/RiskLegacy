@@ -2,7 +2,7 @@ struct Skin{
     string image;
     string tooltipName;
     string requirement;
-    string upgrade;
+    string model;
 };
 
 struct PlayerSkins{
