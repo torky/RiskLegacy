@@ -6,6 +6,8 @@ struct Picked{
 
 typedef Picked[16] PlayerArray;
 
+void ISetBaseOwnership(int baseID, int owner);
+
 void GeneratePickedPlayers(playergroup players, int count, arrayref<PlayerArray> pickedPlayers){
     int i;
     int p;
@@ -15,70 +17,66 @@ void GeneratePickedPlayers(playergroup players, int count, arrayref<PlayerArray>
     }
 }
 
-void DistributeTerritories(playergroup players) {
-    int i;
-    int count;
-    int r;
-    int p;
-    int j;
-    int c;
-    int bi;
-
-    int prevR = -1;
-    int prevI = -1;
-
-    PlayerArray pickedPlayers;
-
-    count = PlayerGroupCount(players);
-    j = -1;
-    c = 0;
-    i = 0;
-    while(i < totalCountries){
-        if(j == -1){
-            //Reset # of random players, and picked players
-            j = count-1;
-            GeneratePickedPlayers(players, count, pickedPlayers);
-        }
-        bi = allCountries[i].baseIDs[c];
-
-        if(bi == 0){
-            c = 0;
-            i+=1;
-            if(i == totalCountries) { break; }
-            //Skip 1 income countries
-            while(UnitGroupCount(allCountries[i].structures, c_unitCountAll) == 1){ 
-                i+=1;
-                if(i == totalCountries) { break; }
-            }
-            bi = allCountries[i].baseIDs[c];
-        }
-
-        //Pick next random player
-        r = RandomInt(0, j);
-        while(pickedPlayers[r].picked) {
-            r+=1;
-        }
-
-        //Insure picked player is not the same player previously picked
-        while(prevI == i && prevR == r && count != 1){
-            r = RandomInt(0, j);
-            while(pickedPlayers[r].picked) {
-                r+=1;
-            }
-        }
-
-        //Mark picked player as picked
-        pickedPlayers[r].picked = true;
-        p = pickedPlayers[r].value;
-        
-        SetBaseOwnership(bi, p);
-        prevR = r;
-        prevI = i;
-        c+=1;
-        j-=1;
+int nextRandomPick(int pickablePlayers, arrayref<PlayerArray> pickedPlayers, int previousPick, bool dontMatchPrevious, int totalPicks){
+    int pickableIndexMax = pickablePlayers - 1;
+    int randomIndex = RandomInt(0, pickableIndexMax);
+    int[2] randomPick;
+    while(pickedPlayers[randomIndex].picked) {
+        randomIndex+=1;
     }
-    
+
+    while(dontMatchPrevious && randomIndex == previousPick && totalPicks != 1){
+        randomIndex = RandomInt(0, pickableIndexMax);
+        while(pickedPlayers[randomIndex].picked) {
+            randomIndex+=1;
+        }
+    }
+
+    pickedPlayers[randomIndex].picked = true;
+    return randomIndex;
 }
+
+void DistributeTerritories(playergroup players, funcref<ISetBaseOwnership> SetBaseOwnerShipFunc) {
+    int countryID;
+    int baseInCountry;
+    structref<Country> country;
+    int countryStructures;
+    int baseID;
+    PlayerArray picked;
+    int totalPicks;
+    int picksRemaining; 
+    int nextPick;
+    int nextPlayer;
+    bool dontMatchPrevious;
+    int previousPick = -1; //Defaulted to -1 so first run will be successful
+    int previousCountryID = -1; //Defaulted to -1 so first run will be successful
+
+    picksRemaining = 0;
+    totalPicks = PlayerGroupCount(players);
+    for(countryID = 0; countryID < totalCountries; countryID += 1){
+
+        country = allCountries[countryID];
+        countryStructures = UnitGroupCount(country.structures, c_unitCountAll);
+        if(countryStructures == 1) { continue; }
+        for(baseInCountry = 0; baseInCountry < countryStructures; baseInCountry += 1){
+            baseID = country.baseIDs[baseInCountry];
+            if(picksRemaining <= 0){
+                picksRemaining = totalPicks;
+                GeneratePickedPlayers(players, totalPicks, picked);
+            }
+
+            dontMatchPrevious = countryID == previousCountryID;
+            nextPick = nextRandomPick(picksRemaining, picked, previousPick, dontMatchPrevious, totalPicks);
+            nextPlayer = picked[nextPick].value;
+            
+            SetBaseOwnerShipFunc(baseID, nextPlayer);
+
+            previousPick = nextPick;
+            previousCountryID = countryID;
+            picksRemaining-=1;
+        }
+    }
+}  
 
 
 

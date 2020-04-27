@@ -70,7 +70,6 @@ bool SwapDefenderAbility (bool testConds, bool runActions) {
     SwapDefender(EventUnitTargetUnit(), baseID);
     if ((currentOwner != newOwner)) {
         SetBaseOwnership(baseID, newOwner);
-        //gf_CountryConquestSequence(newOwner, currentOwner, gf_getCustomUnitValue(EventUnit(), 10));
         //if ((gv_player[newOwner].lv_showHideNationality == true)) {
         //    gf_ShowHideIndvFlag(true, baseID);
         //}

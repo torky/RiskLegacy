@@ -82,7 +82,7 @@ bool gt_GameModeSelect_Func (bool testConds, bool runActions) {
     InitializeBases();
 
     players = PlayerGroupActive();
-    DistributeTerritories(players);
+    DistributeTerritories(players, SetBaseOwnership);
     UpdateCountries();
     UpdatePlayerSpawnControlGroups();
     AddSkin();
