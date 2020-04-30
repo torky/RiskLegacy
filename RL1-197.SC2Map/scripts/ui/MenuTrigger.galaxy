@@ -1,0 +1,13 @@
+trigger gt_Menu;
+
+bool Menu(bool testConds, bool runActions){
+    UISetCustomMenuItemVisible(PlayerGroupAll(), c_gameMenuDialogOptionsButton, true);
+    UISetCustomMenuItemVisible(PlayerGroupAll(), c_gameMenuDialogQuitButton, true);
+    UISetCustomMenuItemVisible(PlayerGroupAll(), c_gameMenuDialogReturnToGameplayButton, true);
+    UIShowCustomMenu(PlayerGroupSingle(EventPlayer()), StringToText("Risk Legacy"));
+    return true;
+}
+
+void gt_Menu_Init(){
+    gt_Menu = TriggerCreate("Menu");
+}

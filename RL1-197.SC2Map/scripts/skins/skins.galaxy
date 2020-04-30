@@ -1,7 +1,4 @@
 struct Skin{
-    string image;
-    string tooltipName;
-    string requirement;
     string model;
 };
 
@@ -35,6 +32,9 @@ bool Skins(bool testConds, bool runActions){
     return true;
 }
 
+void SetMarineSkin(structref<PlayerSkins> playerSkins, structref<Skin> skin){
+    playerSkins.marine.model = skin.model;
+}
 
 void gt_Skins_Init(){
     gt_Skins = TriggerCreate("Skins");

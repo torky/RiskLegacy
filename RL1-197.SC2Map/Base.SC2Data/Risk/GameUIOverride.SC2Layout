@@ -41,7 +41,7 @@
       </Frame>
     </Frame>
     
-    <!-- Chanes left anchor from background 3 to 1-->
+    <!-- Changes left anchor from background 3 to 1-->
     
     <Frame type="ResourceFrame" name="GameUI/UIContainer/FullscreenUpperContainer/ResourcePanel/ResourceFrame" file="GameUI">
       <Frame type="Image" name="SupplyBackground" template="ResourcePanel/ResourcePanelIconBackgroundTemplate">

@@ -57,7 +57,7 @@ void CreateButtons () {
     DialogCreate(707, 500, c_anchorTopLeft, 100, 25, true);
     DialogSetFullscreen(DialogLastCreated(), true);
 
-    InitializeBasicButton(buttons.menu, "Menu", 121, 86, c_anchorBottomRight, 24, 26, null);
+    InitializeBasicButton(buttons.menu, "Menu", 121, 86, c_anchorBottomRight, 24, 26, gt_Menu);
     SetDefaultButtonBorderImage(buttons.menu.screenButtonID);
     InitializeBasicButton(buttons.profile, "Profile", 136, 86, c_anchorBottomLeft, 372, 117, null);
     SetDefaultButtonBorderImage(buttons.profile.screenButtonID);

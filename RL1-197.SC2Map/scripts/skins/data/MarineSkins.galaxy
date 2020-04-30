@@ -11,58 +11,25 @@ Skin NovaMarine;
 Skin GhostMarine;
 
 void InitializeMarineSkins(){
-    DefaultMarine.image = "image";
-    DefaultMarine.requirement = "None";
-    DefaultMarine.tooltipName = "ToolTip";
     DefaultMarine.model = "Marine";
 
-    InfestedMarine.image = "image";
-    InfestedMarine.requirement = "None";
-    InfestedMarine.tooltipName = "ToolTip";
     InfestedMarine.model = "InfestedTerran";
     
-    WarpigMarine.image = "image";
-    WarpigMarine.requirement = "None";
-    WarpigMarine.tooltipName = "ToolTip";
     WarpigMarine.model = "WarPig";
 
-    UmojanMarine.image = "image";
-    UmojanMarine.requirement = "None";
-    UmojanMarine.tooltipName = "ToolTip";
     UmojanMarine.model = "Umojan Marine";
 
-    TaurenMarine.image = "image";
-    TaurenMarine.requirement = "None";
-    TaurenMarine.tooltipName = "ToolTip";
     TaurenMarine.model = "TaurenSpaceMarine";
 
-    MurlockMarine.image = "image";
-    MurlockMarine.requirement = "None";
-    MurlockMarine.tooltipName = "ToolTip";
     MurlockMarine.model = "MurlocMarine";
 
-    SpectreMarine.image = "image";
-    SpectreMarine.requirement = "None";
-    SpectreMarine.tooltipName = "ToolTip";
     SpectreMarine.model = "Spectre";
 
-    BlackOpsMarine.image = "image";
-    BlackOpsMarine.requirement = "None";
-    BlackOpsMarine.tooltipName = "ToolTip";
     BlackOpsMarine.model = "BlackOps Marine";
 
-    JunkerMarine.image = "image";
-    JunkerMarine.requirement = "None";
-    JunkerMarine.tooltipName = "ToolTip";
     JunkerMarine.model = "Marine Junker";
 
-    NovaMarine.image = "image";
-    NovaMarine.requirement = "None";
-    NovaMarine.tooltipName = "ToolTip";
     NovaMarine.model = "Nova";
 
-    GhostMarine.image = "image";
-    GhostMarine.requirement = "None";
-    GhostMarine.tooltipName = "ToolTip";
     GhostMarine.model = "Ghost";
 }

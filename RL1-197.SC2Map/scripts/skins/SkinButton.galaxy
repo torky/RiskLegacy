@@ -1,22 +1,5 @@
-//--------------------------------------------------------------------------------------------------
-
-//--------------------------------------------------------------------------------------------------
-// Trigger Variables
-//--------------------------------------------------------------------------------------------------
-
 trigger gt_DialogItem;
 
-//--------------------------------------------------------------------------------------------------
-// Trigger: Melee Initialization
-//--------------------------------------------------------------------------------------------------
-
-
-//--------------------------------------------------------------------------------------------------
-
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: DialogItem
-//--------------------------------------------------------------------------------------------------
 bool gt_DialogItem_Func (bool testConds, bool runActions) {
     int usedDialog;
     string usedProperty;
@@ -39,9 +22,6 @@ bool gt_DialogItem_Func (bool testConds, bool runActions) {
     usedProperty = DialogControlGetPropertyAsString(dialogItem,c_triggerControlPropertyEditText,1); 
     dialogID = StringToInt(usedProperty);
 
-    skinName = allSkinButtons[dialogID].skinName;
-    unitName = allSkinButtons[dialogID].unitName;
-
     units = UnitGroupEmpty();
     units = UnitGroup(unitName, triggeringPlayer, RegionPlayableMap(), UnitFilter(0, 0, (1 << c_targetFilterPsionic) | (1 << c_targetFilterStructure) | (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32)) | (1 << (c_targetFilterInvulnerable - 32))), 0);
     count = UnitGroupCount(units, c_unitCountAll); 
@@ -56,12 +36,7 @@ bool gt_DialogItem_Func (bool testConds, bool runActions) {
     return true;
 }
 
-//--------------------------------------------------------------------------------------------------
 void gt_DialogItem_Init () {
     gt_DialogItem = TriggerCreate("gt_DialogItem_Func");
     TriggerAddEventDialogControl(gt_DialogItem, c_playerAny, c_invalidDialogControlId, c_triggerControlEventTypeClick);
 }
-
-//--------------------------------------------------------------------------------------------------
-// Trigger Initialization
-//--------------------------------------------------------------------------------------------------

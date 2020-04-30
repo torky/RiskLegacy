@@ -2,12 +2,13 @@
 include "TriggerLibs/NativeLib"
 
 //Level 0
+include "scripts/players/PlayerAdmins"
+include "scripts/skins/Skins"
 include "scripts/start/Start"
+include "scripts/ui/Buttons"
+include "scripts/ui/MenuTrigger"
 include "scripts/units/Units"
 include "scripts/units/UnitTrained"
-include "scripts/ui/Buttons"
-include "scripts/skins/Skins"
-include "scripts/players/PlayerAdmins"
 
 //Level 1
 include "scripts/cards/Cards"
@@ -22,7 +23,6 @@ include "scripts/countries/Country"
 //Level 3 
 include "scripts/countries/Conscripts"
 include "scripts/ui/UI"
-include "scripts/skins/SkinCreateUI"
 include "scripts/skins/SkinButton"
 
 
@@ -85,7 +85,6 @@ bool gt_GameModeSelect_Func (bool testConds, bool runActions) {
     DistributeTerritories(players, SetBaseOwnership);
     UpdateCountries();
     UpdatePlayerSpawnControlGroups();
-    AddSkin();
     
     SetupUI();
     CreateButtons();
@@ -126,6 +125,7 @@ void gt_GameModeSelect_Init () {
 }
 
 void InitTriggers () {
+    gt_Menu_Init();
     gt_Cards_Init();
     gt_UnitTrained_Init();
     gt_SetupPlayers_Init();
@@ -136,7 +136,6 @@ void InitTriggers () {
     gt_SpawnConscripts_Init();
     gt_ConscriptSpawned_Init();
     gt_Refresh_Init();
-    gt_DialogItem_Init();
 }
 
 void InitMap () {
