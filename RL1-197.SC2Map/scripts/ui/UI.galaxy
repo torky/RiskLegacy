@@ -66,12 +66,6 @@ void CreateButtons () {
     InitializeBasicButton(buttons.skins, "Skins", 136, 86, c_anchorBottomLeft, 372, 208, null);
     SetDefaultButtonBorderImage(buttons.skins.screenButtonID);
     InitializeCardsButton();
-    InitializeBasicButton(buttons.kills, "Kills", 133, 90, c_anchorBottomLeft, 0, 372, null);
-    SetDefaultButtonBorderImage(buttons.kills.screenButtonID);
-    InitializeBasicButton(buttons.wins, "Wins", 133, 90, c_anchorBottomLeft, 133, 372, null);
-    SetDefaultButtonBorderImage(buttons.wins.screenButtonID);
-    InitializeBasicButton(buttons.winRate, "Win Rate", 133, 90, c_anchorBottomLeft, 266, 372, null);
-    SetDefaultButtonBorderImage(buttons.winRate.screenButtonID);
     InitializeSelectUnitButtons();
 
     //gf_InfoPanelLog();
