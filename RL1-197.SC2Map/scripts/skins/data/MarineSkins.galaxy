@@ -12,10 +12,16 @@ Skin GhostMarine;
 
 void InitializeMarineSkins(){
     DefaultMarine.model = "Marine";
+    DefaultMarine.requirement.type = c_requirementKills;
+    DefaultMarine.requirement.value = "0";
 
     InfestedMarine.model = "InfestedTerran";
-    
+    InfestedMarine.requirement.type = c_requirementKills;
+    InfestedMarine.requirement.value = "1";
+
     WarpigMarine.model = "WarPig";
+    WarpigMarine.requirement.type = c_requirementWins;
+    WarpigMarine.requirement.value = "1";
 
     UmojanMarine.model = "Umojan Marine";
 

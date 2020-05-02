@@ -1,12 +1,7 @@
-
-
-void SetupUI () {
+void RemoveDefaults(){
     int player;
 
-    GameSetSpeedValue(c_gameSpeedNormal);
-    GameSetSpeedLocked(true);
     UISetFrameVisible(PlayerGroupAll(), c_syncFrameTypeSupply, false);
-    //UISetFrameVisible(PlayerGroupAll(), c_syncFrameTypeResourcePanel, false);
     UISetFrameVisible(PlayerGroupAll(), c_syncFrameTypeAllianceButton, false);
     UISetFrameVisible(PlayerGroupAll(), c_syncFrameTypeAchievementMenuButton, false);
     HelpPanelEnableTechGlossaryButton(PlayerGroupAll(), false);
@@ -14,7 +9,6 @@ void SetupUI () {
     UISetFrameVisible(PlayerGroupAll(), c_syncFrameTypeMenuBar, false);
     UISetFrameVisible(PlayerGroupAll(), c_syncFrameTypeInfoPanel, false);
     UISetFrameVisible(PlayerGroupAll(), c_syncFrameTypeTipAlertPanel, false);
-    //UISetFrameVisible(PlayerGroupAll(), c_syncFrameTypeMinimapPanel, false);
     UISetFrameVisible(PlayerGroupAll(), c_syncFrameTypeConsolePanel, false);
     UISetFrameVisible(PlayerGroupAll(), c_syncFrameTypeArmyButton, false);
     UISetFrameVisible(PlayerGroupAll(), c_syncFrameTypeIdleWorkerButton, false);
@@ -25,6 +19,13 @@ void SetupUI () {
         TechTreeUnitHelpDefault(player, false);
         PlayerOptionOverride(player, "simplecommandcard", "0");
     }
+}
+
+void SetupUI () {
+    GameSetSpeedValue(c_gameSpeedNormal);
+    GameSetSpeedLocked(true);
+    RemoveDefaults();
+    SetupSkinsUI();
 }
 
 void InitializeSelectUnitButtons(){

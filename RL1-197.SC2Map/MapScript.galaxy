@@ -9,6 +9,7 @@ include "scripts/ui/Buttons"
 include "scripts/ui/MenuTrigger"
 include "scripts/units/Units"
 include "scripts/units/UnitTrained"
+include "scripts/skins/SkinsUI"
 
 //Level 1
 include "scripts/cards/Cards"
@@ -129,6 +130,7 @@ void InitTriggers () {
     gt_Cards_Init();
     gt_UnitTrained_Init();
     gt_SetupPlayers_Init();
+    gt_Skins_Init();
     gt_SwapDefender_Init();
     gt_BaseCapture_Init();
     gt_EmptyBaseCapture_Init();

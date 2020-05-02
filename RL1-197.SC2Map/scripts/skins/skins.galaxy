@@ -1,41 +1,69 @@
-struct Skin{
-    string model;
+const string c_requirementKills = "Kills";
+const string c_requirementWins = "Wins";
+const string c_requirementPrizes = "Prizes";
+
+struct Requirement{
+    string type;
+    string value;
 };
 
-struct PlayerSkins{
-    Skin marine;
-    Skin medic;
-    Skin marauder;
-    Skin scv;
-    Skin hellion;
-    Skin vulture;
-    Skin goliath;
-    Skin tank;
-    Skin hercules;
-    Skin viking;
-    Skin scienceVessel;
-    Skin banshee;
-    Skin battleCruiser;    
-    Skin barracks;
-    Skin starport;
+struct Skin{
+    string model;
+    Requirement requirement;
 };
+
+struct SkinType{
+    string unitType;
+    Skin[15] skins;
+};
+
+const int c_marineSkinID = 1;
+const int c_medicSkinID = 2;
+const int c_marauderSkinID = 3;
+const int c_scvSkinID = 4;
+const int c_hellionSkinID = 5;
+const int c_vultureSkinID = 6;
+const int c_goliathSkinID = 7;
+const int c_tankSkinID = 8;
+const int c_herculesSkinID = 9;
+const int c_vikingSkinID = 10;
+const int c_scienceVesselSkinID = 11;
+const int c_bansheeSkinID = 12;
+const int c_battleCruiserSkinID = 13;
+const int c_barracksSkinID = 14;
+const int c_starportSkinID = 15;
+
+const int totalSkinTypes = 16;
+SkinType[16] allSkinTypes;
+typedef Skin[16] PlayerSkins;
+
+void DeclareSkinTypes(){
+    allSkinTypes[c_marineSkinID].unitType = "Marine";
+    allSkinTypes[c_medicSkinID].unitType = "Medic";
+    allSkinTypes[c_marauderSkinID].unitType = "Marauder";
+    allSkinTypes[c_scvSkinID].unitType = "SCV";
+    allSkinTypes[c_hellionSkinID].unitType = "Hellion";
+    allSkinTypes[c_vultureSkinID].unitType = "Vulture";
+    allSkinTypes[c_goliathSkinID].unitType = "Goliath";
+    allSkinTypes[c_tankSkinID].unitType = "Siege Tank";
+    allSkinTypes[c_herculesSkinID].unitType = "Hercules";
+    allSkinTypes[c_vikingSkinID].unitType = "Viking";
+    allSkinTypes[c_scienceVesselSkinID].unitType = "Science Vessel";
+    allSkinTypes[c_bansheeSkinID].unitType = "Banshee";
+    allSkinTypes[c_battleCruiserSkinID].unitType = "Battlecruiser";
+    allSkinTypes[c_barracksSkinID].unitType = "Barracks";
+    allSkinTypes[c_starportSkinID].unitType = "Starport";
+}
 
 trigger gt_Skins;
 
 bool Skins(bool testConds, bool runActions){
-    int player = 0;
-    Skin skin;
-    int upgradeLevel;
-    bool test;
-
+    DeclareSkinTypes();
 
     return true;
 }
 
-void SetMarineSkin(structref<PlayerSkins> playerSkins, structref<Skin> skin){
-    playerSkins.marine.model = skin.model;
-}
-
 void gt_Skins_Init(){
     gt_Skins = TriggerCreate("Skins");
+    TriggerAddEventMapInit(gt_Skins);
 }

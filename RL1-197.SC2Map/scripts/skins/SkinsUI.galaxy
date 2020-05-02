@@ -1,46 +1,35 @@
-
-int skinTypesUI;
-int skinOptionsUI;
+struct RequirementUI{
+    int unitPulldown;
+    int tabButton;
+    string requirementType;
+    Skin[6] skin;
+};
 
 struct SkinUI{
-    int dialogID;
-    int width;
-    int height;
-    int x;
-    int y;
-    string backgroundImage;
-    color backgroundColor;
+    RequirementUI kills;
+    RequirementUI wins;
+    RequirementUI prizes;
 };
 
 SkinUI skinUI; 
 
-void CreateSkinTypesUI(){
-
+void SetupUnitPulldown(string path, structref<RequirementUI> requirement){
+    int i;
+    requirement.unitPulldown = DialogControlHookupStandard(c_triggerControlTypePulldown, path);
+    for(i = 1; i < totalSkinTypes; i+=1){
+        DialogControlAddItem(requirement.unitPulldown, PlayerGroupActive(), StringToText(allSkinTypes[i].unitType));
+    }
+    DialogControlSelectItem(requirement.unitPulldown, PlayerGroupActive(), c_marineSkinID);
 }
 
-void CreateSkinOptionsUI(){
-
+void SetupRequirementUI(structref<RequirementUI> requirement, string pulldownPath, string tabButtonPath, string type){
+    requirement.requirementType = type;
+    SetupUnitPulldown(pulldownPath, requirement);
+    requirement.tabButton = DialogControlHookupStandard(c_triggerControlTypeButton, tabButtonPath);
 }
 
-void CreateBackground(int width, int height, int dialogID){
-    string backgroundImage = "Assets\\Textures\\ui_camapaignmenu_dialogbox_base.dds";
-    color backgroundColor = Color(100,100,100);
-    libNtve_gf_CreateDialogItemImage(
-        dialogID, width, height, 
-        c_anchorBottom, 0, 0, StringToText(""), 
-        backgroundImage, c_triggerImageTypeHorizontalBorder, true, 
-        backgroundColor, c_triggerBlendModeNormal
-    );
-}
-
-void CreateSkinsUI(){
-    skinUI.width = 400;
-    skinUI.height = 400;
-    skinUI.x = -870;
-    skinUI.y = 475;
-    skinUI.dialogID = DialogCreate(skinUI.width, skinUI.height, c_anchorBottom, skinUI.x, skinUI.y, true);
-    CreateBackground(skinUI.width, skinUI.height, skinUI.dialogID);
-
-    CreateSkinTypesUI();
-    CreateSkinOptionsUI();
+void SetupSkinsUI(){
+    SetupRequirementUI(skinUI.kills, "UIContainer/SkinsUI/KillSkinPanel/UnitSelect", "UIContainer/SkinsUI/KillSkinTab", c_requirementKills);
+    SetupRequirementUI(skinUI.kills, "UIContainer/SkinsUI/WinSkinPanel/UnitSelect", "UIContainer/SkinsUI/WinSkinTab", c_requirementKills);
+    SetupRequirementUI(skinUI.kills, "UIContainer/SkinsUI/PrizeSkinPanel/UnitSelect", "UIContainer/SkinsUI/PrizeSkinTab", c_requirementKills);
 }
