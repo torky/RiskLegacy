@@ -171,6 +171,7 @@ bool BaseCapture(bool testConds, bool runActions){
     dyingUnit = EventUnit();
     killingUnit = EventUnitDamageSourceUnit();
     baseID = GetBaseIDOfUnit(dyingUnit);
+    if(baseID < 0) { return false; }
     base = allBases[baseID];
     oldOwner = UnitGetOwner(base.structure);
 

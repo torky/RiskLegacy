@@ -19,7 +19,7 @@ include "scripts/skins/data/MarineSkins"
 //Level 2
 include "scripts/banks/Banks"
 include "scripts/countries/Country"
-include "scripts/skins/SkinsUI"
+include "scripts/skins/SkinsController"
 
 //Level 3 
 include "scripts/countries/Conscripts"
