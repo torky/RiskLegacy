@@ -2,22 +2,22 @@ const string c_requirementKills = "Kills";
 const string c_requirementWins = "Wins";
 const string c_requirementPrizes = "Prizes";
 
-struct Requirement{
-    string type;
-    string value;
-};
-
 struct Skin{
     string model;
     string buttonPath;
-    Requirement requirement;
+    string value;
 };
 
-const int totalSkinTypeSkins = 15;
+const int totalSkinsToEarn = 5;
+const int totalRequirements = 3;
+
+const int c_killRequirement = 0;
+const int c_winRequirement = 1;
+const int c_prizeRequirement = 2;
 
 struct SkinType{
     string unitType;
-    Skin[totalSkinTypeSkins] skins;
+    Skin[totalRequirements][totalSkinsToEarn] skins;
 };
 
 const int c_marineSkinID = 1;
@@ -56,6 +56,12 @@ void DeclareSkinTypes(){
     allSkinTypes[c_battleCruiserSkinID].unitType = "Battlecruiser";
     allSkinTypes[c_barracksSkinID].unitType = "Barracks";
     allSkinTypes[c_starportSkinID].unitType = "Starport";
+}
+
+void SetSkin(structref<Skin> oldSkin, structref<Skin> newSkin){
+    oldSkin.buttonPath = newSkin.buttonPath;
+    oldSkin.model = newSkin.model;
+    oldSkin.value = newSkin.value;
 }
 
 trigger gt_Skins;

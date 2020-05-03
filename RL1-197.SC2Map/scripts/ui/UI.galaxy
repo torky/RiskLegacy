@@ -36,8 +36,7 @@ void InitializeSelectUnitButtons(){
     buttons.selectUnit.id = DialogControlLastCreated();
     DialogControlSetEnabled(buttons.selectUnit.id, PlayerGroupAll(), true);
     buttons.selectUnit.screenButtonID = nextButtonID;
-    nextButtonID+=1;
-    
+    nextButtonID+=1;    
     libNtve_gf_DisplayScreenButton(nextButtonID, TextWithColor(StringToText(""), Color(58.43, 79.22, 100.00)), 64, 64, c_anchorBottomLeft, 508, 164, null);
     libNtve_gf_SetDialogItemTooltip(DialogControlLastCreated(), StringExternal("Hides unit information panel."), PlayerGroupAll());
     libNtve_gf_SetDialogItemStyle(DialogControlLastCreated(), "RobotoCondensed15", PlayerGroupAll());
@@ -57,6 +56,10 @@ void CreateButtons () {
     libNtve_gf_CreateDialogItemImage(DialogLastCreated(), DialogGetWidth(DialogLastCreated()), DialogGetHeight(DialogLastCreated()), c_anchorCenter, 0, 0, StringToText(""), "Assets\\Textures\\ui_camapaignmenu_dialogbox_base.dds", c_triggerImageTypeHorizontalBorder, false, Color(100,100,100), c_triggerBlendModeNormal);
     DialogCreate(707, 500, c_anchorTopLeft, 100, 25, true);
     DialogSetFullscreen(DialogLastCreated(), true);
+
+    buttons.skins.screenButtonID = DialogControlHookupStandard(c_triggerControlTypeButton, "UIContainer/SkinsButton");
+    buttons.profile.screenButtonID = DialogControlHookupStandard(c_triggerControlTypeButton, "UIContainer/ProfileButton");
+    buttons.log.screenButtonID = DialogControlHookupStandard(c_triggerControlTypeButton, "UIContainer/LogsButton");
 
     InitializeBasicButton(buttons.menu, "Menu", 121, 86, c_anchorBottomRight, 24, 26, gt_Menu);
     SetDefaultButtonBorderImage(buttons.menu.screenButtonID);

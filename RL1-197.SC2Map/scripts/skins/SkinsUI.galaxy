@@ -1,8 +1,16 @@
+struct SkinButton{
+    Skin skin;
+    int id;
+    int innerImage;
+};
+
+const int totalSkinButtonsPerPanel = 5;
+
 struct RequirementUI{
     int unitPulldown;
     int tabButton;
     string requirementType;
-    Skin[6] skin;
+    SkinButton[totalSkinButtonsPerPanel] skinTypeButtons;
 };
 
 struct SkinUI{
@@ -15,22 +23,82 @@ SkinUI skinUI;
 
 void SetupUnitPulldown(string path, structref<RequirementUI> requirement){
     int i;
-    requirement.unitPulldown = DialogControlHookupStandard(c_triggerControlTypePulldown, path);
+    requirement.unitPulldown = DialogControlHookupStandard(c_triggerControlTypePulldown, path  + "UnitSelect");
     for(i = 1; i < totalSkinTypes; i+=1){
         DialogControlAddItem(requirement.unitPulldown, PlayerGroupActive(), StringToText(allSkinTypes[i].unitType));
     }
+
+    requirement.skinTypeButtons[0].id = DialogControlHookupStandard(c_triggerControlTypeButton, path + "Button0");
+    requirement.skinTypeButtons[0].innerImage = DialogControlHookupStandard(c_triggerControlTypeImage, path + "Button0/InnerImage");
+    requirement.skinTypeButtons[1].id = DialogControlHookupStandard(c_triggerControlTypeButton, path + "Button1");
+    requirement.skinTypeButtons[1].innerImage = DialogControlHookupStandard(c_triggerControlTypeImage, path + "Button1/InnerImage");
+    requirement.skinTypeButtons[2].id = DialogControlHookupStandard(c_triggerControlTypeButton, path + "Button2");
+    requirement.skinTypeButtons[2].innerImage = DialogControlHookupStandard(c_triggerControlTypeImage, path + "Button2/InnerImage");
+    requirement.skinTypeButtons[3].id = DialogControlHookupStandard(c_triggerControlTypeButton, path + "Button3");
+    requirement.skinTypeButtons[3].innerImage = DialogControlHookupStandard(c_triggerControlTypeImage, path + "Button3/InnerImage");
+    requirement.skinTypeButtons[4].id = DialogControlHookupStandard(c_triggerControlTypeButton, path + "Button4");
+    requirement.skinTypeButtons[4].innerImage = DialogControlHookupStandard(c_triggerControlTypeImage, path + "Button4/InnerImage");
     DialogControlSelectItem(requirement.unitPulldown, PlayerGroupActive(), c_marineSkinID);
 }
 
 void SetupRequirementUI(structref<RequirementUI> requirement, string path, string tabButtonPath, string type){
     requirement.requirementType = type;
-    SetupUnitPulldown(path + "UnitSelect", requirement);
+    SetupUnitPulldown(path, requirement);
     requirement.tabButton = DialogControlHookupStandard(c_triggerControlTypeButton, tabButtonPath);
 }
+
+
+trigger gt_UpdateCurrentRequirementUI;
+
+bool UpdateCurrentRequirementUI(bool testConds, bool runActions){
+    int active;
+    int pulldown = EventDialogControl();
+    int requirement;
+    int selected;
+    int i;
+    int button;
+    int player = EventPlayer();
+    string image;
+    structref<RequirementUI> requirementUI;
+    
+    if(pulldown == skinUI.kills.unitPulldown){
+        requirement = c_killRequirement;
+        requirementUI = skinUI.kills;
+    }else if(pulldown == skinUI.wins.unitPulldown){
+        requirement = c_winRequirement;
+        requirementUI = skinUI.wins;
+    }else if(pulldown == skinUI.prizes.unitPulldown){
+        requirement = c_prizeRequirement;
+        requirementUI = skinUI.prizes;
+    }
+
+    selected = DialogControlGetPropertyAsInt(pulldown, c_triggerControlPropertySelectionIndex, player);
+    for(i = 0; i < totalSkinButtonsPerPanel; i+=1){
+        SetSkin(requirementUI.skinTypeButtons[i].skin, allSkinTypes[selected].skins[requirement][i]);
+        image = allSkinTypes[selected].skins[requirement][i].buttonPath;
+        button = requirementUI.skinTypeButtons[i].innerImage;
+        libNtve_gf_SetDialogItemImage(button, "Assets\\Textures\\btn-unit-terran-marine.dds", PlayerGroupSingle(player));
+    }
+    
+    return true;
+}
+
+void gt_UpdateCurrentRequirementUI_Init(){
+    int player;
+
+    gt_UpdateCurrentRequirementUI = TriggerCreate("UpdateCurrentRequirementUI");
+    for(player = 0; player < totalPlayers; player += 1){
+        TriggerAddEventDialogControl(gt_UpdateCurrentRequirementUI, player, skinUI.kills.unitPulldown, c_triggerControlEventTypeSelectionChanged);
+        TriggerAddEventDialogControl(gt_UpdateCurrentRequirementUI, player, skinUI.wins.unitPulldown, c_triggerControlEventTypeSelectionChanged);
+        TriggerAddEventDialogControl(gt_UpdateCurrentRequirementUI, player, skinUI.prizes.unitPulldown, c_triggerControlEventTypeSelectionChanged);
+    }
+}
+
 
 void SetupSkinsUI(){
     InitializeMarineSkins();
     SetupRequirementUI(skinUI.kills, "UIContainer/SkinsUI/KillSkinPanel/", "UIContainer/SkinsUI/KillSkinTab", c_requirementKills);
-    SetupRequirementUI(skinUI.kills, "UIContainer/SkinsUI/WinSkinPanel/", "UIContainer/SkinsUI/WinSkinTab", c_requirementKills);
-    SetupRequirementUI(skinUI.kills, "UIContainer/SkinsUI/PrizeSkinPanel/", "UIContainer/SkinsUI/PrizeSkinTab", c_requirementKills);
+    SetupRequirementUI(skinUI.wins, "UIContainer/SkinsUI/WinSkinPanel/", "UIContainer/SkinsUI/WinSkinTab", c_requirementWins);
+    SetupRequirementUI(skinUI.prizes, "UIContainer/SkinsUI/PrizeSkinPanel/", "UIContainer/SkinsUI/PrizeSkinTab", c_requirementPrizes);
+    gt_UpdateCurrentRequirementUI_Init();
 }
