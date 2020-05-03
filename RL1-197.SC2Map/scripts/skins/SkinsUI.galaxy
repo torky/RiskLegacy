@@ -22,14 +22,15 @@ void SetupUnitPulldown(string path, structref<RequirementUI> requirement){
     DialogControlSelectItem(requirement.unitPulldown, PlayerGroupActive(), c_marineSkinID);
 }
 
-void SetupRequirementUI(structref<RequirementUI> requirement, string pulldownPath, string tabButtonPath, string type){
+void SetupRequirementUI(structref<RequirementUI> requirement, string path, string tabButtonPath, string type){
     requirement.requirementType = type;
-    SetupUnitPulldown(pulldownPath, requirement);
+    SetupUnitPulldown(path + "UnitSelect", requirement);
     requirement.tabButton = DialogControlHookupStandard(c_triggerControlTypeButton, tabButtonPath);
 }
 
 void SetupSkinsUI(){
-    SetupRequirementUI(skinUI.kills, "UIContainer/SkinsUI/KillSkinPanel/UnitSelect", "UIContainer/SkinsUI/KillSkinTab", c_requirementKills);
-    SetupRequirementUI(skinUI.kills, "UIContainer/SkinsUI/WinSkinPanel/UnitSelect", "UIContainer/SkinsUI/WinSkinTab", c_requirementKills);
-    SetupRequirementUI(skinUI.kills, "UIContainer/SkinsUI/PrizeSkinPanel/UnitSelect", "UIContainer/SkinsUI/PrizeSkinTab", c_requirementKills);
+    InitializeMarineSkins();
+    SetupRequirementUI(skinUI.kills, "UIContainer/SkinsUI/KillSkinPanel/", "UIContainer/SkinsUI/KillSkinTab", c_requirementKills);
+    SetupRequirementUI(skinUI.kills, "UIContainer/SkinsUI/WinSkinPanel/", "UIContainer/SkinsUI/WinSkinTab", c_requirementKills);
+    SetupRequirementUI(skinUI.kills, "UIContainer/SkinsUI/PrizeSkinPanel/", "UIContainer/SkinsUI/PrizeSkinTab", c_requirementKills);
 }

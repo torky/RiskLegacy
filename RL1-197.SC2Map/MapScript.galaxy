@@ -9,17 +9,17 @@ include "scripts/ui/Buttons"
 include "scripts/ui/MenuTrigger"
 include "scripts/units/Units"
 include "scripts/units/UnitTrained"
-include "scripts/skins/SkinsUI"
 
 //Level 1
 include "scripts/cards/Cards"
 include "scripts/bases/Bases"
 include "scripts/players/Players"
+include "scripts/skins/data/MarineSkins"
 
 //Level 2
 include "scripts/banks/Banks"
 include "scripts/countries/Country"
-
+include "scripts/skins/SkinsUI"
 
 //Level 3 
 include "scripts/countries/Conscripts"

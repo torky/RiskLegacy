@@ -9,12 +9,15 @@ struct Requirement{
 
 struct Skin{
     string model;
+    string buttonPath;
     Requirement requirement;
 };
 
+const int totalSkinTypeSkins = 15;
+
 struct SkinType{
     string unitType;
-    Skin[15] skins;
+    Skin[totalSkinTypeSkins] skins;
 };
 
 const int c_marineSkinID = 1;

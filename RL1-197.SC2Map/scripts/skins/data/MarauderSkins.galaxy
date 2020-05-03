@@ -8,7 +8,6 @@ Skin SwannMarauder;
 Skin JunkerMarauder;
 Skin UmojanMarauder;
 
-
 void InitializeMarauderSkins(){
     DefaultMarauder.model = "Marauder";
 
