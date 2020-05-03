@@ -60,12 +60,6 @@ void CreateButtons () {
 
     InitializeBasicButton(buttons.menu, "Menu", 121, 86, c_anchorBottomRight, 24, 26, gt_Menu);
     SetDefaultButtonBorderImage(buttons.menu.screenButtonID);
-    InitializeBasicButton(buttons.profile, "Profile", 136, 86, c_anchorBottomLeft, 372, 117, null);
-    SetDefaultButtonBorderImage(buttons.profile.screenButtonID);
-    InitializeBasicButton(buttons.log, "Log", 136, 86, c_anchorBottomLeft, 372, 26, null);
-    SetDefaultButtonBorderImage(buttons.log.screenButtonID);
-    InitializeBasicButton(buttons.skins, "Skins", 136, 86, c_anchorBottomLeft, 372, 208, null);
-    SetDefaultButtonBorderImage(buttons.skins.screenButtonID);
     InitializeCardsButton();
     InitializeSelectUnitButtons();
 
