@@ -138,9 +138,11 @@ bool UpdatePlayerSkin(bool testConds, bool runActions){
     int player;
     int skinButtonID;
     int requirementID;
-    int unitType;
+    int unitTypeID;
     int skinButtonSpot;
     int pulldown;
+    string unitType;
+    string model;
     structref<SkinButton> skinButton;
     structref<RequirementUI> requirement;
 
@@ -151,9 +153,12 @@ bool UpdatePlayerSkin(bool testConds, bool runActions){
     skinButtonSpot = GetSkinButton(requirement, skinButtonID);
     skinButton = requirement.skinButtons[skinButtonSpot];
     pulldown = requirement.unitPulldown;
-    unitType = GetUnitTypeIndexFromPulldown(pulldown, player);
+    unitTypeID = GetUnitTypeIndexFromPulldown(pulldown, player);
+    unitType = allSkinTypes[unitTypeID].unitType;
 
-    allPlayers[player].skins[unitType] = skinButton.skin.model;
+    allPlayers[player].skins[unitTypeID] = skinButton.skin.model;
+    model = allPlayers[player].skins[unitTypeID];
+    UpdateSkins(unitType, model, player);
 
     return true;
 }
@@ -187,6 +192,7 @@ bool SkinPlayerUnits(bool testConds, bool runActions){
     player = EventPlayer();
     unitType = UnitGetType(unitCreated);
     unitTypeID = GetUnitTypeID(unitType);
+    if(unitTypeID == -1) { return false; }
     model = allPlayers[player].skins[unitTypeID];
     
     if(model != null && model != ""){
