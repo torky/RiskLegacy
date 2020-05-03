@@ -72,12 +72,12 @@ bool UpdateCurrentRequirementUI(bool testConds, bool runActions){
         requirementUI = skinUI.prizes;
     }
 
-    selected = DialogControlGetPropertyAsInt(pulldown, c_triggerControlPropertySelectionIndex, player);
+    selected = DialogControlGetPropertyAsInt(pulldown, c_triggerControlPropertySelectionIndex, player) + 1;
     for(i = 0; i < totalSkinButtonsPerPanel; i+=1){
         SetSkin(requirementUI.skinTypeButtons[i].skin, allSkinTypes[selected].skins[requirement][i]);
         image = allSkinTypes[selected].skins[requirement][i].buttonPath;
         button = requirementUI.skinTypeButtons[i].innerImage;
-        libNtve_gf_SetDialogItemImage(button, "Assets\\Textures\\btn-unit-terran-marine.dds", PlayerGroupSingle(player));
+        libNtve_gf_SetDialogItemImage(button, image, PlayerGroupSingle(player));
     }
     
     return true;

@@ -3,12 +3,12 @@ const int c_infestedMarine = 1;
 const int c_warpigMarine = 2;
 const int c_umojanMarine = 3;
 const int c_taurenMarine = 4;
-const int c_murlockMarine = 1;
-const int c_spectreMarine = 2;
-const int c_blackOpsMarine = 3;
-const int c_junkerMarine = 4;
-const int c_novaMarine = 1;
-const int c_ghostMarine = 2;
+const int c_murlockMarine = 0;
+const int c_spectreMarine = 1;
+const int c_blackOpsMarine = 2;
+const int c_junkerMarine = 3;
+const int c_novaMarine = 0;
+const int c_ghostMarine = 1;
 
 void InitializeMarineSkins(){
     allSkinTypes[c_marineSkinID].skins[c_killRequirement][c_defaultMarine].model = "Marine";
@@ -32,7 +32,7 @@ void InitializeMarineSkins(){
     allSkinTypes[c_marineSkinID].skins[c_killRequirement][c_taurenMarine].value = "1";
 
     allSkinTypes[c_marineSkinID].skins[c_winRequirement][c_murlockMarine].model = "MurlocMarine";
-    allSkinTypes[c_marineSkinID].skins[c_winRequirement][c_murlockMarine].buttonPath = "";
+    allSkinTypes[c_marineSkinID].skins[c_winRequirement][c_murlockMarine].buttonPath = "Assets\\Textures\\btn-terran-murlocmarine.dds";
     allSkinTypes[c_marineSkinID].skins[c_winRequirement][c_murlockMarine].value = "1";
 
     allSkinTypes[c_marineSkinID].skins[c_winRequirement][c_spectreMarine].model = "Spectre";
@@ -48,7 +48,7 @@ void InitializeMarineSkins(){
     allSkinTypes[c_marineSkinID].skins[c_winRequirement][c_junkerMarine].value = "1";
 
     allSkinTypes[c_marineSkinID].skins[c_prizeRequirement][c_novaMarine].model = "Nova";
-    allSkinTypes[c_marineSkinID].skins[c_prizeRequirement][c_novaMarine].buttonPath = "Assets\\Textures\\wireframe-novaex3-apolloinfantrysuitrifle.dds";
+    allSkinTypes[c_marineSkinID].skins[c_prizeRequirement][c_novaMarine].buttonPath = "Assets\\Textures\\btn-upgrade-nova-novarespawn.dds";
     allSkinTypes[c_marineSkinID].skins[c_prizeRequirement][c_novaMarine].value = "1";
 
     allSkinTypes[c_marineSkinID].skins[c_prizeRequirement][c_ghostMarine].model = "Ghost";
