@@ -76,6 +76,7 @@ bool gt_GameModeSelect_Func (bool testConds, bool runActions) {
     VisEnable(c_visTypeMask, true);
     VisEnable(c_visTypeFog, true);
     DeleteStupidRocks();
+    DeclareSkinTypes();
     LoadPlayerAdmins();
     SetPlayerAdmins();
     LoadBankInfoForPlayers();
@@ -130,7 +131,6 @@ void InitTriggers () {
     gt_Cards_Init();
     gt_UnitTrained_Init();
     gt_SetupPlayers_Init();
-    gt_Skins_Init();
     gt_SwapDefender_Init();
     gt_BaseCapture_Init();
     gt_EmptyBaseCapture_Init();

@@ -23,7 +23,7 @@ void InitializeMarineSkins(){
     allSkinTypes[c_marineSkinID].skins[c_killRequirement][c_warpigMarine].buttonPath = "Assets\\Textures\\btn-unit-terran-merc-marine.dds";
     allSkinTypes[c_marineSkinID].skins[c_killRequirement][c_warpigMarine].value = "1";
 
-    allSkinTypes[c_marineSkinID].skins[c_killRequirement][c_umojanMarine].model = "Umojan Marine";
+    allSkinTypes[c_marineSkinID].skins[c_killRequirement][c_umojanMarine].model = "UmojanMarine";
     allSkinTypes[c_marineSkinID].skins[c_killRequirement][c_umojanMarine].buttonPath = "Assets\\Textures\\btn-unit-terran-marine-umojan.dds";
     allSkinTypes[c_marineSkinID].skins[c_killRequirement][c_umojanMarine].value = "1";
 
@@ -39,11 +39,11 @@ void InitializeMarineSkins(){
     allSkinTypes[c_marineSkinID].skins[c_winRequirement][c_spectreMarine].buttonPath = "Assets\\Textures\\btn-unit-terran-spectre.dds";
     allSkinTypes[c_marineSkinID].skins[c_winRequirement][c_spectreMarine].value = "1";
 
-    allSkinTypes[c_marineSkinID].skins[c_winRequirement][c_blackOpsMarine].model = "BlackOps Marine";
+    allSkinTypes[c_marineSkinID].skins[c_winRequirement][c_blackOpsMarine].model = "BlackOpsMarine";
     allSkinTypes[c_marineSkinID].skins[c_winRequirement][c_blackOpsMarine].buttonPath = "Assets\\Textures\\btn-unit-terran-marineblackops.dds";
     allSkinTypes[c_marineSkinID].skins[c_winRequirement][c_blackOpsMarine].value = "1";
 
-    allSkinTypes[c_marineSkinID].skins[c_winRequirement][c_junkerMarine].model = "Marine Junker";
+    allSkinTypes[c_marineSkinID].skins[c_winRequirement][c_junkerMarine].model = "MarineJunker";
     allSkinTypes[c_marineSkinID].skins[c_winRequirement][c_junkerMarine].buttonPath = "Assets\\Textures\\btn-unit-collection-marine-junker.dds";
     allSkinTypes[c_marineSkinID].skins[c_winRequirement][c_junkerMarine].value = "1";
 

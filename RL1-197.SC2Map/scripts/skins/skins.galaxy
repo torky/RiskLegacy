@@ -1,7 +1,3 @@
-const string c_requirementKills = "Kills";
-const string c_requirementWins = "Wins";
-const string c_requirementPrizes = "Prizes";
-
 struct Skin{
     string model;
     string buttonPath;
@@ -38,7 +34,6 @@ const int c_starportSkinID = 15;
 
 const int totalSkinTypes = 16;
 SkinType[16] allSkinTypes;
-typedef Skin[16] PlayerSkins;
 
 void DeclareSkinTypes(){
     allSkinTypes[c_marineSkinID].unitType = "Marine";
@@ -64,15 +59,34 @@ void SetSkin(structref<Skin> oldSkin, structref<Skin> newSkin){
     oldSkin.value = newSkin.value;
 }
 
-trigger gt_Skins;
-
-bool Skins(bool testConds, bool runActions){
-    DeclareSkinTypes();
-
-    return true;
+void SwapUnitModel(unit u, string model){
+    string actorMessage = libNtve_gf_ModelSwap(model, 0);
+    libNtve_gf_SendActorMessageToUnit(u, actorMessage);
 }
 
-void gt_Skins_Init(){
-    gt_Skins = TriggerCreate("Skins");
-    TriggerAddEventMapInit(gt_Skins);
+//Sets the `unitType` skin/model to the specified `model` for the specified `player` 
+void UpdateSkins(string unitType, string model, int player){
+    unitgroup units;
+    unit currentUnit;
+    int count;
+    unitfilter filter = UnitFilter(0, 0, (1 << c_targetFilterPsionic) | (1 << c_targetFilterStructure) | (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32)) | (1 << (c_targetFilterInvulnerable - 32)));
+
+    units = UnitGroup(unitType, player, RegionPlayableMap(), filter, 0);
+    count = UnitGroupCount(units, c_unitCountAll); 
+    for (;; count -= 1) {
+        currentUnit = UnitGroupUnitFromEnd(units, count);
+        if (currentUnit == null) { break; }
+        SwapUnitModel(currentUnit, model);
+    }
+}
+
+int GetUnitTypeID(string unitType){
+    int i;
+    for(i = 0; i < totalSkinTypes; i += 1){
+        if(allSkinTypes[i].unitType == unitType){
+            return i;
+        }
+    }
+
+    return -1;
 }

@@ -56,19 +56,19 @@ void SetPlayerValuesFromBank(int playerID){
     player.showProfile = BankValueGetAsInt(playerBank, c_sectionSettingAchieve, c_showProfile);
     player.showFlags = BankValueGetAsInt(playerBank, c_sectionSettingAchieve, c_showFlags);
     player.showKillValue = BankValueGetAsInt(playerBank, c_sectionSettingAchieve, c_showKillValue);
-    player.skins[c_marineSkinID].model = BankValueGetAsString(playerBank, c_sectionSettingAchieve, c_marineSkin);
-    player.skins[c_medicSkinID].model = BankValueGetAsString(playerBank, c_sectionSettingAchieve, c_medicSkin);
-    player.skins[c_marauderSkinID].model = BankValueGetAsString(playerBank, c_sectionSettingAchieve, c_marauderSkin);
-    player.skins[c_scvSkinID].model = BankValueGetAsString(playerBank, c_sectionSettingAchieve, c_scvSkin);
-    player.skins[c_hellionSkinID].model = BankValueGetAsString(playerBank, c_sectionSettingAchieve, c_hellionSkin);
-    player.skins[c_vultureSkinID].model = BankValueGetAsString(playerBank, c_sectionSettingAchieve, c_vultureSkin);
-    player.skins[c_goliathSkinID].model = BankValueGetAsString(playerBank, c_sectionSettingAchieve, c_goliathSkin);
-    player.skins[c_tankSkinID].model = BankValueGetAsString(playerBank, c_sectionSettingAchieve, c_tankSkin);
-    player.skins[c_herculesSkinID].model = BankValueGetAsString(playerBank, c_sectionSettingAchieve, c_herculesSkin);
-    player.skins[c_vikingSkinID].model = BankValueGetAsString(playerBank, c_sectionSettingAchieve, c_vikingSkin);
-    player.skins[c_scienceVesselSkinID].model = BankValueGetAsString(playerBank, c_sectionSettingAchieve, c_scienceVesselSkin);
-    player.skins[c_bansheeSkinID].model = BankValueGetAsString(playerBank, c_sectionSettingAchieve, c_bansheeSkin);
-    player.skins[c_battleCruiserSkinID].model = BankValueGetAsString(playerBank, c_sectionSettingAchieve, c_battleCruiserSkin);
+    player.skins[c_marineSkinID] = BankValueGetAsString(playerBank, c_sectionSettingAchieve, c_marineSkin);
+    player.skins[c_medicSkinID] = BankValueGetAsString(playerBank, c_sectionSettingAchieve, c_medicSkin);
+    player.skins[c_marauderSkinID] = BankValueGetAsString(playerBank, c_sectionSettingAchieve, c_marauderSkin);
+    player.skins[c_scvSkinID] = BankValueGetAsString(playerBank, c_sectionSettingAchieve, c_scvSkin);
+    player.skins[c_hellionSkinID] = BankValueGetAsString(playerBank, c_sectionSettingAchieve, c_hellionSkin);
+    player.skins[c_vultureSkinID] = BankValueGetAsString(playerBank, c_sectionSettingAchieve, c_vultureSkin);
+    player.skins[c_goliathSkinID] = BankValueGetAsString(playerBank, c_sectionSettingAchieve, c_goliathSkin);
+    player.skins[c_tankSkinID] = BankValueGetAsString(playerBank, c_sectionSettingAchieve, c_tankSkin);
+    player.skins[c_herculesSkinID] = BankValueGetAsString(playerBank, c_sectionSettingAchieve, c_herculesSkin);
+    player.skins[c_vikingSkinID] = BankValueGetAsString(playerBank, c_sectionSettingAchieve, c_vikingSkin);
+    player.skins[c_scienceVesselSkinID] = BankValueGetAsString(playerBank, c_sectionSettingAchieve, c_scienceVesselSkin);
+    player.skins[c_bansheeSkinID] = BankValueGetAsString(playerBank, c_sectionSettingAchieve, c_bansheeSkin);
+    player.skins[c_battleCruiserSkinID] = BankValueGetAsString(playerBank, c_sectionSettingAchieve, c_battleCruiserSkin);
 }
 
 void SavePlayerBankSettings (int playerID) {
@@ -80,19 +80,19 @@ void SavePlayerBankSettings (int playerID) {
     BankValueSetFromInt(playerBank, c_sectionSettingAchieve, c_showProfile, player.showProfile);
     BankValueSetFromInt(playerBank, c_sectionSettingAchieve, c_showFlags, player.showFlags);
     BankValueSetFromInt(playerBank, c_sectionSettingAchieve, c_showKillValue, player.showKillValue);
-    BankValueSetFromString(playerBank, c_sectionSettingAchieve, c_marineSkin, player.skins[c_marineSkinID].model);
-    BankValueSetFromString(playerBank, c_sectionSettingAchieve, c_medicSkin, player.skins[c_medicSkinID].model);
-    BankValueSetFromString(playerBank, c_sectionSettingAchieve, c_marauderSkin, player.skins[c_marauderSkinID].model);
-    BankValueSetFromString(playerBank, c_sectionSettingAchieve, c_scvSkin, player.skins[c_scvSkinID].model);
-    BankValueSetFromString(playerBank, c_sectionSettingAchieve, c_hellionSkin, player.skins[c_hellionSkinID].model);
-    BankValueSetFromString(playerBank, c_sectionSettingAchieve, c_vultureSkin, player.skins[c_vultureSkinID].model);
-    BankValueSetFromString(playerBank, c_sectionSettingAchieve, c_goliathSkin, player.skins[c_goliathSkinID].model);
-    BankValueSetFromString(playerBank, c_sectionSettingAchieve, c_tankSkin, player.skins[c_tankSkinID].model);
-    BankValueSetFromString(playerBank, c_sectionSettingAchieve, c_herculesSkin, player.skins[c_herculesSkinID].model);
-    BankValueSetFromString(playerBank, c_sectionSettingAchieve, c_vikingSkin, player.skins[c_vikingSkinID].model);
-    BankValueSetFromString(playerBank, c_sectionSettingAchieve, c_scienceVesselSkin, player.skins[c_scienceVesselSkinID].model);
-    BankValueSetFromString(playerBank, c_sectionSettingAchieve, c_bansheeSkin, player.skins[c_bansheeSkinID].model);
-    BankValueSetFromString(playerBank, c_sectionSettingAchieve, c_battleCruiserSkin, player.skins[c_battleCruiserSkinID].model);
+    BankValueSetFromString(playerBank, c_sectionSettingAchieve, c_marineSkin, player.skins[c_marineSkinID]);
+    BankValueSetFromString(playerBank, c_sectionSettingAchieve, c_medicSkin, player.skins[c_medicSkinID]);
+    BankValueSetFromString(playerBank, c_sectionSettingAchieve, c_marauderSkin, player.skins[c_marauderSkinID]);
+    BankValueSetFromString(playerBank, c_sectionSettingAchieve, c_scvSkin, player.skins[c_scvSkinID]);
+    BankValueSetFromString(playerBank, c_sectionSettingAchieve, c_hellionSkin, player.skins[c_hellionSkinID]);
+    BankValueSetFromString(playerBank, c_sectionSettingAchieve, c_vultureSkin, player.skins[c_vultureSkinID]);
+    BankValueSetFromString(playerBank, c_sectionSettingAchieve, c_goliathSkin, player.skins[c_goliathSkinID]);
+    BankValueSetFromString(playerBank, c_sectionSettingAchieve, c_tankSkin, player.skins[c_tankSkinID]);
+    BankValueSetFromString(playerBank, c_sectionSettingAchieve, c_herculesSkin, player.skins[c_herculesSkinID]);
+    BankValueSetFromString(playerBank, c_sectionSettingAchieve, c_vikingSkin, player.skins[c_vikingSkinID]);
+    BankValueSetFromString(playerBank, c_sectionSettingAchieve, c_scienceVesselSkin, player.skins[c_scienceVesselSkinID]);
+    BankValueSetFromString(playerBank, c_sectionSettingAchieve, c_bansheeSkin, player.skins[c_bansheeSkinID]);
+    BankValueSetFromString(playerBank, c_sectionSettingAchieve, c_battleCruiserSkin, player.skins[c_battleCruiserSkinID]);
     BankValueSetFromString(playerBank, c_sectionPlayer, c_Win252, player.name);
 
     BankOptionSet(playerBank, c_bankOptionSignature, true);

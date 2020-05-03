@@ -1,3 +1,5 @@
+typedef string[16] PlayerSkins;
+
 struct Player{
     int income;
     int wins;

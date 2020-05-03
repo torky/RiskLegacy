@@ -121,8 +121,8 @@
     </CModel>
     <CModel id="Ghost">
         <Radius value="0.320000"/>
-        <ScaleMax value="0.650000,0.650000,0.650000"/>
-        <ScaleMin value="0.650000,0.650000,0.650000"/>
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
     </CModel>
     <CModel id="GhostNukeCollateralFire">
         <ScaleMax value="2.000000,2.000000,2.000000"/>
@@ -286,10 +286,6 @@
         <ScaleMax value="0.500000,0.500000,0.500000"/>
         <ScaleMin value="0.500000,0.500000,0.500000"/>
     </CModel>
-    <CModel id="MercGoliath" parent="SpartanCompany">
-        <ScaleMax value="0.350000,0.350000,0.350000"/>
-        <ScaleMin value="0.350000,0.350000,0.350000"/>
-    </CModel>
     <CModel id="MercHellion" parent="Hellion_Merc_Collection">
         <Model value="Assets\Units\Terran\HellionMercenary\HellionMercenary.m3"/>
         <ScaleMax value="0.375000,0.375000,0.375000"/>
@@ -333,7 +329,6 @@
         <ScaleMin value="0.500000,0.500000,0.500000"/>
     </CModel>
     <CModel id="SMBanshee">
-        <Flags index="FOW" value="1"/>
         <Occlusion value="Show"/>
         <Radius value="0.750000"/>
         <ScaleMax value="0.600000,0.600000,0.600000"/>
@@ -361,7 +356,6 @@
         <EditorCategories value="Race:Terran"/>
     </CModel>
     <CModel id="SiegeBreaker">
-        <Radius value="0.500000"/>
         <ScaleMax value="0.400000,0.400000,0.400000"/>
         <ScaleMin value="0.400000,0.400000,0.400000"/>
     </CModel>
@@ -417,7 +411,6 @@
         <Radius value="0.800000"/>
         <ShadowRadius value="1.300000"/>
     </CModel>
-    <CModel id="SwannMarauder" parent="Swann"/>
     <CModel id="TaurenSpaceMarine">
         <Radius value="0.250000"/>
         <ScaleMax value="0.270000,0.270000,0.270000"/>
