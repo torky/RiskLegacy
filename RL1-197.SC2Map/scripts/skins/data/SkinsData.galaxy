@@ -1,9 +1,33 @@
 include "scripts/skins/data/MarineSkins"
 include "scripts/skins/data/MedicSkins"
 include "scripts/skins/data/MarauderSkins"
+include "scripts/skins/data/SCVSkins"
+include "scripts/skins/data/HellionSkins"
+include "scripts/skins/data/VultureSkins"
+include "scripts/skins/data/GoliathSkins"
+include "scripts/skins/data/SiegeTankSkins"
+include "scripts/skins/data/HerculesSkins"
+include "scripts/skins/data/VikingSkins"
+include "scripts/skins/data/ScienceVesselSkins"
+include "scripts/skins/data/BansheeSkins"
+include "scripts/skins/data/BattlecruiserSkins"
+include "scripts/skins/data/BarracksSkins"
+include "scripts/skins/data/StarportSkins"
 
 void InitializeSkinData(){
     InitializeMarineSkins();
     InitializeMedicSkins();
     InitializeMarauderSkins();
+    InitializeSCVSkins();
+    InitializeHellionSkins();
+    InitializeVultureSkins();
+    InitializeGoliathSkins();
+    InitializeSiegeTankSkins();
+    InitializeHerculesSkins();
+    InitializeVikingSkins();
+    InitializeScienceVesselSkins();
+    InitializeBansheeSkins();
+    InitializeBattlecruiserSkins();
+    InitializeBarracksSkins();
+    InitializeStarportSkins();
 }

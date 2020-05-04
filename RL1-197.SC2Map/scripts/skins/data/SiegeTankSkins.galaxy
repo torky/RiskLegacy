@@ -1,0 +1,30 @@
+const int c_defaultSiegeTank = 0;
+const int c_breakerSiegeTank = 1;
+const int c_covertopsSiegeTank = 0;
+const int c_blackopsSiegeTank = 1;
+const int c_umojanSiegeTank = 2;
+const int c_junkerSiegeTank = 3;
+const int c_commandoSiegeTank = 0;
+
+void InitializeSiegeTankSkins(){
+    allSkinTypes[c_tankSkinID].skins[c_killRequirement][c_defaultSiegeTank].model = "SiegeTank";
+    allSkinTypes[c_tankSkinID].skins[c_killRequirement][c_defaultSiegeTank].buttonPath = "Assets\\Textures\\btn-unit-terran-siegetank.dds";
+
+    allSkinTypes[c_tankSkinID].skins[c_killRequirement][c_breakerSiegeTank].model = "SiegeBreaker";
+    allSkinTypes[c_tankSkinID].skins[c_killRequirement][c_breakerSiegeTank].buttonPath = "Assets\\Textures\\btn-unit-terran-siegetankmercenary-tank.dds";
+
+    allSkinTypes[c_tankSkinID].skins[c_winRequirement][c_covertopsSiegeTank].model = "CovertopsTank";
+    allSkinTypes[c_tankSkinID].skins[c_winRequirement][c_covertopsSiegeTank].buttonPath = "Assets\\Textures\\btn-unit-collection-siegetank-covertops.dds";
+
+    allSkinTypes[c_tankSkinID].skins[c_winRequirement][c_blackopsSiegeTank].model = "BlackopsTank";
+    allSkinTypes[c_tankSkinID].skins[c_winRequirement][c_blackopsSiegeTank].buttonPath = "Assets\\Textures\\btn-unit-terran-siegetankblackops-tank.dds";
+
+    allSkinTypes[c_tankSkinID].skins[c_winRequirement][c_umojanSiegeTank].model = "UmojanTank";
+    allSkinTypes[c_tankSkinID].skins[c_winRequirement][c_umojanSiegeTank].buttonPath = "Assets\\Textures\\btn-unit-collection-siegetank-umojan.dds";
+
+    allSkinTypes[c_tankSkinID].skins[c_winRequirement][c_junkerSiegeTank].model = "JunkerTank";
+    allSkinTypes[c_tankSkinID].skins[c_winRequirement][c_junkerSiegeTank].buttonPath = "Assets\\Textures\\btn-unit-collection-siegetank-junker.dds";
+    
+    allSkinTypes[c_tankSkinID].skins[c_prizeRequirement][c_commandoSiegeTank].model = "CommandoTank";
+    allSkinTypes[c_tankSkinID].skins[c_prizeRequirement][c_commandoSiegeTank].buttonPath = "Assets\\Textures\\btn-unit-collection-siegetank-commando.dds";
+}

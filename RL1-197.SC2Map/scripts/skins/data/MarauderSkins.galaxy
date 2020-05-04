@@ -11,37 +11,28 @@ const int c_swannMarauder = 0;
 void InitializeMarauderSkins(){
     allSkinTypes[c_marauderSkinID].skins[c_killRequirement][c_defaultMarauder].model = "Marauder";
     allSkinTypes[c_marauderSkinID].skins[c_killRequirement][c_defaultMarauder].buttonPath = "Assets\\Textures\\btn-unit-terran-marauder.dds";
-    allSkinTypes[c_marauderSkinID].skins[c_killRequirement][c_defaultMarauder].value = "0";
 
     allSkinTypes[c_marauderSkinID].skins[c_killRequirement][c_dominionKillTeamMarauder].model = "DominionKillTeam";
     allSkinTypes[c_marauderSkinID].skins[c_killRequirement][c_dominionKillTeamMarauder].buttonPath = "Assets\\Textures\\btn-unit-terran-marauderkillsquad.dds";
-    allSkinTypes[c_marauderSkinID].skins[c_killRequirement][c_dominionKillTeamMarauder].value = "0";
 
     allSkinTypes[c_marauderSkinID].skins[c_killRequirement][c_hammerSecurityMarauder].model = "HammerSecurity";
     allSkinTypes[c_marauderSkinID].skins[c_killRequirement][c_hammerSecurityMarauder].buttonPath = "Assets\\Textures\\btn-unit-terran-maraudermercenary.dds";
-    allSkinTypes[c_marauderSkinID].skins[c_killRequirement][c_hammerSecurityMarauder].value = "0";
 
     allSkinTypes[c_marauderSkinID].skins[c_winRequirement][c_deluxeMarauder].model = "DeluxeMarauder";
     allSkinTypes[c_marauderSkinID].skins[c_winRequirement][c_deluxeMarauder].buttonPath = "Assets\\Textures\\btn-unit-maurader-collectionskin-deluxe.dds";
-    allSkinTypes[c_marauderSkinID].skins[c_winRequirement][c_deluxeMarauder].value = "0";
 
     allSkinTypes[c_marauderSkinID].skins[c_winRequirement][c_blackopsMarauder].model = "BlackopsMarauder";
     allSkinTypes[c_marauderSkinID].skins[c_winRequirement][c_blackopsMarauder].buttonPath = "Assets\\Textures\\btn-unit-terran-marauderblackops.dds";
-    allSkinTypes[c_marauderSkinID].skins[c_winRequirement][c_blackopsMarauder].value = "0";
 
     allSkinTypes[c_marauderSkinID].skins[c_winRequirement][c_covertopsMarauder].model = "CovertopsMarauder";
     allSkinTypes[c_marauderSkinID].skins[c_winRequirement][c_covertopsMarauder].buttonPath = "Assets\\Textures\\btn-unit-collection-marauder-covertops.dds";
-    allSkinTypes[c_marauderSkinID].skins[c_winRequirement][c_covertopsMarauder].value = "0";
     
     allSkinTypes[c_marauderSkinID].skins[c_winRequirement][c_junkerMarauder].model = "JunkerMarauder";
     allSkinTypes[c_marauderSkinID].skins[c_winRequirement][c_junkerMarauder].buttonPath = "Assets\\Textures\\btn-unit-collection-marauder-junker.dds";
-    allSkinTypes[c_marauderSkinID].skins[c_winRequirement][c_junkerMarauder].value = "0";
     
     allSkinTypes[c_marauderSkinID].skins[c_winRequirement][c_umojanMarauder].model = "UmojanMarauder";
     allSkinTypes[c_marauderSkinID].skins[c_winRequirement][c_umojanMarauder].buttonPath = "Assets\\Textures\\btn-unit-terran-marauder-umojan.dds";
-    allSkinTypes[c_marauderSkinID].skins[c_winRequirement][c_umojanMarauder].value = "0";
 
     allSkinTypes[c_marauderSkinID].skins[c_prizeRequirement][c_swannMarauder].model = "Swann";
     allSkinTypes[c_marauderSkinID].skins[c_prizeRequirement][c_swannMarauder].buttonPath = "Assets\\Textures\\btn-swann.dds";
-    allSkinTypes[c_marauderSkinID].skins[c_prizeRequirement][c_swannMarauder].value = "0";
 }

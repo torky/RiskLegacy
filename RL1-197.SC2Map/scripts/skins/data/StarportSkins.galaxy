@@ -1,0 +1,10 @@
+const int c_defaultStarport = 0;
+const int c_bioDomeCommandStarport = 0;
+
+void InitializeStarportSkins(){
+    allSkinTypes[c_starportSkinID].skins[c_killRequirement][c_defaultStarport].model = "Starport";
+    allSkinTypes[c_starportSkinID].skins[c_killRequirement][c_defaultStarport].buttonPath = "Assets\\Textures\\btn-building-terran-starport.dds";
+
+    allSkinTypes[c_starportSkinID].skins[c_prizeRequirement][c_bioDomeCommandStarport].model = "BioDomeCommand";
+    allSkinTypes[c_starportSkinID].skins[c_prizeRequirement][c_bioDomeCommandStarport].buttonPath = "Assets\\Textures\\btn-building-terran-biodomecommand.dds";
+}

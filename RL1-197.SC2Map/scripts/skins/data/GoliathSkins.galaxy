@@ -1,0 +1,14 @@
+const int c_defaultGoliath = 0;
+const int c_mercGoliath = 0;
+const int c_blackopsGoliath = 0;
+
+void InitializeGoliathSkins(){
+    allSkinTypes[c_goliathSkinID].skins[c_killRequirement][c_defaultGoliath].model = "Goliath";
+    allSkinTypes[c_goliathSkinID].skins[c_killRequirement][c_defaultGoliath].buttonPath = "Assets\\Textures\\btn-unit-terran-goliath.dds";
+
+    allSkinTypes[c_goliathSkinID].skins[c_winRequirement][c_defaultGoliath].model = "MercGoliath";
+    allSkinTypes[c_goliathSkinID].skins[c_winRequirement][c_defaultGoliath].buttonPath = "Assets\\Textures\\btn-unit-terran-goliathmercenary.dds";
+
+    allSkinTypes[c_goliathSkinID].skins[c_prizeRequirement][c_defaultGoliath].model = "BlackopsGoliath";
+    allSkinTypes[c_goliathSkinID].skins[c_prizeRequirement][c_defaultGoliath].buttonPath = "Assets\\Textures\\btn-unit-terran-goliathblackops.dds";
+}

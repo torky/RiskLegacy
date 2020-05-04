@@ -1,0 +1,22 @@
+const int c_defaultViking = 0;
+const int c_mercViking = 1;
+const int c_umojanViking = 0;
+const int c_covertopsViking = 1;
+const int c_mechaViking = 0;
+
+void InitializeVikingSkins(){
+    allSkinTypes[c_vikingSkinID].skins[c_killRequirement][c_defaultViking].model = "VikingFighter";
+    allSkinTypes[c_vikingSkinID].skins[c_killRequirement][c_defaultViking].buttonPath = "Assets\\Textures\\btn-unit-terran-vikingfighter.dds";
+    
+    allSkinTypes[c_vikingSkinID].skins[c_killRequirement][c_mercViking].model = "HelsAngelFighter";
+    allSkinTypes[c_vikingSkinID].skins[c_killRequirement][c_mercViking].buttonPath = "Assets\\Textures\\btn-unit-terran-merc-viking.dds";
+    
+    allSkinTypes[c_vikingSkinID].skins[c_winRequirement][c_umojanViking].model = "UmojanViking";
+    allSkinTypes[c_vikingSkinID].skins[c_winRequirement][c_umojanViking].buttonPath = "Assets\\Textures\\btn-unit-collection-vikingfighter-umojan.dds";
+    
+    allSkinTypes[c_vikingSkinID].skins[c_winRequirement][c_covertopsViking].model = "CovertopsViking";
+    allSkinTypes[c_vikingSkinID].skins[c_winRequirement][c_covertopsViking].buttonPath = "Assets\\Textures\\btn-unit-collection-vikingfighter-covertops.dds";
+
+    allSkinTypes[c_vikingSkinID].skins[c_prizeRequirement][c_mechaViking].model = "MechaViking";
+    allSkinTypes[c_vikingSkinID].skins[c_prizeRequirement][c_mechaViking].buttonPath = "Assets\\Textures\\btn-unit-collection-terran-mecha-viking.dds";
+}

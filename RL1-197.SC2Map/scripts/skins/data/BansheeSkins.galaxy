@@ -1,0 +1,26 @@
+const int c_defaultBanshee = 0;
+const int c_duskWingBanshee = 1;
+const int c_junkerBanshee = 0;
+const int c_umojanBanshee = 1;
+const int c_covertopsBanshee = 2;
+const int c_blackopsBanshee = 3;
+
+void InitializeBansheeSkins(){
+    allSkinTypes[c_bansheeSkinID].skins[c_killRequirement][c_defaultBanshee].model = "Banshee";
+    allSkinTypes[c_bansheeSkinID].skins[c_killRequirement][c_defaultBanshee].buttonPath = "Assets\\Textures\\btn-unit-terran-banshee.dds";
+    
+    allSkinTypes[c_bansheeSkinID].skins[c_killRequirement][c_duskWingBanshee].model = "DuskWing";
+    allSkinTypes[c_bansheeSkinID].skins[c_killRequirement][c_duskWingBanshee].buttonPath ="Assets\\Textures\\btn-unit-terran-bansheemercenary.dds";
+
+    allSkinTypes[c_bansheeSkinID].skins[c_winRequirement][c_junkerBanshee].model = "JunkerBanshee";
+    allSkinTypes[c_bansheeSkinID].skins[c_winRequirement][c_junkerBanshee].buttonPath ="Assets\\Textures\\btn-unit-collection-banshee-junker.dds";
+
+    allSkinTypes[c_bansheeSkinID].skins[c_winRequirement][c_umojanBanshee].model = "UmojanBanshee";
+    allSkinTypes[c_bansheeSkinID].skins[c_winRequirement][c_umojanBanshee].buttonPath ="Assets\\Textures\\btn-unit-terran-banshee-umojan.dds";
+
+    allSkinTypes[c_bansheeSkinID].skins[c_winRequirement][c_covertopsBanshee].model = "CovertopsBanshee";
+    allSkinTypes[c_bansheeSkinID].skins[c_winRequirement][c_covertopsBanshee].buttonPath ="Assets\\Textures\\btn-unit-collection-banshee-covertops.dds";
+
+    allSkinTypes[c_bansheeSkinID].skins[c_winRequirement][c_blackopsBanshee].model = "BlackopsBanshee";
+    allSkinTypes[c_bansheeSkinID].skins[c_winRequirement][c_blackopsBanshee].buttonPath ="Assets\\Textures\\btn-unit-terran-bansheeblackops.dds";
+}

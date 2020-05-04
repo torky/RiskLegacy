@@ -68,7 +68,7 @@ void SetPlayerValuesFromBank(int playerID){
     player.skins[c_vikingSkinID] = BankValueGetAsString(playerBank, c_sectionSettingAchieve, c_vikingSkin);
     player.skins[c_scienceVesselSkinID] = BankValueGetAsString(playerBank, c_sectionSettingAchieve, c_scienceVesselSkin);
     player.skins[c_bansheeSkinID] = BankValueGetAsString(playerBank, c_sectionSettingAchieve, c_bansheeSkin);
-    player.skins[c_battleCruiserSkinID] = BankValueGetAsString(playerBank, c_sectionSettingAchieve, c_battleCruiserSkin);
+    player.skins[c_battlecruiserSkinID] = BankValueGetAsString(playerBank, c_sectionSettingAchieve, c_battleCruiserSkin);
 }
 
 void SavePlayerBankSettings (int playerID) {
@@ -92,7 +92,7 @@ void SavePlayerBankSettings (int playerID) {
     BankValueSetFromString(playerBank, c_sectionSettingAchieve, c_vikingSkin, player.skins[c_vikingSkinID]);
     BankValueSetFromString(playerBank, c_sectionSettingAchieve, c_scienceVesselSkin, player.skins[c_scienceVesselSkinID]);
     BankValueSetFromString(playerBank, c_sectionSettingAchieve, c_bansheeSkin, player.skins[c_bansheeSkinID]);
-    BankValueSetFromString(playerBank, c_sectionSettingAchieve, c_battleCruiserSkin, player.skins[c_battleCruiserSkinID]);
+    BankValueSetFromString(playerBank, c_sectionSettingAchieve, c_battleCruiserSkin, player.skins[c_battlecruiserSkinID]);
     BankValueSetFromString(playerBank, c_sectionPlayer, c_Win252, player.name);
 
     BankOptionSet(playerBank, c_bankOptionSignature, true);

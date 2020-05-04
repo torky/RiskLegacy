@@ -1,0 +1,18 @@
+const int c_defaultScienceVessel = 0;
+const int c_biomechanicalDroneScienceVessel = 1;
+const int c_pddScienceVessel = 0;
+const int c_hologramScienceVessel = 0;
+
+void InitializeScienceVesselSkins(){
+    allSkinTypes[c_scienceVesselSkinID].skins[c_killRequirement][c_defaultScienceVessel].model = "ScienceVessel";
+    allSkinTypes[c_scienceVesselSkinID].skins[c_killRequirement][c_defaultScienceVessel].buttonPath = "Assets\\Textures\\btn-unit-terran-sciencevessel.dds";
+
+    allSkinTypes[c_scienceVesselSkinID].skins[c_killRequirement][c_biomechanicalDroneScienceVessel].model = "SciencevesselBiomechanicalDrone";
+    allSkinTypes[c_scienceVesselSkinID].skins[c_killRequirement][c_biomechanicalDroneScienceVessel].buttonPath = "Assets\\Textures\\btn-unit-terran-targetingdrone.dds";
+
+    allSkinTypes[c_scienceVesselSkinID].skins[c_winRequirement][c_pddScienceVessel].model = "SciencevesselPDD";
+    allSkinTypes[c_scienceVesselSkinID].skins[c_winRequirement][c_pddScienceVessel].buttonPath = "Assets\\Textures\\btn-unit-biomechanicaldrone.dds";
+
+    allSkinTypes[c_scienceVesselSkinID].skins[c_prizeRequirement][c_hologramScienceVessel].model = "SciencevesselHologram";
+    allSkinTypes[c_scienceVesselSkinID].skins[c_prizeRequirement][c_hologramScienceVessel].buttonPath = "risk\\sciencevesselskin.dds";
+}

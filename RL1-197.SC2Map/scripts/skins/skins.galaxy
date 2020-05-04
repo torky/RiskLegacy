@@ -28,7 +28,7 @@ const int c_herculesSkinID = 9;
 const int c_vikingSkinID = 10;
 const int c_scienceVesselSkinID = 11;
 const int c_bansheeSkinID = 12;
-const int c_battleCruiserSkinID = 13;
+const int c_battlecruiserSkinID = 13;
 const int c_barracksSkinID = 14;
 const int c_starportSkinID = 15;
 
@@ -43,12 +43,12 @@ void DeclareSkinTypes(){
     allSkinTypes[c_hellionSkinID].unitType = "Hellion";
     allSkinTypes[c_vultureSkinID].unitType = "Vulture";
     allSkinTypes[c_goliathSkinID].unitType = "Goliath";
-    allSkinTypes[c_tankSkinID].unitType = "Siege Tank";
+    allSkinTypes[c_tankSkinID].unitType = "SiegeTank";
     allSkinTypes[c_herculesSkinID].unitType = "Hercules";
-    allSkinTypes[c_vikingSkinID].unitType = "Viking";
-    allSkinTypes[c_scienceVesselSkinID].unitType = "Science Vessel";
+    allSkinTypes[c_vikingSkinID].unitType = "VikingFighter";
+    allSkinTypes[c_scienceVesselSkinID].unitType = "ScienceVessel";
     allSkinTypes[c_bansheeSkinID].unitType = "Banshee";
-    allSkinTypes[c_battleCruiserSkinID].unitType = "Battlecruiser";
+    allSkinTypes[c_battlecruiserSkinID].unitType = "Battlecruiser";
     allSkinTypes[c_barracksSkinID].unitType = "Barracks";
     allSkinTypes[c_starportSkinID].unitType = "Starport";
 }
@@ -69,7 +69,7 @@ void UpdateSkins(string unitType, string model, int player){
     unitgroup units;
     unit currentUnit;
     int count;
-    unitfilter filter = UnitFilter(0, 0, (1 << c_targetFilterPsionic) | (1 << c_targetFilterStructure) | (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32)) | (1 << (c_targetFilterInvulnerable - 32)));
+    unitfilter filter = UnitFilter(0, 0, 0, 0);
 
     units = UnitGroup(unitType, player, RegionPlayableMap(), filter, 0);
     count = UnitGroupCount(units, c_unitCountAll); 

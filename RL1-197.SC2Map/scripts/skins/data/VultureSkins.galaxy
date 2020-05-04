@@ -1,0 +1,6 @@
+const int c_defaultVulture = 0;
+
+void InitializeVultureSkins(){
+    allSkinTypes[c_vultureSkinID].skins[c_killRequirement][c_defaultVulture].model = "Vulture";
+    allSkinTypes[c_vultureSkinID].skins[c_killRequirement][c_defaultVulture].buttonPath = "Assets\\Textures\\btn-unit-terran-vulture.dds";
+}

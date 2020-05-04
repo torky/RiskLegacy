@@ -1,0 +1,30 @@
+const int c_defaultBattlecruiser = 0;
+const int c_lokiBattlecruiser = 1;
+const int c_covertopsBattlecruiser = 0;
+const int c_junkerBattlecruiser = 1;
+const int c_umojanBattlecruiser = 2;
+const int c_cerberusBattlecruiser = 0;
+const int c_gorgonBattlecruiser = 1;
+
+void InitializeBattlecruiserSkins(){
+    allSkinTypes[c_battlecruiserSkinID].skins[c_killRequirement][c_defaultBattlecruiser].model = "Battlecruiser";
+    allSkinTypes[c_battlecruiserSkinID].skins[c_killRequirement][c_defaultBattlecruiser].buttonPath = "Assets\\Textures\\btn-unit-terran-battlecruiser.dds";
+
+    allSkinTypes[c_battlecruiserSkinID].skins[c_killRequirement][c_lokiBattlecruiser].model = "Loki";
+    allSkinTypes[c_battlecruiserSkinID].skins[c_killRequirement][c_lokiBattlecruiser].buttonPath = "Assets\\Textures\\btn-unit-terran-battlecruiserloki.dds";
+    
+    allSkinTypes[c_battlecruiserSkinID].skins[c_winRequirement][c_covertopsBattlecruiser].model = "CovertopsBattlecruiser";
+    allSkinTypes[c_battlecruiserSkinID].skins[c_winRequirement][c_covertopsBattlecruiser].buttonPath = "Assets\\Textures\\btn-unit-collection-battlecruiser-covertops.dds";
+    
+    allSkinTypes[c_battlecruiserSkinID].skins[c_winRequirement][c_junkerBattlecruiser].model = "JunkerBattlecruiser";
+    allSkinTypes[c_battlecruiserSkinID].skins[c_winRequirement][c_junkerBattlecruiser].buttonPath = "Assets\\Textures\\btn-unit-collection-battlecruiser-junker.dds";
+    
+    allSkinTypes[c_battlecruiserSkinID].skins[c_winRequirement][c_umojanBattlecruiser].model = "UmojanBattlecruiser";
+    allSkinTypes[c_battlecruiserSkinID].skins[c_winRequirement][c_umojanBattlecruiser].buttonPath = "Assets\\Textures\\btn-unit-collection-battlecruiser-umojan.dds";
+    
+    allSkinTypes[c_battlecruiserSkinID].skins[c_prizeRequirement][c_cerberusBattlecruiser].model = "CerberusBattlecruiser";
+    allSkinTypes[c_battlecruiserSkinID].skins[c_prizeRequirement][c_cerberusBattlecruiser].buttonPath = "Assets\\Textures\\btn-unit-terran-cerberus.dds";
+
+    allSkinTypes[c_battlecruiserSkinID].skins[c_prizeRequirement][c_gorgonBattlecruiser].model = "GorgonBattlecruiser";
+    allSkinTypes[c_battlecruiserSkinID].skins[c_prizeRequirement][c_gorgonBattlecruiser].buttonPath = "Assets\\Textures\\btn-unit-terran-gorgonbattlecruiser.dds";
+}
