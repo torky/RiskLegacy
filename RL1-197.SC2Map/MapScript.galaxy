@@ -14,7 +14,7 @@ include "scripts/units/UnitTrained"
 include "scripts/cards/Cards"
 include "scripts/bases/Bases"
 include "scripts/players/Players"
-include "scripts/skins/data/MarineSkins"
+include "scripts/skins/data/SkinsData"
 
 //Level 2
 include "scripts/banks/Banks"

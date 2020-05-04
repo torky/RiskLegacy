@@ -215,7 +215,7 @@ void gt_SkinPlayerUnits_Init(){
 }
 
 void SetupSkinsUI(){
-    InitializeMarineSkins();
+    InitializeSkinData();
     HookupRequirmentUI(skinUI.requirements[c_killRequirement], "UIContainer/SkinsUI/KillSkinPanel/", "UIContainer/SkinsUI/KillSkinTab");
     HookupRequirmentUI(skinUI.requirements[c_winRequirement], "UIContainer/SkinsUI/WinSkinPanel/", "UIContainer/SkinsUI/WinSkinTab");
     HookupRequirmentUI(skinUI.requirements[c_prizeRequirement], "UIContainer/SkinsUI/PrizeSkinPanel/", "UIContainer/SkinsUI/PrizeSkinTab");

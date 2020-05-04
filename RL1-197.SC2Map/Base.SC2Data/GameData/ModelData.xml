@@ -198,6 +198,7 @@
         <Radius value="0.400000"/>
         <ScaleMax value="0.390000,0.390000,0.390000"/>
         <ScaleMin value="0.390000,0.390000,0.390000"/>
+        <ShadowRadius value="0.250000"/>
     </CModel>
     <CModel id="Interceptor">
         <Model value="Assets\assault gallen\assault gallen\COOP_Interceptor_HornerHan.m3"/>
@@ -495,8 +496,9 @@
     </CModel>
     <CModel id="WarPig">
         <Radius value="0.187500"/>
-        <ScaleMax value="0.530000,0.530000,0.530000"/>
-        <ScaleMin value="0.530000,0.530000,0.530000"/>
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+        <ShadowRadius value="0.250000"/>
     </CModel>
     <CModel id="WraithPortrait">
         <ScaleMax value="0.500000,0.500000,0.500000"/>

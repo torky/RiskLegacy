@@ -1,0 +1,9 @@
+include "scripts/skins/data/MarineSkins"
+include "scripts/skins/data/MedicSkins"
+include "scripts/skins/data/MarauderSkins"
+
+void InitializeSkinData(){
+    InitializeMarineSkins();
+    InitializeMedicSkins();
+    InitializeMarauderSkins();
+}
