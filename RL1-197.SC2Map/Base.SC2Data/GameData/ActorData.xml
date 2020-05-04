@@ -151,12 +151,12 @@
         <On Terms="Behavior.Battlecruiser.On" Send="ModelSwap Battlecruiser"/>
         <BarOffset value="35"/>
         <BarWidth value="70"/>
-        <TerrainSquibs index="0">
+        <TerrainSquibs>
             <MovementDistance value="0.150000,0.150000"/>
             <IdlePeriod value="0.250000,0.500000"/>
             <RangeDown value="5.000000"/>
             <RangeDownFade value="1.000000"/>
-            <Visuals index="0" TerrainPhysicsMaterial="" ActorModel="" ModelLink=""/>
+            <Visuals/>
         </TerrainSquibs>
     </CActorUnit>
     <CActorRange id="DefenderGuide" parent="RangeAbil" abil="SelectDefender2">
@@ -363,12 +363,12 @@
     <CActorUnit id="Hellion">
         <BarOffset value="22"/>
         <BarWidth value="30"/>
-        <TerrainSquibs index="0">
+        <TerrainSquibs>
             <MovementDistance value="0.150000,0.150000"/>
             <IdlePeriod value="0.100000,0.250000"/>
             <RangeUp value="1.000000"/>
             <RangeDown value="1.000000"/>
-            <Visuals index="0" TerrainPhysicsMaterial="" ActorModel="" ModelLink=""/>
+            <Visuals/>
         </TerrainSquibs>
         <On Terms="Behavior.Hellion.On" Send="ModelSwap Hellion"/>
         <On Terms="Behavior.MercHellion.On" Send="ModelSwap MercHellion"/>
@@ -419,20 +419,34 @@
         <On Terms="Behavior.SwannMarauder.On" Send="ModelSwap SwannMarauder"/>
         <On Terms="Behavior.JunkerMarauder.On" Send="ModelSwap JunkerMarauder"/>
         <On Terms="Behavior.UmojanMarauder.On" Send="ModelSwap UmojanMarauder"/>
-        <TerrainSquibs index="0">
+        <TerrainSquibs>
             <MovementDistance value="0.150000,0.150000"/>
             <IdlePeriod value="0.100000,0.250000"/>
             <RangeUp value="0.800000"/>
             <RangeDown value="0.800000"/>
-            <Visuals index="0" TerrainPhysicsMaterial="" ActorModel="" ModelLink=""/>
+            <Visuals/>
         </TerrainSquibs>
     </CActorUnit>
     <!--                                                                                         -->
     <!-- Marine ................................................................................ -->
     <!--                                                                                         -->
     <CActorUnit id="Marine">
-        <On Terms="Behavior.InfestedMarine.On" Send="ModelSwap InfestedTerran 0"/>
-        <On Terms="Behavior.Warpig.On" Send="ModelSwap WarPig 0"/>
+        <On index="64" Terms="Upgrade.ShieldWall.Add" Send="AnimClear Cover"/>
+        <On index="65" Terms="UnitDeath.Marine; AnimPlaying Cover" Target="_DeathModel" Send="AnimPlay Cover Cover PlayForever 0.000000"/>
+        <On index="66" Terms="Abil.attack.ReadyStart" Send="AnimGroupApply Ready"/>
+        <On index="67" Terms="WeaponStart.*.AttackStart; WeaponTargetElevation GE 20.000000" Target="" Send="AnimBracketStart Attack Attack,Superior"/>
+        <On index="68" Terms="WeaponStart.*.AttackStart; WeaponTargetElevation LE -20.000000" Send="AnimBracketStart Attack Attack,Inferior"/>
+        <On index="69" Terms="WeaponStart.*.AttackStart" Send="AnimBracketStart Attack Attack"/>
+        <On index="70" Terms="WeaponStop.*.AttackStop" Send="AnimBracketStop Attack"/>
+        <On index="71" Terms="Abil.attack.ReadyStop" Send="AnimGroupRemove Ready"/>
+        <On index="72" Terms="ModelEvent; ModelEventName SquibStart" Send="Create MarineCheerSquib"/>
+        <On index="73" Terms="ModelEvent; ModelEventName SquibStop" Target="MarineCheerSquib" Send="Destroy"/>
+        <On index="74" Terms="ModelEvent; ModelEventName SquibStop" Target="MarineCheerSquibSound" Send="Destroy"/>
+        <On index="75" Terms="AnimDone; AnimName Cheer" Target="MarineCheerSquib" Send="Destroy"/>
+        <On index="76" Terms="AnimDone; AnimName Cheer" Target="MarineCheerSquibSound" Send="Destroy"/>
+        <On index="77" Terms="UnitHeightUpdate.*.Land" Target="" Send="Create Marine_Land"/>
+        <On index="78" Terms="Behavior.InfestedMarine.On" Target="" Send="ModelSwap InfestedTerran 0"/>
+        <On index="79" Terms="Behavior.Warpig.On" Send="ModelSwap WarPig 0"/>
         <On Terms="Behavior.TaurenMarine.On" Send="ModelSwap TaurenSpaceMarine 0"/>
         <On Terms="Behavior.MurlockMarine.On" Send="ModelSwap MurlocMarine"/>
         <On Terms="Behavior.Spectre.On" Send="ModelSwap Spectre"/>
@@ -443,6 +457,10 @@
         <On Terms="Behavior.UmojanMarine" Send="ModelSwap UmojanMarine 0"/>
         <Scale value="1.300000"/>
         <TerrainSquibs index="0">
+            <MovementDistance value="0.150000,0.150000"/>
+            <IdlePeriod value="0.100000,0.250000"/>
+            <RangeUp value="0.600000"/>
+            <RangeDown value="0.600000"/>
             <Visuals index="0" TerrainPhysicsMaterial="" ActorModel="" ModelLink=""/>
         </TerrainSquibs>
         <BarOffset value="19"/>
@@ -455,7 +473,32 @@
         <On index="3" Terms="UnitRevive.ConscriptMarine"/>
         <On index="4" Terms="UnitConstruction.ConscriptMarine.Start"/>
         <On index="5" Terms="UnitConstruction.ConscriptMarine.Finish"/>
-        <On index="67" Terms="UnitDeath.ConscriptMarine; AnimPlaying Cover"/>
+        <On index="64" Terms="ActorCreation; ValidatePlayer NoMarineShield" Send="AnimPlay Cover Cover PlayForever 0.000000"/>
+        <On index="65" Terms="Upgrade.ShieldWall.Add" Target="" Send="AnimClear Cover"/>
+        <On index="66" Terms="Upgrade.ShieldWall.Remove" Send="AnimPlay Cover Cover PlayForever 0.000000"/>
+        <On index="67" Terms="UnitDeath.ConscriptMarine; AnimPlaying Cover" Target="_DeathModel" Send="AnimPlay Cover Cover PlayForever 0.000000"/>
+        <On index="68" Terms="Abil.attack.ReadyStart" Send="AnimGroupApply Ready"/>
+        <On index="69" Terms="WeaponStart.*.AttackStart; WeaponTargetElevation GE 20.000000" Send="AnimBracketStart Attack Attack,Superior"/>
+        <On index="70" Terms="WeaponStart.*.AttackStart; WeaponTargetElevation LE -20.000000" Send="AnimBracketStart Attack Attack,Inferior"/>
+        <On index="71" Terms="WeaponStart.*.AttackStart" Send="AnimBracketStart Attack Attack"/>
+        <On index="72" Terms="WeaponStop.*.AttackStop" Send="AnimBracketStop Attack"/>
+        <On index="73" Terms="Abil.attack.ReadyStop" Target="" Send="AnimGroupRemove Ready"/>
+        <On index="74" Terms="ModelEvent; ModelEventName SquibStart" Target="" Send="Create MarineCheerSquib"/>
+        <On index="75" Terms="ModelEvent; ModelEventName SquibStop" Target="MarineCheerSquib" Send="Destroy"/>
+        <On index="76" Terms="ModelEvent; ModelEventName SquibStop" Target="MarineCheerSquibSound" Send="Destroy"/>
+        <On index="77" Terms="AnimDone; AnimName Cheer" Target="MarineCheerSquib" Send="Destroy"/>
+        <On index="78" Terms="AnimDone; AnimName Cheer" Target="MarineCheerSquibSound" Send="Destroy"/>
+        <On index="79" Terms="UnitHeightUpdate.*.Land" Send="Create Marine_Land"/>
+        <On index="80" Terms="Behavior.InfestedMarine.On" Send="ModelSwap InfestedTerran 0"/>
+        <On index="81" Terms="Behavior.Warpig.On" Send="ModelSwap WarPig 0"/>
+        <On index="82" Terms="Behavior.TaurenMarine.On" Send="ModelSwap TaurenSpaceMarine 0"/>
+        <On index="83" Terms="Behavior.MurlockMarine.On" Send="ModelSwap MurlocMarine"/>
+        <On index="84" Terms="Behavior.Spectre.On" Send="ModelSwap Spectre"/>
+        <On index="85" Terms="Behavior.Marine.On" Send="ModelSwap Marine"/>
+        <On index="86" Terms="Behavior.Nova.On" Send="ModelSwap Nova"/>
+        <On index="87" Terms="Behavior.JunkerMarine.On" Send="ModelSwap MarineJunker 0"/>
+        <On Terms="Behavior.BlackOpsMarine" Send="ModelSwap BlackOpsMarine 0"/>
+        <On Terms="Behavior.UmojanMarine" Send="ModelSwap UmojanMarine 0"/>
         <On Terms="Behavior.InfestedMarine.On" Send="ModelSwap InfestedTerran 0"/>
         <On Terms="Behavior.Warpig.On" Send="ModelSwap WarPig 0"/>
         <On Terms="Behavior.TaurenMarine.On" Send="ModelSwap TaurenSpaceMarine 0"/>
@@ -508,12 +551,12 @@
     <!--                                                                                         -->
     <CActorUnit id="Raven">
         <BarOffset value="50"/>
-        <TerrainSquibs index="0">
+        <TerrainSquibs>
             <MovementDistance value="0.150000,0.150000"/>
             <IdlePeriod value="0.250000,0.500000"/>
             <RangeDown value="5.000000"/>
             <RangeDownFade value="1.000000"/>
-            <Visuals index="0" TerrainPhysicsMaterial="" ActorModel="" ModelLink=""/>
+            <Visuals/>
         </TerrainSquibs>
     </CActorUnit>
     <CActorUnit id="SCV">
@@ -558,12 +601,12 @@
         <On Terms="Behavior.BlackopsTank.On" Send="ModelSwap BlackopsTank 0"/>
         <On Terms="Behavior.UmojanTank.On" Send="ModelSwap UmojanTank 0"/>
         <On Terms="Behavior.CommandoTank.On" Send="ModelSwap CommandoTank 0"/>
-        <TerrainSquibs index="0">
+        <TerrainSquibs>
             <MovementDistance value="0.150000,0.150000"/>
             <IdlePeriod value="0.100000,0.250000"/>
             <RangeUp value="1.000000"/>
             <RangeDown value="1.000000"/>
-            <Visuals index="0" TerrainPhysicsMaterial="" ActorModel="" ModelLink=""/>
+            <Visuals/>
         </TerrainSquibs>
     </CActorUnit>
     <CActorUnit id="SpacePlatformReactorPathingBlocker2">
@@ -663,12 +706,12 @@
         <On Terms="Behavior.MechaViking.On" Send="ModelSwap MechaViking"/>
         <On Terms="Behavior.UmojanViking.On" Send="ModelSwap UmojanViking"/>
         <On Terms="Behavior.CovertopsViking.On" Send="ModelSwap CovertopsViking"/>
-        <TerrainSquibs index="0">
+        <TerrainSquibs>
             <MovementDistance value="0.150000,0.150000"/>
             <IdlePeriod value="0.250000,0.500000"/>
             <RangeDown value="5.000000"/>
             <RangeDownFade value="1.000000"/>
-            <Visuals index="0" TerrainPhysicsMaterial="" ActorModel="" ModelLink=""/>
+            <Visuals/>
         </TerrainSquibs>
     </CActorUnit>
     <!--                                                                                         -->

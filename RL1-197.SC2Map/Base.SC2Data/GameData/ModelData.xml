@@ -33,6 +33,8 @@
     <CModel id="BlackOpsMarine" parent="Marine_CovertOps_Collection">
         <ScaleMax value="0.500000,0.500000,0.500000"/>
         <ScaleMin value="0.500000,0.500000,0.500000"/>
+        <Radius value="0.187500"/>
+        <ShadowRadius value="0.250000"/>
     </CModel>
     <CModel id="BlackopsBanshee">
         <Model value="Assets\Units\Terran\Banshee_BlackOps\Banshee_BlackOps.m3"/>
@@ -120,9 +122,10 @@
         <ScaleMin value="0.500000,0.500000,0.500000"/>
     </CModel>
     <CModel id="Ghost">
-        <Radius value="0.320000"/>
+        <Radius value="0.187500"/>
         <ScaleMax value="0.500000,0.500000,0.500000"/>
         <ScaleMin value="0.500000,0.500000,0.500000"/>
+        <ShadowRadius value="0.250000"/>
     </CModel>
     <CModel id="GhostNukeCollateralFire">
         <ScaleMax value="2.000000,2.000000,2.000000"/>
@@ -271,6 +274,8 @@
         <EditorCategories value=""/>
         <ScaleMax value="0.500000,0.500000,0.500000"/>
         <ScaleMin value="0.500000,0.500000,0.500000"/>
+        <Radius value="0.187500"/>
+        <ShadowRadius value="0.250000"/>
     </CModel>
     <CModel id="MechaViking">
         <Model value="Assets\Units\Terran\VikingFighter_Mecha_Collection\VikingFighter_Mecha_Collection.m3"/>
@@ -307,10 +312,15 @@
     <CModel id="MurlocMarine">
         <ScaleMax value="0.400000,0.400000,0.400000"/>
         <ScaleMin value="0.400000,0.400000,0.400000"/>
+        <Radius value="0.187500"/>
+        <SelectionRadius value="0.375000"/>
+        <ShadowRadius value="0.250000"/>
     </CModel>
     <CModel id="Nova">
         <ScaleMax value="0.500000,0.500000,0.500000"/>
         <ScaleMin value="0.500000,0.500000,0.500000"/>
+        <Radius value="0.187500"/>
+        <ShadowRadius value="0.250000"/>
     </CModel>
     <CModel id="Predator">
         <ScaleMax value="0.750000,0.750000,0.750000"/>
@@ -404,6 +414,8 @@
     <CModel id="Spectre">
         <ScaleMax value="0.500000,0.500000,0.500000"/>
         <ScaleMin value="0.500000,0.500000,0.500000"/>
+        <Radius value="0.187500"/>
+        <ShadowRadius value="0.250000"/>
     </CModel>
     <CModel id="Starport">
         <ScaleMax value="0.400000,0.400000,0.400000"/>
@@ -412,9 +424,10 @@
         <ShadowRadius value="1.300000"/>
     </CModel>
     <CModel id="TaurenSpaceMarine">
-        <Radius value="0.250000"/>
+        <Radius value="0.187500"/>
         <ScaleMax value="0.270000,0.270000,0.270000"/>
         <ScaleMin value="0.270000,0.270000,0.270000"/>
+        <ShadowRadius value="0.250000"/>
     </CModel>
     <CModel id="Thor">
         <ScaleMax value="0.320000,0.335000,0.320000"/>
@@ -455,6 +468,8 @@
     <CModel id="UmojanMarine" parent="Marine_Umojan">
         <ScaleMax value="0.500000,0.500000,0.500000"/>
         <ScaleMin value="0.500000,0.500000,0.500000"/>
+        <Radius value="0.187500"/>
+        <ShadowRadius value="0.250000"/>
     </CModel>
     <CModel id="UmojanSCV" parent="SCV_Umojan">
         <ScaleMax value="0.500000,0.500000,0.500000"/>

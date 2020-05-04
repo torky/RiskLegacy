@@ -68,31 +68,36 @@ int GetRequirementIDByPulldown(int pulldown){
     return -1;
 }
 
+void UpdateSkinButtonImages(structref<RequirementUI> requirementUI, int requirementID, int unitTypeID, int player){
+    int button;
+    string image;
+    int i;
+
+    for(i = 0; i < totalSkinButtonsPerPanel; i+=1){
+        SetSkin(requirementUI.skinButtons[i].skin, allSkinTypes[unitTypeID].skins[requirementID][i]);
+        image = allSkinTypes[unitTypeID].skins[requirementID][i].buttonPath;
+        if(image == null || image =="") { image = "Assets/Textures/btn-no-image.dds"; }
+        button = requirementUI.skinButtons[i].innerImage;
+        libNtve_gf_SetDialogItemImage(button, image, PlayerGroupSingle(player));
+    }
+}
+
 trigger gt_SelectUnitType;
 
 bool SelectUnitType(bool testConds, bool runActions){
     int active;
     int pulldown = EventDialogControl();
     int requirement;
-    int selected;
+    int unitTypeID;
     int i;
-    int button;
     int player = EventPlayer();
-    string image;
     structref<RequirementUI> requirementUI;
 
     requirement = GetRequirementIDByPulldown(pulldown);
     requirementUI = skinUI.requirements[requirement];
-    
-    //Update RequirementUI
-    selected = GetUnitTypeIndexFromPulldown(pulldown, player);
-    for(i = 0; i < totalSkinButtonsPerPanel; i+=1){
-        SetSkin(requirementUI.skinButtons[i].skin, allSkinTypes[selected].skins[requirement][i]);
-        image = allSkinTypes[selected].skins[requirement][i].buttonPath;
-        if(image == null) { image = ""; }
-        button = requirementUI.skinButtons[i].innerImage;
-        libNtve_gf_SetDialogItemImage(button, image, PlayerGroupSingle(player));
-    }
+    unitTypeID = GetUnitTypeIndexFromPulldown(pulldown, player);
+
+    UpdateSkinButtonImages(requirementUI, requirement, unitTypeID, player);
     
     return true;
 }
