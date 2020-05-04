@@ -143,14 +143,17 @@ id=Marauder
 path=Assets\Textures\.dds
 asset=Wireframe-Terran-##id##,btn-unit-terran-marauder,btn-upgrade-protoss-shieldslevel0,btn-upgrade-terran-infantryarmorlevel0,ui_ingame_workercount_bg
 Actor=CliffLocalSelection,CliffLocalSelectionObserver,CliffPreSelection,CliffPreSelectionObserver,CommandUIHarnessAttackProtoss,CommandUIHarnessAttackTerran,CommandUIHarnessAttackZerg,CommandUIHarnessConfirmProtoss,CommandUIHarnessConfirmTerran,CommandUIHarnessConfirmZerg,CommandUIHarnessMoveProtoss,CommandUIHarnessMoveTerran,CommandUIHarnessMoveZerg,CommandUIHarnessRallyProtoss,CommandUIHarnessRallyTerran,CommandUIHarnessRallyZerg,DeadAnimationMacro,EditorSelection,FlyerHelperSplat,FlyerShadow,GroundLocalFlashingSelection,GroundLocalSelection,GroundLocalSelectionObserver,GroundPreSelection,GroundPreSelectionObserver,GroundShadow,GroundSyncFlashingSelection,GroundSyncSelection,ModelPretargetGround,PlaceholderModel,PlacementModel,PortraitActor,PrimaryGroundSyncSelectionObserver,SecondaryGroundSyncSelectionObserver,Snapshot,SoundEmitter,TerrainMgr,UnitDeathModel,UnitDeathModelUnscaled,UnitDeathSound,UnitDeathVoice,UnitFootprint,UnitSound,UnloadDropAnim
-Model=Blackops##id##,Covertops##id##,Deluxe##id##,HammerSecurity,Invisible,Junker##id##,##id##,##id##Death,##id##DeathEviscerate,##id##Portrait,ProtossSmallUnitDeathLow,TerranSmallUnitDeathLow,Umojan##id##,ZergSmallUnitDeathLow
+Model=Blackops##id##,Covertops##id##,Deluxe##id##,HammerSecurity,Invisible,Junker##id##,##id##,##id##Portrait,ProtossSmallUnitDeathLow,TerranSmallUnitDeathLow,Umojan##id##,ZergSmallUnitDeathLow
 Sound=##id##_Ambience,##id##_Attack,##id##_Help,##id##_Pissed,##id##_Ready,##id##_What,##id##_Yes
 id=Marine
 path=Assets\Textures\.dds
 asset=Wireframe-Terran-##id##,btn-unit-terran-marine,btn-upgrade-protoss-shieldslevel0,btn-upgrade-terran-infantryarmorlevel0,ui_ingame_workercount_bg
 Actor=CliffLocalSelection,CliffLocalSelectionObserver,CliffPreSelection,CliffPreSelectionObserver,CommandUIHarnessAttackProtoss,CommandUIHarnessAttackTerran,CommandUIHarnessAttackZerg,CommandUIHarnessConfirmProtoss,CommandUIHarnessConfirmTerran,CommandUIHarnessConfirmZerg,CommandUIHarnessMoveProtoss,CommandUIHarnessMoveTerran,CommandUIHarnessMoveZerg,CommandUIHarnessRallyProtoss,CommandUIHarnessRallyTerran,CommandUIHarnessRallyZerg,DeadAnimationMacro,EditorSelection,FlyerHelperSplat,FlyerShadow,GroundLocalFlashingSelection,GroundLocalSelection,GroundLocalSelectionObserver,GroundPreSelection,GroundPreSelectionObserver,GroundShadow,GroundSyncFlashingSelection,GroundSyncSelection,##id##CheerSquib,##id##_Land,ModelPretargetGround,PhysicsDeathsSwarmGround,PlaceholderModel,PlacementModel,PortraitActor,PrimaryGroundSyncSelectionObserver,SecondaryGroundSyncSelectionObserver,Snapshot,SoundEmitter,SpineCrawlerHurlDeathRagdollBloodPrevent,TerrainMgr,TerrainSquibAnimations,UnitDeathModelUnscaled,UnitDeathModelWithDeathMotionGround,UnitDeathSound,UnitDeathVoice,UnitFootprint,UnitSound,UnloadDropAnim
-Model=BlackOps##id##,InfestedTerran,Invisible,##id##,##id##Death,##id##DeathAcid,##id##DeathBlast,##id##DeathEat,##id##DeathEviscerate,##id##DeathFire,##id##DeathRagdoll,##id##Junker,##id##Portrait,Murloc##id##,Nova,ProtossSmallUnitDeathLow,Spectre,TaurenSpace##id##,TerranSmallBiologicalUnitDeathLow,TerranSmallUnitDeathLow,Umojan##id##,WarPig,ZergSmallUnitDeathLow
+Model=BlackOps##id##,InfestedTerran,Invisible,##id##,##id##DeathAcid,##id##DeathBlast,##id##DeathEat,##id##DeathRagdoll,##id##Junker,##id##Portrait,Murloc##id##,Nova,ProtossSmallUnitDeathLow,Spectre,TaurenSpace##id##,TerranSmallBiologicalUnitDeathLow,TerranSmallUnitDeathLow,Umojan##id##,WarPig,ZergSmallUnitDeathLow
 Sound=##id##_Ambience,##id##_Attack,##id##_Help,##id##_Pissed,##id##_Ready,##id##_StimPackVO,##id##_What,##id##_Yes
+id=Marine_Death
+Actor=CommandUIHarnessAttackProtoss,CommandUIHarnessAttackTerran,CommandUIHarnessAttackZerg,CommandUIHarnessConfirmProtoss,CommandUIHarnessConfirmTerran,CommandUIHarnessConfirmZerg,CommandUIHarnessMoveProtoss,CommandUIHarnessMoveTerran,CommandUIHarnessMoveZerg,CommandUIHarnessRallyProtoss,CommandUIHarnessRallyTerran,CommandUIHarnessRallyZerg,TerrainMgr
+Sound
 id=MissileTurret
 path=Assets\Textures\.dds
 asset=Wireframe-Terran-##id##,btn-building-terran-missileturret,btn-upgrade-protoss-shieldslevel0,btn-upgrade-terran-buildingarmor,ui_ingame_workercount_bg
@@ -298,7 +301,7 @@ Actor=CliffLocalSelection,CliffLocalSelectionObserver,CliffPreSelection,CliffPre
 Model=Battlecruiser
 parent=Marine
 id=Marine2
-Model
+Model=##id##,MarineDeath,MarineDeathEviscerate,MarineDeathFire
 
 [Behavior]
 id=Slow
@@ -1535,7 +1538,7 @@ Actor=BlipVisual,CommandUIHarnessAttackProtoss,CommandUIHarnessAttackTerran,Comm
 Button=AcquireMove,Armory,Barracks,Bunker,Cancel,CommandCenter,EngineeringBay,Factory,FusionCore,GhostAcademy,MissileTurret,Move,MoveHoldPosition,MovePatrol,NanoRepair,Refinery,SensorTower,Starport,Stop,SupplyDepot
 id=Marine
 Abil=Stimpack,attack,move,stop
-Actor=BlipVisual,CommandUIHarnessAttackProtoss,CommandUIHarnessAttackTerran,CommandUIHarnessAttackZerg,CommandUIHarnessConfirmProtoss,CommandUIHarnessConfirmTerran,CommandUIHarnessConfirmZerg,CommandUIHarnessMoveProtoss,CommandUIHarnessMoveTerran,CommandUIHarnessMoveZerg,CommandUIHarnessRallyProtoss,CommandUIHarnessRallyTerran,CommandUIHarnessRallyZerg,ConfirmationLocalAirAttack,ConfirmationLocalGroundAttack,ConfirmationSyncAirAttack,ConfirmationSyncGroundAttack,ConstructionRefundTextAlly,ConstructionRefundTextEnemy,FlyerShadow,GroundShadow,##id##,##id##_Death,SalvagedTextAlly,SalvagedTextEnemy,ShieldImpact,TerrainMgr,UnitPointsTextAll
+Actor=BlipVisual,CommandUIHarnessAttackProtoss,CommandUIHarnessAttackTerran,CommandUIHarnessAttackZerg,CommandUIHarnessConfirmProtoss,CommandUIHarnessConfirmTerran,CommandUIHarnessConfirmZerg,CommandUIHarnessMoveProtoss,CommandUIHarnessMoveTerran,CommandUIHarnessMoveZerg,CommandUIHarnessRallyProtoss,CommandUIHarnessRallyTerran,CommandUIHarnessRallyZerg,ConfirmationLocalAirAttack,ConfirmationLocalGroundAttack,ConfirmationSyncAirAttack,ConfirmationSyncGroundAttack,ConstructionRefundTextAlly,ConstructionRefundTextEnemy,FlyerShadow,GroundShadow,##id##,SalvagedTextAlly,SalvagedTextEnemy,ShieldImpact,TerrainMgr,UnitPointsTextAll
 Button=Attack,Move,MoveHoldPosition,MovePatrol,Stop
 Weapon=GuassRifle
 id=Ghost

@@ -3,12 +3,12 @@ const int c_infestedMarine = 1;
 const int c_warpigMarine = 2;
 const int c_umojanMarine = 3;
 const int c_taurenMarine = 4;
-const int c_murlockMarine = 0;
-const int c_spectreMarine = 1;
-const int c_blackOpsMarine = 2;
-const int c_junkerMarine = 3;
+const int c_spectreMarine = 0;
+const int c_blackOpsMarine = 1;
+const int c_junkerMarine = 2;
 const int c_novaMarine = 0;
 const int c_ghostMarine = 1;
+const int c_murlockMarine = 2;
 
 void InitializeMarineSkins(){
     allSkinTypes[c_marineSkinID].skins[c_killRequirement][c_defaultMarine].model = "Marine";
@@ -26,9 +26,6 @@ void InitializeMarineSkins(){
     allSkinTypes[c_marineSkinID].skins[c_killRequirement][c_taurenMarine].model = "TaurenSpaceMarine";
     allSkinTypes[c_marineSkinID].skins[c_killRequirement][c_taurenMarine].buttonPath = "Assets\\Textures\\btn-unit-terran-taurenspacemarine.dds";
 
-    allSkinTypes[c_marineSkinID].skins[c_winRequirement][c_murlockMarine].model = "MurlocMarine";
-    allSkinTypes[c_marineSkinID].skins[c_winRequirement][c_murlockMarine].buttonPath = "Assets\\Textures\\btn-terran-murlocmarine.dds";
-
     allSkinTypes[c_marineSkinID].skins[c_winRequirement][c_spectreMarine].model = "Spectre";
     allSkinTypes[c_marineSkinID].skins[c_winRequirement][c_spectreMarine].buttonPath = "Assets\\Textures\\btn-unit-terran-spectre.dds";
 
@@ -43,4 +40,7 @@ void InitializeMarineSkins(){
 
     allSkinTypes[c_marineSkinID].skins[c_prizeRequirement][c_ghostMarine].model = "Ghost";
     allSkinTypes[c_marineSkinID].skins[c_prizeRequirement][c_ghostMarine].buttonPath = "Assets\\Textures\\btn-unit-terran-ghost.dds";
+
+    allSkinTypes[c_marineSkinID].skins[c_prizeRequirement][c_murlockMarine].model = "MurlocMarine";
+    allSkinTypes[c_marineSkinID].skins[c_prizeRequirement][c_murlockMarine].buttonPath = "Assets\\Textures\\btn-terran-murlocmarine.dds";
 }

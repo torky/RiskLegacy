@@ -426,6 +426,8 @@
             <RangeDown value="0.800000"/>
             <Visuals/>
         </TerrainSquibs>
+        <DeathArray index="Normal" ModelLink=""/>
+        <DeathArray index="Eviscerate" ModelLink=""/>
     </CActorUnit>
     <!--                                                                                         -->
     <!-- Marine ................................................................................ -->
@@ -465,6 +467,9 @@
         </TerrainSquibs>
         <BarOffset value="19"/>
         <BarWidth value="18"/>
+        <DeathArray index="Normal" ModelLink=""/>
+        <DeathArray index="Eviscerate" ModelLink=""/>
+        <DeathArray index="Fire" ModelLink=""/>
     </CActorUnit>
     <CActorUnit id="Marine2" parent="Marine" unitName="ConscriptMarine">
         <On index="0" Terms="UnitBirth.ConscriptMarine"/>
@@ -510,7 +515,11 @@
         <BuildModel value="Marine2"/>
         <PlacementModel value="Marine2"/>
         <HighlightTooltip value="Unit/Name/Marine2"/>
+        <DeathArray index="Normal" ModelLink="MarineDeath"/>
+        <DeathArray index="Eviscerate" ModelLink="MarineDeathEviscerate"/>
+        <DeathArray index="Fire" ModelLink="MarineDeathFire"/>
     </CActorUnit>
+    <CActorSound id="Marine_Death"/>
     <!--                                                                                         -->
     <!-- Medic ................................................................................. -->
     <!--                                                                                         -->
