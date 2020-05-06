@@ -1,3 +1,13 @@
+void StartIncomeTextAnimation(int i, int countryIncome, int countryOwner){
+    if(allCountries[i].spawn != null){
+        TextTagCreate((StringToText("<img path=\"Assets\\Textures\\icon-energy-nobg.dds\" width=\"27\" height=\"27\"/> ") + IntToText(countryIncome)), 20, UnitGetPosition(allCountries[i].spawn), 1.75, true, false, PlayerGroupSingle(countryOwner));
+        TextTagSetColor(TextTagLastCreated(), c_textTagColorText, Color(45.88, 87.45, 83.53));
+        TextTagSetFontSize(TextTagLastCreated(), 32);
+        TextTagSetVelocity(TextTagLastCreated(), 0.25, 90.0);
+        TextTagSetTime(TextTagLastCreated(), c_textTagTimeDuration, 10.0);
+    }
+}
+
 void RefreshIncome(){
     
     playergroup players;
@@ -19,6 +29,7 @@ void RefreshIncome(){
         countryIncome = allCountries[i].income;
         countryOwner = allCountries[i].owner;
         allPlayers[countryOwner].income += countryIncome;
+        StartIncomeTextAnimation(i, countryIncome, countryOwner);
     }
 
     //Add Income
