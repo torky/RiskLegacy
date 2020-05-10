@@ -6,9 +6,6 @@ struct Button{
 struct Buttons {
     Button backgroundDialog;
     Button menu;
-    Button profile;
-    Button log;
-    Button skins;
     Button cards;
     Button kills;
     Button wins;

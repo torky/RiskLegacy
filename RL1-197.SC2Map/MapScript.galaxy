@@ -11,12 +11,12 @@ include "scripts/units/Units"
 include "scripts/units/UnitTrained"
 
 //Level 1
-include "scripts/cards/Cards"
 include "scripts/bases/Bases"
 include "scripts/players/Players"
 include "scripts/skins/data/SkinsData"
 
 //Level 2
+include "scripts/cards/Cards"
 include "scripts/banks/Banks"
 include "scripts/countries/Country"
 include "scripts/skins/SkinsController"
@@ -24,8 +24,7 @@ include "scripts/skins/SkinsController"
 //Level 3 
 include "scripts/countries/Conscripts"
 include "scripts/ui/UI"
-include "scripts/skins/SkinButton"
-
+include "scripts/stats/Stats"
 
 //Level 4
 include "scripts/countries/PredefineCountries"
@@ -80,6 +79,7 @@ bool gt_GameModeSelect_Func (bool testConds, bool runActions) {
     LoadPlayerAdmins();
     SetPlayerAdmins();
     LoadBankInfoForPlayers();
+    SetScoreStatsForAllPlayers();
     PredefineCountries();
     InitializeBases();
 
@@ -129,6 +129,7 @@ void gt_GameModeSelect_Init () {
 void InitTriggers () {
     gt_Menu_Init();
     gt_Cards_Init();
+    gt_CardsKey_Init();
     gt_UnitTrained_Init();
     gt_SetupPlayers_Init();
     gt_SwapDefender_Init();

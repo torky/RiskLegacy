@@ -999,6 +999,7 @@ Race/Name/Neut=Protoss
 Race/Name/Terr=Protoss
 Race/Name/Zerg=Protoss
 RequirementNode/Tooltip/LT172494085CountUnitInterceptorQueuedOrBetterAtUnit3=Assault Carrier must have fewer than 3 Drones
+ScoreValue/Name/Wins=Wins
 TerrainTex/Name/AgriaConcrete=New Folsom Dirt
 TerrainTex/Name/AgriaCrops=Bel'Shir Dirt Dark
 TerrainTex/Name/AgriaDirtRough=Monlyth Bricks

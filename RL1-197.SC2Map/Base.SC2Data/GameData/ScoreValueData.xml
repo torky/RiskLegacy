@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CScoreValueCustom id="Wins" parent="BaseScoreValue"/>
+    <CScoreValueCustom id="Losses" parent="BaseScoreValue"/>
+    <CScoreValueCustom id="Kills" parent="BaseScoreValue"/>
+    <CScoreValueCustom id="Deaths" parent="BaseScoreValue"/>
+    <CScoreValueCustom id="FastestWin" parent="BaseScoreValue"/>
+    <CScoreValueCustom id="ShowProfile" parent="BaseScoreValue"/>
+    <CScoreValueCustom id="ShowKillValue" parent="BaseScoreValue"/>
+    <CScoreValueCustom id="CurrentPlayer" parent="BaseScoreValue"/>
+</Catalog>

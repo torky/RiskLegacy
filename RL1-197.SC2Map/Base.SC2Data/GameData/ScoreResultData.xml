@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="us-ascii"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Catalog>
     <CScoreResultGraph id="Graphs">
         <ValueTable index="0" value="APM"/>
-        <ValueTable index="1" value="ResourceCollectionRateSampled"/>
-        <ValueTable value="ResourceValueArmySampled"/>
+        <ValueTable index="2" value="ResourceValueArmySampled"/>
+        <ValueTable index="3" removed="1"/>
     </CScoreResultGraph>
 </Catalog>
