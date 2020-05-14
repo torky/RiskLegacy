@@ -26,6 +26,7 @@ void SetupUI () {
     GameSetSpeedLocked(true);
     RemoveDefaults();
     SetupSkinsUI();
+    SetupSettingsUI();
 }
 
 void InitializeSelectUnitButtons(){
@@ -61,7 +62,4 @@ void CreateButtons () {
     SetDefaultButtonBorderImage(buttons.menu.screenButtonID);
     InitializeCardsButton();
     InitializeSelectUnitButtons();
-
-    //gf_InfoPanelLog();
-    //gf_InfoPanelProfile();
 }

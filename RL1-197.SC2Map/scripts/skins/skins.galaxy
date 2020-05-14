@@ -32,6 +32,7 @@ const int c_battlecruiserSkinID = 13;
 const int c_barracksSkinID = 14;
 const int c_starportSkinID = 15;
 
+const int c_unitSkinIndex0 = 1;
 const int totalSkinTypes = 16;
 SkinType[16] allSkinTypes;
 
@@ -60,8 +61,11 @@ void SetSkin(structref<Skin> oldSkin, structref<Skin> newSkin){
 }
 
 void SwapUnitModel(unit u, string model){
-    string actorMessage = libNtve_gf_ModelSwap(model, 0);
-    libNtve_gf_SendActorMessageToUnit(u, actorMessage);
+    string actorMessage;
+    if(model != null && model != ""){
+        actorMessage = libNtve_gf_ModelSwap(model, 0);
+        libNtve_gf_SendActorMessageToUnit(u, actorMessage);
+    }
 }
 
 //Sets the `unitType` skin/model to the specified `model` for the specified `player` 

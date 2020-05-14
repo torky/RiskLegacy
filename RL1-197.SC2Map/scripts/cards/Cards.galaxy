@@ -1,52 +1,7 @@
-trigger gt_Cards;
-
-bool Cards(bool testConds, bool runActions){
-    int player;
-    player = EventPlayer();
-
-    if(PlayerGetPropertyInt(player, c_playerPropVespene) >= 3){
-        PlayerModifyPropertyInt(player, c_playerPropVespene, c_playerPropOperSubtract, 3);
-        PlayerModifyPropertyInt(player, c_playerPropMinerals, c_playerPropOperAdd, 5);
-        if(PlayerGetPropertyInt(player, c_playerPropVespene) < 3){
-            libNtve_gf_SetScreenButtonBorderImage(buttons.cards.screenButtonID, "risk\\Flag\\tgacardnormalpressed1.tga", "risk\\Flag\\tgacardhoverpressed1.tga", c_triggerImageTypeNormal);
-        }
-    }
-
-    return true;
-}
-
-void gt_Cards_Init(){
-    gt_Cards = TriggerCreate("Cards");
-}
-
-trigger gt_CardsKey;
-
-bool CardsKey(bool testConds, bool runActions){
-    int player;
-    int key;
-
-    player = EventPlayer();
-    key = EventKeyPressed();
-    if(key == allPlayers[player].cardsKey){
-        TriggerExecute(gt_Cards, false, false);
-    }
-
-    return true;
-}
-
-void gt_CardsKey_Init(){
-    int i;
-    gt_CardsKey = TriggerCreate("CardsKey");
-    for(i = 0; i < totalPlayers; i+=1){
-        TriggerAddEventKeyPressed(gt_CardsKey, i, c_keyNone, false, c_keyModifierStateExclude, c_keyModifierStateExclude, c_keyModifierStateExclude);
-    }
-}
-
 void InitializeCardsButton(){
-    libNtve_gf_DisplayScreenButton(nextButtonID, TextWithColor(StringToText(""), Color(58.43, 79.22, 100.00)), 64, 64, c_anchorBottomLeft, 508, 228, gt_Cards);
+    libNtve_gf_DisplayScreenButton(nextButtonID, TextWithColor(StringToText(""), Color(58.43, 79.22, 100.00)), 64, 64, c_anchorBottomLeft, 508, 228, null);
     buttons.cards.screenButtonID = nextButtonID;
-    libNtve_gf_SetDialogItemHotkey(DialogControlLastCreated(), c_keyNone, PlayerGroupAll());
-    libNtve_gf_SetDialogItemTooltip(DialogControlLastCreated(), StringExternal("Param/Value/BF595410"), PlayerGroupAll());
+    libNtve_gf_SetDialogItemTooltip(DialogControlLastCreated(), StringExternal("Param/Value/1F3D4564"), PlayerGroupAll());
     libNtve_gf_SetDialogItemStyle(DialogControlLastCreated(), "RobotoCondensed15", PlayerGroupAll());
     libNtve_gf_SetScreenButtonBorderImage(buttons.cards.screenButtonID, "risk\\Flag\\tgacardnormalpressed1.tga", "risk\\Flag\\tgacardhoverpressed1.tga", c_triggerImageTypeNormal);
     buttons.cards.id = DialogControlLastCreated();
@@ -59,8 +14,8 @@ void IncrementCards(int player, unit structure){
         PlayerModifyPropertyInt(player, c_playerPropVespene, c_playerPropOperAdd, 1);
         UnitBehaviorAdd(structure, "CardCooldown", structure, 1);
         if(PlayerGetPropertyInt(player, c_playerPropVespene) >= 3){
-            libNtve_gf_SetDialogItemImage(buttons.cards.id, "risk\\cardyellownormalpressed1.dds", PlayerGroupSingle(player));
-            libNtve_gf_SetDialogItemImage2(buttons.cards.id, "risk\\cardyellowhoverpressed1.dds", PlayerGroupSingle(player));
+            PlayerModifyPropertyInt(player, c_playerPropVespene, c_playerPropOperSubtract, 3);
+            PlayerModifyPropertyInt(player, c_playerPropMinerals, c_playerPropOperAdd, 5);
         }
     }
 }

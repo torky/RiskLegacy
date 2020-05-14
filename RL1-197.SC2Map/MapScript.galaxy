@@ -20,6 +20,7 @@ include "scripts/cards/Cards"
 include "scripts/banks/Banks"
 include "scripts/countries/Country"
 include "scripts/skins/SkinsController"
+include "scripts/settings/SettingsController"
 
 //Level 3 
 include "scripts/countries/Conscripts"
@@ -128,8 +129,6 @@ void gt_GameModeSelect_Init () {
 
 void InitTriggers () {
     gt_Menu_Init();
-    gt_Cards_Init();
-    gt_CardsKey_Init();
     gt_UnitTrained_Init();
     gt_SetupPlayers_Init();
     gt_SwapDefender_Init();

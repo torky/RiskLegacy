@@ -33,11 +33,41 @@ const string c_Win2535 = "45689";
 const string c_sectionRanking = "973423";
 const string c_Win22 = "78245";
 
+const string c_bankName = "RiskRevulsionv3";
+
 void LoadBankForPlayer(int player){
     bank b;
-    b = BankLoad("RiskRevulsionv3", player);
+    b = BankLoad(c_bankName, player);
     BankOptionSet(b, c_bankOptionSignature, true);
     allPlayers[player].infoBank = b;
+}
+void SetPlayerValuesDefault(int playerID){
+    structref<Player> player = allPlayers[playerID];
+    
+    player.wins = 0;
+    player.losses = 0;
+    player.kills = 0;
+    player.deaths = 0;
+    player.rekt = 0;
+    player.lost = 0;
+    player.fastestWin = -1;
+    player.pingBases = 1;
+    player.showProfile = 1;
+    player.showFlags = 1;
+    player.showKillValue = 1;
+    player.skins[c_marineSkinID] = "";
+    player.skins[c_medicSkinID] = "";
+    player.skins[c_marauderSkinID] = "";
+    player.skins[c_scvSkinID] = "";
+    player.skins[c_hellionSkinID] = "";
+    player.skins[c_vultureSkinID] = "";
+    player.skins[c_goliathSkinID] = "";
+    player.skins[c_tankSkinID] = "";
+    player.skins[c_herculesSkinID] = "";
+    player.skins[c_vikingSkinID] = "";
+    player.skins[c_scienceVesselSkinID] = "";
+    player.skins[c_bansheeSkinID] = "";
+    player.skins[c_battlecruiserSkinID] = "";
 }
 
 void SetPlayerValuesFromBank(int playerID){
@@ -50,7 +80,6 @@ void SetPlayerValuesFromBank(int playerID){
     player.deaths = BankValueGetAsInt(playerBank, c_sectionPlayer, c_Win25);
     player.rekt = BankValueGetAsInt(playerBank, c_sectionPlayer, c_Win27);
     player.lost = BankValueGetAsInt(playerBank, c_sectionPlayer, c_Win26);
-    player.cardsKey = BankValueGetAsInt(playerBank, c_sectionPlayer, c_playerCardKey);
     player.fastestWin = BankValueGetAsInt(playerBank, c_sectionPlayer, c_playerFastestWin);
     player.pingBases = BankValueGetAsInt(playerBank, c_sectionSettingAchieve, c_pingBases);
     player.showProfile = BankValueGetAsInt(playerBank, c_sectionSettingAchieve, c_showProfile);
@@ -75,7 +104,6 @@ void SavePlayerBankSettings (int playerID) {
     structref<Player> player = allPlayers[playerID];
     bank playerBank = player.infoBank;
 
-    BankValueSetFromInt(playerBank, c_sectionPlayer, c_playerCardKey, player.cardsKey);
     BankValueSetFromInt(playerBank, c_sectionSettingAchieve, c_pingBases, player.pingBases);
     BankValueSetFromInt(playerBank, c_sectionSettingAchieve, c_showProfile, player.showProfile);
     BankValueSetFromInt(playerBank, c_sectionSettingAchieve, c_showFlags, player.showFlags);
@@ -143,6 +171,11 @@ void LoadBankInfoForPlayers(){
 
     for(i = 1; i < totalPlayers; i+=1){
         LoadBankForPlayer(i);
-        SetPlayerValuesFromBank(i);
+        if(BankExists(c_bankName, i)){
+            SetPlayerValuesFromBank(i);
+        }else{
+            SetPlayerValuesDefault(i);
+        }
+
     }
 }

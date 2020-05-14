@@ -164,6 +164,7 @@ bool UpdatePlayerSkin(bool testConds, bool runActions){
     allPlayers[player].skins[unitTypeID] = skinButton.skin.model;
     model = allPlayers[player].skins[unitTypeID];
     UpdateSkins(unitType, model, player);
+    SavePlayerBankSettings(player);
 
     return true;
 }
@@ -200,9 +201,7 @@ bool SkinPlayerUnits(bool testConds, bool runActions){
     if(unitTypeID == -1) { return false; }
     model = allPlayers[player].skins[unitTypeID];
     
-    if(model != null && model != ""){
-        SwapUnitModel(unitCreated, allPlayers[player].skins[unitTypeID]);
-    }
+    SwapUnitModel(unitCreated, allPlayers[player].skins[unitTypeID]);
 
     return true;
 }
@@ -214,8 +213,19 @@ void gt_SkinPlayerUnits_Init(){
     TriggerAddEventUnitCreated(gt_SkinPlayerUnits, null, "BarracksTrain2", null);
 }
 
+void SkinInitialUnits(){
+    int p;
+    int u;
+    for(p = 1; p < totalPlayers; p+=1){
+        for(u = c_unitSkinIndex0; u < totalSkinTypes; u+=1){
+            UpdateSkins(allSkinTypes[u].unitType, allPlayers[p].skins[u], p);
+        }
+    }
+}
+
 void SetupSkinsUI(){
     InitializeSkinData();
+    SkinInitialUnits();
     HookupRequirmentUI(skinUI.requirements[c_killRequirement], "UIContainer/SkinsUI/KillSkinPanel/", "UIContainer/SkinsUI/KillSkinTab");
     HookupRequirmentUI(skinUI.requirements[c_winRequirement], "UIContainer/SkinsUI/WinSkinPanel/", "UIContainer/SkinsUI/WinSkinTab");
     HookupRequirmentUI(skinUI.requirements[c_prizeRequirement], "UIContainer/SkinsUI/PrizeSkinPanel/", "UIContainer/SkinsUI/PrizeSkinTab");
