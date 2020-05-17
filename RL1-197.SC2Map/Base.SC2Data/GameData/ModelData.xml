@@ -296,6 +296,10 @@
     <CModel id="MercCompound">
         <ShadowRadius value="1.300000"/>
     </CModel>
+    <CModel id="MercGoliath" parent="SpartanCompany">	
+        <ScaleMax value="0.350000,0.350000,0.350000"/>	
+        <ScaleMin value="0.350000,0.350000,0.350000"/>	
+    </CModel>
     <CModel id="MercHellion" parent="Hellion_Merc_Collection">
         <Model value="Assets\Units\Terran\HellionMercenary\HellionMercenary.m3"/>
         <ScaleMax value="0.375000,0.375000,0.375000"/>
