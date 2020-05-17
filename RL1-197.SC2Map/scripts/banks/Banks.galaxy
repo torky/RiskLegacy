@@ -15,6 +15,7 @@ const string c_pingBases = "42346";
 const string c_showProfile = "67365";
 const string c_showFlags = "87666";
 const string c_showKillValue = "78865";
+const string c_autoCards = "AutoCards";
 const string c_marineSkin = "marine";
 const string c_scvSkin = "scv";
 const string c_goliathSkin = "goliath";
@@ -57,6 +58,7 @@ void SetPlayerValuesDefault(int playerID){
     player.showProfile = 1;
     player.showFlags = 1;
     player.showKillValue = 1;
+    player.autoCards = 1;
     player.skins[c_marineSkinID] = "";
     player.skins[c_medicSkinID] = "";
     player.skins[c_marauderSkinID] = "";
@@ -87,6 +89,7 @@ void SetPlayerValuesFromBank(int playerID){
     player.showProfile = BankValueGetAsInt(playerBank, c_sectionSettingAchieve, c_showProfile);
     player.showFlags = BankValueGetAsInt(playerBank, c_sectionSettingAchieve, c_showFlags);
     player.showKillValue = BankValueGetAsInt(playerBank, c_sectionSettingAchieve, c_showKillValue);
+    player.autoCards = BankValueGetAsInt(playerBank, c_sectionSettingAchieve, c_autoCards);
     player.skins[c_marineSkinID] = BankValueGetAsString(playerBank, c_sectionSettingAchieve, c_marineSkin);
     player.skins[c_medicSkinID] = BankValueGetAsString(playerBank, c_sectionSettingAchieve, c_medicSkin);
     player.skins[c_marauderSkinID] = BankValueGetAsString(playerBank, c_sectionSettingAchieve, c_marauderSkin);
@@ -112,6 +115,7 @@ void SavePlayerBankSettings (int playerID) {
     BankValueSetFromInt(playerBank, c_sectionSettingAchieve, c_showProfile, player.showProfile);
     BankValueSetFromInt(playerBank, c_sectionSettingAchieve, c_showFlags, player.showFlags);
     BankValueSetFromInt(playerBank, c_sectionSettingAchieve, c_showKillValue, player.showKillValue);
+    BankValueSetFromInt(playerBank, c_sectionSettingAchieve, c_autoCards, player.autoCards);
     BankValueSetFromString(playerBank, c_sectionSettingAchieve, c_marineSkin, player.skins[c_marineSkinID]);
     BankValueSetFromString(playerBank, c_sectionSettingAchieve, c_medicSkin, player.skins[c_medicSkinID]);
     BankValueSetFromString(playerBank, c_sectionSettingAchieve, c_marauderSkin, player.skins[c_marauderSkinID]);

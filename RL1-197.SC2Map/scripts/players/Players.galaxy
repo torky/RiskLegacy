@@ -16,7 +16,8 @@ struct Player{
     int showFlags;
     int showProfile;
     int showKillValue;
-    bool isAdmin;
+    int autoCards;
+    int isAdmin;
 };
 
 const int totalPlayers = 16;
@@ -34,7 +35,7 @@ bool SetupPlayers(bool TestConds, bool RunActions){
     for(i = 1; i <= PlayerGroupCount(players); i += 1){
         player = PlayerGroupPlayer(players, i);
         PlayerModifyPropertyInt(player, c_playerPropSuppliesMade, c_playerPropOperSetTo, 1750);
-        allPlayers[i].isAdmin = false;
+        allPlayers[i].isAdmin = 0;
     }
 
     return true;
@@ -74,7 +75,6 @@ int GetPlayerDeaths(int player){
 
 int GetPlayerLostValue(int player){
     return PlayerScoreValueGetAsInt(player, "UnitsLostValue");
-
 }
 
 void SetPlayerAdmins(){
@@ -90,7 +90,7 @@ void SetPlayerAdmins(){
         player = PlayerGroupPlayer(players, i);
         for(admin = 0; admin < totalAdmins; admin+=1){
             if(PlayerHandle(player) == allAdmins[admin].sc2ID){
-                allPlayers[player].isAdmin = true;
+                allPlayers[player].isAdmin = 1;
             }
         }
     }

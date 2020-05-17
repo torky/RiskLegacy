@@ -3,6 +3,7 @@ struct Settings{
     int showFlags;
     int showProfile;
     int showKillValue;
+    int autoCards;
 };
 
 Settings settings;
@@ -13,12 +14,14 @@ void HookupSettings(){
     settings.showFlags = DialogControlHookupStandard(c_triggerControlTypeCheckBox, "UIContainer/ProfileUI/SettingsPanel/ShowFlags");
     settings.showProfile = DialogControlHookupStandard(c_triggerControlTypeCheckBox, "UIContainer/ProfileUI/SettingsPanel/ShowProfile");
     settings.showKillValue = DialogControlHookupStandard(c_triggerControlTypeCheckBox, "UIContainer/ProfileUI/SettingsPanel/ShowKillValue");
+    settings.autoCards = DialogControlHookupStandard(c_triggerControlTypeCheckBox, "UIContainer/ProfileUI/SettingsPanel/AutoCards");
 
     for(i = 0; i < totalPlayers; i+=1){
         libNtve_gf_SetDialogItemChecked(settings.pingBases, allPlayers[i].pingBases == 1, PlayerGroupSingle(i));
         libNtve_gf_SetDialogItemChecked(settings.showFlags, allPlayers[i].showFlags == 1, PlayerGroupSingle(i));
         libNtve_gf_SetDialogItemChecked(settings.showProfile, allPlayers[i].showProfile == 1, PlayerGroupSingle(i));
         libNtve_gf_SetDialogItemChecked(settings.showKillValue, allPlayers[i].showKillValue == 1, PlayerGroupSingle(i));
+        libNtve_gf_SetDialogItemChecked(settings.autoCards, allPlayers[i].autoCards == 1, PlayerGroupSingle(i));
     }
 }
 
@@ -31,6 +34,7 @@ bool UpdateCheckBoxSettings(bool testConds, bool runActions){
     bool showFlags;
     bool showProfile;
     bool showKillValue;
+    bool autoCards;
 
     player = EventPlayer();
     checkBox = EventDialogControl();
@@ -39,11 +43,13 @@ bool UpdateCheckBoxSettings(bool testConds, bool runActions){
     showFlags = libNtve_gf_DialogItemIsChecked(settings.showFlags, player);
     showProfile = libNtve_gf_DialogItemIsChecked(settings.showProfile, player);
     showKillValue = libNtve_gf_DialogItemIsChecked(settings.showKillValue, player);
+    autoCards = libNtve_gf_DialogItemIsChecked(settings.autoCards, player);
     
     if(pingBases) { allPlayers[player].pingBases = 1; } else { allPlayers[player].pingBases = 0; }
     if(showFlags) { allPlayers[player].showFlags = 1; } else { allPlayers[player].showFlags = 0; }
     if(showProfile) { allPlayers[player].showProfile = 1; } else { allPlayers[player].showProfile = 0; }
     if(showKillValue) { allPlayers[player].showKillValue = 1; } else { allPlayers[player].showKillValue = 0; }
+    if(autoCards) { allPlayers[player].autoCards = 1; } else { allPlayers[player].autoCards = 0; }
 
     SavePlayerBankSettings(player);
 
@@ -61,6 +67,7 @@ void gt_UpdateCheckBoxSettings_Init(){
         TriggerAddEventDialogControl(gt_UpdateCheckBoxSettings, player, settings.showFlags, c_triggerControlEventTypeChecked);
         TriggerAddEventDialogControl(gt_UpdateCheckBoxSettings, player, settings.showProfile, c_triggerControlEventTypeChecked);
         TriggerAddEventDialogControl(gt_UpdateCheckBoxSettings, player, settings.showKillValue, c_triggerControlEventTypeChecked);
+        TriggerAddEventDialogControl(gt_UpdateCheckBoxSettings, player, settings.autoCards, c_triggerControlEventTypeChecked);
     }
 }
 
