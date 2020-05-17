@@ -11,33 +11,35 @@ include "scripts/units/Units"
 include "scripts/units/UnitTrained"
 
 //Level 1
-include "scripts/bases/Bases"
 include "scripts/players/Players"
 include "scripts/skins/data/SkinsData"
 
 //Level 2
+include "scripts/bases/Bases"
+
+//Level 3
 include "scripts/cards/Cards"
 include "scripts/banks/Banks"
 include "scripts/countries/Country"
 include "scripts/skins/SkinsController"
 include "scripts/settings/SettingsController"
 
-//Level 3 
+//Level 4 
 include "scripts/countries/Conscripts"
 include "scripts/ui/UI"
 include "scripts/stats/Stats"
 
-//Level 4
+//Level 5
 include "scripts/countries/PredefineCountries"
 include "scripts/bases/Defender"
 include "scripts/bases/DistributeTerritories" 
 include "scripts/income/Income"
 
-//Level 5
+//Level 6
 include "scripts/bases/BaseCapture"
 include "scripts/refresh/Refresh"
 
-//Level 6
+//Level 7
 include "scripts/modes/1v1"
 include "scripts/modes/Custom"
 include "scripts/modes/Empire"
