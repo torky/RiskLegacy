@@ -27,7 +27,9 @@ const string c_tankSkin = "tank";
 const string c_herculesSkin = "hercules";
 const string c_scienceVesselSkin = "scienceVessel";
 const string c_bansheeSkin = "banshee";
-const string c_battleCruiserSkin = "battleCruiser";
+const string c_battleCruiserSkin = "battlecruiser";
+const string c_barracksSkin = "barracks";
+const string c_starportSkin = "starport";
 const string c_Win2531 = "43357";
 const string c_Win2535 = "45689";
 const string c_sectionRanking = "973423";
@@ -98,6 +100,8 @@ void SetPlayerValuesFromBank(int playerID){
     player.skins[c_scienceVesselSkinID] = BankValueGetAsString(playerBank, c_sectionSettingAchieve, c_scienceVesselSkin);
     player.skins[c_bansheeSkinID] = BankValueGetAsString(playerBank, c_sectionSettingAchieve, c_bansheeSkin);
     player.skins[c_battlecruiserSkinID] = BankValueGetAsString(playerBank, c_sectionSettingAchieve, c_battleCruiserSkin);
+    player.skins[c_barracksSkinID] = BankValueGetAsString(playerBank, c_sectionSettingAchieve, c_barracksSkin);
+    player.skins[c_starportSkinID] = BankValueGetAsString(playerBank, c_sectionSettingAchieve, c_starportSkin);
 }
 
 void SavePlayerBankSettings (int playerID) {
@@ -121,6 +125,8 @@ void SavePlayerBankSettings (int playerID) {
     BankValueSetFromString(playerBank, c_sectionSettingAchieve, c_scienceVesselSkin, player.skins[c_scienceVesselSkinID]);
     BankValueSetFromString(playerBank, c_sectionSettingAchieve, c_bansheeSkin, player.skins[c_bansheeSkinID]);
     BankValueSetFromString(playerBank, c_sectionSettingAchieve, c_battleCruiserSkin, player.skins[c_battlecruiserSkinID]);
+    BankValueSetFromString(playerBank, c_sectionSettingAchieve, c_barracksSkin, player.skins[c_barracksSkinID]);
+    BankValueSetFromString(playerBank, c_sectionSettingAchieve, c_starportSkin, player.skins[c_starportSkinID]);
     BankValueSetFromString(playerBank, c_sectionPlayer, c_Win252, player.name);
 
     BankOptionSet(playerBank, c_bankOptionSignature, true);

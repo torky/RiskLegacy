@@ -48,6 +48,7 @@ void UpdateCountry(int countryID){
 
     if(newOwner != oldOwner){
         country.conscripts = UnitGroupEmpty();
+        UnitIssueOrder(country.spawn, OrderTargetingUnit(AbilityCommand("Rally", 0), country.spawn), c_orderQueueReplace);
     }
     
     country.owner = newOwner;

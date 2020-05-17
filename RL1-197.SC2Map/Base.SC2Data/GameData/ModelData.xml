@@ -29,6 +29,7 @@
         <Radius value="0.750000"/>
         <ScaleMax value="0.310000,0.310000,0.310000"/>
         <ScaleMin value="0.310000,0.310000,0.310000"/>
+        <ShadowRadius value="1.3"/>
     </CModel>
     <CModel id="BlackOpsMarine" parent="Marine_CovertOps_Collection">
         <ScaleMax value="0.500000,0.500000,0.500000"/>
@@ -291,6 +292,9 @@
     <CModel id="Medivac">
         <ScaleMax value="0.500000,0.500000,0.500000"/>
         <ScaleMin value="0.500000,0.500000,0.500000"/>
+    </CModel>
+    <CModel id="MercCompound">
+        <ShadowRadius value="1.300000"/>
     </CModel>
     <CModel id="MercHellion" parent="Hellion_Merc_Collection">
         <Model value="Assets\Units\Terran\HellionMercenary\HellionMercenary.m3"/>

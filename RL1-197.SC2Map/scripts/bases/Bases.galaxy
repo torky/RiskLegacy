@@ -43,4 +43,10 @@ void SetBaseOwnership(int baseID, int player) {
     b = allBases[baseID];
     UnitSetOwner(b.defender, player, true);
     UnitSetOwner(b.structure, player, true);
+    
+    if(UnitGetType(b.structure) == "Barracks"){
+        SwapUnitModel(b.structure, allPlayers[player].skins[c_barracksSkinID]);
+    }else{
+        SwapUnitModel(b.structure, allPlayers[player].skins[c_starportSkinID]);
+    }
 }

@@ -57,18 +57,16 @@ bool SwapDefenderAbility (bool testConds, bool runActions) {
         return true;
     }
 
-    if ((UnitHasBehavior(EventUnitTargetUnit(), "WaterUnit") == true) && (UnitGetType(EventUnit()) == "Barracks") && (UnitGetType(EventUnit()) == "Factory")) {
+    if ((UnitHasBehavior(EventUnitTargetUnit(), "WaterUnit") == true) && ((UnitGetType(EventUnit()) == "Barracks") || (UnitGetType(EventUnit()) == "Starport"))) {
         return true;
     }
-    else {
-        if ((UnitHasBehavior(allBases[baseID].defender, "WaterUnit") == true) && (WorldHeight(c_heightMapGround, UnitGetPosition(EventUnitTargetUnit())) > 7.8)) {
-            libNtve_gf_UIErrorMessage(PlayerGroupSingle(currentOwner), StringToText("Cannot be moved on land!"), SoundLink("Alert_TerranBuildError", -1));
-            return true;
-        }
-
+    else if ((UnitHasBehavior(allBases[baseID].defender, "WaterUnit") == true) && (WorldHeight(c_heightMapGround, UnitGetPosition(EventUnitTargetUnit())) > 7.8)) {
+        libNtve_gf_UIErrorMessage(PlayerGroupSingle(currentOwner), StringToText("Cannot be moved on land!"), SoundLink("Alert_TerranBuildError", -1));
+        return true;
     }
+    
     SwapDefender(EventUnitTargetUnit(), baseID);
-    if ((currentOwner != newOwner)) {
+    if (currentOwner != newOwner) {
         SetBaseOwnership(baseID, newOwner);
         //if ((gv_player[newOwner].lv_showHideNationality == true)) {
         //    gf_ShowHideIndvFlag(true, baseID);

@@ -183,6 +183,10 @@
                 <Slot Id="Global"/>
                 <Value Id="1315926637"/>
             </Default>
+            <ValueHidden Id="1399615346"/>
+            <ValueHidden Id="1399615351"/>
+            <ValueHidden Id="1180791668"/>
+            <ValueHidden Id="1180791666"/>
         </Attribute>
         <Attribute Namespace="999" Id="3010">
             <Default>
@@ -280,6 +284,10 @@
                 <Slot Id="Global"/>
                 <Value Id="1315926637"/>
             </Default>
+            <ValueHidden Id="1399615346"/>
+            <ValueHidden Id="1399615351"/>
+            <ValueHidden Id="1180791668"/>
+            <ValueHidden Id="1180791666"/>
         </Attribute>
         <Attribute Namespace="999" Id="2000">
             <Default>
@@ -375,6 +383,10 @@
                 <Slot Id="Global"/>
                 <Value Id="1315926637"/>
             </Default>
+            <ValueHidden Id="1399615346"/>
+            <ValueHidden Id="1399615351"/>
+            <ValueHidden Id="1180791668"/>
+            <ValueHidden Id="1180791666"/>
         </Attribute>
         <Attribute Id="1">
             <Default>
@@ -683,6 +695,10 @@
                 <Slot Id="Global"/>
                 <Value Id="1315926637"/>
             </Default>
+            <ValueHidden Id="1399615346"/>
+            <ValueHidden Id="1399615351"/>
+            <ValueHidden Id="1180791668"/>
+            <ValueHidden Id="1180791666"/>
         </Attribute>
     </Variant>
     <Variant>
