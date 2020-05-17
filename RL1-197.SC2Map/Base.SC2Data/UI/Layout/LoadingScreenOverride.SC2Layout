@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+
+    <Constant name="discordLink" val="https://discord.com/invite/zyWFBVT"/>
+
+    <Frame type="Frame" name="LoadingScreenOverride">
+        <Anchor relative="$parent"/> 
+        <Frame type="CopyClipboardButton" name="CopyBtn">
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="-165"/>
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="98"/>
+            
+            <Width val="200"/>
+            <Height val="75"/>
+            <HoverSound val="@UI_BnetSelect02_2.wav"/>
+           
+            <ClipboardText val="#discordLink"/>
+
+            <NormalImage val="NormalImage"/>
+            <HoverImage val="HoverImage"/>
+           
+            <ClickSound val="@UI_ActionButtonSelect"/>
+            <HighlightOnHover val="true"/>
+            
+            <Animation name="HoverSound">
+                <Event event="OnMouseEnter" action="Reset,Play"/>
+                <Controller type="Sound" end="Stop">
+                    <Key type="Sound" time="0" sound="@UI_HoverTick"/>
+                </Controller>
+            </Animation>
+
+
+            <Frame type="Image" name="NormalImage">
+                
+                <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+                <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+                <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+                <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+                <Texture val="Risk/ui_battlenet_challenge_button_normalpressed.dds"/>
+                <TextureType val="NineSlice"/>
+                <StateCount val="2"/>
+            </Frame>
+
+            <Frame type="Image" name="HoverImage">
+                
+                <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+                <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+                <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+                <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+                <Texture val="Risk/ui_battlenet_challenge_button_normaloverpressedover.dds"/>
+                <TextureType val="NineSlice"/>
+                <StateCount val="2"/>
+            </Frame>
+                    
+            <Frame type="Label" name="discordLabel">
+                <Anchor side="Bottom" relative="$parent" pos="Max" offset="-23"/>
+                <Anchor side="Left" relative="$parent" pos="Min" offset="39"/>
+                
+                <Text val="Discord Link"/>
+                
+              
+                <Style val="LoadingHelpLabel"/>
+                <Color val="149,202,255"/>
+            </Frame>
+                
+        </Frame>
+        
+    </Frame>
+</Desc>  

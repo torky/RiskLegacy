@@ -7,4 +7,5 @@
 <Unit id="Starport"/>
 <Unit id="UnbuildableRocksDestructible" Variations="0,1,2,3,4,5,6,7"/>
 <Unit id="SpawnZone"/>
+<Sound id="UI_ActionButtonSelect"/>
 </Preload>
