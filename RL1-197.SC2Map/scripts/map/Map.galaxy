@@ -124,7 +124,6 @@ bool ViewTurn(bool testConds, bool runActions){
         image = currentPlayerMapHistoryTurn[player][b];
         c = allMapHistory[turn][b];
         DialogControlSetPropertyAsColor(image, c_triggerControlPropertyColor, PlayerGroupSingle(player), c);
-        UIDisplayMessage(PlayerGroupAll(), c_messageAreaChat, IntToText(b));
     }
 
     return true;
