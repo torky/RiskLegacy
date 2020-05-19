@@ -21,6 +21,7 @@ include "scripts/bases/Bases"
 include "scripts/cards/Cards"
 include "scripts/banks/Banks"
 include "scripts/countries/Country"
+include "scripts/map/Map"
 include "scripts/skins/SkinsController"
 include "scripts/settings/SettingsController"
 
@@ -139,6 +140,8 @@ void InitTriggers () {
     gt_GameModeSelect_Init();
     gt_SpawnConscripts_Init();
     gt_ConscriptSpawned_Init();
+    gt_ShowHideMapHistory_Init();
+    gt_ViewTurn_Init();
     gt_Refresh_Init();
 }
 

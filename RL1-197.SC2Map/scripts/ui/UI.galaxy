@@ -21,12 +21,14 @@ void RemoveDefaults(){
     }
 }
 
+// Don't create any dialogs before this because I'm too lazy to figure out how to readjust the numbers
 void SetupUI () {
     GameSetSpeedValue(c_gameSpeedNormal);
     GameSetSpeedLocked(true);
     RemoveDefaults();
     SetupSkinsUI();
     SetupSettingsUI();
+    SetupMapHistoryUI();
 }
 
 void InitializeSelectUnitButtons(){

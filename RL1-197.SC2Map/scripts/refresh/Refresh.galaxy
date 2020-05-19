@@ -17,6 +17,7 @@ bool Refresh(bool testConds, bool runActions){
     remainingTime-=1;
     if(remainingTime < 1){
         //Increment turns
+        RefreshMapHistory(turns);
         turns+=1;
         remainingTime=totalTurnTime;
         RefreshIncome();

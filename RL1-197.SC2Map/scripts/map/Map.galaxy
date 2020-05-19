@@ -1,0 +1,147 @@
+const int totalMapHistoryTurns = 501;
+color[totalMapHistoryTurns][totalBases] allMapHistory;
+
+int mapDialog;
+int mapHistory;
+int mapTurnSlider;
+int mapTurnLabel;
+int mapBackground;
+int mapHistoryButton;
+int profileButton;
+int skinsButton;
+int[totalPlayers] playerMapHistoryAnchor;
+int[totalPlayers][totalBases] currentPlayerMapHistoryTurn;
+
+fixed GetMinimapUnitX (unit u, int dialog) {
+    fixed mapWidth;
+    fixed miniWidth;
+    fixed x;
+
+    mapWidth = libNtve_gf_WidthOfRegion(RegionEntireMap());
+    miniWidth = DialogGetWidth(dialog);
+    x = PointGetX(UnitGetPosition(u));
+
+    return (x * miniWidth) / mapWidth;
+}
+
+fixed GetMinimapUnitY (unit u, int dialog) {
+    fixed mapHeight;
+    fixed miniHeight;
+    fixed y;
+
+    mapHeight = libNtve_gf_HeightOfRegion(RegionEntireMap());
+    miniHeight = DialogGetHeight(dialog);
+    y = PointGetY(UnitGetPosition(u));
+
+    return (y * miniHeight) / mapHeight - 5;
+}
+
+void SetupMapHistoryUI(){
+    int mapAnchor;
+    int player;
+    int b;
+    int x;
+    int y;
+    int baseImage;
+    playergroup players;
+
+    mapHistoryButton = DialogControlHookupStandard(c_triggerControlTypeButton, "UIContainer/LogsButton");
+    skinsButton = DialogControlHookupStandard(c_triggerControlTypeButton, "UIContainer/SkinsButton");
+    profileButton = DialogControlHookupStandard(c_triggerControlTypeButton, "UIContainer/ProfileButton");
+
+    mapBackground = DialogCreate(510, 600, c_anchorBottomLeft, 0, 370, true);
+    DialogSetVisible(mapBackground, PlayerGroupAll(), false);
+    DialogSetImageVisible(mapBackground, false);
+    libNtve_gf_CreateDialogItemImage(mapBackground, 510, 600, c_anchorCenter, 0, 0, null, "Assets/Textures/ui_camapaignmenu_dialogbox_base.dds", c_triggerImageTypeHorizontalBorder, false, Color(255, 255, 255), c_triggerBlendModeNormal);
+    
+    mapTurnSlider = DialogControlCreateFromTemplate(mapBackground, c_triggerControlTypeSlider, "Logs/MapTurnSlider");
+    DialogControlSetPropertyAsFixed(mapTurnSlider, c_triggerControlPropertyMinValue, PlayerGroupAll(), 0);
+    DialogControlSetPropertyAsFixed(mapTurnSlider, c_triggerControlPropertyMaxValue, PlayerGroupAll(), totalMapHistoryTurns-1);
+    DialogControlSetSize(mapTurnSlider, PlayerGroupAll(), 410, 30);
+    DialogControlSetPosition(mapTurnSlider, PlayerGroupAll(), c_anchorTopLeft, 50, 100);
+    
+    mapTurnLabel = DialogControlCreateFromTemplate(mapBackground, c_triggerControlTypeLabel, "Logs/MapTurnLabel");
+    DialogControlSetPosition(mapTurnLabel, PlayerGroupAll(), c_anchorTop, 0, 50);
+
+    mapDialog = DialogCreate(400, 390, c_anchorBottomLeft, 55, 400, true);
+    DialogSetImageVisible(mapDialog, false);
+    DialogSetVisible(mapDialog, PlayerGroupAll(), false);
+    
+    mapHistory = libNtve_gf_CreateDialogItemImage(mapDialog, 390, 367, c_anchorCenter, 0, 0, StringToText(""), "Risk\\RiskMinimap.tga", c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
+
+    for(player = 1; player < totalPlayers; player+=1){
+        playerMapHistoryAnchor[player] = mapAnchor;
+        for(b = 0; b < totalBases; b+=1){
+            if(allBases[b].structure == null){ break; }
+            x = FixedToInt(GetMinimapUnitX(allBases[b].structure, mapDialog));
+            y = FixedToInt(GetMinimapUnitY(allBases[b].structure, mapDialog));
+            baseImage = libNtve_gf_CreateDialogItemImage(mapDialog, 5, 5, c_anchorBottomLeft, 0, 0, StringToText(""), "Assets\\Textures\\white32.dds", c_triggerImageTypeNormal, true, Color(100,100,100), c_triggerBlendModeNormal);
+            DialogControlSetPosition(baseImage, PlayerGroupSingle(player), c_anchorBottomLeft, x, y);
+            DialogControlSetVisible(baseImage, PlayerGroupSingle(player), true);
+
+            players = PlayerGroupAll();
+            PlayerGroupRemove(players, player);
+            DialogControlSetVisible(baseImage, players, false);
+            currentPlayerMapHistoryTurn[player][b] = baseImage;
+        }
+    }
+}
+
+trigger gt_ShowHideMapHistory;
+
+bool ShowHideMapHistory(bool testConds, bool runActions){
+    int player = EventPlayer();
+    int control = EventDialogControl();
+    bool visible;
+
+    visible = control == mapHistoryButton && !DialogIsVisible(mapDialog, player);
+
+    DialogSetVisible(mapDialog, PlayerGroupSingle(player), visible);
+    DialogSetVisible(mapBackground, PlayerGroupSingle(player), visible);
+
+    return true;
+}
+
+void gt_ShowHideMapHistory_Init(){
+    gt_ShowHideMapHistory = TriggerCreate("ShowHideMapHistory");
+    TriggerAddEventDialogControl(gt_ShowHideMapHistory, c_playerAny, mapHistoryButton, c_triggerControlEventTypeClick);
+    TriggerAddEventDialogControl(gt_ShowHideMapHistory, c_playerAny, profileButton, c_triggerControlEventTypeClick);
+    TriggerAddEventDialogControl(gt_ShowHideMapHistory, c_playerAny, skinsButton, c_triggerControlEventTypeClick);
+}
+
+trigger gt_ViewTurn;
+
+bool ViewTurn(bool testConds, bool runActions){
+    int slider = EventDialogControl();
+    int player = EventPlayer();
+    int b;
+    int turn = FixedToInt(DialogControlGetPropertyAsFixed(slider, c_triggerControlPropertyValue, player));
+    int image;
+    color c;
+
+    for(b = 0; b < totalBases; b+=1){
+        if(allBases[b].structure == null) {break;}
+        image = currentPlayerMapHistoryTurn[player][b];
+        c = allMapHistory[turn][b];
+        DialogControlSetPropertyAsColor(image, c_triggerControlPropertyColor, PlayerGroupSingle(player), c);
+        UIDisplayMessage(PlayerGroupAll(), c_messageAreaChat, IntToText(b));
+    }
+
+    return true;
+}
+
+void gt_ViewTurn_Init(){
+    gt_ViewTurn = TriggerCreate("ViewTurn");
+    TriggerAddEventDialogControl(gt_ViewTurn, c_playerAny, mapTurnSlider, c_triggerControlEventTypeValueChanged);
+}
+
+void RefreshMapHistory(int turn){
+    int b;
+    int player;
+
+    for(b = 0; b < totalBases; b+=1){
+        if(allBases[b].structure == null) {break;}
+        player = UnitGetOwner(allBases[b].structure);
+        allMapHistory[turn][b] = ColorFromIndex(PlayerGetColorIndex(player, true), c_teamColorEmissive);
+    }
+}
