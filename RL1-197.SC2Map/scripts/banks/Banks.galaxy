@@ -141,7 +141,6 @@ void UpdatePlayerBankStats(int playerID){
     structref<Player> player = allPlayers[playerID];
     bank playerBank = player.infoBank;
 
-
     BankValueSetFromInt(playerBank, c_sectionPlayer, c_Win24, player.kills + GetPlayerKills(playerID));
     BankValueSetFromInt(playerBank, c_sectionPlayer, c_Win25, player.deaths + GetPlayerDeaths(playerID));
     BankValueSetFromInt(playerBank, c_sectionPlayer, c_Win27, player.rekt + GetPlayerKillValue(playerID));

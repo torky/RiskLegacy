@@ -1,0 +1,70 @@
+bool ICompare(int l, int r);
+
+const int c_maxSortSize = 13;
+
+typedef int[c_maxSortSize] NumberArray;
+
+//Compare return true if the first value is a lower index than the second value
+void Merge(arrayref<NumberArray> arr, int l, int m, int r, funcref<ICompare> Compare) 
+{ 
+    int i; int j; int k; 
+    int n1 = m - l + 1; 
+    int n2 =  r - m; 
+  
+    int[c_maxSortSize] L; 
+    int[c_maxSortSize] R; 
+  
+    for (i = 0; i < n1; i+=1){
+        L[i] = arr[l + i]; 
+    } 
+    for (j = 0; j < n2; j+=1){
+        R[j] = arr[m + 1+ j]; 
+    }
+  
+    i = 0; // Initial index of first subarray 
+    j = 0; // Initial index of second subarray 
+    k = l; // Initial index of merged subarray 
+    while (i < n1 && j < n2) 
+    { 
+        if (Compare(L[i], R[j])) 
+        { 
+            arr[k] = L[i]; 
+            i+=1; 
+        } 
+        else
+        { 
+            arr[k] = R[j]; 
+            j+=1; 
+        } 
+        k+=1; 
+    } 
+  
+    while (i < n1) 
+    { 
+        arr[k] = L[i]; 
+        i+=1; 
+        k+=1; 
+    } 
+
+    while (j < n2) 
+    { 
+        arr[k] = R[j]; 
+        j+=1; 
+        k+=1; 
+    } 
+} 
+
+//Sorts an int array of size 12
+void MergeSort(arrayref<NumberArray> arr, int l, int r, funcref<ICompare> Compare) 
+{
+    int m; 
+    if (l < r) 
+    { 
+        m = l+(r-l)/2; 
+  
+        MergeSort(arr, l, m, Compare); 
+        MergeSort(arr, m+1, r, Compare); 
+  
+        Merge(arr, l, m, r, Compare); 
+    } 
+} 

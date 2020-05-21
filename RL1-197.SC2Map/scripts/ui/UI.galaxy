@@ -28,6 +28,7 @@ void SetupUI () {
     RemoveDefaults();
     SetupSkinsUI();
     SetupSettingsUI();
+    SetupScoreboard();
     SetupMapHistoryUI();
 }
 

@@ -1,0 +1,216 @@
+int scoreboard;
+int scoreboardButton;
+
+const int c_playerNameX = 18;
+const int c_incX = 235;
+const int c_rektX = 290;
+const int c_lossX = 350;
+const int c_statusX = 410;
+
+const int c_titleHeight = 40;
+const int c_rowHeight = 27;
+
+const int c_playerName = 0;
+const int c_playerInc = 1;
+const int c_playerRekt = 2;
+const int c_playerLost = 3;
+const int c_playerStatus = 4;
+const int c_playerNumber = 5;
+
+const int totalScoreboardRows = 13; // We do not use index 0
+const int totalScoreboardValues = 6;
+
+playergroup scoreboardPlayers;
+
+//Score data is array[row][column] with columns: name, income, rekt, loss, status, playerNumber (0 - 15)
+int[totalScoreboardRows][totalScoreboardValues] scoreboardData;
+
+//Assumes scoreboard dialog was already created
+void CreateScoreboardTitleLabel(string label, int x){
+    libNtve_gf_CreateDialogItemLabel(scoreboard, 200, 50, c_anchorTopLeft, x, 30, StringToText(label), libNtve_gf_ConvertPlayerColorToColor(0), false, 0);
+    libNtve_gf_SetDialogItemStyle(DialogControlLastCreated(), "RobotoMedium 18", PlayerGroupAll());
+}
+
+int CreateScoreboardLabel(int row, int col, text val, int player){
+    int x;
+    int y = c_titleHeight + row * c_rowHeight;
+    int label;
+
+    if(col == c_playerName) {x = c_playerNameX;}
+    else if(col == c_playerInc) {x = c_incX;}
+    else if(col == c_playerRekt) {x = c_rektX;}
+    else if(col == c_playerLost) {x = c_lossX;}
+    else{
+        return -1;
+    }
+
+    label = libNtve_gf_CreateDialogItemLabel(scoreboard, 200, 50, c_anchorTopLeft, x, y, val, libNtve_gf_ConvertPlayerColorToColor(player), false, 0);
+    libNtve_gf_SetDialogItemStyle(DialogControlLastCreated(), "RobotoMedium 18", PlayerGroupAll());
+    return label;
+}
+
+int CreateScoreboardStatus(int row){
+    int y = c_titleHeight + row * c_rowHeight;
+    return libNtve_gf_CreateDialogItemImage(DialogLastCreated(), 20, 20, c_anchorTopLeft, 427, y, StringToText("Active"), "Risk\\Active.dds", c_triggerImageTypeNormal, true, Color(100,100,100), c_triggerBlendModeNormal);
+}
+
+void CreateAndSetScoreboardRow(int row, int player){
+    scoreboardData[row][c_playerName] = CreateScoreboardLabel(row, c_playerName, PlayerName(player), player);
+    scoreboardData[row][c_playerInc] = CreateScoreboardLabel(row, c_playerInc, IntToText(4), player);
+    scoreboardData[row][c_playerRekt] = CreateScoreboardLabel(row, c_playerRekt, IntToText(0), player);
+    scoreboardData[row][c_playerLost] = CreateScoreboardLabel(row, c_playerLost, IntToText(0), player);
+    scoreboardData[row][c_playerStatus] = CreateScoreboardStatus(row);
+    scoreboardData[row][c_playerNumber] = player;
+}
+
+trigger gt_ShowHideScoreboard;
+
+bool ShowHideScoreboard(bool testConds, bool runActions){
+    int button = EventDialogControl();
+    int player = EventPlayer();
+    bool visible;
+    text tooltip;
+
+    visible = !DialogIsVisible(scoreboard, player);
+    if(visible){
+        tooltip = StringToText("Minimize this scoreboard");
+    }else{
+        tooltip = StringToText("Maximize this scoreboard");
+    }
+
+    DialogSetVisible(scoreboard, PlayerGroupSingle(player), visible);
+    libNtve_gf_SetDialogItemTooltip(button, tooltip, PlayerGroupSingle(player));
+
+    return true;
+}
+
+void gt_ShowHideScoreboard_Init(){
+    gt_ShowHideScoreboard = TriggerCreate("ShowHideScoreboard");
+    TriggerAddEventDialogControl(gt_ShowHideScoreboard, c_playerAny, scoreboardButton, c_triggerControlEventTypeClick);
+}
+
+//Players with higher incomes should be a lower index than lower ones
+bool ComparePlayers(int l, int r){
+    
+    if(PlayerType(r) == c_playerTypeNone) { return true; }
+    if(PlayerType(l) == c_playerTypeNone) { return false; }
+
+    if(PlayerType(r) == c_playerTypeNeutral) { return true; }
+    if(PlayerType(l) == c_playerTypeNeutral) { return false; }
+
+    if(PlayerType(r) == c_playerTypeComputer) { return true; }
+    if(PlayerType(l) == c_playerTypeComputer) { return false; }
+
+    return allPlayers[l].income >= allPlayers[r].income;
+}
+
+string GetPlayerStatusImage(int player){
+    int playerStatus = PlayerStatus(player);
+    unitgroup ownedUnits;
+    unitfilter filter = UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32)));
+    int count;
+    
+    if(playerStatus == c_playerStatusActive){
+        ownedUnits = UnitGroup(null, player, RegionEntireMap(), filter, 0);
+        count = UnitGroupCount(ownedUnits, c_unitCountAlive);
+        if(count > 0){
+            return "Risk\\Active.dds";
+        }
+        return "Risk\\Busy.dds";
+    }
+    return "Risk\\Inactive.dds";
+}
+
+void UpdateScoreboard(){
+    int r;
+    int player;
+    text income;
+    text rekt;
+    text lost;
+    string image;
+    playergroup playersAll = PlayerGroupAll();
+
+    for(r = 1; r <= PlayerGroupCount(scoreboardPlayers); r+=1){
+        player = scoreboardData[r][c_playerNumber];
+
+        income = IntToText(allPlayers[player].income);
+        rekt = IntToText(GetPlayerKillValue(player));
+        lost = IntToText(GetPlayerLostValue(player));
+        image = GetPlayerStatusImage(player);
+
+        libNtve_gf_SetDialogItemText(scoreboardData[r][c_playerName], PlayerName(player), playersAll);
+        libNtve_gf_SetDialogItemText(scoreboardData[r][c_playerInc], income, playersAll);
+        libNtve_gf_SetDialogItemText(scoreboardData[r][c_playerRekt], rekt, playersAll);
+        libNtve_gf_SetDialogItemText(scoreboardData[r][c_playerLost], lost, playersAll);
+        libNtve_gf_SetDialogItemImage(scoreboardData[r][c_playerStatus], image, playersAll);
+    }
+}
+
+void RefreshScoreboard(){
+    int r;
+    int c;
+    int i;
+    int player;
+
+    NumberArray players;
+
+    for(i = 1; i < totalScoreboardRows-1; i+=1){
+        players[i] = scoreboardData[i][c_playerNumber];
+    }
+    MergeSort(players, 1, totalScoreboardRows-1, ComparePlayers);
+    for(i = 1; i < totalScoreboardRows-1; i+=1){
+        scoreboardData[i][c_playerNumber] = players[i];
+    }
+
+    UpdateScoreboard();
+}
+
+trigger gt_PeriodicScoreboardUpdate;
+
+bool PeriodicScoreboardUpdate(bool testConds, bool runActions){
+    UpdateScoreboard();
+    return true;
+}
+
+void gt_PeriodicScoreboardUpdate_Init(){
+    gt_PeriodicScoreboardUpdate = TriggerCreate("PeriodicScoreboardUpdate");
+    TriggerAddEventTimePeriodic(gt_PeriodicScoreboardUpdate, 10.0, c_timeGame);
+}
+
+void SetupScoreboard(){
+    int height = c_titleHeight + PlayerGroupCount(PlayerGroupActive()) * c_rowHeight + 50;
+    int width = 490;
+    int i;
+    int row;
+    int player;
+    int scoreBoardButtonDialog;
+
+    scoreboardPlayers = PlayerGroupActive();
+    
+    scoreboard = DialogCreate(width, height, c_anchorTopRight, 15, 110, true);
+    DialogSetImageVisible(scoreboard, false);
+    DialogSetVisible(scoreboard, PlayerGroupAll(), true);
+    libNtve_gf_CreateDialogItemImage(scoreboard, width, height, c_anchorCenter, 0, 0, null, "Assets/Textures/ui_camapaignmenu_dialogbox_base.dds", c_triggerImageTypeHorizontalBorder, false, Color(100, 100, 100), c_triggerBlendModeNormal);
+    
+    scoreBoardButtonDialog = DialogCreate(width, height, c_anchorTopRight, 15, 110, true);
+    DialogSetImageVisible(scoreBoardButtonDialog, false);
+    DialogSetVisible(scoreBoardButtonDialog, PlayerGroupAll(), true);
+    scoreboardButton = libNtve_gf_CreateDialogItemButton(scoreBoardButtonDialog, 45, 40, c_anchorTopRight, -4, -3, StringToText("Minimize this scoreboard"), StringToText(""), "Assets\\Textures\\ui_button_unbindkey_normaloverpressedover_bnet.dds");
+    libNtve_gf_SetDialogItemImage(scoreboardButton, "Assets\\Textures\\ui_button_unbindkey_normalpressed_bnet.dds", PlayerGroupAll());
+    libNtve_gf_SetDialogItemImageType(scoreboardButton, c_triggerImageTypeNormal, PlayerGroupAll());
+
+    CreateScoreboardTitleLabel("Players", c_playerNameX);
+    CreateScoreboardTitleLabel("Inc", c_incX);
+    CreateScoreboardTitleLabel("Rekt", c_rektX);
+    CreateScoreboardTitleLabel("Loss", c_lossX);
+    CreateScoreboardTitleLabel("Status", c_statusX);
+
+    for(i = 1; i <= PlayerGroupCount(scoreboardPlayers); i+=1){
+        row = i;
+        player = PlayerGroupPlayer(scoreboardPlayers, i);
+        CreateAndSetScoreboardRow(row, player);
+    }
+
+    gt_ShowHideScoreboard_Init();
+    gt_PeriodicScoreboardUpdate_Init();
+}
