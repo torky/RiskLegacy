@@ -1,3 +1,5 @@
+const int c_currencyCap = 750;
+
 void StartIncomeTextAnimation(int i, int countryIncome, int countryOwner){
     if(allCountries[i].spawn != null){
         TextTagCreate((StringToText("<img path=\"Assets\\Textures\\icon-energy-nobg.dds\" width=\"27\" height=\"27\"/> ") + IntToText(countryIncome)), 20, UnitGetPosition(allCountries[i].spawn), 1.75, true, false, PlayerGroupSingle(countryOwner));
@@ -36,5 +38,11 @@ void RefreshIncome(){
     for(i = 1; i <= PlayerGroupCount(players); i += 1){
         player = PlayerGroupPlayer(players, i);
         PlayerModifyPropertyInt(player, c_playerPropMinerals, c_playerPropOperAdd, allPlayers[player].income);
+        if (PlayerGetPropertyInt(player, c_playerPropMinerals) > c_currencyCap) {
+            UIDisplayMessage(PlayerGroupSingle(player), c_messageAreaSubtitle, StringToText("<c val=\"CCCC33\">Private</c> - You hit your currency cap!"));
+            PlayerModifyPropertyInt(player, c_playerPropMinerals, c_playerPropOperSetTo, c_currencyCap);
+        } else if(PlayerGetPropertyInt(player, c_playerPropMinerals) > c_currencyCap - allPlayers[player].income) {
+            UIDisplayMessage(PlayerGroupSingle(player), c_messageAreaSubtitle, StringToText("<c val=\"CCCC33\">Private</c> - You're about to hit your currency cap!"));
+        }
     }
 }

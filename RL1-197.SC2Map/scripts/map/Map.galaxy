@@ -63,7 +63,7 @@ void SetupMapHistoryUI(){
     mapTurnLabel = DialogControlCreateFromTemplate(mapBackground, c_triggerControlTypeLabel, "Logs/MapTurnLabel");
     DialogControlSetPosition(mapTurnLabel, PlayerGroupAll(), c_anchorTop, 0, 50);
 
-    mapDialog = DialogCreate(400, 390, c_anchorBottomLeft, 55, 400, true);
+    mapDialog = DialogCreate(400, 390, c_anchorBottomLeft, 55, 420, true);
     DialogSetImageVisible(mapDialog, false);
     DialogSetVisible(mapDialog, PlayerGroupAll(), false);
     
@@ -140,6 +140,7 @@ void RefreshMapHistory(int turn){
 
     for(b = 0; b < totalBases; b+=1){
         if(allBases[b].structure == null) {break;}
+        DialogControlSetPropertyAsFixed(mapTurnSlider, c_triggerControlPropertyMaxValue, PlayerGroupAll(), turn+1);
         player = UnitGetOwner(allBases[b].structure);
         allMapHistory[turn][b] = ColorFromIndex(PlayerGetColorIndex(player, true), c_teamColorEmissive);
     }
