@@ -58,27 +58,21 @@ void InitLibs () {
     libNtve_InitLib();
 }
 
+const string c_mode1v1 = "0007";
+const string c_modeCustom = "0002";
+const string c_modeEmpire = "0006";
+const string c_modeQuick = "0001";
+const string c_modeSolo = "0004";
+const string c_modeTeams = "0005";
+const string c_modeTutorial = "0003";
+
+string gameMode;
+
 trigger gt_GameModeSelect;
 
 bool gt_GameModeSelect_Func (bool testConds, bool runActions) {
-    string mode1v1;
-    string modeCustom;
-    string modeEmpire;
-    string modeQuick;
-    string modeSolo;
-    string modeTeams;
-    string modeTutorial;
 
-    string gameMode;
     playergroup players;
-
-    mode1v1 = "0007";
-    modeCustom = "0002";
-    modeEmpire = "0006";
-    modeQuick = "0001";
-    modeSolo = "0004";
-    modeTeams = "0005";
-    modeTutorial = "0003";
     
     gameMode = GameAttributeGameValue("1");
     VisEnable(c_visTypeMask, true);
@@ -101,25 +95,25 @@ bool gt_GameModeSelect_Func (bool testConds, bool runActions) {
     SetupUI();
     CreateButtons();
     
-    if (gameMode == mode1v1) {
+    if (gameMode == c_mode1v1) {
         UIDisplayMessage(PlayerGroupActive(), c_messageAreaChat, StringToText("1v1"));
 
-    }else if (gameMode == modeCustom) {
+    }else if (gameMode == c_modeCustom) {
         UIDisplayMessage(PlayerGroupActive(), c_messageAreaChat, StringToText("Custom"));
 
-    }else if (gameMode == modeEmpire) {
+    }else if (gameMode == c_modeEmpire) {
         UIDisplayMessage(PlayerGroupActive(), c_messageAreaChat, StringToText("Empire"));
 
-    }else if (gameMode == modeQuick) {
+    }else if (gameMode == c_modeQuick) {
         UIDisplayMessage(PlayerGroupActive(), c_messageAreaChat, StringToText("Quick"));
 
-    }else if (gameMode == modeSolo) {
+    }else if (gameMode == c_modeSolo) {
         UIDisplayMessage(PlayerGroupActive(), c_messageAreaChat, StringToText("Solo"));
 
-    }else if (gameMode == modeTeams) {
+    }else if (gameMode == c_modeTeams) {
         UIDisplayMessage(PlayerGroupActive(), c_messageAreaChat, StringToText("Teams"));
         
-    }else if (gameMode == modeTutorial) {
+    }else if (gameMode == c_modeTutorial) {
         UIDisplayMessage(PlayerGroupActive(), c_messageAreaChat, StringToText("Tutorial"));
 
     }

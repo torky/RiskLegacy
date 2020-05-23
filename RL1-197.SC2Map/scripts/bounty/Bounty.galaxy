@@ -1,0 +1,36 @@
+const int c_defaultBounty = 4;
+
+int bounty;
+
+trigger gt_Bounty;
+
+bool Bounty(bool testConds, bool runActions){
+    int player = libNtve_gf_KillingPlayer();
+    int dyingPlayer = EventPlayer();
+    int mineralsAdded;
+    unit u = libNtve_gf_KillingUnit();
+    point dyingPosition;
+
+    if(player == dyingPlayer){ return true; }
+    allPlayers[player].bounty += UnitTypeGetCost(UnitGetType(u), c_unitCostMinerals);
+    mineralsAdded = allPlayers[player].bounty / bounty;
+    allPlayers[player].bounty = ModI(allPlayers[player].bounty, bounty);
+    if(mineralsAdded > 0){
+        PlayerModifyPropertyInt(player, c_playerPropMinerals, c_playerPropOperAdd, mineralsAdded);
+        if(allPlayers[player].income < 30 || gameMode != c_modeQuick){
+            dyingPosition = UnitGetPosition(EventUnit());
+            TextTagCreate((StringToText("<img path=\"Assets\\Textures\\icon-energy-nobg.dds\" width=\"21\" height=\"21\"/>") + IntToText(mineralsAdded)), 15, dyingPosition, 1.5, true, false, PlayerGroupSingle(player));
+            TextTagSetColor(TextTagLastCreated(), c_textTagColorText, Color(45.88, 87.45, 83.53));
+            TextTagSetFontSize(TextTagLastCreated(), 24);
+            TextTagSetVelocity(TextTagLastCreated(), 0.25, 90.0);
+            TextTagSetTime(TextTagLastCreated(), c_textTagTimeDuration, 7.0);
+        }
+    }
+
+    return true;
+}
+
+void gt_Bounty_Init(){
+    gt_Bounty = TriggerCreate("Bounty");
+    TriggerAddEventUnitDied(gt_Bounty, null);
+}
