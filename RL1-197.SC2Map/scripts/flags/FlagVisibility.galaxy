@@ -15,6 +15,18 @@ void UpdateFlagVisibilityForPlayer(unit flag, int player){
     }
 }
 
+void ShowHideAllFlagsForPlayer(int player){
+    unit flag;
+    unitgroup flags = UnitGroup("DestructibleKorhalFlag", c_playerAny, RegionPlayableMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+    int count = UnitGroupCount(flags, c_unitCountAlive);
+
+    for (;; count -= 1) {
+        flag = UnitGroupUnitFromEnd(flags, count);
+        if (flag == null) { break; }
+        UpdateFlagVisibilityForPlayer(flag, player);
+    }
+}
+
 void ShowHideFlagsForAllPlayers(){
     playergroup players = PlayerGroupActive();
     unitgroup flags = UnitGroup("DestructibleKorhalFlag", c_playerAny, RegionPlayableMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);

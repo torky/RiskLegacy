@@ -41,7 +41,13 @@ bool UpdateCheckBoxSettings(bool testConds, bool runActions){
     autoCards = libNtve_gf_DialogItemIsChecked(settings.autoCards, player);
     
     if(pingBases) { allPlayers[player].pingBases = 1; } else { allPlayers[player].pingBases = 0; }
-    if(showFlags) { allPlayers[player].showFlags = 1; } else { allPlayers[player].showFlags = 0; }
+    if(showFlags) { 
+        allPlayers[player].showFlags = 1; 
+        ShowHideAllFlagsForPlayer(player);
+    } else { 
+        allPlayers[player].showFlags = 0; 
+        ShowHideAllFlagsForPlayer(player);
+    }
     if(showProfile) { allPlayers[player].showProfile = 1; } else { allPlayers[player].showProfile = 0; }
     if(autoCards) { allPlayers[player].autoCards = 1; } else { allPlayers[player].autoCards = 0; }
 
