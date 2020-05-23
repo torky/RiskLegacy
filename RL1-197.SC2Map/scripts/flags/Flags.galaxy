@@ -1,9 +1,12 @@
 void HideFlagForPlayer(unit flag, int player){
-    ActorSend(libNtve_gf_MainActorofUnit(flag), "SetFilterPlayers " + IntToString(player));
+    actor a = libNtve_gf_MainActorofUnit(flag);
+    ActorSend(a, "SetVisibleToPlayers " + IntToString(player) + " Clear");
+    ActorSend(a, "SetFilterPlayers " + IntToString(player));
 }
 
-void ShowFlag(unit flag){
-    ActorSend(libNtve_gf_MainActorofUnit(flag), "ClearFilterPlayers");
+void ShowFlagForPlayer(unit flag, int player){
+    actor a = libNtve_gf_MainActorofUnit(flag);
+    ActorSend(a, "SetVisibleToPlayers " + IntToString(player));
 }
 
 void SetFlag(unit flag, string texture){

@@ -1,7 +1,6 @@
 
 void UpdateFlagVisibilityForPlayer(unit flag, int player){
     int flagOwner;
-    ShowFlag(flag);
     if(allPlayers[player].showFlags == 1){
         flagOwner = UnitGetOwner(flag);
         if(allPlayers[flagOwner].flag == null 
@@ -9,6 +8,8 @@ void UpdateFlagVisibilityForPlayer(unit flag, int player){
             || allPlayers[flagOwner].flag == "Nothing" 
             || !allPlayers[flagOwner].showHomeland){
             HideFlagForPlayer(flag, player);
+        }else{
+            ShowFlagForPlayer(flag, player);
         }
     }else{
         HideFlagForPlayer(flag, player);
