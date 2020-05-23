@@ -87,8 +87,8 @@ void LoadPlayerAdmins () {
     allAdmins[i].name = "Opex";
     allAdmins[i].sc2ID = "1-S2-1-3719067";
     allAdmins[i].status = c_donator4Status;
-    allAdmins[i].flagImage = "risk\\donate\\Opex.tga";
-    allAdmins[i].flagTexture = "Sovietflag";
+    allAdmins[i].flagImage = "risk\\donate\\flex.tga";
+    allAdmins[i].flagTexture = "Flex";
     i = (i + 1);
 
     allAdmins[i].name = "JoePasta";
@@ -319,8 +319,8 @@ void LoadPlayerAdmins () {
     allAdmins[i].name = "torky";
     allAdmins[i].sc2ID = "1-S2-1-3719067";
     allAdmins[i].status = c_adminStatus;
-    allAdmins[i].flagImage = "risk\\donate\\UnitedNations.tga";
-    allAdmins[i].flagTexture = "CrazyRusski";
+    allAdmins[i].flagImage = "risk\\donate\\digitek.tga";
+    allAdmins[i].flagTexture = "digitek";
     i = (i + 1);
 
     allAdmins[i].name = "daboss";
@@ -339,6 +339,12 @@ void LoadPlayerAdmins () {
 
     allAdmins[i].name = "Nanos";
     allAdmins[i].sc2ID = "1-S2-1-1547074";
+    allAdmins[i].status = c_adminStatus;
+    allAdmins[i].flagImage = "risk\\donate\\UnitedNations.tga";
+    allAdmins[i].flagTexture = "CrazyRusski";
+
+    allAdmins[i].name = "Spartan";
+    allAdmins[i].sc2ID = "1-S2-1-379067";
     allAdmins[i].status = c_adminStatus;
     allAdmins[i].flagImage = "risk\\donate\\UnitedNations.tga";
     allAdmins[i].flagTexture = "CrazyRusski";

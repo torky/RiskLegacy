@@ -11,13 +11,15 @@ struct Player{
     bank infoBank;
     int fastestWin;
     string name;
+    string flag;
+    bool showHomeland;
     PlayerSkins skins;
     int pingBases;
     int showFlags;
     int showProfile;
     int showKillValue;
     int autoCards;
-    int isAdmin;
+    int playerStatus;
 };
 
 const int totalPlayers = 16;
@@ -35,7 +37,6 @@ bool SetupPlayers(bool TestConds, bool RunActions){
     for(i = 1; i <= PlayerGroupCount(players); i += 1){
         player = PlayerGroupPlayer(players, i);
         PlayerModifyPropertyInt(player, c_playerPropSuppliesMade, c_playerPropOperSetTo, 1750);
-        allPlayers[i].isAdmin = 0;
     }
 
     return true;
@@ -77,7 +78,7 @@ int GetPlayerLostValue(int player){
     return PlayerScoreValueGetAsInt(player, "UnitsLostValue");
 }
 
-void SetPlayerAdmins(){
+void SetInGamePlayerData(){
     int player;
     int i;
     int admin;
@@ -90,8 +91,13 @@ void SetPlayerAdmins(){
         player = PlayerGroupPlayer(players, i);
         for(admin = 0; admin < totalAdmins; admin+=1){
             if(PlayerHandle(player) == allAdmins[admin].sc2ID){
-                allPlayers[player].isAdmin = 1;
+                allPlayers[player].playerStatus = allAdmins[admin].status;
+                allPlayers[player].flag = allAdmins[admin].flagTexture;
             }
         }
+        if(allPlayers[player].playerStatus < c_adminStatus){
+            allPlayers[player].flag = "Nothing";
+        }
+        allPlayers[player].showHomeland = false;
     }
 }

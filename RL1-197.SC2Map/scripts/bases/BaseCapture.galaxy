@@ -1,5 +1,6 @@
-// Radius 6.0
+trigger gt_BaseCapture;
 
+// Radius 6.0
 unitgroup NearbyUnits(point position, int player, fixed radius){
     unitfilter filter;
     filter = UnitFilter(0, 
@@ -116,8 +117,13 @@ void ChangeBaseOwner(int baseID, unit newDefender){
 
     UpdatePlayerSpawnControlGroup(newOwner);
     UpdatePlayerSpawnControlGroup(oldOwner);
+
+    SetFlag(base.flag, allPlayers[newOwner].flag);
+    UpdateFlagVisibilityForPlayer(base.flag, newOwner);
+    UpdateFlagVisibilityForPlayer(base.flag, oldOwner);
     
     libNtve_gf_AttachActorToUnit(base.defender, "TimeWarpLaunch", "Ref_Origin");
+    TriggerAddEventUnitDamaged(gt_BaseCapture, UnitRefFromUnit(base.defender), c_unitDamageTypeAny, c_unitDamageFatal, null);
 }
 
 trigger gt_EmptyBaseCapture;
@@ -156,8 +162,6 @@ void gt_EmptyBaseCapture_Init(){
     gt_EmptyBaseCapture = TriggerCreate("EmptyBaseCapture");
 }
 
-trigger gt_BaseCapture;
-
 bool BaseCapture(bool testConds, bool runActions){
     unit dyingUnit;
     unit killingUnit;
@@ -193,6 +197,4 @@ bool BaseCapture(bool testConds, bool runActions){
 
 void gt_BaseCapture_Init () {
     gt_BaseCapture = TriggerCreate("BaseCapture");
-    TriggerAddEventUnitDamaged(gt_BaseCapture, null, c_unitDamageTypeAny, c_unitDamageFatal, null);
-
 }

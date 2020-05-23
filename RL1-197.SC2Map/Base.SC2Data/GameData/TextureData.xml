@@ -400,4 +400,20 @@
         <File value="risk\donate\PsychoPyro.tga"/>
         <Slot value="decal"/>
     </CTexture>
+    <CTexture id="Opex">
+        <File value="risk\donate\Opex.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="Flex">
+        <File value="risk\donate\flexblackflipped.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+        <CTexture id="FlexTeal">
+        <File value="risk\donate\flextealflipped.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
+    <CTexture id="RoyalsFlag">
+        <File value="risk\donate\RoyalsFlipped.tga"/>
+        <Slot value="decal"/>
+    </CTexture>
 </Catalog>

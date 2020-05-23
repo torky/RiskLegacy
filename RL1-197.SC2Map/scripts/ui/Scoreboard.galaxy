@@ -147,19 +147,25 @@ void UpdateScoreboard(){
 }
 
 void RefreshScoreboard(){
-    int r;
     int c;
     int i;
     int player;
+    int dialogItem;
+    color playerColor;
 
     NumberArray players;
 
-    for(i = 1; i < totalScoreboardRows-1; i+=1){
+    for(i = 1; i <= PlayerGroupCount(scoreboardPlayers); i+=1){
         players[i] = scoreboardData[i][c_playerNumber];
     }
-    MergeSort(players, 1, totalScoreboardRows-1, ComparePlayers);
-    for(i = 1; i < totalScoreboardRows-1; i+=1){
+    MergeSort(players, 1, PlayerGroupCount(scoreboardPlayers), ComparePlayers);
+    for(i = 1; i < PlayerGroupCount(scoreboardPlayers); i+=1){
         scoreboardData[i][c_playerNumber] = players[i];
+        for(c = 0; c < c_playerStatus; c+=1){ 
+            dialogItem = scoreboardData[i][c];
+            playerColor = libNtve_gf_ConvertPlayerColorToColor(players[i]);
+            libNtve_gf_SetDialogItemColor(dialogItem, playerColor, PlayerGroupAll());
+        }
     }
 
     UpdateScoreboard();

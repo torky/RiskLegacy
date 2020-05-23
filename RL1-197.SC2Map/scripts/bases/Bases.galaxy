@@ -24,10 +24,9 @@ void InitializeBase (int player, int baseID, unit structure) {
     UnitBehaviorAdd(UnitLastCreated(), "NoDefenderAura", UnitLastCreated(), 1);
     base.position = UnitGetPosition(base.beacon);
     
-    UnitCreate(1, "DestructibleKorhalFlag", c_unitCreateIgnorePlacement, 0, PointWithOffsetPolar(basePosition, 0.8, 60.0), 90.0);
+    UnitCreate(1, "DestructibleKorhalFlag", c_unitCreateIgnorePlacement, player, PointWithOffsetPolar(basePosition, 0.8, 60.0), 90.0);
     base.flag = UnitLastCreated();
     ActorSend(libNtve_gf_MainActorofUnit(base.flag), libNtve_gf_TextureSelectByID("Nothing"));
-    libNtve_gf_ShowHideUnit(base.flag, false);
     
     UnitCreate(1, "Marine", 0, player, PointWithOffsetPolar(basePosition, 1.5, 320.0), 0);
     base.defender = UnitLastCreated();
@@ -38,15 +37,53 @@ void InitializeBase (int player, int baseID, unit structure) {
     SetBaseIDOfUnit(base.beacon, baseID);
 }
 
-void SetBaseOwnership(int baseID, int player) {
+unit SetBaseOwnership(int baseID, int player) {
     structref<Base> b;
     b = allBases[baseID];
     UnitSetOwner(b.defender, player, true);
     UnitSetOwner(b.structure, player, true);
+    UnitSetOwner(b.flag, player, true);
     
     if(UnitGetType(b.structure) == "Barracks"){
         SwapUnitModel(b.structure, allPlayers[player].skins[c_barracksSkinID]);
     }else{
         SwapUnitModel(b.structure, allPlayers[player].skins[c_starportSkinID]);
     }
+
+    SetFlag(b.flag, allPlayers[player].flag);
+
+    return b.defender;
+}
+
+
+void SwapDefender (unit newUnit, int baseID) {
+    point swapPoint;
+    int countryID;
+    unit oldUnit;
+
+    oldUnit = allBases[baseID].defender;
+    countryID = GetCountryIDOfUnit(oldUnit);
+    swapPoint = UnitGetPosition(newUnit);
+
+    //Move old Unit
+    if(oldUnit != null && UnitIsAlive(oldUnit)){
+        UnitSetPosition(oldUnit, swapPoint, false);
+        UnitBehaviorRemove(oldUnit, "Defender", 1);
+        UnitBehaviorAdd(oldUnit, "Loadable", oldUnit, 1);
+        //Assign game values
+        SetCountryIDOfUnit(oldUnit, -1);
+        SetBaseIDOfUnit(oldUnit, -1);
+    }
+    
+    //Move new Unit
+    UnitSetPosition(newUnit, allBases[baseID].position, false);
+    UnitBehaviorRemove(newUnit, "Loadable", 1);
+    UnitBehaviorAdd(newUnit, "Defender", newUnit, 1);
+    UnitSetPropertyFixed(newUnit, c_unitPropLife, (UnitGetPropertyFixed(newUnit, c_unitPropLife, c_unitPropCurrent) - 20.0));
+    
+    //Assign game values
+    SetCountryIDOfUnit(newUnit, countryID);
+    SetBaseIDOfUnit(newUnit, baseID);
+
+    allBases[baseID].defender = newUnit;
 }

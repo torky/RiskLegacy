@@ -1,0 +1,23 @@
+
+
+trigger gt_SetHomeland;
+
+bool SetHomeland(bool testConds, bool runActions){
+    int player = EventPlayer();
+    unit u = EventUnit();
+    int country = GetCountryIDOfUnit(u);
+
+    allPlayers[player].showHomeland = !allPlayers[player].showHomeland;
+
+    if(allPlayers[player].playerStatus < c_adminStatus){
+        allPlayers[player].flag = allCountries[country].flagTexture;
+        SetPlayerFlagsForAllPlayers(player);
+    }
+
+    return true;
+}
+
+void gt_SetHomeland_Init () {
+    gt_SetHomeland = TriggerCreate("SetHomeland");
+    TriggerAddEventUnitAbility(gt_SetHomeland, null, AbilityCommand("SelectCountry", 0), c_unitAbilStageExecute, false);
+}

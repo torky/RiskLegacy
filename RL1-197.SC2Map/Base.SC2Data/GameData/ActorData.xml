@@ -427,7 +427,10 @@
             <Visuals/>
         </TerrainSquibs>
         <DeathArray index="Normal" ModelLink=""/>
-        <DeathArray index="Eviscerate" ModelLink=""/>
+        <DeathArray index="Eat" AnimProps="Death"/>
+        <DeathArray index="Eviscerate" AnimProps="Death" ModelLink=""/>
+        <DeathArray index="Fire" AnimProps="Death"/>
+        <DeathArray index="Squish" AnimProps="Death"/>
     </CActorUnit>
     <!--                                                                                         -->
     <!-- Marine ................................................................................ -->
@@ -468,8 +471,9 @@
         <BarOffset value="19"/>
         <BarWidth value="18"/>
         <DeathArray index="Normal" ModelLink=""/>
-        <DeathArray index="Eviscerate" ModelLink=""/>
-        <DeathArray index="Fire" ModelLink=""/>
+        <DeathArray index="Eviscerate" AnimProps="Death" ModelLink=""/>
+        <DeathArray index="Fire" AnimProps="Death" ModelLink=""/>
+        <DeathArray index="Squish" AnimProps="Death"/>
     </CActorUnit>
     <CActorUnit id="Marine2" parent="Marine" unitName="ConscriptMarine">
         <On index="0" Terms="UnitBirth.ConscriptMarine"/>
@@ -516,8 +520,9 @@
         <PlacementModel value="Marine2"/>
         <HighlightTooltip value="Unit/Name/Marine2"/>
         <DeathArray index="Normal" ModelLink="MarineDeath"/>
-        <DeathArray index="Eviscerate" ModelLink="MarineDeathEviscerate"/>
-        <DeathArray index="Fire" ModelLink="MarineDeathFire"/>
+        <DeathArray index="Eviscerate" AnimProps="Death,Eviscerate" ModelLink="MarineDeathEviscerate"/>
+        <DeathArray index="Fire" AnimProps="Death,Fire" ModelLink="MarineDeathFire"/>
+        <DeathArray index="Squish" AnimProps="Death,Squish"/>
     </CActorUnit>
     <CActorSound id="Marine_Death"/>
     <!--                                                                                         -->
@@ -617,6 +622,11 @@
             <RangeDown value="1.000000"/>
             <Visuals/>
         </TerrainSquibs>
+        <DeathArray index="Normal" ModelLink="" VoiceLink=""/>
+        <DeathArray index="Eat" AnimProps="Death"/>
+        <DeathArray index="Eviscerate" AnimProps="Death"/>
+        <DeathArray index="Fire" AnimProps="Death"/>
+        <DeathArray index="Squish" AnimProps="Death"/>
     </CActorUnit>
     <CActorUnit id="SpacePlatformReactorPathingBlocker2">
         <On Terms="UnitBirth.WaterPathBlocker" Send="Create"/>

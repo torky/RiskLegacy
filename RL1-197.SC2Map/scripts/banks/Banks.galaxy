@@ -177,10 +177,12 @@ void PresetPlayerAsLoser(int playerID){
 
 void LoadBankInfoForPlayers(){
     int i;
+    bool bankExists;
 
     for(i = 1; i < totalPlayers; i+=1){
+        bankExists = BankExists(c_bankName, i);
         LoadBankForPlayer(i);
-        if(BankExists(c_bankName, i)){
+        if(bankExists){
             SetPlayerValuesFromBank(i);
         }else{
             SetPlayerValuesDefault(i);

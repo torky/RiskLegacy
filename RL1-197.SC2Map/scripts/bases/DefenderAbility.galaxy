@@ -1,39 +1,5 @@
 trigger gt_SwapDefenderAbility;
 
-void SwapDefender (unit newUnit, int baseID) {
-    //Variable Declarations
-    point swapPoint;
-    int countryID;
-    unit oldUnit;
-
-    oldUnit = allBases[baseID].defender;
-    countryID = GetCountryIDOfUnit(oldUnit);
-    swapPoint = UnitGetPosition(newUnit);
-
-    //Implementation
-    //Move old Unit
-    if(oldUnit != null && UnitIsAlive(oldUnit)){
-        UnitSetPosition(oldUnit, swapPoint, false);
-        UnitBehaviorRemove(oldUnit, "Defender", 1);
-        UnitBehaviorAdd(oldUnit, "Loadable", oldUnit, 1);
-        //Assign game values
-        SetCountryIDOfUnit(oldUnit, -1);
-        SetBaseIDOfUnit(oldUnit, -1);
-    }
-    
-    //Move new Unit
-    UnitSetPosition(newUnit, allBases[baseID].position, false);
-    UnitBehaviorRemove(newUnit, "Loadable", 1);
-    UnitBehaviorAdd(newUnit, "Defender", newUnit, 1);
-    UnitSetPropertyFixed(newUnit, c_unitPropLife, (UnitGetPropertyFixed(newUnit, c_unitPropLife, c_unitPropCurrent) - 20.0));
-    
-    //Assign game values
-    SetCountryIDOfUnit(newUnit, countryID);
-    SetBaseIDOfUnit(newUnit, baseID);
-
-    allBases[baseID].defender = newUnit;
-}
-
 bool SwapDefenderAbility (bool testConds, bool runActions) {
     int newOwner;
     int currentOwner;
@@ -75,6 +41,8 @@ bool SwapDefenderAbility (bool testConds, bool runActions) {
         //    gf_ShowHideIndvFlag(false, baseID);
         //}
     }
+
+    TriggerAddEventUnitDamaged(gt_BaseCapture, UnitRefFromUnit(allBases[baseID].defender), c_unitDamageTypeAny, c_unitDamageFatal, null);
 
     UnitIssueOrder(EventUnit(), Order(AbilityCommand("stop", 0)), c_orderQueueReplace);
     return true;

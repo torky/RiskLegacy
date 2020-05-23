@@ -48,6 +48,10 @@ void UpdateCountry(int countryID){
 
     if(newOwner != oldOwner){
         country.conscripts = UnitGroupEmpty();
+        if(country.flagTexture == allPlayers[oldOwner].flag){
+            allPlayers[oldOwner].flag = "Nothing";
+            SetPlayerFlagsForAllPlayers(oldOwner);
+        }
         UnitIssueOrder(country.spawn, OrderTargetingUnit(AbilityCommand("Rally", 0), country.spawn), c_orderQueueReplace);
     }
     
@@ -84,6 +88,7 @@ void InitializeBases () {
             baseID+=1;
             y+=1;
         }
+        SetCountryIDOfUnit(allCountries[i].spawn, i);
     }
 }
 

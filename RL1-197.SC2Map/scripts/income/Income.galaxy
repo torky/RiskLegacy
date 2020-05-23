@@ -30,8 +30,10 @@ void RefreshIncome(){
     for(i = 0; i < totalCountries; i+=1){
         countryIncome = allCountries[i].income;
         countryOwner = allCountries[i].owner;
-        allPlayers[countryOwner].income += countryIncome;
-        StartIncomeTextAnimation(i, countryIncome, countryOwner);
+        if(countryOwner > 0 && countryOwner < 15){
+            allPlayers[countryOwner].income += countryIncome;
+            StartIncomeTextAnimation(i, countryIncome, countryOwner);
+        }
     }
 
     //Add Income

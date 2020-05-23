@@ -2,12 +2,13 @@
 include "TriggerLibs/NativeLib"
 
 //Level 0
+include "scripts/ui/Buttons"
+include "scripts/flags/Flags"
+include "scripts/ui/MenuTrigger"
+include "scripts/sort/MergeSort"
 include "scripts/players/PlayerAdmins"
 include "scripts/skins/Skins"
 include "scripts/start/Start"
-include "scripts/ui/Buttons"
-include "scripts/ui/MenuTrigger"
-include "scripts/sort/MergeSort"
 include "scripts/units/Units"
 include "scripts/units/UnitTrained"
 
@@ -17,29 +18,31 @@ include "scripts/skins/data/SkinsData"
 
 //Level 2
 include "scripts/bases/Bases"
+include "scripts/flags/FlagVisibility"
 
 //Level 3
-include "scripts/cards/Cards"
 include "scripts/banks/Banks"
+include "scripts/cards/Cards"
 include "scripts/countries/Country"
 include "scripts/map/Map"
 include "scripts/ui/Scoreboard"
-include "scripts/skins/SkinsController"
 include "scripts/settings/SettingsController"
+include "scripts/skins/SkinsController"
 
-//Level 4 
+//Level 4
+include "scripts/bases/BaseCapture"
 include "scripts/countries/Conscripts"
-include "scripts/ui/UI"
+include "scripts/flags/HomelandFlags"
 include "scripts/stats/Stats"
+include "scripts/ui/UI"
 
 //Level 5
-include "scripts/countries/PredefineCountries"
-include "scripts/bases/Defender"
+include "scripts/bases/DefenderAbility"
 include "scripts/bases/DistributeTerritories" 
 include "scripts/income/Income"
+include "scripts/countries/PredefineCountries"
 
 //Level 6
-include "scripts/bases/BaseCapture"
 include "scripts/refresh/Refresh"
 
 //Level 7
@@ -83,7 +86,7 @@ bool gt_GameModeSelect_Func (bool testConds, bool runActions) {
     DeleteStupidRocks();
     DeclareSkinTypes();
     LoadPlayerAdmins();
-    SetPlayerAdmins();
+    SetInGamePlayerData();
     LoadBankInfoForPlayers();
     SetScoreStatsForAllPlayers();
     PredefineCountries();
@@ -93,6 +96,7 @@ bool gt_GameModeSelect_Func (bool testConds, bool runActions) {
     DistributeTerritories(players, SetBaseOwnership);
     UpdateCountries();
     UpdatePlayerSpawnControlGroups();
+    ShowHideFlagsForAllPlayers();
     
     SetupUI();
     CreateButtons();
@@ -140,6 +144,7 @@ void InitTriggers () {
     gt_BaseCapture_Init();
     gt_EmptyBaseCapture_Init();
     gt_GameModeSelect_Init();
+    gt_SetHomeland_Init();
     gt_SpawnConscripts_Init();
     gt_ConscriptSpawned_Init();
     gt_ShowHideMapHistory_Init();

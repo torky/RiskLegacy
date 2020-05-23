@@ -6,7 +6,7 @@ struct Picked{
 
 typedef Picked[16] PlayerArray;
 
-void ISetBaseOwnership(int baseID, int owner);
+unit gf_SetBaseOwnership(int baseID, int owner);
 
 void GeneratePickedPlayers(playergroup players, int count, arrayref<PlayerArray> pickedPlayers){
     int i;
@@ -36,7 +36,7 @@ int nextRandomPick(int pickablePlayers, arrayref<PlayerArray> pickedPlayers, int
     return randomIndex;
 }
 
-void DistributeTerritories(playergroup players, funcref<ISetBaseOwnership> SetBaseOwnerShipFunc) {
+void DistributeTerritories(playergroup players, funcref<gf_SetBaseOwnership> SetBaseOwnerShipFunc) {
     int countryID;
     int baseInCountry;
     structref<Country> country;
@@ -48,6 +48,7 @@ void DistributeTerritories(playergroup players, funcref<ISetBaseOwnership> SetBa
     int nextPick;
     int nextPlayer;
     bool dontMatchPrevious;
+    unitref u;
     int previousPick = -1; //Defaulted to -1 so first run will be successful
     int previousCountryID = -1; //Defaulted to -1 so first run will be successful
 
@@ -74,6 +75,13 @@ void DistributeTerritories(playergroup players, funcref<ISetBaseOwnership> SetBa
             previousPick = nextPick;
             previousCountryID = countryID;
             picksRemaining-=1;
+        }
+    }
+
+    for(baseID = 0; baseID < totalBases; baseID+=1){
+        if(allBases[baseID].defender != null){
+            u = UnitRefFromUnit(allBases[baseID].defender);
+            TriggerAddEventUnitDamaged(gt_BaseCapture, u, c_unitDamageTypeAny, c_unitDamageFatal, null);
         }
     }
 }  
