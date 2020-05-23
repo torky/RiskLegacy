@@ -44,10 +44,21 @@ void gt_SpawnConscripts_Init(){
 
 void RefreshConscripts(){
     int i;
+    int j;
+    order trainMarine;
+    int unitsToBeSpawned;
+    int countryID;
+    structref<Country> country;
 
     for(i = 0; i < totalCountries; i += 1){
-        conscriptCountryID = i;
-        TriggerExecute(gt_SpawnConscripts, false, false);
+        countryID = i;
+        country = allCountries[countryID];
+        trainMarine = Order(AbilityCommand("BarracksTrain2", 0));
+        if(country.owner != 0 && UnitGroupCount(country.conscripts, c_unitCountAlive) < country.conscriptSpawnLimit){
+            for (j = 0; j < country.conscriptsSpawnedPerTurn; j += 1){
+                UnitIssueOrder(country.spawn, trainMarine, c_orderQueueAddToEnd);
+            }
+        }    
     }  
 }
 

@@ -3,6 +3,8 @@ trigger gt_Refresh;
 int totalTurnTime = 10;
 int remainingTime = 5;
 int turns = 0;
+int timerDisplay;
+int turnDisplay;
 
 bool Refresh(bool testConds, bool runActions){
     int count;
@@ -15,30 +17,31 @@ bool Refresh(bool testConds, bool runActions){
 
     //Decrement turn time
     remainingTime-=1;
-    if(remainingTime < 1){
+    if(remainingTime <= 0){
         //Increment turns
         RefreshMapHistory(turns);
         turns+=1;
         remainingTime=totalTurnTime;
+        libNtve_gf_SetDialogItemText(turnDisplay, IntToText(turns), PlayerGroupAll());
         RefreshIncome();
         RefreshConscripts();
         RefreshScoreboard();
     }else if (remainingTime < 4) {
         SoundPlay(SoundLink("UI_BnetCountdown", -1), players, 100.0, 0.0);
     }
-
-    for(i = 1; i <= PlayerGroupCount(players); i += 1){
-        player = PlayerGroupPlayer(players, i);
-        PlayerModifyPropertyInt(player, c_playerPropTerrazine, c_playerPropOperSetTo, remainingTime);
-        PlayerModifyPropertyInt(player, c_playerPropCustom, c_playerPropOperSetTo, turns);
-    }
+    libNtve_gf_SetDialogItemText(timerDisplay, IntToText(remainingTime), PlayerGroupAll());
 
     return true;
 }
 
 void gt_Refresh_Init(){
     gt_Refresh = TriggerCreate("Refresh");
+    timerDisplay = DialogControlHookupStandard(c_triggerControlTypeLabel,"UIContainer/FullscreenUpperContainer/ResourcePanel/ResourceFrame/TimeDisplay");
+    turnDisplay = DialogControlHookupStandard(c_triggerControlTypeLabel,"UIContainer/FullscreenUpperContainer/ResourcePanel/ResourceFrame/TurnDisplay");
     TriggerAddEventTimePeriodic(gt_Refresh, 1.0, c_timeGame);
+    libNtve_gf_SetDialogItemText(timerDisplay, IntToText(remainingTime), PlayerGroupAll());
+    libNtve_gf_SetDialogItemText(turnDisplay, IntToText(turns), PlayerGroupAll());
+
     TriggerEnable(gt_Refresh, false);
 }
 

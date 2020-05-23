@@ -32,7 +32,6 @@ void RefreshIncome(){
         countryOwner = allCountries[i].owner;
         if(countryOwner > 0 && countryOwner < 15){
             allPlayers[countryOwner].income += countryIncome;
-            StartIncomeTextAnimation(i, countryIncome, countryOwner);
         }
     }
 
