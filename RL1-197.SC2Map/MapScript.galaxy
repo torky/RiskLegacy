@@ -1,6 +1,16 @@
 //Must be first
 include "TriggerLibs/NativeLib"
 
+string gameMode;
+
+const string c_mode1v1 = "0007";
+const string c_modeCustom = "0002";
+const string c_modeEmpire = "0006";
+const string c_modeQuick = "0001";
+const string c_modeSolo = "0004";
+const string c_modeTeams = "0005";
+const string c_modeTutorial = "0003";
+
 //Level 0
 include "scripts/ui/Buttons"
 include "scripts/flags/Flags"
@@ -19,6 +29,7 @@ include "scripts/skins/data/SkinsData"
 //Level 2
 include "scripts/bases/Bases"
 include "scripts/flags/FlagVisibility"
+include "scripts/bounty/Bounty"
 
 //Level 3
 include "scripts/banks/Banks"
@@ -57,16 +68,6 @@ include "scripts/modes/Tutorial"
 void InitLibs () {
     libNtve_InitLib();
 }
-
-const string c_mode1v1 = "0007";
-const string c_modeCustom = "0002";
-const string c_modeEmpire = "0006";
-const string c_modeQuick = "0001";
-const string c_modeSolo = "0004";
-const string c_modeTeams = "0005";
-const string c_modeTutorial = "0003";
-
-string gameMode;
 
 trigger gt_GameModeSelect;
 
@@ -134,6 +135,7 @@ void InitTriggers () {
     gt_Menu_Init();
     gt_UnitTrained_Init();
     gt_SetupPlayers_Init();
+    gt_Bounty_Init();
     gt_SwapDefender_Init();
     gt_BaseCapture_Init();
     gt_EmptyBaseCapture_Init();

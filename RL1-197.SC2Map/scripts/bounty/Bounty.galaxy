@@ -1,6 +1,6 @@
 const int c_defaultBounty = 4;
 
-int bounty;
+int bounty = c_defaultBounty;
 
 trigger gt_Bounty;
 
@@ -8,12 +8,12 @@ bool Bounty(bool testConds, bool runActions){
     int player = libNtve_gf_KillingPlayer();
     int dyingPlayer = EventPlayer();
     int mineralsAdded;
-    unit u = libNtve_gf_KillingUnit();
+    unit u = EventUnit();
     point dyingPosition;
 
     if(player == dyingPlayer){ return true; }
     allPlayers[player].bounty += UnitTypeGetCost(UnitGetType(u), c_unitCostMinerals);
-    mineralsAdded = allPlayers[player].bounty / bounty;
+    mineralsAdded = FixedToInt(allPlayers[player].bounty / bounty);
     allPlayers[player].bounty = ModI(allPlayers[player].bounty, bounty);
     if(mineralsAdded > 0){
         PlayerModifyPropertyInt(player, c_playerPropMinerals, c_playerPropOperAdd, mineralsAdded);
