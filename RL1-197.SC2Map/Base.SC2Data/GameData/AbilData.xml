@@ -66,7 +66,9 @@
     </CAbilTrain>
     <CAbilTrain id="BarracksTrain2" parent="BarracksTrain">
         <Name value="Abil/Name/BarracksTrain2"/>
-        <InfoArray index="Train1" Time="0"/>
+        <InfoArray index="Train1" Time="0.5">
+            <Resource index="Minerals" value="-1"/>
+        </InfoArray>
         <InfoArray index="Train2" Time="0"/>
         <InfoArray index="Train3" Time="0"/>
         <InfoArray index="Train4" Time="0"/>
