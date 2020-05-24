@@ -5,11 +5,12 @@ struct Skin{
 };
 
 const int totalSkinsToEarn = 5;
-const int totalRequirements = 3;
+const int totalRequirements = 4;
 
 const int c_killRequirement = 0;
 const int c_winRequirement = 1;
-const int c_prizeRequirement = 2;
+const int c_winRateRequirement = 2;
+const int c_prizeRequirement = 3;
 
 struct SkinType{
     string unitType;
@@ -34,7 +35,7 @@ const int c_starportSkinID = 15;
 
 const int c_unitSkinIndex0 = 1;
 const int totalSkinTypes = 16;
-SkinType[16] allSkinTypes;
+SkinType[totalSkinTypes] allSkinTypes;
 
 void DeclareSkinTypes(){
     allSkinTypes[c_marineSkinID].unitType = "Marine";

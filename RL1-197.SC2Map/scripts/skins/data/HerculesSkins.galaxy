@@ -1,10 +1,10 @@
-const int c_defaultHercules = 0;
-const int c_medivacHercules = 0;
-
 void InitializeHerculesSkins(){
-    allSkinTypes[c_herculesSkinID].skins[c_killRequirement][c_defaultHercules].model = "Hercules";
-    allSkinTypes[c_herculesSkinID].skins[c_killRequirement][c_defaultHercules].buttonPath = "Assets\\Textures\\btn-unit-terran-hercules.dds";
+    //Kills
+    allSkinTypes[c_herculesSkinID].skins[c_killRequirement][0].model = "Hercules";
+    allSkinTypes[c_herculesSkinID].skins[c_killRequirement][0].buttonPath = "Assets\\Textures\\btn-unit-terran-hercules.dds";
+    allSkinTypes[c_herculesSkinID].skins[c_killRequirement][0].value = "0";
 
-    allSkinTypes[c_herculesSkinID].skins[c_prizeRequirement][c_medivacHercules].model = "Medivac";
-    allSkinTypes[c_herculesSkinID].skins[c_prizeRequirement][c_medivacHercules].buttonPath = "Assets\\Textures\\btn-unit-terran-medivac.dds";
+    //Prize
+    allSkinTypes[c_herculesSkinID].skins[c_prizeRequirement][0].model = "Medivac";
+    allSkinTypes[c_herculesSkinID].skins[c_prizeRequirement][0].buttonPath = "Assets\\Textures\\btn-unit-terran-medivac.dds";
 }

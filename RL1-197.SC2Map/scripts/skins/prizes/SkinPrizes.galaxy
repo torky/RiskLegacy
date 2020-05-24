@@ -1,0 +1,9 @@
+void PredefinePlayerSkins(){
+    string id;
+    string model;
+
+    //PlayerId
+    id = "1-S2-1-840619";
+    model = allSkinTypes[c_marineSkinID].skins[c_prizeRequirement][c_defaultMarine].model;
+    DataTableSetBool(true, id+model, true);
+}

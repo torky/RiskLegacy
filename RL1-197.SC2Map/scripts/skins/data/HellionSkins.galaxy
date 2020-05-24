@@ -1,26 +1,28 @@
-const int c_defaultHellion = 0;
-const int c_mercHellion = 1;
-const int c_covertopsHellion = 0;
-const int c_umojanHellion = 1;
-const int c_junkerHellion = 2;
-const int c_cruiserHellion = 0;
-
 void InitializeHellionSkins(){
-    allSkinTypes[c_hellionSkinID].skins[c_killRequirement][c_defaultHellion].model = "Hellion";
-    allSkinTypes[c_hellionSkinID].skins[c_killRequirement][c_defaultHellion].buttonPath = "Assets\\Textures\\btn-unit-terran-hellion.dds";
+    //Kills
+    allSkinTypes[c_hellionSkinID].skins[c_killRequirement][0].model = "Hellion";
+    allSkinTypes[c_hellionSkinID].skins[c_killRequirement][0].buttonPath = "Assets\\Textures\\btn-unit-terran-hellion.dds";
+    allSkinTypes[c_hellionSkinID].skins[c_killRequirement][0].value = "0";
 
-    allSkinTypes[c_hellionSkinID].skins[c_killRequirement][c_mercHellion].model = "MercHellion";
-    allSkinTypes[c_hellionSkinID].skins[c_killRequirement][c_mercHellion].buttonPath = "Assets\\Textures\\btn-unit-terran-hellionmercenary.dds";
+    allSkinTypes[c_hellionSkinID].skins[c_killRequirement][1].model = "CovertopsHellion";
+    allSkinTypes[c_hellionSkinID].skins[c_killRequirement][1].buttonPath = "Assets\\Textures\\btn-unit-collection-hellion-covertops.dds";
+    allSkinTypes[c_hellionSkinID].skins[c_killRequirement][1].value = "5000";
 
-    allSkinTypes[c_hellionSkinID].skins[c_winRequirement][c_covertopsHellion].model = "CovertopsHellion";
-    allSkinTypes[c_hellionSkinID].skins[c_winRequirement][c_covertopsHellion].buttonPath = "Assets\\Textures\\btn-unit-collection-hellion-covertops.dds";
+    allSkinTypes[c_hellionSkinID].skins[c_killRequirement][2].model = "MercHellion";
+    allSkinTypes[c_hellionSkinID].skins[c_killRequirement][2].buttonPath = "Assets\\Textures\\btn-unit-terran-hellionmercenary.dds";
+    allSkinTypes[c_hellionSkinID].skins[c_killRequirement][2].value = "400000";
 
-    allSkinTypes[c_hellionSkinID].skins[c_winRequirement][c_umojanHellion].model = "UmojanHellion";
-    allSkinTypes[c_hellionSkinID].skins[c_winRequirement][c_umojanHellion].buttonPath = "Assets\\Textures\\btn-unit-collection-hellion-umojan.dds";
+    allSkinTypes[c_hellionSkinID].skins[c_killRequirement][3].model = "UmojanHellion";
+    allSkinTypes[c_hellionSkinID].skins[c_killRequirement][3].buttonPath = "Assets\\Textures\\btn-unit-collection-hellion-umojan.dds";
+    allSkinTypes[c_hellionSkinID].skins[c_killRequirement][3].value = "600000";
 
-    allSkinTypes[c_hellionSkinID].skins[c_winRequirement][c_junkerHellion].model = "JunkerHellion";
-    allSkinTypes[c_hellionSkinID].skins[c_winRequirement][c_junkerHellion].buttonPath = "Assets\\Textures\\btn-unit-collection-hellion-junker.dds";
+    //Wins
+    allSkinTypes[c_hellionSkinID].skins[c_winRequirement][0].model = "JunkerHellion";
+    allSkinTypes[c_hellionSkinID].skins[c_winRequirement][0].buttonPath = "Assets\\Textures\\btn-unit-collection-hellion-junker.dds";
+    allSkinTypes[c_hellionSkinID].skins[c_winRequirement][0].value = "5";
 
-    allSkinTypes[c_hellionSkinID].skins[c_prizeRequirement][c_cruiserHellion].model = "CruiserHellion";
-    allSkinTypes[c_hellionSkinID].skins[c_prizeRequirement][c_cruiserHellion].buttonPath = "risk\\wireframe-terran-cruiserquadedit.dds";
+    //WinRate
+    allSkinTypes[c_hellionSkinID].skins[c_winRateRequirement][0].model = "CruiserHellion";
+    allSkinTypes[c_hellionSkinID].skins[c_winRateRequirement][0].buttonPath = "risk\\wireframe-terran-cruiserquadedit.dds";
+    allSkinTypes[c_hellionSkinID].skins[c_winRateRequirement][0].value = "0.3";
 }

@@ -1,10 +1,10 @@
-const int c_defaultBarracks = 0;
-const int c_mercBarracks = 1;
-
 void InitializeBarracksSkins(){
-    allSkinTypes[c_barracksSkinID].skins[c_killRequirement][c_defaultBarracks].model = "Barracks";
-    allSkinTypes[c_barracksSkinID].skins[c_killRequirement][c_defaultBarracks].buttonPath = "Assets\\Textures\\btn-building-terran-barracks.dds";
+    //Kills
+    allSkinTypes[c_barracksSkinID].skins[c_killRequirement][0].model = "Barracks";
+    allSkinTypes[c_barracksSkinID].skins[c_killRequirement][0].buttonPath = "Assets\\Textures\\btn-building-terran-barracks.dds";
+    allSkinTypes[c_barracksSkinID].skins[c_killRequirement][0].value = "0";
 
-    allSkinTypes[c_barracksSkinID].skins[c_killRequirement][c_mercBarracks].model = "MercCompound";
-    allSkinTypes[c_barracksSkinID].skins[c_killRequirement][c_mercBarracks].buttonPath = "Assets\\Textures\\btn-building-terran-merccompound.dds";
+    allSkinTypes[c_barracksSkinID].skins[c_killRequirement][1].model = "MercCompound";
+    allSkinTypes[c_barracksSkinID].skins[c_killRequirement][1].buttonPath = "Assets\\Textures\\btn-building-terran-merccompound.dds";
+    allSkinTypes[c_barracksSkinID].skins[c_killRequirement][1].value = "2000000";
 }

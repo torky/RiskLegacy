@@ -11,7 +11,7 @@ struct SkinButtonKey{
 };
 
 const int totalSkinButtonsPerRow = 5;
-const int totalSkinButtonIDs = 60; //Just needs to be larger than 30
+const int totalSkinButtonIDs = 60; //Just needs to be larger than 10 * requirements
 
 struct SkinUI{
     int unitPulldown;
@@ -51,35 +51,60 @@ void HookupSkinUI(structref<SkinUI> skinUI, string path){
     HookupUnitPulldown(path, skinUI);
     HookupSkinButtonRow(c_killRequirement, path + "Kills/", 2);
     HookupSkinButtonRow(c_winRequirement, path + "Wins/", 12);
-    HookupSkinButtonRow(c_prizeRequirement, path + "Prizes/", 22);
+    HookupSkinButtonRow(c_winRateRequirement, path + "WinRate/", 22);
+    HookupSkinButtonRow(c_prizeRequirement, path + "Prizes/", 32);
 }
 
 int GetUnitTypeIndexFromPulldown(int pulldown, int player){
     return DialogControlGetPropertyAsInt(pulldown, c_triggerControlPropertySelectionIndex, player) + 1;
 }
 
-void UpdateSkinButtonRowImages(int player, int unitTypeID){
+bool PlayerMeetsRequirement(int player, int requirement, int skinIndex, int unitTypeId){
+    int p = player;
+    int r = requirement;
+    int s = skinIndex;
+    int u = unitTypeId;
+    int value;
+    string id;
+
+    if(r == c_winRequirement || r == c_killRequirement){
+        value = StringToInt(allSkinTypes[u].skins[r][s].value);
+        if(r == c_winRequirement){
+            return allPlayers[player].wins >= value;
+        }else if(r == c_killRequirement){
+            return allPlayers[player].kills >= value;
+        }
+    }else if(r == c_winRateRequirement){
+        if(allPlayers[player].losses == 0) { return false; }
+        return allPlayers[player].wins / allPlayers[player].losses >= StringToFixed(allSkinTypes[u].skins[r][s].value);
+    }else if(r == c_prizeRequirement){
+        return DataTableGetBool(true, PlayerHandle(player) + allSkinTypes[u].skins[r][s].model);
+    }
+
+    return false;
+}
+
+void UpdateSkinButtonImages(int player, int unitTypeID){
     int i;
     int r;
     int button;
     string image;
+    bool playerMeetsRequirement;
     for(r = 0; r < totalRequirements; r+=1){
         for(i = 0; i < totalSkinButtonsPerRow; i+=1){
             SetSkin(skinUI.skinRows[r][i].skins[player], allSkinTypes[unitTypeID].skins[r][i]);
             image = allSkinTypes[unitTypeID].skins[r][i].buttonPath;
-            if(image == null || image =="") { image = "Assets/Textures/btn-no-image.dds"; }
+            if(image == null || image =="") { 
+                image = "Assets/Textures/btn-no-image.dds"; 
+                playerMeetsRequirement = false;
+            }else{
+                playerMeetsRequirement = PlayerMeetsRequirement(player, r, i, unitTypeID) || allPlayers[player].playerStatus == c_adminStatus;
+            }
             button = skinUI.skinRows[r][i].innerImage;
             libNtve_gf_SetDialogItemImage(button, image, PlayerGroupSingle(player));
+            DialogControlSetEnabled(button, PlayerGroupSingle(player), playerMeetsRequirement);
         }
-    }
-
-}
-
-void UpdateSkinButtonImages(int player, int unitTypeID){
-    UpdateSkinButtonRowImages(player, unitTypeID);
-    UpdateSkinButtonRowImages(player, unitTypeID);
-    UpdateSkinButtonRowImages(player, unitTypeID);
-}
+    }}
 
 trigger gt_SelectUnitType;
 

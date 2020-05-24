@@ -1,27 +1,28 @@
-const int c_defaultSCV = 0;
-const int c_infestedSCV = 1;
-const int c_mercSCV = 0;
-const int c_umojanSCV = 1;
-const int c_covertopsSCV = 2;
-const int c_muleSCV = 0;
-
-
 void InitializeSCVSkins(){
-    allSkinTypes[c_scvSkinID].skins[c_killRequirement][c_defaultSCV].model = "SCV";
-    allSkinTypes[c_scvSkinID].skins[c_killRequirement][c_defaultSCV].buttonPath = "Assets\\Textures\\btn-unit-terran-SCV.dds";
+    //Kills
+    allSkinTypes[c_scvSkinID].skins[c_killRequirement][0].model = "SCV";
+    allSkinTypes[c_scvSkinID].skins[c_killRequirement][0].buttonPath = "Assets\\Textures\\btn-unit-terran-SCV.dds";
+    allSkinTypes[c_scvSkinID].skins[c_killRequirement][0].value = "0";
 
-    allSkinTypes[c_scvSkinID].skins[c_killRequirement][c_infestedSCV].model = "InfestedSCV";
-    allSkinTypes[c_scvSkinID].skins[c_killRequirement][c_infestedSCV].buttonPath = "Assets\\Textures\\btn-unit-zerg-infestedscv.dds";
-    
-    allSkinTypes[c_scvSkinID].skins[c_winRequirement][c_mercSCV].model = "MercSCV";
-    allSkinTypes[c_scvSkinID].skins[c_winRequirement][c_mercSCV].buttonPath = "Assets\\Textures\\btn-unit-terran-merc-scv.dds";
+    allSkinTypes[c_scvSkinID].skins[c_killRequirement][1].model = "InfestedSCV";
+    allSkinTypes[c_scvSkinID].skins[c_killRequirement][1].buttonPath = "Assets\\Textures\\btn-unit-zerg-infestedscv.dds";
+    allSkinTypes[c_scvSkinID].skins[c_killRequirement][1].value = "1500";
 
-    allSkinTypes[c_scvSkinID].skins[c_winRequirement][c_umojanSCV].model = "UmojanSCV";
-    allSkinTypes[c_scvSkinID].skins[c_winRequirement][c_umojanSCV].buttonPath = "Assets\\Textures\\btn-unit-collection-scv-umojan.dds";
+    allSkinTypes[c_scvSkinID].skins[c_killRequirement][2].model = "MercSCV";
+    allSkinTypes[c_scvSkinID].skins[c_killRequirement][2].buttonPath = "Assets\\Textures\\btn-unit-terran-merc-scv.dds";
+    allSkinTypes[c_scvSkinID].skins[c_killRequirement][2].value = "300000";
 
-    allSkinTypes[c_scvSkinID].skins[c_winRequirement][c_covertopsSCV].model = "CovertopsSCV";
-    allSkinTypes[c_scvSkinID].skins[c_winRequirement][c_covertopsSCV].buttonPath = "Assets\\Textures\\btn-unit-collection-scv-covertops.dds";
+    //Wins
+    allSkinTypes[c_scvSkinID].skins[c_winRequirement][0].model = "UmojanSCV";
+    allSkinTypes[c_scvSkinID].skins[c_winRequirement][0].buttonPath = "Assets\\Textures\\btn-unit-collection-scv-umojan.dds";
+    allSkinTypes[c_scvSkinID].skins[c_winRequirement][0].value = "150";
 
-    allSkinTypes[c_scvSkinID].skins[c_prizeRequirement][c_muleSCV].model = "MuleSCV";
-    allSkinTypes[c_scvSkinID].skins[c_prizeRequirement][c_muleSCV].buttonPath = "Assets\\Textures\\btn-unit-terran-mule.dds";
+    //WinRate
+    allSkinTypes[c_scvSkinID].skins[c_winRateRequirement][0].model = "CovertopsSCV";
+    allSkinTypes[c_scvSkinID].skins[c_winRateRequirement][0].buttonPath = "Assets\\Textures\\btn-unit-collection-scv-covertops.dds";
+    allSkinTypes[c_scvSkinID].skins[c_winRateRequirement][0].value = "0.45";
+
+    allSkinTypes[c_scvSkinID].skins[c_winRateRequirement][1].model = "MuleSCV";
+    allSkinTypes[c_scvSkinID].skins[c_winRateRequirement][1].buttonPath = "Assets\\Textures\\btn-unit-terran-mule.dds";
+    allSkinTypes[c_scvSkinID].skins[c_winRateRequirement][1].value = "0.5";
 }

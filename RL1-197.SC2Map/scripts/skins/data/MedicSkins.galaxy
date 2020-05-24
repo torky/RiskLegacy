@@ -1,14 +1,15 @@
-const int c_defaultMedic = 0;
-const int c_eliteMedic = 1;
-const int c_killsquadMedic = 0;
-
 void InitializeMedicSkins(){
-    allSkinTypes[c_medicSkinID].skins[c_killRequirement][c_defaultMedic].model = "Medic";
-    allSkinTypes[c_medicSkinID].skins[c_killRequirement][c_defaultMedic].buttonPath = "Assets\\Textures\\btn-unit-terran-medic.dds";
+    //Kills
+    allSkinTypes[c_medicSkinID].skins[c_killRequirement][0].model = "Medic";
+    allSkinTypes[c_medicSkinID].skins[c_killRequirement][0].buttonPath = "Assets\\Textures\\btn-unit-terran-medic.dds";
+    allSkinTypes[c_medicSkinID].skins[c_killRequirement][0].value = "0";
 
-    allSkinTypes[c_medicSkinID].skins[c_killRequirement][c_eliteMedic].model = "EliteMedic";
-    allSkinTypes[c_medicSkinID].skins[c_killRequirement][c_eliteMedic].buttonPath = "Assets\\Textures\\btn-unit-terran-medicelite.dds";
-    
-    allSkinTypes[c_medicSkinID].skins[c_winRequirement][c_killsquadMedic].model = "KillsquadMedic";
-    allSkinTypes[c_medicSkinID].skins[c_winRequirement][c_killsquadMedic].buttonPath = "Assets\\Textures\\btn-unit-terran-medickillsquad.dds";
+    allSkinTypes[c_medicSkinID].skins[c_killRequirement][1].model = "KillsquadMedic";
+    allSkinTypes[c_medicSkinID].skins[c_killRequirement][1].buttonPath = "Assets\\Textures\\btn-unit-terran-medickillsquad.dds";
+    allSkinTypes[c_medicSkinID].skins[c_killRequirement][1].value = "75000";
+
+    //WinRate
+    allSkinTypes[c_medicSkinID].skins[c_winRateRequirement][0].model = "EliteMedic";
+    allSkinTypes[c_medicSkinID].skins[c_winRateRequirement][0].buttonPath = "Assets\\Textures\\btn-unit-terran-medicelite.dds";
+    allSkinTypes[c_medicSkinID].skins[c_winRateRequirement][0].value = "0.35";
 }
