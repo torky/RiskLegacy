@@ -348,4 +348,10 @@ void LoadPlayerAdmins () {
     allAdmins[i].status = c_adminStatus;
     allAdmins[i].flagImage = "risk\\donate\\UnitedNations.tga";
     allAdmins[i].flagTexture = "CrazyRusski";
+    
+    allAdmins[i].name = "Marsbar";
+    allAdmins[i].sc2ID = "2-S2-1-3020340";
+    allAdmins[i].status = c_adminStatus;
+    allAdmins[i].flagImage = "risk\\donate\\UnitedNations.tga";
+    allAdmins[i].flagTexture = "CrazyRusski";
 }
