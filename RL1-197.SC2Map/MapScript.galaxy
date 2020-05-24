@@ -28,8 +28,8 @@ include "scripts/skins/data/SkinsData"
 
 //Level 2
 include "scripts/bases/Bases"
-include "scripts/flags/FlagVisibility"
 include "scripts/bounty/Bounty"
+include "scripts/flags/FlagVisibility"
 
 //Level 3
 include "scripts/banks/Banks"
@@ -48,6 +48,7 @@ include "scripts/stats/Stats"
 include "scripts/ui/UI"
 
 //Level 5
+include "scripts/players/AdminCommands"
 include "scripts/bases/DefenderAbility"
 include "scripts/bases/DistributeTerritories" 
 include "scripts/income/Income"
@@ -83,7 +84,7 @@ bool gt_GameModeSelect_Func (bool testConds, bool runActions) {
     LoadPlayerAdmins();
     SetInGamePlayerData();
     LoadBankInfoForPlayers();
-    SetScoreStatsForAllPlayers();
+    UpdateScoreStatsForAllPlayers();
     PredefineCountries();
     InitializeBases();
 
@@ -140,6 +141,7 @@ void InitTriggers () {
     gt_BaseCapture_Init();
     gt_EmptyBaseCapture_Init();
     gt_GameModeSelect_Init();
+    gt_PlayerAdminCommands_Init();
     gt_SetHomeland_Init();
     gt_SpawnConscripts_Init();
     gt_ConscriptSpawned_Init();

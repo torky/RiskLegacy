@@ -23,6 +23,7 @@ struct Player{
     int bounty;
 };
 
+playergroup allCurrentAdmins = PlayerGroupEmpty();
 const int totalPlayers = 16;
 Player[totalPlayers] allPlayers;
 
@@ -79,42 +80,6 @@ int GetPlayerLostValue(int player){
     return PlayerScoreValueGetAsInt(player, "UnitsLostValue");
 }
 
-
-trigger gt_PlayerAdminCommands;
-
-bool PlayerAdminCommands(bool testConds, bool runActions){
-    string command = StringWord(EventChatMessage(false), 1);
-    int player = StringToInt(StringWord(EventChatMessage(false), 2));
-    int val = StringToInt(StringWord(EventChatMessage(false), 3));
-    if(command == "-setwin"){
-        allPlayers[player].wins = val;
-    }
-    if(command == "-setlose"){
-        allPlayers[player].losses = val;
-    }
-    if(command == "-setkill"){
-        allPlayers[player].kills = val;
-    }
-    if(command == "-setdeath"){
-        allPlayers[player].deaths = val;
-    }
-    
-    return true;
-}
-
-void gt_PlayerAdminCommands_Init(){
-    int player;
-    gt_PlayerAdminCommands = TriggerCreate("PlayerAdminCommands");
-    for(player = 1; player < totalPlayers; player+=1){
-        if(allPlayers[player].playerStatus == c_adminStatus){
-            TriggerAddEventChatMessage(gt_PlayerAdminCommands, player, "-setwin", false);
-            TriggerAddEventChatMessage(gt_PlayerAdminCommands, player, "-setlose", false);
-            TriggerAddEventChatMessage(gt_PlayerAdminCommands, player, "-setkill", false);
-            TriggerAddEventChatMessage(gt_PlayerAdminCommands, player, "-setdeath", false);
-        }
-    }
-}
-
 void SetInGamePlayerData(){
     int player;
     int i;
@@ -130,12 +95,15 @@ void SetInGamePlayerData(){
             if(PlayerHandle(player) == allAdmins[admin].sc2ID){
                 allPlayers[player].playerStatus = allAdmins[admin].status;
                 allPlayers[player].flag = allAdmins[admin].flagTexture;
+                if(allPlayers[player].playerStatus == c_adminStatus){
+                    PlayerGroupAdd(allCurrentAdmins, player);
+                }
             }
         }
         if(allPlayers[player].playerStatus < c_adminStatus){
             allPlayers[player].flag = "Nothing";
         }
+
         allPlayers[player].showHomeland = false;
     }
-    gt_PlayerAdminCommands_Init();
 }

@@ -1,0 +1,38 @@
+
+trigger gt_PlayerAdminCommands;
+
+bool PlayerAdminCommands(bool testConds, bool runActions){
+    string command = StringWord(EventChatMessage(false), 1);
+    int player = StringToInt(StringWord(EventChatMessage(false), 2));
+    int val = StringToInt(StringWord(EventChatMessage(false), 3));
+    if(command == "-setwin"){
+        allPlayers[player].wins = val;
+    }
+    if(command == "-setlose"){
+        allPlayers[player].losses = val;
+    }
+    if(command == "-setkill"){
+        allPlayers[player].kills = val;
+    }
+    if(command == "-setdeath"){
+        allPlayers[player].deaths = val;
+    }
+    
+    UpdatePlayerBankStats(player);
+    UpdateScoreStatsForPlayer(player);
+
+    return true;
+}
+
+void gt_PlayerAdminCommands_Init(){
+    int player;
+    gt_PlayerAdminCommands = TriggerCreate("PlayerAdminCommands");
+    for(player = 1; player < totalPlayers; player+=1){
+        if(allPlayers[player].playerStatus == c_adminStatus){
+            TriggerAddEventChatMessage(gt_PlayerAdminCommands, player, "-setwin", false);
+            TriggerAddEventChatMessage(gt_PlayerAdminCommands, player, "-setlose", false);
+            TriggerAddEventChatMessage(gt_PlayerAdminCommands, player, "-setkill", false);
+            TriggerAddEventChatMessage(gt_PlayerAdminCommands, player, "-setdeath", false);
+        }
+    }
+}

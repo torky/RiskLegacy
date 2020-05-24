@@ -1,4 +1,4 @@
-void SetAllPlayerScoreStats(int player){
+void UpdateScoreStatsForPlayer(int player){
     PlayerScoreValueSetFromInt(player, "Wins", allPlayers[player].wins);
     PlayerScoreValueSetFromInt(player, "Losses", allPlayers[player].losses);
     PlayerScoreValueSetFromInt(player, "Kills", allPlayers[player].kills);
@@ -8,9 +8,9 @@ void SetAllPlayerScoreStats(int player){
     PlayerScoreValueSetFromInt(player, "ShowKillValue", allPlayers[player].showKillValue);
 }
 
-void SetScoreStatsForAllPlayers(){
+void UpdateScoreStatsForAllPlayers(){
     int player;
     for(player = 0; player < totalPlayers; player += 1){
-        SetAllPlayerScoreStats(player);
+        UpdateScoreStatsForPlayer(player);
     }
 }

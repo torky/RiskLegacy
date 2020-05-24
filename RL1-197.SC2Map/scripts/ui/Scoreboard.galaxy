@@ -55,7 +55,11 @@ int CreateScoreboardStatus(int row){
 }
 
 void CreateAndSetScoreboardRow(int row, int player){
+    string playerHandle = PlayerHandle(player);
+    int playerButton;
     scoreboardData[row][c_playerName] = CreateScoreboardLabel(row, c_playerName, PlayerName(player), player);
+    playerButton = scoreboardData[row][c_playerName];
+    libNtve_gf_SetDialogItemTooltip(playerButton, StringToText(playerHandle), allCurrentAdmins);
     scoreboardData[row][c_playerInc] = CreateScoreboardLabel(row, c_playerInc, IntToText(4), player);
     scoreboardData[row][c_playerRekt] = CreateScoreboardLabel(row, c_playerRekt, IntToText(0), player);
     scoreboardData[row][c_playerLost] = CreateScoreboardLabel(row, c_playerLost, IntToText(0), player);
@@ -139,6 +143,8 @@ void UpdateScoreboard(){
         image = GetPlayerStatusImage(player);
 
         libNtve_gf_SetDialogItemText(scoreboardData[r][c_playerName], PlayerName(player), playersAll);
+        libNtve_gf_SetDialogItemTooltip(scoreboardData[r][c_playerName], StringToText(PlayerHandle(player)), allCurrentAdmins);
+        
         libNtve_gf_SetDialogItemText(scoreboardData[r][c_playerInc], income, playersAll);
         libNtve_gf_SetDialogItemText(scoreboardData[r][c_playerRekt], rekt, playersAll);
         libNtve_gf_SetDialogItemText(scoreboardData[r][c_playerLost], lost, playersAll);
