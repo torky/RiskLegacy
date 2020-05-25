@@ -55,8 +55,13 @@ int CreateScoreboardStatus(int row){
 }
 
 void CreateAndSetScoreboardRow(int row, int player){
-    string playerHandle = PlayerHandle(player);
+    string playerHandle;
     int playerButton;
+
+    if(PlayerType(player) == c_playerTypeUser){
+        playerHandle = PlayerHandle(player);
+    }
+
     scoreboardData[row][c_playerName] = CreateScoreboardLabel(row, c_playerName, PlayerName(player), player);
     playerButton = scoreboardData[row][c_playerName];
     libNtve_gf_SetDialogItemTooltip(playerButton, StringToText(playerHandle), allCurrentAdmins);
@@ -143,7 +148,9 @@ void UpdateScoreboard(){
         image = GetPlayerStatusImage(player);
 
         libNtve_gf_SetDialogItemText(scoreboardData[r][c_playerName], PlayerName(player), playersAll);
-        libNtve_gf_SetDialogItemTooltip(scoreboardData[r][c_playerName], StringToText(PlayerHandle(player)), allCurrentAdmins);
+        if(PlayerType(player) == c_playerTypeUser){
+            libNtve_gf_SetDialogItemTooltip(scoreboardData[r][c_playerName], StringToText(PlayerHandle(player)), allCurrentAdmins);
+        }
         
         libNtve_gf_SetDialogItemText(scoreboardData[r][c_playerInc], income, playersAll);
         libNtve_gf_SetDialogItemText(scoreboardData[r][c_playerRekt], rekt, playersAll);
@@ -165,7 +172,7 @@ void RefreshScoreboard(){
         players[i] = scoreboardData[i][c_playerNumber];
     }
     MergeSort(players, 1, PlayerGroupCount(scoreboardPlayers), ComparePlayers);
-    for(i = 1; i < PlayerGroupCount(scoreboardPlayers); i+=1){
+    for(i = 1; i <= PlayerGroupCount(scoreboardPlayers); i+=1){
         scoreboardData[i][c_playerNumber] = players[i];
         for(c = 0; c < c_playerStatus; c+=1){ 
             dialogItem = scoreboardData[i][c];
