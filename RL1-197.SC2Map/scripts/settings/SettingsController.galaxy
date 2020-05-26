@@ -31,6 +31,7 @@ bool UpdateCheckBoxSettings(bool testConds, bool runActions){
     bool showFlags;
     bool showProfile;
     bool autoCards;
+    playergroup players;
 
     player = EventPlayer();
     checkBox = EventDialogControl();
@@ -48,7 +49,13 @@ bool UpdateCheckBoxSettings(bool testConds, bool runActions){
         allPlayers[player].showFlags = 0; 
         ShowHideAllFlagsForPlayer(player);
     }
-    if(showProfile) { allPlayers[player].showProfile = 1; } else { allPlayers[player].showProfile = 0; }
+    if(showProfile) { 
+        allPlayers[player].showProfile = 1; 
+        UpdateProfileVisible(player, true);
+    } else { 
+        allPlayers[player].showProfile = 0; 
+        UpdateProfileVisible(player, false);
+    }
     if(autoCards) { allPlayers[player].autoCards = 1; } else { allPlayers[player].autoCards = 0; }
 
     SavePlayerBankSettings(player);
@@ -72,5 +79,7 @@ void gt_UpdateCheckBoxSettings_Init(){
 
 void SetupSettingsUI(){
     HookupSettings();
+    HookupStatsButtons();
+    UpdateAllProfileVisibilities();
     gt_UpdateCheckBoxSettings_Init();
 }

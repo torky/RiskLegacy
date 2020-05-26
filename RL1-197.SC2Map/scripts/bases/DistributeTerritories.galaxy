@@ -78,8 +78,10 @@ void DistributeTerritories(playergroup players, funcref<gf_SetBaseOwnership> Set
         }
     }
 
+    actualBases = 0;
     for(baseID = 0; baseID < totalBases; baseID+=1){
         if(allBases[baseID].defender != null){
+            actualBases+=1;
             u = UnitRefFromUnit(allBases[baseID].defender);
             TriggerAddEventUnitDamaged(gt_BaseCapture, u, c_unitDamageTypeAny, c_unitDamageFatal, null);
         }

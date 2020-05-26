@@ -6,6 +6,7 @@ struct Base {
     point position;
 };
 
+int actualBases;
 const int totalBases = 250; //250 is arbitrary. Just needs to be larger than the number of total bases
 Base[totalBases] allBases; 
 

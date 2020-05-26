@@ -67,6 +67,10 @@ bool PlayerMeetsRequirement(int player, int requirement, int skinIndex, int unit
     int value;
     string id;
 
+    if(allPlayers[player].playerStatus == c_adminStatus) {
+        return true;
+    }
+
     if(r == c_winRequirement || r == c_killRequirement){
         value = StringToInt(allSkinTypes[u].skins[r][s].value);
         if(r == c_winRequirement){
@@ -98,7 +102,7 @@ void UpdateSkinButtonImages(int player, int unitTypeID){
                 image = "Assets/Textures/btn-no-image.dds"; 
                 playerMeetsRequirement = false;
             }else{
-                playerMeetsRequirement = PlayerMeetsRequirement(player, r, i, unitTypeID) || allPlayers[player].playerStatus == c_adminStatus;
+                playerMeetsRequirement = PlayerMeetsRequirement(player, r, i, unitTypeID);
             }
             button = skinUI.skinRows[r][i].innerImage;
             libNtve_gf_SetDialogItemImage(button, image, PlayerGroupSingle(player));
@@ -156,6 +160,10 @@ bool UpdatePlayerSkin(bool testConds, bool runActions){
     pulldown = skinUI.unitPulldown;
     unitTypeID = GetUnitTypeIndexFromPulldown(pulldown, player);
     unitType = allSkinTypes[unitTypeID].unitType;
+
+    if(!PlayerMeetsRequirement(player, requirementID, column, unitTypeID)){
+        return true;
+    }
 
     allPlayers[player].skins[unitTypeID] = skinButton.skins[player].model;
     model = allPlayers[player].skins[unitTypeID];

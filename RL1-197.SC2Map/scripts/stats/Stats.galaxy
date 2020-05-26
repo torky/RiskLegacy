@@ -1,16 +1,36 @@
+int[totalPlayers] statsButtons;
+
 void UpdateScoreStatsForPlayer(int player){
     PlayerScoreValueSetFromInt(player, "Wins", allPlayers[player].wins);
     PlayerScoreValueSetFromInt(player, "Losses", allPlayers[player].losses);
     PlayerScoreValueSetFromInt(player, "Kills", allPlayers[player].kills);
     PlayerScoreValueSetFromInt(player, "Deaths", allPlayers[player].deaths);
     PlayerScoreValueSetFromInt(player, "FastestWin", allPlayers[player].fastestWin);
-    PlayerScoreValueSetFromInt(player, "ShowProfile", allPlayers[player].showProfile);
-    PlayerScoreValueSetFromInt(player, "ShowKillValue", allPlayers[player].showKillValue);
 }
 
 void UpdateScoreStatsForAllPlayers(){
     int player;
     for(player = 0; player < totalPlayers; player += 1){
         UpdateScoreStatsForPlayer(player);
+    }
+}
+
+void HookupStatsButtons(){
+    int i = 0;
+    for(i = 1; i < 13; i+=1){
+        statsButtons[i] = DialogControlHookupStandard(c_triggerControlTypeButton, "UIContainer/ProfileUI/StatsPanel/PlayerStats/PlayerStat" + IntToString(i));
+    }
+}
+
+void UpdateProfileVisible(int player, bool enabled){
+    playergroup players = PlayerGroupActive();
+    PlayerGroupRemove(players, player);
+    DialogControlSetEnabled(statsButtons[player], players, enabled);
+}
+
+void UpdateAllProfileVisibilities(){
+    int i;
+    for(i = 1; i < 13; i+=1){
+        UpdateProfileVisible(i, allPlayers[i].showProfile == 1);
     }
 }

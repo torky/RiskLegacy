@@ -30,6 +30,7 @@ include "scripts/skins/data/SkinsData"
 include "scripts/bases/Bases"
 include "scripts/bounty/Bounty"
 include "scripts/flags/FlagVisibility"
+include "scripts/stats/Stats"
 
 //Level 3
 include "scripts/banks/Banks"
@@ -39,12 +40,12 @@ include "scripts/map/Map"
 include "scripts/ui/Scoreboard"
 include "scripts/settings/SettingsController"
 include "scripts/skins/SkinsController"
+include "scripts/victoryPercentage/VictoryPercentage"
 
 //Level 4
 include "scripts/bases/BaseCapture"
 include "scripts/countries/Conscripts"
 include "scripts/flags/HomelandFlags"
-include "scripts/stats/Stats"
 include "scripts/ui/UI"
 
 //Level 5

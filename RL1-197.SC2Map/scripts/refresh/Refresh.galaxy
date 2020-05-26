@@ -26,6 +26,7 @@ bool Refresh(bool testConds, bool runActions){
         RefreshIncome();
         RefreshConscripts();
         RefreshScoreboard();
+        RefreshVictoryPercentage();
     }else if (remainingTime < 4) {
         SoundPlay(SoundLink("UI_BnetCountdown", -1), players, 100.0, 0.0);
     }

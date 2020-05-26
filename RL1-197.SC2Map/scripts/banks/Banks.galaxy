@@ -158,7 +158,7 @@ void UpdatePlayerBankWinLoss(int playerID, int numberOfTurns){
     bank playerBank = player.infoBank;
 
     BankValueSetFromInt(playerBank, c_sectionPlayer, c_Win2, player.wins + 1);
-    BankValueSetFromInt(playerBank, c_sectionPlayer, c_Win23, player.losses);
+    BankValueSetFromInt(playerBank, c_sectionPlayer, c_Win23, player.losses - 1);
 
     if (numberOfTurns < player.fastestWin){
         BankValueSetFromInt(playerBank, c_sectionPlayer, c_playerFastestWin, numberOfTurns);
@@ -185,7 +185,7 @@ void LoadBankInfoForPlayers(){
     for(i = 1; i < totalPlayers; i+=1){
         bankExists = BankExists(c_bankName, i);
         LoadBankForPlayer(i);
-        if(bankExists || !BankVerify(allPlayers[i].infoBank)){
+        if(bankExists && BankVerify(allPlayers[i].infoBank)){
             SetPlayerValuesFromBank(i);
         }else{
             SetPlayerValuesDefault(i);
