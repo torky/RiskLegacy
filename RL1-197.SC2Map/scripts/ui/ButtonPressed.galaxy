@@ -1,0 +1,44 @@
+trigger gt_ButtonPressed;
+bool ButtonPressed(bool testConds, bool runActions){
+
+    int dialogItem;
+    int player;
+    dialogItem = EventDialogControl();
+    player = EventPlayer();
+   
+
+    if(dialogItem == kingOfTheHill.UIOptOutButton){
+        if(player == kingOfTheHill.playerOrder[0] || player == kingOfTheHill.playerOrder[1]){
+            UIDisplayMessage(PlayerGroupSingle(player),c_messageAreaChat,StringToText("You can't opt-out while in a game!"));
+        } else {
+            if(kingOfTheHill.UIOptOutString[player] == "Opt-Out"){
+                kingOfTheHill.UIOptOutString[player] = "Join In";
+                DialogControlSetPropertyAsText(dialogItem,c_triggerControlPropertyText,PlayerGroupSingle(player),StringToText("Join In"));
+                RemoveFromQueue(player);
+                
+            } else {
+                kingOfTheHill.UIOptOutString[player] = "Opt-Out";
+                DialogControlSetPropertyAsText(dialogItem,c_triggerControlPropertyText,PlayerGroupSingle(player),StringToText("Opt-Out"));
+                AddToQueue(player);
+            }
+        }
+       
+    } else if(dialogItem == kingOfTheHill.UISurrenderButton){
+        if(kingOfTheHill.playerOrder[0] == player || kingOfTheHill.playerOrder[1] == player){
+            RotateQueue(0,player);
+        } else {
+            UIDisplayMessage(PlayerGroupSingle(player),c_messageAreaChat,StringToText("You can't surrender while not in a game!")); 
+        }
+    }
+    
+    return true;
+}
+
+
+
+void gt_ButtonPressed_Init () {
+    gt_ButtonPressed = TriggerCreate("ButtonPressed");
+    TriggerAddEventDialogControl(gt_ButtonPressed, c_playerAny, c_invalidDialogControlId, c_triggerControlEventTypeClick);
+    
+  
+}

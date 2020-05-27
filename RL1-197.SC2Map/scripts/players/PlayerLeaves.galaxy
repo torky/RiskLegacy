@@ -1,0 +1,13 @@
+trigger gt_PlayerLeaves;
+bool PlayerLeaves(bool testConds, bool runActions){
+    int player;
+    player = EventPlayer();
+    RemoveFromQueue(player);
+    return true;
+}
+
+void gt_PlayerLeaves_Init () {
+    gt_PlayerLeaves = TriggerCreate("PlayerLeaves");
+    TriggerAddEventPlayerLeft(gt_PlayerLeaves,c_playerAny, c_gameResultUndecided);
+  
+}

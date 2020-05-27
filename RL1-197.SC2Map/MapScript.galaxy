@@ -10,6 +10,7 @@ const string c_modeQuick = "0001";
 const string c_modeSolo = "0004";
 const string c_modeTeams = "0005";
 const string c_modeTutorial = "0003";
+const string c_modeKingOfTheHill = "0008";
 
 //Level 0
 include "scripts/ui/Buttons"
@@ -62,10 +63,14 @@ include "scripts/refresh/Refresh"
 include "scripts/modes/1v1"
 include "scripts/modes/Custom"
 include "scripts/modes/Empire"
+include "scripts/modes/KingOfTheHill"
 include "scripts/modes/Quick"
 include "scripts/modes/Solo"
 include "scripts/modes/Teams"
 include "scripts/modes/Tutorial"
+include "scripts/chat/Chat"
+include "scripts/ui/ButtonPressed"
+include "scripts/players/PlayerLeaves"
 
 void InitLibs () {
     libNtve_InitLib();
@@ -74,7 +79,6 @@ void InitLibs () {
 trigger gt_GameModeSelect;
 
 bool gt_GameModeSelect_Func (bool testConds, bool runActions) {
-
     playergroup players;
     
     gameMode = GameAttributeGameValue("1");
@@ -119,6 +123,10 @@ bool gt_GameModeSelect_Func (bool testConds, bool runActions) {
     }else if (gameMode == c_modeTutorial) {
         UIDisplayMessage(PlayerGroupActive(), c_messageAreaChat, StringToText("Tutorial"));
 
+    }else if (gameMode == c_modeKingOfTheHill){
+        UIDisplayMessage(PlayerGroupActive(), c_messageAreaChat, StringToText("King of the Hill"));
+        KOTHHookUp();
+        RandomizeOrder();
     }
 
     VisEnable(c_visTypeMask, false);
@@ -149,6 +157,9 @@ void InitTriggers () {
     gt_ShowHideMapHistory_Init();
     gt_ViewTurn_Init();
     gt_Refresh_Init();
+    gt_PlayerLeaves_Init();
+    gt_Chat_Init();
+    gt_ButtonPressed_Init();
 }
 
 void InitMap () {

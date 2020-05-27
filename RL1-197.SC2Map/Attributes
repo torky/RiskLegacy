@@ -35,9 +35,13 @@
             <Id Value="3"/>
             <Name Value="Attribute001/Value003/Name"/>
         </Value>
+        <Value>
+            <Id Value="8"/>
+            <Name Value="Attribute001/Value008/Name"/>
+        </Value>
         <Default>
             <Slot Id="Global"/>
-            <Value Id="4"/>
+            <Value Id="8"/>
         </Default>
     </Attribute>
     <DefaultVariants Value="0"/>
@@ -859,6 +863,42 @@
             <Default>
                 <Slot Id="11"/>
                 <Value Id="1131180900"/>
+            </Default>
+        </Attribute>
+    </Variant>
+    <Variant>
+        <Id Value="9"/>
+        <CategoryId Value="15"/>
+        <ModeId Value="1"/>
+        <ModeName Value="Variant009/ModeName"/>
+        <ModeDesc Value="Variant009/ModeDesc"/>
+        <MaxTeamSize Value="12"/>
+        <AttributeHidden Namespace="999" Id="3006"/>
+        <AttributeHidden Namespace="999" Id="3000"/>
+        <AttributeHidden Namespace="0" Id="1"/>
+        <AttributeHidden Namespace="999" Id="3010"/>
+        <Attribute Namespace="999" Id="1001">
+            <Default>
+                <Slot Id="Global"/>
+                <Value Id="28271"/>
+            </Default>
+        </Attribute>
+        <Attribute Namespace="999" Id="2000">
+            <Default>
+                <Slot Id="Global"/>
+                <Value Id="29746"/>
+            </Default>
+        </Attribute>
+        <Attribute Id="1">
+            <Default>
+                <Slot Id="Global"/>
+                <Value Id="8"/>
+            </Default>
+        </Attribute>
+        <Attribute Namespace="999" Id="3000">
+            <Default>
+                <Slot Id="Global"/>
+                <Value Id="1315926637"/>
             </Default>
         </Attribute>
     </Variant>
