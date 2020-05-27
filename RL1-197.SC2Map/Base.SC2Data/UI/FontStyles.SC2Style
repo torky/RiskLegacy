@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <StyleFile>
+    <Style name="VSFont" template="StandardValue" font="risk\Roboto\Roboto-Condensed.ttf" height="25" vjustify="Middle" hjustify="Center" styleflags="TightGradient | Outline | Bold" textcolor="255,7,118,254 - 255,132,193,255" highlightcolor="255,219,245,139 - 255,0,0,0" disabledcolor="255,36,230,26 - 255,128,128,128" hotkeycolor="255,237,143,120 - 255,0,0,0" hyperlinkcolor="255,241,131,65 - 255,0,0,0" glowcolor="255,238,243,253" shadowoffset="10" outlinewidth="2"/>
     <Style name="UnitWeaponLineStartTip" template="RobotoLight12" font="UI\Fonts\Eurostile-Reg.otf" height="15" vjustify="Top" hjustify="Left" styleflags="Shadow" textcolor="255,35,190,207" highlightcolor="255,0,0,0" disabledcolor="255,128,128,128" hotkeycolor="255,0,0,0" hyperlinkcolor="255,0,0,0" glowcolor="255,0,0,0" shadowoffset="0" outlinewidth="0"/>
     <Style name="UnitWeaponNameTip " template="RobotoLight12"/>
     <Style name="UnitEnergy" template="RobotoLight12" font="UI\Fonts\Eurostile-Reg.otf" height="15" vjustify="Top" hjustify="Center" styleflags="Shadow" textcolor="255,216,89,230" highlightcolor="255,0,0,0" disabledcolor="255,128,128,128" hotkeycolor="255,0,0,0" hyperlinkcolor="255,0,0,0" glowcolor="255,0,0,0" shadowoffset="0" outlinewidth="0"/>

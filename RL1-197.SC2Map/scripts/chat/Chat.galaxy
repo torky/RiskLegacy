@@ -1,0 +1,29 @@
+//This is for testing king of the hill
+trigger gt_Chat;
+
+bool Chat(bool testConds, bool runActions){
+    
+    EventChatMessage(false);
+
+    if(EventChatMessage(false) == "remove"){
+        RemoveFromQueue(6);
+    }
+
+    if(EventChatMessage(false) == "add"){
+        AddToQueue(6);
+    }
+
+    if(EventChatMessage(false) == "kingwin"){
+        RotateQueue(kingOfTheHill.playerOrder[0],0);
+    }
+
+    if(EventChatMessage(false) == "kinglose"){
+        RotateQueue(0,kingOfTheHill.playerOrder[0]);
+    }
+    return true;
+}
+
+void gt_Chat_Init () {
+    gt_Chat = TriggerCreate("Chat");
+    TriggerAddEventChatMessage(gt_Chat, c_playerAny, "", false);
+}

@@ -24,6 +24,9 @@
             <Value> </Value>
             <Value> </Value>
             <Value> </Value>
+            <Value> </Value>
+            <Value> </Value>
+            <Value> </Value>
         </Flags>
     </Screenshot>
     <ScreenshotHowToPlay>
@@ -36,6 +39,8 @@
             <Value>2</Value>
         </CaptionId>
         <Flags>
+            <Value> </Value>
+            <Value> </Value>
             <Value> </Value>
             <Value> </Value>
         </Flags>

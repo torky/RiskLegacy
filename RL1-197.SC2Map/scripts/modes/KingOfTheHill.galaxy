@@ -1,0 +1,323 @@
+
+struct KOTH{
+    int[16] playerOrder;
+    int[16] wins;
+    int[16] losses;
+    int endOfQueueIndex;
+    int[13] scoreBoardOrder;
+    int totalActivePlayers;
+
+    int UISurrenderButton;
+    int UIOptOutButton;
+    string[totalPlayers] UIOptOutString;
+    int UIMinimizeButton;
+    int[3] UIInfoPlayerNameLabel;
+    int[3] UIInfoPlayerLabelImage;
+    int[3][13] UIDialogLabels;
+    int king;
+    int challenger;
+};
+KOTH kingOfTheHill;
+
+void KOTHHookUp(){
+    int i;
+    int king;
+    int j;
+    int h;
+    int currentPlayer;
+    string rowPath="";
+    string colPath="";
+    playergroup players;
+    int activePlayers;
+    for(i=0; i <= totalPlayers -1; i += 1){
+        kingOfTheHill.UIOptOutString[i] = "Opt-Out";
+    }
+   
+    //Sets up all KOTH scoreboard columns and rows
+    for(j = 0; j <= 2; j +=1){
+        for(h = 1; h <= 12; h += 1){
+            rowPath = "Row" + IntToString(h) + "/";
+            colPath = "col" + IntToString(j + 1);
+            
+            kingOfTheHill.UIDialogLabels[j][h] = DialogControlHookupStandard(c_triggerControlTypeLabel, "UIContainer/KingOfTheHillUI/KOTHScorePanel/" + rowPath + colPath);
+        }
+    }
+
+    kingOfTheHill.totalActivePlayers = PlayerGroupCount(PlayerGroupActive());
+    for(i = 1; i <= kingOfTheHill.totalActivePlayers; i += 1){
+        kingOfTheHill.scoreBoardOrder[PlayerGroupPlayer(PlayerGroupActive(), i)] = PlayerGroupPlayer(PlayerGroupActive(), i);  
+    }
+    
+    //Hides Rows in which there aren't enough players for
+    for(h = 1; h <= 12; h += 1){
+        if(h > kingOfTheHill.totalActivePlayers){
+            DialogControlSetPropertyAsBool(kingOfTheHill.UIDialogLabels[0][h], c_triggerControlPropertyVisible, PlayerGroupAll(), false);
+            DialogControlSetPropertyAsBool(kingOfTheHill.UIDialogLabels[1][h], c_triggerControlPropertyVisible, PlayerGroupAll(), false);
+            DialogControlSetPropertyAsBool(kingOfTheHill.UIDialogLabels[2][h], c_triggerControlPropertyVisible, PlayerGroupAll(), false);
+        } 
+    }
+
+    //Put Players Into Rows
+    for(i = 1; i <= kingOfTheHill.totalActivePlayers; i += 1){
+        currentPlayer = kingOfTheHill.scoreBoardOrder[i];
+        DialogControlSetPropertyAsText(kingOfTheHill.UIDialogLabels[0][i],c_triggerControlPropertyText, PlayerGroupAll(),StringToText(allPlayers[currentPlayer].name));
+        DialogControlSetPropertyAsText(kingOfTheHill.UIDialogLabels[1][i],c_triggerControlPropertyText, PlayerGroupAll(),StringToText(IntToString(kingOfTheHill.wins[currentPlayer])));
+        DialogControlSetPropertyAsText(kingOfTheHill.UIDialogLabels[2][i],c_triggerControlPropertyText, PlayerGroupAll(),StringToText(IntToString(kingOfTheHill.losses[currentPlayer])));
+    }
+  
+    //KOTH Info Panel Hookup
+    kingOfTheHill.UIMinimizeButton = DialogControlHookupStandard(c_triggerControlTypeButton, "UIContainer/KOTHButton");
+    DialogControlSetPropertyAsBool(kingOfTheHill.UIMinimizeButton, c_triggerControlPropertyVisible, PlayerGroupAll(), true);
+    kingOfTheHill.UIOptOutButton = DialogControlHookupStandard(c_triggerControlTypeButton, "UIContainer/KingOfTheHillUI/KOTHInfoPanel/OptOut");
+    kingOfTheHill.UISurrenderButton = DialogControlHookupStandard(c_triggerControlTypeButton, "UIContainer/KingOfTheHillUI/KOTHInfoPanel/Surrender");
+    kingOfTheHill.UIInfoPlayerNameLabel[0] = DialogControlHookupStandard(c_triggerControlTypeLabel,"UIContainer/KingOfTheHillUI/KOTHInfoPanel/Player1Image/Player1Label");
+    kingOfTheHill.UIInfoPlayerNameLabel[1] = DialogControlHookupStandard(c_triggerControlTypeLabel,"UIContainer/KingOfTheHillUI/KOTHInfoPanel/Player2Image/Player2Label");
+    kingOfTheHill.UIInfoPlayerNameLabel[2] = DialogControlHookupStandard(c_triggerControlTypeLabel,"UIContainer/KingOfTheHillUI/KOTHInfoPanel/Player3Image/Player3Label");
+    kingOfTheHill.UIInfoPlayerLabelImage[0] = DialogControlHookupStandard(c_triggerControlTypeImage, "UIContainer/KingOfTheHillUI/KOTHInfoPanel/Player1Image");
+    kingOfTheHill.UIInfoPlayerLabelImage[1] = DialogControlHookupStandard(c_triggerControlTypeImage, "UIContainer/KingOfTheHillUI/KOTHInfoPanel/Player2Image");
+    kingOfTheHill.UIInfoPlayerLabelImage[2] = DialogControlHookupStandard(c_triggerControlTypeImage, "UIContainer/KingOfTheHillUI/KOTHInfoPanel/Player3Image");
+    DialogControlSetPropertyAsBool(kingOfTheHill.UIInfoPlayerLabelImage[0], c_triggerControlPropertyDesaturated, PlayerGroupAll(), true);
+    DialogControlSetPropertyAsBool(kingOfTheHill.UIInfoPlayerLabelImage[1], c_triggerControlPropertyDesaturated, PlayerGroupAll(), true);
+    DialogControlSetPropertyAsBool(kingOfTheHill.UIInfoPlayerLabelImage[2], c_triggerControlPropertyDesaturated, PlayerGroupAll(), true);
+}
+
+void KOTH_UIUpdateInfo(){
+
+    color[3] colors;
+    int[3][3] colorsInt;
+    string[3] playerName;
+    int i;
+    
+    playerName[0] = allPlayers[kingOfTheHill.playerOrder[0]].name;
+    playerName[1] = allPlayers[kingOfTheHill.playerOrder[1]].name;
+    playerName[2] = allPlayers[kingOfTheHill.playerOrder[2]].name;
+
+    colors[0] = libNtve_gf_ConvertPlayerColorToColor(kingOfTheHill.playerOrder[0]);
+    colors[1] = libNtve_gf_ConvertPlayerColorToColor(kingOfTheHill.playerOrder[1]);
+    colors[2] = libNtve_gf_ConvertPlayerColorToColor(kingOfTheHill.playerOrder[2]);
+
+    //Brighten team colour text
+    for(i = 0; i <= 2; i+= 1){
+        colorsInt[0][i]  = 40 + Color255FromFixed(ColorGetComponent(colors[i],c_colorComponentRed));
+        colorsInt[1][i]  = 40 + Color255FromFixed(ColorGetComponent(colors[i],c_colorComponentGreen));
+        colorsInt[2][i]  = 40 + Color255FromFixed(ColorGetComponent(colors[i],c_colorComponentBlue));
+        if(colorsInt[0][i] >= 255){
+            //colorsInt[0][i] = 255;
+        }
+        if(colorsInt[1][i] >= 255){
+         //   colorsInt[1][i] = 255;
+        }
+        if(colorsInt[2][i] >= 255){
+        //    colorsInt[2][i] = 255;
+        }
+        colors[i] = Color(IntToFixed(colorsInt[0][i]),IntToFixed(colorsInt[1][i]),IntToFixed(colorsInt[2][i])) ;
+    }
+    
+    DialogControlSetPropertyAsText(kingOfTheHill.UIInfoPlayerNameLabel[0],c_triggerControlPropertyText,PlayerGroupAll(),StringToText(playerName[0]));
+    DialogControlSetPropertyAsText(kingOfTheHill.UIInfoPlayerNameLabel[1],c_triggerControlPropertyText,PlayerGroupAll(),StringToText(playerName[1]));
+    DialogControlSetPropertyAsText(kingOfTheHill.UIInfoPlayerNameLabel[2],c_triggerControlPropertyText,PlayerGroupAll(),StringToText(playerName[2]));
+    
+    DialogControlSetPropertyAsColor(kingOfTheHill.UIInfoPlayerNameLabel[0],c_triggerControlPropertyColor,PlayerGroupAll(),colors[0]);
+    DialogControlSetPropertyAsColor(kingOfTheHill.UIInfoPlayerNameLabel[1],c_triggerControlPropertyColor,PlayerGroupAll(),colors[1]);
+    DialogControlSetPropertyAsColor(kingOfTheHill.UIInfoPlayerNameLabel[2],c_triggerControlPropertyColor,PlayerGroupAll(),colors[2]);
+
+    DialogControlSetPropertyAsColor(kingOfTheHill.UIInfoPlayerLabelImage[0],c_triggerControlPropertyDesaturationColor,PlayerGroupAll(),libNtve_gf_ConvertPlayerColorToColor(kingOfTheHill.playerOrder[0]));
+    DialogControlSetPropertyAsColor(kingOfTheHill.UIInfoPlayerLabelImage[1],c_triggerControlPropertyDesaturationColor,PlayerGroupAll(),libNtve_gf_ConvertPlayerColorToColor(kingOfTheHill.playerOrder[1]));
+    DialogControlSetPropertyAsColor(kingOfTheHill.UIInfoPlayerLabelImage[2],c_triggerControlPropertyDesaturationColor,PlayerGroupAll(),libNtve_gf_ConvertPlayerColorToColor(kingOfTheHill.playerOrder[2]));
+
+}
+
+void RandomizeOrder(){
+    int i;
+    int j;
+    int loop = 0;
+    int numberOfPlayers;
+    int pickedNumber;
+    bool numberIsSame = false;
+    bool randomNumberPicked = false;
+    int player;
+    int randomIndex;
+    int temporaryValue;
+    string[5] stringValues;
+
+    
+
+    //Get Players Into The Array
+    playergroup currentGroup = PlayerGroupEmpty();
+
+    currentGroup = PlayerGroupActive();
+    player = -1;
+    while (true) {
+        player = PlayerGroupNextPlayer(currentGroup, player);
+        if (player < 0) { break; }
+        kingOfTheHill.playerOrder[i] = player;
+        i += 1;
+    }
+    
+    //Randomize The Array
+    while (i != 0) {
+        //Pick an index
+        randomIndex = RandomInt(0,i-1);
+        i -= 1;
+        //Swap it with the current index
+        temporaryValue = kingOfTheHill.playerOrder[i];
+        kingOfTheHill.playerOrder[i] = kingOfTheHill.playerOrder[randomIndex];
+        kingOfTheHill.playerOrder[randomIndex] = temporaryValue;  
+    }
+    kingOfTheHill.endOfQueueIndex = loop - 1;
+    KOTH_UIUpdateInfo();  
+}
+
+void KOTH_UIUpdateScoreBoard(){
+    bool scoreBoardInOrder = false;
+    bool neededSort = false;
+    bool sortedSomething = false;
+
+    int currentPlayer;
+    int currentPlayerWins;
+    int nextPlayer;
+    int nextPlayerWins;
+    int i;
+
+    int playerAtScoreboardPosition;
+    int nextPlayerAtScoreBoardPosition;
+
+    while(scoreBoardInOrder == false){
+        neededSort = false;
+        for(i = 1; i <= kingOfTheHill.totalActivePlayers; i += 1){
+            
+            currentPlayer =  kingOfTheHill.scoreBoardOrder[i];
+            nextPlayer = kingOfTheHill.scoreBoardOrder[i + 1];
+
+            currentPlayerWins = kingOfTheHill.wins[currentPlayer];
+            nextPlayerWins = kingOfTheHill.wins[nextPlayer];
+
+            DialogControlSetPropertyAsText(kingOfTheHill.UIDialogLabels[0][i],c_triggerControlPropertyText, PlayerGroupAll(),StringToText(allPlayers[currentPlayer].name));
+            DialogControlSetPropertyAsText(kingOfTheHill.UIDialogLabels[1][i],c_triggerControlPropertyText, PlayerGroupAll(),StringToText(IntToString(kingOfTheHill.wins[currentPlayer])));
+            DialogControlSetPropertyAsText(kingOfTheHill.UIDialogLabels[2][i],c_triggerControlPropertyText, PlayerGroupAll(),StringToText(IntToString(kingOfTheHill.losses[currentPlayer])));
+
+            if(i+1 <= kingOfTheHill.totalActivePlayers){
+                if(nextPlayerWins > currentPlayerWins){
+                    neededSort = true;
+                    kingOfTheHill.scoreBoardOrder[i] = nextPlayer;
+                    kingOfTheHill.scoreBoardOrder[i + 1] = currentPlayer;
+
+                    DialogControlSetPropertyAsText(kingOfTheHill.UIDialogLabels[0][i],c_triggerControlPropertyText, PlayerGroupAll(),StringToText(allPlayers[nextPlayer].name));
+                    DialogControlSetPropertyAsText(kingOfTheHill.UIDialogLabels[1][i],c_triggerControlPropertyText, PlayerGroupAll(),StringToText(IntToString(kingOfTheHill.wins[nextPlayer])));
+                    DialogControlSetPropertyAsText(kingOfTheHill.UIDialogLabels[2][i],c_triggerControlPropertyText, PlayerGroupAll(),StringToText(IntToString(kingOfTheHill.losses[nextPlayer])));
+
+                    DialogControlSetPropertyAsText(kingOfTheHill.UIDialogLabels[0][i + 1],c_triggerControlPropertyText, PlayerGroupAll(),StringToText(allPlayers[currentPlayer].name));
+                    DialogControlSetPropertyAsText(kingOfTheHill.UIDialogLabels[1][i + 1],c_triggerControlPropertyText, PlayerGroupAll(),StringToText(IntToString(kingOfTheHill.wins[currentPlayer])));
+                    DialogControlSetPropertyAsText(kingOfTheHill.UIDialogLabels[2][i + 1],c_triggerControlPropertyText, PlayerGroupAll(),StringToText(IntToString(kingOfTheHill.losses[currentPlayer])));
+                } 
+            }
+        }
+        if(neededSort == true){
+            scoreBoardInOrder = false;
+        } else {
+            scoreBoardInOrder = true;
+        } 
+    }     
+}
+
+void RotateQueue(int winningPlayer, int losingPlayer){
+    int player1 = kingOfTheHill.playerOrder[0];
+    int player2 = kingOfTheHill.playerOrder[1];
+    text[2] nameWithColor;
+
+    int startingIndex = 0;
+    int i;
+
+    if(losingPlayer != 0){
+        if(losingPlayer == player1){
+            winningPlayer = player2;
+        } else {
+            losingPlayer = player2;
+            winningPlayer = player1;
+        }
+    }
+    if(winningPlayer != 0){
+        if(winningPlayer == player1){
+            losingPlayer = player2;
+        } else {
+            winningPlayer = player2;
+            losingPlayer = player1;
+        }
+    }
+    
+    kingOfTheHill.wins[winningPlayer] += 1;
+    kingOfTheHill.losses[losingPlayer] += 1;
+
+    //Put winning player to the front of the queue
+    if(player1 == winningPlayer){
+    } else if(player2 == winningPlayer){
+        kingOfTheHill.playerOrder[0] = kingOfTheHill.playerOrder[1];
+    }
+ 
+    //Put losing player to the back of the queue
+    for(i = 1; i <= kingOfTheHill.endOfQueueIndex; i += 1){
+        if(i != kingOfTheHill.endOfQueueIndex){
+            kingOfTheHill.playerOrder[i] = kingOfTheHill.playerOrder[i+1];
+        } else {
+            kingOfTheHill.playerOrder[i] = losingPlayer;
+        }
+    }
+
+    nameWithColor[0] = TextWithColor(StringToText(allPlayers[losingPlayer].name),libNtve_gf_ConvertPlayerColorToColor(losingPlayer));
+    nameWithColor[1] = TextWithColor(StringToText(allPlayers[winningPlayer].name),libNtve_gf_ConvertPlayerColorToColor(winningPlayer));
+    UIDisplayMessage(PlayerGroupAll(), c_messageAreaChat, nameWithColor[0] + StringToText(" has been defeated by ") + nameWithColor[1]);
+    KOTH_UIUpdateInfo();
+    KOTH_UIUpdateScoreBoard();
+}
+
+void RemoveFromQueue(int player){
+    int i;
+    bool playerToRemoveFound = false;
+    int playerIndex;
+    text nameWithColor;
+   
+    if(player != kingOfTheHill.king && player != kingOfTheHill.challenger){    
+        for(i = 0; i <= kingOfTheHill.endOfQueueIndex; i += 1){
+            if(player == kingOfTheHill.playerOrder[i]){
+                playerToRemoveFound = true;
+                playerIndex = i;
+                break;
+            }
+        }
+    
+        if(playerToRemoveFound){
+            nameWithColor = TextWithColor(StringToText(allPlayers[player].name),libNtve_gf_ConvertPlayerColorToColor(player));
+            UIDisplayMessage(PlayerGroupAll(), c_messageAreaChat, nameWithColor + StringToText(" opted-out"));
+            for(i = playerIndex; i <= kingOfTheHill.endOfQueueIndex; i+=1){
+                kingOfTheHill.playerOrder[i] = kingOfTheHill.playerOrder[i+1];
+            }
+            kingOfTheHill.endOfQueueIndex -= 1;
+        }
+    }
+    KOTH_UIUpdateInfo();
+}
+
+void AddToQueue(int player){
+    bool playerAlreadyExists = false;
+    int i;
+    text nameWithColor;
+
+    for(i = 0; i < kingOfTheHill.endOfQueueIndex; i += 1){
+        if(player == kingOfTheHill.playerOrder[i]){
+            playerAlreadyExists = true;
+            break;
+        }
+    }
+
+    if(playerAlreadyExists == false){
+        kingOfTheHill.endOfQueueIndex += 1;
+        kingOfTheHill.playerOrder[kingOfTheHill.endOfQueueIndex] = player;
+        nameWithColor= TextWithColor(StringToText(allPlayers[player].name),libNtve_gf_ConvertPlayerColorToColor(player));
+        UIDisplayMessage(PlayerGroupAll(), c_messageAreaChat, nameWithColor + StringToText(" joined in"));
+    }
+}
+
+
+
+
+
