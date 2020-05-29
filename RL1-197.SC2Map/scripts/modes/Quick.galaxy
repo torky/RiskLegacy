@@ -18,9 +18,7 @@ bool Ranked(){
     return true;
 }
 
-trigger gt_CheckVictoryConditions;
-
-bool CheckVictoryConditions(bool testConds, bool runActions){
+void CheckVictoryConditions(){
     int player;
     fixed percentage;
     color playerColor;
@@ -42,7 +40,7 @@ bool CheckVictoryConditions(bool testConds, bool runActions){
             && PlayerType(player) == c_playerTypeUser 
             && percentage >= victoryPercentage;
 
-        if(playerHasWon){
+        if(playerHasWon || PlayerGroupCount(PlayerGroupActive()) == 1){
             if(Ranked()){
                 UpdatePlayerBankWinLoss(player, turns);
                 for(player = 1; player < totalPlayers; player+=1){
@@ -52,16 +50,9 @@ bool CheckVictoryConditions(bool testConds, bool runActions){
             PlayerGroupAdd(winners, player);
             StopRefresh();
             StopUnitsAndGlow();
-            return true;
+            return;
         }
     }
-
-    return true;
-}
-
-void gt_CheckVictoryConditions_Init(){
-    gt_CheckVictoryConditions = TriggerCreate("CheckVictoryConditions");
-    TriggerAddEventTimePeriodic(gt_CheckVictoryConditions, IntToFixed(totalTurnTime), c_timeGame);
 }
 
 void QuickModeSetup(){
@@ -74,6 +65,5 @@ void QuickModeSetup(){
     }else{
         UIDisplayMessage(PlayerGroupActive(), c_messageAreaChat, StringToText("<c val=\"CCCC33\">Game</c> - This is an <c val=\"FF0000\">UNRANKED</c> game"));
     }
-
-    gt_CheckVictoryConditions_Init();
+    RefreshVictory = CheckVictoryConditions;
 }

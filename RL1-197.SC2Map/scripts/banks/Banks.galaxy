@@ -41,9 +41,6 @@ const string c_bankName = "RiskRevulsionv3";
 
 void LoadBankForPlayer(int player){
     bank b;
-    if(player == 1){
-        UIDisplayMessage(PlayerGroupAll(), c_messageAreaChat, StringToText(libNtve_gf_ConvertBooleanToString(BankExists(c_bankName, player))));
-    }
     b = BankLoad(c_bankName, player);
     BankOptionSet(b, c_bankOptionSignature, true);
     allPlayers[player].infoBank = b;

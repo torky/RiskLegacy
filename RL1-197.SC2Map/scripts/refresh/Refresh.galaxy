@@ -6,6 +6,13 @@ int turns = 0;
 int timerDisplay;
 int turnDisplay;
 
+void gf_RefreshVictory();
+void DefaultRefreshVictory(){
+    return;
+}
+
+funcref<gf_RefreshVictory> RefreshVictory = DefaultRefreshVictory;
+
 bool Refresh(bool testConds, bool runActions){
     int count;
     int i;
@@ -26,6 +33,7 @@ bool Refresh(bool testConds, bool runActions){
         RefreshIncome();
         RefreshConscripts();
         RefreshScoreboard();
+        RefreshVictory();
     }else if (remainingTime < 4) {
         SoundPlay(SoundLink("UI_BnetCountdown", -1), players, 100.0, 0.0);
     }

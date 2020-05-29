@@ -41,7 +41,6 @@ include "scripts/map/Map"
 include "scripts/ui/Scoreboard"
 include "scripts/settings/SettingsController"
 include "scripts/skins/SkinsController"
-include "scripts/victoryPercentage/VictoryPercentage"
 
 //Level 4
 include "scripts/bases/BaseCapture"
@@ -93,6 +92,9 @@ bool gt_GameModeSelect_Func (bool testConds, bool runActions) {
     UpdateScoreStatsForAllPlayers();
     PredefineCountries();
     InitializeBases();
+        
+    SetupUI();
+    CreateButtons();
     
     if (gameMode == c_mode1v1) {
         UIDisplayMessage(PlayerGroupActive(), c_messageAreaChat, StringToText("1v1"));
@@ -119,6 +121,7 @@ bool gt_GameModeSelect_Func (bool testConds, bool runActions) {
         UIDisplayMessage(PlayerGroupActive(), c_messageAreaChat, StringToText("King of the Hill"));
         KOTHHookUp();
         RandomizeOrder();
+        gt_PlayerLeaves_Init();
     }
     
     players = PlayerGroupActive();
@@ -126,9 +129,6 @@ bool gt_GameModeSelect_Func (bool testConds, bool runActions) {
     UpdateCountries();
     UpdatePlayerSpawnControlGroups();
     ShowHideFlagsForAllPlayers();
-    
-    SetupUI();
-    CreateButtons();
 
     VisEnable(c_visTypeMask, false);
     VisEnable(c_visTypeFog, false);
@@ -158,7 +158,6 @@ void InitTriggers () {
     gt_ShowHideMapHistory_Init();
     gt_ViewTurn_Init();
     gt_Refresh_Init();
-    gt_PlayerLeaves_Init();
     gt_Chat_Init();
     gt_ButtonPressed_Init();
 }
