@@ -38,7 +38,7 @@ void InitializeBase (int player, int baseID, unit structure) {
     SetBaseIDOfUnit(base.beacon, baseID);
 }
 
-unit SetBaseOwnership(int baseID, int player) {
+void SetBaseOwnership(int baseID, int player) {
     structref<Base> b;
     b = allBases[baseID];
     UnitSetOwner(b.defender, player, true);
@@ -52,10 +52,15 @@ unit SetBaseOwnership(int baseID, int player) {
     }
 
     SetFlag(b.flag, allPlayers[player].flag);
-
-    return b.defender;
 }
 
+void SetBaseOwnership1v1(int baseID, int player) {
+    playergroup team1 = GameAttributePlayersForTeam(1);
+    playergroup team2 = GameAttributePlayersForTeam(1);
+    if(PlayerGroupHasPlayer(team1, player) || PlayerGroupHasPlayer(team2, player)){
+        SetBaseOwnership(baseID, player);
+    }
+}
 
 void SwapDefender (unit newUnit, int baseID) {
     point swapPoint;

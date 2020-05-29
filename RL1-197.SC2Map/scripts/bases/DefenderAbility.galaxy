@@ -34,12 +34,6 @@ bool SwapDefenderAbility (bool testConds, bool runActions) {
     SwapDefender(EventUnitTargetUnit(), baseID);
     if (currentOwner != newOwner) {
         SetBaseOwnership(baseID, newOwner);
-        //if ((gv_player[newOwner].lv_showHideNationality == true)) {
-        //    gf_ShowHideIndvFlag(true, baseID);
-        //}
-        //else {
-        //    gf_ShowHideIndvFlag(false, baseID);
-        //}
     }
 
     TriggerAddEventUnitDamaged(gt_BaseCapture, UnitRefFromUnit(allBases[baseID].defender), c_unitDamageTypeAny, c_unitDamageFatal, null);

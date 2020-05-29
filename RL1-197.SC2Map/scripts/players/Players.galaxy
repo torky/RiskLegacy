@@ -24,6 +24,7 @@ struct Player{
 };
 
 playergroup allCurrentAdmins = PlayerGroupEmpty();
+playergroup winners = PlayerGroupEmpty();
 const int totalPlayers = 16;
 Player[totalPlayers] allPlayers;
 

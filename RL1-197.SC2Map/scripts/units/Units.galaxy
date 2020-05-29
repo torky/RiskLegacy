@@ -17,4 +17,24 @@ void SetBaseIDOfUnit(unit u, int baseID){
     UnitSetCustomValue(u, c_baseIDOfUnit, IntToFixed(baseID));
 }
 
+void StopUnitsAndGlow(){
+    unitgroup playerUnits;
+    int count;
+    unit u;
+    VisEnable(c_visTypeMask, false);
+    VisEnable(c_visTypeFog, false);
+    UnitPauseAll(true);
+    playerUnits = UnitGroup(null, c_playerAny, RegionPlayableMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+    count = UnitGroupCount(playerUnits, c_unitCountAll);
+    for (;; count -= 1) {
+        u = UnitGroupUnitFromEnd(playerUnits, count);
+        if (u == null) { break; }
+        libNtve_gf_MakeUnitUncommandable(u, true);
+        if (PlayerGroupHasPlayer(winners, UnitGetOwner(u))) {
+            ActorSend(libNtve_gf_MainActorofUnit(u), "HaloStart");
+            ActorSend(libNtve_gf_MainActorofUnit(u), "GlowStart");
+            UnitIssueOrder(u, Order(AbilityCommand("stop", 2)), c_orderQueueReplace);
+        }
+    }
+}
 

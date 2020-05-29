@@ -1,0 +1,79 @@
+fixed victoryPercentage = 70;
+
+bool Ranked(){
+    int count = PlayerGroupCount(PlayerGroupActive());
+    int i;
+    int player;
+    if(count < 8){
+        return false;
+    }
+
+    for(i = 1; i <= count; i+=1){
+        player = PlayerGroupPlayer(PlayerGroupActive(), i);
+        if(PlayerType(player) != c_playerTypeUser){
+            return false;
+        }
+    }
+
+    return true;
+}
+
+trigger gt_CheckVictoryConditions;
+
+bool CheckVictoryConditions(bool testConds, bool runActions){
+    int player;
+    fixed percentage;
+    color playerColor;
+    text message;
+    bool playerHasWon;
+
+    for(player = 1; player < totalPlayers; player+=1){
+        percentage = IntToFixed(allPlayers[player].income) / IntToFixed(actualBases);
+        playerColor = libNtve_gf_ConvertPlayerColorToColor(player);
+        if(percentage >= .3){
+            message = StringToText("<c val=\"FF0000\">Warning!</c> - ") 
+                + TextWithColor(PlayerName(player), playerColor) 
+                + StringToText(" controls ") + FixedToText(percentage * 100, 1) 
+                + StringToText("% of the map!");
+            UIDisplayMessage(PlayerGroupActive(), c_messageAreaChat, message);
+        }
+
+        playerHasWon = PlayerStatus(player) == c_playerStatusActive 
+            && PlayerType(player) == c_playerTypeUser 
+            && percentage >= victoryPercentage;
+
+        if(playerHasWon){
+            if(Ranked()){
+                UpdatePlayerBankWinLoss(player, turns);
+                for(player = 1; player < totalPlayers; player+=1){
+                    UpdatePlayerBankStats(player);
+                }
+            }
+            PlayerGroupAdd(winners, player);
+            StopRefresh();
+            StopUnitsAndGlow();
+            return true;
+        }
+    }
+
+    return true;
+}
+
+void gt_CheckVictoryConditions_Init(){
+    gt_CheckVictoryConditions = TriggerCreate("CheckVictoryConditions");
+    TriggerAddEventTimePeriodic(gt_CheckVictoryConditions, IntToFixed(totalTurnTime), c_timeGame);
+}
+
+void QuickModeSetup(){
+    int i;
+    if(Ranked()){
+        UIDisplayMessage(PlayerGroupActive(), c_messageAreaChat, StringToText("<c val=\"CCCC33\">Game</c> - This is a <c val=\"00FF00\">RANKED</c> game"));
+        for(i = 1; i < totalPlayers; i+=1){
+            PresetPlayerAsLoser(i);
+        }
+    }else{
+        UIDisplayMessage(PlayerGroupActive(), c_messageAreaChat, StringToText("<c val=\"CCCC33\">Game</c> - This is an <c val=\"FF0000\">UNRANKED</c> game"));
+    }
+
+    gt_CheckVictoryConditions_Init();
+}

@@ -6,7 +6,7 @@ struct Picked{
 
 typedef Picked[16] PlayerArray;
 
-unit gf_SetBaseOwnership(int baseID, int owner);
+void gf_SetBaseOwnership(int baseID, int owner);
 
 void GeneratePickedPlayers(playergroup players, int count, arrayref<PlayerArray> pickedPlayers){
     int i;
@@ -78,10 +78,10 @@ void DistributeTerritories(playergroup players, funcref<gf_SetBaseOwnership> Set
         }
     }
 
-    actualBases = 0;
+    actualBases = UnitCount("Barracks", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, 0, 0), c_noMaxCount);
+    actualBases += UnitCount("Starport", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, 0, 0), c_noMaxCount);
     for(baseID = 0; baseID < totalBases; baseID+=1){
         if(allBases[baseID].defender != null){
-            actualBases+=1;
             u = UnitRefFromUnit(allBases[baseID].defender);
             TriggerAddEventUnitDamaged(gt_BaseCapture, u, c_unitDamageTypeAny, c_unitDamageFatal, null);
         }

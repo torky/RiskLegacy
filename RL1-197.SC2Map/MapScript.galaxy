@@ -13,18 +13,18 @@ const string c_modeTutorial = "0003";
 const string c_modeKingOfTheHill = "0008";
 
 //Level 0
+include "scripts/players/AdminData"
 include "scripts/ui/Buttons"
 include "scripts/flags/Flags"
 include "scripts/ui/MenuTrigger"
 include "scripts/sort/MergeSort"
-include "scripts/players/AdminData"
+include "scripts/players/Players"
 include "scripts/skins/Skins"
 include "scripts/start/Start"
-include "scripts/units/Units"
 include "scripts/units/UnitTrained"
 
 //Level 1
-include "scripts/players/Players"
+include "scripts/units/Units"
 include "scripts/skins/data/SkinsData"
 
 //Level 2
@@ -80,6 +80,7 @@ trigger gt_GameModeSelect;
 
 bool gt_GameModeSelect_Func (bool testConds, bool runActions) {
     playergroup players;
+    funcref<gf_SetBaseOwnership> baseOwnershipFunc = SetBaseOwnership;
     
     gameMode = GameAttributeGameValue("1");
     VisEnable(c_visTypeMask, true);
@@ -92,19 +93,10 @@ bool gt_GameModeSelect_Func (bool testConds, bool runActions) {
     UpdateScoreStatsForAllPlayers();
     PredefineCountries();
     InitializeBases();
-
-    players = PlayerGroupActive();
-    DistributeTerritories(players, SetBaseOwnership);
-    UpdateCountries();
-    UpdatePlayerSpawnControlGroups();
-    ShowHideFlagsForAllPlayers();
-    
-    SetupUI();
-    CreateButtons();
     
     if (gameMode == c_mode1v1) {
         UIDisplayMessage(PlayerGroupActive(), c_messageAreaChat, StringToText("1v1"));
-
+        baseOwnershipFunc = SetBaseOwnership1v1;
     }else if (gameMode == c_modeCustom) {
         UIDisplayMessage(PlayerGroupActive(), c_messageAreaChat, StringToText("Custom"));
 
@@ -113,7 +105,7 @@ bool gt_GameModeSelect_Func (bool testConds, bool runActions) {
 
     }else if (gameMode == c_modeQuick) {
         UIDisplayMessage(PlayerGroupActive(), c_messageAreaChat, StringToText("Quick"));
-
+        QuickModeSetup();
     }else if (gameMode == c_modeSolo) {
         UIDisplayMessage(PlayerGroupActive(), c_messageAreaChat, StringToText("Solo"));
 
@@ -128,6 +120,15 @@ bool gt_GameModeSelect_Func (bool testConds, bool runActions) {
         KOTHHookUp();
         RandomizeOrder();
     }
+    
+    players = PlayerGroupActive();
+    DistributeTerritories(players, baseOwnershipFunc);
+    UpdateCountries();
+    UpdatePlayerSpawnControlGroups();
+    ShowHideFlagsForAllPlayers();
+    
+    SetupUI();
+    CreateButtons();
 
     VisEnable(c_visTypeMask, false);
     VisEnable(c_visTypeFog, false);
