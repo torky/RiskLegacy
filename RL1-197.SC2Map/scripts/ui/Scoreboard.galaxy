@@ -51,7 +51,7 @@ int CreateScoreboardLabel(int row, int col, text val, int player){
 
 int CreateScoreboardStatus(int row){
     int y = c_titleHeight + row * c_rowHeight;
-    return libNtve_gf_CreateDialogItemImage(DialogLastCreated(), 20, 20, c_anchorTopLeft, 427, y, StringToText("Active"), "Risk\\Active.dds", c_triggerImageTypeNormal, true, Color(100,100,100), c_triggerBlendModeNormal);
+    return libNtve_gf_CreateDialogItemImage(scoreboard, 20, 20, c_anchorTopLeft, 427, y, StringToText("Active"), "Risk\\Active.dds", c_triggerImageTypeNormal, true, Color(100,100,100), c_triggerBlendModeNormal);
 }
 
 void CreateAndSetScoreboardRow(int row, int player){

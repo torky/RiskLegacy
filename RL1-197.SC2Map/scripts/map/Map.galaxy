@@ -94,10 +94,11 @@ bool ShowHideMapHistory(bool testConds, bool runActions){
     int control = EventDialogControl();
     bool visible;
 
-    visible = control == mapHistoryButton && !DialogIsVisible(mapDialog, player);
-
-    DialogSetVisible(mapDialog, PlayerGroupSingle(player), visible);
-    DialogSetVisible(mapBackground, PlayerGroupSingle(player), visible);
+    if(control == mapHistoryButton || control == profileButton || control == skinsButton){
+        visible = control == mapHistoryButton && !DialogIsVisible(mapDialog, player);
+        DialogSetVisible(mapDialog, PlayerGroupSingle(player), visible);
+        DialogSetVisible(mapBackground, PlayerGroupSingle(player), visible);
+    }
 
     return true;
 }

@@ -35,6 +35,7 @@ const string c_Win2531 = "43357";
 const string c_Win2535 = "45689";
 const string c_sectionRanking = "973423";
 const string c_Win22 = "78245";
+const string c_sectionHackers = "Hackers";
 
 const string c_bankName = "RiskRevulsionv3";
 
@@ -180,7 +181,12 @@ void PresetPlayerAsLoser(int playerID){
 
 void LoadBankInfoForPlayers(){
     int i;
+    int j;
+    int hackCount;
+    int player;
+    int count;
     bool bankExists;
+    playergroup hackers = PlayerGroupEmpty();
 
     for(i = 1; i < totalPlayers; i+=1){
         bankExists = BankExists(c_bankName, i);
@@ -188,8 +194,19 @@ void LoadBankInfoForPlayers(){
         if(bankExists && BankVerify(allPlayers[i].infoBank)){
             SetPlayerValuesFromBank(i);
         }else{
+            if(bankExists){
+                PlayerGroupAdd(hackers, i);
+            }
             SetPlayerValuesDefault(i);
         }
+    }
 
+    count = PlayerGroupCount(hackers);
+    for(i = 1; i <= count; i+=1){
+        player = PlayerGroupPlayer(hackers, i);
+        hackCount = BankValueGetAsInt(allPlayers[j].infoBank, c_sectionHackers, PlayerHandle(i));
+        for(j = 1; j <= totalPlayers; j+=1){
+            BankValueSetFromInt(allPlayers[j].infoBank, c_sectionHackers, PlayerHandle(i), hackCount + 1);
+        }
     }
 }
